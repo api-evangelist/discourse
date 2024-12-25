@@ -43,11 +43,6 @@ common:
     type: Status
 created: 2023/11/13
 modified: '2024-11-14'
-overlays:
-  - url: overlays/apis-io-search.yml
-    type: APIs.io Search
-  - url: overlays/apis-io-search.yml
-    type: API Evangelist Ratings
 description: >+
   At Discourse, our mission is to democratize online community and teamwork by
   raising the standard of civilized discourse on the Internet. We achieve this
