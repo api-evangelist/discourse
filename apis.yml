@@ -209,6 +209,27 @@ apis:
 
 
 
+  - aid: discourse:discourse-t-api
+    name: Discourse T API
+    tags: []
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api.example.com
+    contact:
+      - FN: Discourse Support
+        url: https://meta.discourse.org/t/what-is-discourse-api/166416
+        email: ''
+    humanURL: https://www.discourse.org/
+    properties:
+      - type: OpenAPI
+        url: openapi/discourse-t-api-openapi.yml
+    description: |+
+
+      At Discourse, our mission is to democratize online community and teamwork
+      by raising the standard of civilized discourse on the Internet. We achieve
+      this through delivering the best community and forum software.
+
+
+
 name: Discourse
 tags:
   - Communities
