@@ -16,16 +16,17 @@ apis:
         type: Documentation
       - url: https://docs.discourse.org/openapi.json
         type: OpenAPI
-    description: >+
+    description: |
       At Discourse, our mission is to democratize online community and teamwork
       by raising the standard of civilized discourse on the Internet. We achieve
       this through delivering the best community and forum software.
-
 name: Discourse
 tags:
   - Communities
   - Forums
+type: Index
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
 common:
   - url: https://www.discourse.org/pricing
     type: Plans
@@ -42,17 +43,14 @@ common:
   - url: https://status.discourse.org/
     type: Status
 created: 2023/11/13
-modified: '2024-11-14'
-description: >+
+modified: '2024-12-30'
+position: Consumer
+description: |
   At Discourse, our mission is to democratize online community and teamwork by
   raising the standard of civilized discourse on the Internet. We achieve this
   through delivering the best community and forum software.
-
 maintainers:
   - FN: API Evangelist
     url: http://apievangelist.com
     email: info@apievangelist.com
 specificationVersion: '0.16'
-type: Index
-position: Consumer
-access: 3rd-Party
