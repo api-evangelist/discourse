@@ -14,7 +14,7 @@ apis:
     properties:
       - url: https://docs.discourse.org/
         type: Documentation
-      - url: https://docs.discourse.org/openapi.json
+      - url: openapi/discourse-openapi.json
         type: OpenAPI
     description: |
       At Discourse, our mission is to democratize online community and teamwork
@@ -383,7 +383,7 @@ common:
   - url: https://status.discourse.org/
     type: Status
 created: 2023/11/13
-modified: '2026-03-16'
+modified: '2026-04-01'
 position: Consumer
 description: |
   At Discourse, our mission is to democratize online community and teamwork by
