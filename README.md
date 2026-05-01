@@ -1,61 +1,55 @@
 # Discourse (discourse)
-At Discourse, our mission is to democratize online community and teamwork by
-raising the standard of civilized discourse on the Internet. We achieve this
-through delivering the best community and forum software.
 
+At Discourse, our mission is to democratize online community and teamwork by raising the standard of civilized discourse on the Internet. We achieve this through delivering the best community and forum software. The Discourse API exposes administrative and content endpoints for categories, topics, posts, users, groups, tags, uploads, badges, and more.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/apis-json/artisanal/main/apis/discourse.yml)
+**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/discourse/refs/heads/main/apis.yml)
 
 ## Scope
 
-- **Type:** Index 
-- **Position:** Consumer 
-- **Access:** 3rd-Party 
+- **Type:** Index
+- **Position:** Consumer
+- **Access:** 3rd-Party
 
-## Tags:
+## Tags
 
- - Communities, Forums
+- Communities, Forums, Open Source
 
 ## Timestamps
 
-- **Created:** 2023/11/13 
-- **Modified:** 2024-12-30 
+- **Created:** 2023-11-13
+- **Modified:** 2026-04-28
 
 ## APIs
 
 ### Discourse API
-At Discourse, our mission is to democratize online community and teamwork
-by raising the standard of civilized discourse on the Internet. We achieve
-this through delivering the best community and forum software.
+The Discourse API exposes the full set of REST endpoints used to manage a Discourse forum, including categories, topics, posts, users, groups, tags, badges, uploads, search, site settings, and admin operations. Authentication uses an API Key plus an Api-Username header issued from the Discourse admin panel.
 
-
-**Human URL:** [https://www.discourse.org/](https://www.discourse.org/)
-
-**Base URL:** [https://api.example.com](https://api.example.com)
-
-
-#### Tags:
-
- - No Tags
+- **Human URL:** [https://www.discourse.org/](https://www.discourse.org/)
+- **Base URL:** https://meta.discourse.org
 
 #### Properties
 
 - [Documentation](https://docs.discourse.org/)
-- [OpenAPI](https://docs.discourse.org/openapi.json)
+- [OpenAPI](openapi/discourse-openapi.json)
+- [GitHub Repo](https://github.com/discourse/discourse_api)
 
 ## Common Properties
 
+- [Website](https://www.discourse.org/)
+- [Documentation](https://docs.discourse.org/)
+- [Community (Meta)](https://meta.discourse.org/)
 - [Plans](https://www.discourse.org/pricing)
 - [Blog](https://blog.discourse.org/)
 - [Plugins](https://www.discourse.org/plugins)
 - [Integrations](https://www.discourse.org/integrations)
-- [Github Repo](https://github.com/discourse/discourse)
+- [GitHub Repo](https://github.com/discourse/discourse)
+- [GitHub Org](https://github.com/discourse)
 - [Privacy Policy](https://www.discourse.org/privacy)
 - [Status](https://status.discourse.org/)
+- [Support](https://meta.discourse.org/c/support/api/52)
 
 ## Maintainers
 
-**FN:** API Evangelist
+**FN:** Kin Lane
 
-**Email:** info@apievangelist.com
-
+**Email:** kin@apievangelist.com
