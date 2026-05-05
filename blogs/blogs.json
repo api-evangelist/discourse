@@ -1,0 +1,13 @@
+{
+  "repo": "discourse",
+  "feeds": [
+    {
+      "source": "https://blog.discourse.org/",
+      "feed_url": "https://blog.discourse.org/rss/",
+      "saved": 10,
+      "title": "Discourse"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:27:07Z"
+}
