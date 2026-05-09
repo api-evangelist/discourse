@@ -3,11 +3,11 @@
   "feeds": [
     {
       "source": "https://blog.discourse.org/",
-      "feed_url": "https://blog.discourse.org/rss/",
-      "saved": 10,
-      "title": "Discourse"
+      "feed_url": "https://blog.discourse.org/feed/",
+      "title": "Discourse",
+      "saved": 2
     }
   ],
-  "post_count": 10,
-  "fetched": "2026-05-03T23:27:07Z"
+  "post_count": 12,
+  "fetched": "2026-05-09T20:17:51Z"
 }
