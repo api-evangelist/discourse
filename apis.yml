@@ -74,6 +74,46 @@ common:
     type: Status
   - url: https://meta.discourse.org/c/support/api/52
     type: Support
+integrations:
+  - name: Google
+  - name: Facebook
+  - name: LinkedIn
+  - name: GitHub
+  - name: Discord
+  - name: Microsoft
+  - name: Apple
+  - name: Slack
+  - name: Mattermost
+  - name: Matrix
+  - name: Rocket Chat
+  - name: Telegram
+  - name: Zulip
+  - name: Gitter
+  - name: Slack chat with Discourse notification
+  - name: Google Adsense
+  - name: Google Ads
+  - name: Amazon
+  - name: CodeFund
+  - name: Discourse forum with banner ad
+  - name: Google Analytics
+  - name: Matomo
+  - name: Adobe Analytics Cloud
+  - name: Google Analytics data
+  - name: Patreon
+  - name: Memberful
+  - name: Patreon pledge tiers
+  - name: Discourse Github
+  - name: Zendesk
+  - name: Zendesk Discourse settings
+  - name: WordPress
+  - name: Zapier
+  - name: Skyvia
+  - name: Agolia
+  - name: BrightCove
+  - name: IFTTT
+  - name: Logo
+  - name: Discourse
+  - name: Get Discourse Hub on Google Play
 maintainers:
   - FN: Kin Lane
     url: http://apievangelist.com
