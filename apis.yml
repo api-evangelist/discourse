@@ -71,7 +71,7 @@ common:
   - url: https://www.discourse.org/tos
     type: TermsOfService
   - url: https://status.discourse.org/
-    type: Status
+    type: StatusPage
   - url: https://meta.discourse.org/c/support/api/52
     type: Support
 integrations:
