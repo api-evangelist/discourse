@@ -1,0 +1,225 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Discourse API Documentation — Badges
+  description: 'Discourse API Documentation — Badges. 5 operations. Lead operation: List badges. Self-contained Naftiko capability
+    covering one Discourse business surface.'
+  tags:
+  - Discourse
+  - Badges
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DISCOURSE_API_KEY: DISCOURSE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: discourse-badges
+    baseUri: https://{defaultHost}
+    description: Discourse API Documentation — Badges business capability. Self-contained, no shared references.
+    resources:
+    - name: admin-badges.json
+      path: /admin/badges.json
+      operations:
+      - name: adminlistbadges
+        method: GET
+        description: List badges
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createbadge
+        method: POST
+        description: Create badge
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: admin-badges-id}.json
+      path: /admin/badges/{id}.json
+      operations:
+      - name: updatebadge
+        method: PUT
+        description: Update badge
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: deletebadge
+        method: DELETE
+        description: Delete badge
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+    - name: user-badges-username}.json
+      path: /user-badges/{username}.json
+      operations:
+      - name: listuserbadges
+        method: GET
+        description: List badges for a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: username
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: discourse-badges-rest
+    port: 8080
+    description: REST adapter for Discourse API Documentation — Badges. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/admin/badges-json
+      name: admin-badges-json
+      description: REST surface for admin-badges.json.
+      operations:
+      - method: GET
+        name: adminlistbadges
+        description: List badges
+        call: discourse-badges.adminlistbadges
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createbadge
+        description: Create badge
+        call: discourse-badges.createbadge
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/badges/id-json
+      name: admin-badges-id-json
+      description: REST surface for admin-badges-id}.json.
+      operations:
+      - method: PUT
+        name: updatebadge
+        description: Update badge
+        call: discourse-badges.updatebadge
+        with:
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletebadge
+        description: Delete badge
+        call: discourse-badges.deletebadge
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/user-badges/username-json
+      name: user-badges-username-json
+      description: REST surface for user-badges-username}.json.
+      operations:
+      - method: GET
+        name: listuserbadges
+        description: List badges for a user
+        call: discourse-badges.listuserbadges
+        with:
+          username: rest.username
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: discourse-badges-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Discourse API Documentation — Badges. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-badges
+      description: List badges
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-badges.adminlistbadges
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-badge
+      description: Create badge
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-badges.createbadge
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-badge
+      description: Update badge
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-badges.updatebadge
+      with:
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-badge
+      description: Delete badge
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: discourse-badges.deletebadge
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-badges-user
+      description: List badges for a user
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-badges.listuserbadges
+      with:
+        username: tools.username
+      outputParameters:
+      - type: object
+        mapping: $.

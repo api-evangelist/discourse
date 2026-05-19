@@ -1,0 +1,263 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Discourse API Documentation — Invites
+  description: 'Discourse API Documentation — Invites. 4 operations. Lead operation: Create an invite. Self-contained Naftiko
+    capability covering one Discourse business surface.'
+  tags:
+  - Discourse
+  - Invites
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DISCOURSE_API_KEY: DISCOURSE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: discourse-invites
+    baseUri: https://{defaultHost}
+    description: Discourse API Documentation — Invites business capability. Self-contained, no shared references.
+    resources:
+    - name: invites.json
+      path: /invites.json
+      operations:
+      - name: createinvite
+        method: POST
+        description: Create an invite
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: invites-create-multiple.json
+      path: /invites/create-multiple.json
+      operations:
+      - name: createmultipleinvites
+        method: POST
+        description: Create multiple invites
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: t-id-invite-group.json
+      path: /t/{id}/invite-group.json
+      operations:
+      - name: invitegrouptotopic
+        method: POST
+        description: Invite group to topic
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: t-id-invite.json
+      path: /t/{id}/invite.json
+      operations:
+      - name: invitetotopic
+        method: POST
+        description: Invite to topic
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: discourse-invites-rest
+    port: 8080
+    description: REST adapter for Discourse API Documentation — Invites. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/invites-json
+      name: invites-json
+      description: REST surface for invites.json.
+      operations:
+      - method: POST
+        name: createinvite
+        description: Create an invite
+        call: discourse-invites.createinvite
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/invites/create-multiple-json
+      name: invites-create-multiple-json
+      description: REST surface for invites-create-multiple.json.
+      operations:
+      - method: POST
+        name: createmultipleinvites
+        description: Create multiple invites
+        call: discourse-invites.createmultipleinvites
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/t/{id}/invite-group-json
+      name: t-id-invite-group-json
+      description: REST surface for t-id-invite-group.json.
+      operations:
+      - method: POST
+        name: invitegrouptotopic
+        description: Invite group to topic
+        call: discourse-invites.invitegrouptotopic
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/t/{id}/invite-json
+      name: t-id-invite-json
+      description: REST surface for t-id-invite.json.
+      operations:
+      - method: POST
+        name: invitetotopic
+        description: Invite to topic
+        call: discourse-invites.invitetotopic
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: discourse-invites-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Discourse API Documentation — Invites. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: create-invite
+      description: Create an invite
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-invites.createinvite
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-multiple-invites
+      description: Create multiple invites
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-invites.createmultipleinvites
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: invite-group-topic
+      description: Invite group to topic
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-invites.invitegrouptotopic
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: invite-topic
+      description: Invite to topic
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-invites.invitetotopic
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,109 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Discourse API Documentation — Notifications
+  description: 'Discourse API Documentation — Notifications. 2 operations. Lead operation: Get the notifications that belong
+    to the current user. Self-contained Naftiko capability covering one Discourse business surface.'
+  tags:
+  - Discourse
+  - Notifications
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DISCOURSE_API_KEY: DISCOURSE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: discourse-notifications
+    baseUri: https://{defaultHost}
+    description: Discourse API Documentation — Notifications business capability. Self-contained, no shared references.
+    resources:
+    - name: notifications.json
+      path: /notifications.json
+      operations:
+      - name: getnotifications
+        method: GET
+        description: Get the notifications that belong to the current user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: notifications-mark-read.json
+      path: /notifications/mark-read.json
+      operations:
+      - name: marknotificationsasread
+        method: PUT
+        description: Mark notifications as read
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: discourse-notifications-rest
+    port: 8080
+    description: REST adapter for Discourse API Documentation — Notifications. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/notifications-json
+      name: notifications-json
+      description: REST surface for notifications.json.
+      operations:
+      - method: GET
+        name: getnotifications
+        description: Get the notifications that belong to the current user
+        call: discourse-notifications.getnotifications
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/notifications/mark-read-json
+      name: notifications-mark-read-json
+      description: REST surface for notifications-mark-read.json.
+      operations:
+      - method: PUT
+        name: marknotificationsasread
+        description: Mark notifications as read
+        call: discourse-notifications.marknotificationsasread
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: discourse-notifications-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Discourse API Documentation — Notifications. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: get-notifications-that-belong-current
+      description: Get the notifications that belong to the current user
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-notifications.getnotifications
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: mark-notifications-read
+      description: Mark notifications as read
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-notifications.marknotificationsasread
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

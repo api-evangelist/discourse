@@ -1,0 +1,329 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Discourse API Documentation — Uploads
+  description: 'Discourse API Documentation — Uploads. 7 operations. Lead operation: Creates an upload. Self-contained Naftiko
+    capability covering one Discourse business surface.'
+  tags:
+  - Discourse
+  - Uploads
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DISCOURSE_API_KEY: DISCOURSE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: discourse-uploads
+    baseUri: https://{defaultHost}
+    description: Discourse API Documentation — Uploads business capability. Self-contained, no shared references.
+    resources:
+    - name: uploads.json
+      path: /uploads.json
+      operations:
+      - name: createupload
+        method: POST
+        description: Creates an upload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: uploads-abort-multipart.json
+      path: /uploads/abort-multipart.json
+      operations:
+      - name: abortmultipart
+        method: POST
+        description: Abort multipart upload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: uploads-batch-presign-multipart-parts.json
+      path: /uploads/batch-presign-multipart-parts.json
+      operations:
+      - name: batchpresignmultipartparts
+        method: POST
+        description: Generates batches of presigned URLs for multipart parts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: uploads-complete-external-upload.json
+      path: /uploads/complete-external-upload.json
+      operations:
+      - name: completeexternalupload
+        method: POST
+        description: Completes a direct external upload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: uploads-complete-multipart.json
+      path: /uploads/complete-multipart.json
+      operations:
+      - name: completemultipart
+        method: POST
+        description: Complete multipart upload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: uploads-create-multipart.json
+      path: /uploads/create-multipart.json
+      operations:
+      - name: createmultipartupload
+        method: POST
+        description: Creates a multipart external upload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: uploads-generate-presigned-put.json
+      path: /uploads/generate-presigned-put.json
+      operations:
+      - name: generatepresignedput
+        method: POST
+        description: Initiates a direct external upload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: discourse-uploads-rest
+    port: 8080
+    description: REST adapter for Discourse API Documentation — Uploads. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/uploads-json
+      name: uploads-json
+      description: REST surface for uploads.json.
+      operations:
+      - method: POST
+        name: createupload
+        description: Creates an upload
+        call: discourse-uploads.createupload
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/uploads/abort-multipart-json
+      name: uploads-abort-multipart-json
+      description: REST surface for uploads-abort-multipart.json.
+      operations:
+      - method: POST
+        name: abortmultipart
+        description: Abort multipart upload
+        call: discourse-uploads.abortmultipart
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/uploads/batch-presign-multipart-parts-json
+      name: uploads-batch-presign-multipart-parts-json
+      description: REST surface for uploads-batch-presign-multipart-parts.json.
+      operations:
+      - method: POST
+        name: batchpresignmultipartparts
+        description: Generates batches of presigned URLs for multipart parts
+        call: discourse-uploads.batchpresignmultipartparts
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/uploads/complete-external-upload-json
+      name: uploads-complete-external-upload-json
+      description: REST surface for uploads-complete-external-upload.json.
+      operations:
+      - method: POST
+        name: completeexternalupload
+        description: Completes a direct external upload
+        call: discourse-uploads.completeexternalupload
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/uploads/complete-multipart-json
+      name: uploads-complete-multipart-json
+      description: REST surface for uploads-complete-multipart.json.
+      operations:
+      - method: POST
+        name: completemultipart
+        description: Complete multipart upload
+        call: discourse-uploads.completemultipart
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/uploads/create-multipart-json
+      name: uploads-create-multipart-json
+      description: REST surface for uploads-create-multipart.json.
+      operations:
+      - method: POST
+        name: createmultipartupload
+        description: Creates a multipart external upload
+        call: discourse-uploads.createmultipartupload
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/uploads/generate-presigned-put-json
+      name: uploads-generate-presigned-put-json
+      description: REST surface for uploads-generate-presigned-put.json.
+      operations:
+      - method: POST
+        name: generatepresignedput
+        description: Initiates a direct external upload
+        call: discourse-uploads.generatepresignedput
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: discourse-uploads-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Discourse API Documentation — Uploads. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: creates-upload
+      description: Creates an upload
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-uploads.createupload
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: abort-multipart-upload
+      description: Abort multipart upload
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-uploads.abortmultipart
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: generates-batches-presigned-urls-multipart
+      description: Generates batches of presigned URLs for multipart parts
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-uploads.batchpresignmultipartparts
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: completes-direct-external-upload
+      description: Completes a direct external upload
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-uploads.completeexternalupload
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: complete-multipart-upload
+      description: Complete multipart upload
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-uploads.completemultipart
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: creates-multipart-external-upload
+      description: Creates a multipart external upload
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-uploads.createmultipartupload
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: initiates-direct-external-upload
+      description: Initiates a direct external upload
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-uploads.generatepresignedput
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

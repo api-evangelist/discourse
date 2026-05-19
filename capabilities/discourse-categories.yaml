@@ -1,0 +1,278 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Discourse API Documentation — Categories
+  description: 'Discourse API Documentation — Categories. 6 operations. Lead operation: Show category. Self-contained Naftiko
+    capability covering one Discourse business surface.'
+  tags:
+  - Discourse
+  - Categories
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DISCOURSE_API_KEY: DISCOURSE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: discourse-categories
+    baseUri: https://{defaultHost}
+    description: Discourse API Documentation — Categories business capability. Self-contained, no shared references.
+    resources:
+    - name: c-id-show.json
+      path: /c/{id}/show.json
+      operations:
+      - name: getcategory
+        method: GET
+        description: Show category
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+    - name: c-slug-id}.json
+      path: /c/{slug}/{id}.json
+      operations:
+      - name: listcategorytopics
+        method: GET
+        description: List topics
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: slug
+          in: path
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: integer
+          required: true
+    - name: categories.json
+      path: /categories.json
+      operations:
+      - name: createcategory
+        method: POST
+        description: Creates a category
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: listcategories
+        method: GET
+        description: Retrieves a list of categories
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: include_subcategories
+          in: query
+          type: boolean
+    - name: categories-id}.json
+      path: /categories/{id}.json
+      operations:
+      - name: updatecategory
+        method: PUT
+        description: Updates a category
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: site.json
+      path: /site.json
+      operations:
+      - name: getsite
+        method: GET
+        description: Get site info
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: discourse-categories-rest
+    port: 8080
+    description: REST adapter for Discourse API Documentation — Categories. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/c/{id}/show-json
+      name: c-id-show-json
+      description: REST surface for c-id-show.json.
+      operations:
+      - method: GET
+        name: getcategory
+        description: Show category
+        call: discourse-categories.getcategory
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/c/{slug}/id-json
+      name: c-slug-id-json
+      description: REST surface for c-slug-id}.json.
+      operations:
+      - method: GET
+        name: listcategorytopics
+        description: List topics
+        call: discourse-categories.listcategorytopics
+        with:
+          slug: rest.slug
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/categories-json
+      name: categories-json
+      description: REST surface for categories.json.
+      operations:
+      - method: POST
+        name: createcategory
+        description: Creates a category
+        call: discourse-categories.createcategory
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listcategories
+        description: Retrieves a list of categories
+        call: discourse-categories.listcategories
+        with:
+          include_subcategories: rest.include_subcategories
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/categories/id-json
+      name: categories-id-json
+      description: REST surface for categories-id}.json.
+      operations:
+      - method: PUT
+        name: updatecategory
+        description: Updates a category
+        call: discourse-categories.updatecategory
+        with:
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/site-json
+      name: site-json
+      description: REST surface for site.json.
+      operations:
+      - method: GET
+        name: getsite
+        description: Get site info
+        call: discourse-categories.getsite
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: discourse-categories-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Discourse API Documentation — Categories. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: show-category
+      description: Show category
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-categories.getcategory
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-topics
+      description: List topics
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-categories.listcategorytopics
+      with:
+        slug: tools.slug
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: creates-category
+      description: Creates a category
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-categories.createcategory
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrieves-list-categories
+      description: Retrieves a list of categories
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-categories.listcategories
+      with:
+        include_subcategories: tools.include_subcategories
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updates-category
+      description: Updates a category
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-categories.updatecategory
+      with:
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-site-info
+      description: Get site info
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-categories.getsite
+      outputParameters:
+      - type: object
+        mapping: $.

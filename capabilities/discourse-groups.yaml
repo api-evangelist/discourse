@@ -1,0 +1,413 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Discourse API Documentation — Groups
+  description: 'Discourse API Documentation — Groups. 9 operations. Lead operation: Create a group. Self-contained Naftiko
+    capability covering one Discourse business surface.'
+  tags:
+  - Discourse
+  - Groups
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DISCOURSE_API_KEY: DISCOURSE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: discourse-groups
+    baseUri: https://{defaultHost}
+    description: Discourse API Documentation — Groups business capability. Self-contained, no shared references.
+    resources:
+    - name: admin-groups.json
+      path: /admin/groups.json
+      operations:
+      - name: creategroup
+        method: POST
+        description: Create a group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: admin-groups-id}.json
+      path: /admin/groups/{id}.json
+      operations:
+      - name: deletegroup
+        method: DELETE
+        description: Delete a group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+    - name: groups.json
+      path: /groups.json
+      operations:
+      - name: listgroups
+        method: GET
+        description: List groups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: groups-by-id-id}.json
+      path: /groups/by-id/{id}.json
+      operations:
+      - name: getgroupbyid
+        method: GET
+        description: Get a group by id
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          description: Use group name instead of id
+          required: true
+    - name: groups-id}.json
+      path: /groups/{id}.json
+      operations:
+      - name: updategroup
+        method: PUT
+        description: Update a group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: groups-id-members.json
+      path: /groups/{id}/members.json
+      operations:
+      - name: addgroupmembers
+        method: PUT
+        description: Add group members
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: removegroupmembers
+        method: DELETE
+        description: Remove group members
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: groups-name}.json
+      path: /groups/{name}.json
+      operations:
+      - name: getgroup
+        method: GET
+        description: Get a group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: Use group name instead of id
+          required: true
+    - name: groups-name-members.json
+      path: /groups/{name}/members.json
+      operations:
+      - name: listgroupmembers
+        method: GET
+        description: List group members
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: Use group name instead of id
+          required: true
+  exposes:
+  - type: rest
+    namespace: discourse-groups-rest
+    port: 8080
+    description: REST adapter for Discourse API Documentation — Groups. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/admin/groups-json
+      name: admin-groups-json
+      description: REST surface for admin-groups.json.
+      operations:
+      - method: POST
+        name: creategroup
+        description: Create a group
+        call: discourse-groups.creategroup
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/groups/id-json
+      name: admin-groups-id-json
+      description: REST surface for admin-groups-id}.json.
+      operations:
+      - method: DELETE
+        name: deletegroup
+        description: Delete a group
+        call: discourse-groups.deletegroup
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/groups-json
+      name: groups-json
+      description: REST surface for groups.json.
+      operations:
+      - method: GET
+        name: listgroups
+        description: List groups
+        call: discourse-groups.listgroups
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/groups/by-id/id-json
+      name: groups-by-id-id-json
+      description: REST surface for groups-by-id-id}.json.
+      operations:
+      - method: GET
+        name: getgroupbyid
+        description: Get a group by id
+        call: discourse-groups.getgroupbyid
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/groups/id-json
+      name: groups-id-json
+      description: REST surface for groups-id}.json.
+      operations:
+      - method: PUT
+        name: updategroup
+        description: Update a group
+        call: discourse-groups.updategroup
+        with:
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/groups/{id}/members-json
+      name: groups-id-members-json
+      description: REST surface for groups-id-members.json.
+      operations:
+      - method: PUT
+        name: addgroupmembers
+        description: Add group members
+        call: discourse-groups.addgroupmembers
+        with:
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: removegroupmembers
+        description: Remove group members
+        call: discourse-groups.removegroupmembers
+        with:
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/groups/name-json
+      name: groups-name-json
+      description: REST surface for groups-name}.json.
+      operations:
+      - method: GET
+        name: getgroup
+        description: Get a group
+        call: discourse-groups.getgroup
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/groups/{name}/members-json
+      name: groups-name-members-json
+      description: REST surface for groups-name-members.json.
+      operations:
+      - method: GET
+        name: listgroupmembers
+        description: List group members
+        call: discourse-groups.listgroupmembers
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: discourse-groups-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Discourse API Documentation — Groups. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: create-group
+      description: Create a group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-groups.creategroup
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-group
+      description: Delete a group
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: discourse-groups.deletegroup
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-groups
+      description: List groups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-groups.listgroups
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-group-id
+      description: Get a group by id
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-groups.getgroupbyid
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-group
+      description: Update a group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-groups.updategroup
+      with:
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: add-group-members
+      description: Add group members
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-groups.addgroupmembers
+      with:
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: remove-group-members
+      description: Remove group members
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: discourse-groups.removegroupmembers
+      with:
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-group
+      description: Get a group
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-groups.getgroup
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-group-members
+      description: List group members
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-groups.listgroupmembers
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.

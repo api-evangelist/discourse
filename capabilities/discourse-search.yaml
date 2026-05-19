@@ -1,0 +1,81 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Discourse API Documentation — Search
+  description: 'Discourse API Documentation — Search. 1 operations. Lead operation: Search for a term. Self-contained Naftiko
+    capability covering one Discourse business surface.'
+  tags:
+  - Discourse
+  - Search
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DISCOURSE_API_KEY: DISCOURSE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: discourse-search
+    baseUri: https://{defaultHost}
+    description: Discourse API Documentation — Search business capability. Self-contained, no shared references.
+    resources:
+    - name: search.json
+      path: /search.json
+      operations:
+      - name: search
+        method: GET
+        description: Search for a term
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: q
+          in: query
+          type: string
+          description: 'The query string needs to be url encoded and is made up of the following options:'
+        - name: page
+          in: query
+          type: integer
+  exposes:
+  - type: rest
+    namespace: discourse-search-rest
+    port: 8080
+    description: REST adapter for Discourse API Documentation — Search. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/search-json
+      name: search-json
+      description: REST surface for search.json.
+      operations:
+      - method: GET
+        name: search
+        description: Search for a term
+        call: discourse-search.search
+        with:
+          q: rest.q
+          page: rest.page
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: discourse-search-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Discourse API Documentation — Search. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: search-term
+      description: Search for a term
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-search.search
+      with:
+        q: tools.q
+        page: tools.page
+      outputParameters:
+      - type: object
+        mapping: $.

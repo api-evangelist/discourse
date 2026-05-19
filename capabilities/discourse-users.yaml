@@ -1,0 +1,1271 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Discourse API Documentation — Users
+  description: 'Discourse API Documentation — Users. 25 operations. Lead operation: List users. Self-contained Naftiko capability
+    covering one Discourse business surface.'
+  tags:
+  - Discourse
+  - Users
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DISCOURSE_API_KEY: DISCOURSE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: discourse-users
+    baseUri: https://{defaultHost}
+    description: Discourse API Documentation — Users business capability. Self-contained, no shared references.
+    resources:
+    - name: admin-users.json
+      path: /admin/users.json
+      operations:
+      - name: adminlistusers
+        method: GET
+        description: List users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: order
+          in: query
+          type: string
+        - name: asc
+          in: query
+          type: string
+        - name: page
+          in: query
+          type: integer
+        - name: show_emails
+          in: query
+          type: boolean
+          description: Include user email addresses in response. These requests will
+        - name: stats
+          in: query
+          type: boolean
+          description: Include user stats information
+        - name: email
+          in: query
+          type: string
+          description: Filter to the user with this email address
+        - name: ip
+          in: query
+          type: string
+          description: Filter to users with this IP address
+    - name: admin-users-list-flag}.json
+      path: /admin/users/list/{flag}.json
+      operations:
+      - name: adminlistusersflag
+        method: GET
+        description: List users by flag
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: flag
+          in: path
+          type: string
+          required: true
+        - name: order
+          in: query
+          type: string
+        - name: asc
+          in: query
+          type: string
+        - name: page
+          in: query
+          type: integer
+        - name: show_emails
+          in: query
+          type: boolean
+          description: Include user email addresses in response. These requests will
+        - name: stats
+          in: query
+          type: boolean
+          description: Include user stats information
+        - name: email
+          in: query
+          type: string
+          description: Filter to the user with this email address
+        - name: ip
+          in: query
+          type: string
+          description: Filter to users with this IP address
+    - name: admin-users-id}.json
+      path: /admin/users/{id}.json
+      operations:
+      - name: admingetuser
+        method: GET
+        description: Get a user by id
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+      - name: deleteuser
+        method: DELETE
+        description: Delete a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: admin-users-id-activate.json
+      path: /admin/users/{id}/activate.json
+      operations:
+      - name: activateuser
+        method: PUT
+        description: Activate a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+    - name: admin-users-id-anonymize.json
+      path: /admin/users/{id}/anonymize.json
+      operations:
+      - name: anonymizeuser
+        method: PUT
+        description: Anonymize a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+    - name: admin-users-id-deactivate.json
+      path: /admin/users/{id}/deactivate.json
+      operations:
+      - name: deactivateuser
+        method: PUT
+        description: Deactivate a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+    - name: admin-users-id-log_out.json
+      path: /admin/users/{id}/log_out.json
+      operations:
+      - name: logoutuser
+        method: POST
+        description: Log a user out
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+    - name: admin-users-id-silence.json
+      path: /admin/users/{id}/silence.json
+      operations:
+      - name: silenceuser
+        method: PUT
+        description: Silence a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: admin-users-id-suspend.json
+      path: /admin/users/{id}/suspend.json
+      operations:
+      - name: suspenduser
+        method: PUT
+        description: Suspend a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: directory_items.json
+      path: /directory_items.json
+      operations:
+      - name: listuserspublic
+        method: GET
+        description: Get a public list of users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: period
+          in: query
+          type: string
+          required: true
+        - name: order
+          in: query
+          type: string
+          required: true
+        - name: asc
+          in: query
+          type: string
+        - name: page
+          in: query
+          type: integer
+    - name: session-forgot_password.json
+      path: /session/forgot_password.json
+      operations:
+      - name: sendpasswordresetemail
+        method: POST
+        description: Send password reset email
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: u-by-external-external_id}.json
+      path: /u/by-external/{external_id}.json
+      operations:
+      - name: getuserexternalid
+        method: GET
+        description: Get a user by external_id
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: external_id
+          in: path
+          type: string
+          required: true
+    - name: u-by-external-provider-external_id}.json
+      path: /u/by-external/{provider}/{external_id}.json
+      operations:
+      - name: getuseridentiyproviderexternalid
+        method: GET
+        description: Get a user by identity provider external ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: provider
+          in: path
+          type: string
+          description: Authentication provider name. Can be found in the provider callback
+          required: true
+        - name: external_id
+          in: path
+          type: string
+          required: true
+    - name: u-username}.json
+      path: /u/{username}.json
+      operations:
+      - name: getuser
+        method: GET
+        description: Get a single user by username
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: username
+          in: path
+          type: string
+          required: true
+      - name: updateuser
+        method: PUT
+        description: Update a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: username
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: u-username-emails.json
+      path: /u/{username}/emails.json
+      operations:
+      - name: getuseremails
+        method: GET
+        description: Get email addresses belonging to a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: username
+          in: path
+          type: string
+          required: true
+    - name: u-username-preferences-avatar-pick.json
+      path: /u/{username}/preferences/avatar/pick.json
+      operations:
+      - name: updateavatar
+        method: PUT
+        description: Update avatar
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: username
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: u-username-preferences-email.json
+      path: /u/{username}/preferences/email.json
+      operations:
+      - name: updateemail
+        method: PUT
+        description: Update email
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: username
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: u-username-preferences-username.json
+      path: /u/{username}/preferences/username.json
+      operations:
+      - name: updateusername
+        method: PUT
+        description: Update username
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: username
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: user-badges-username}.json
+      path: /user-badges/{username}.json
+      operations:
+      - name: listuserbadges
+        method: GET
+        description: List badges for a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: username
+          in: path
+          type: string
+          required: true
+    - name: user_actions.json
+      path: /user_actions.json
+      operations:
+      - name: listuseractions
+        method: GET
+        description: Get a list of user actions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: offset
+          in: query
+          type: integer
+          required: true
+        - name: username
+          in: query
+          type: string
+          required: true
+        - name: filter
+          in: query
+          type: string
+          required: true
+    - name: user_avatar-username-refresh_gravatar.json
+      path: /user_avatar/{username}/refresh_gravatar.json
+      operations:
+      - name: refreshgravatar
+        method: POST
+        description: Refresh gravatar
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: username
+          in: path
+          type: string
+          required: true
+    - name: users.json
+      path: /users.json
+      operations:
+      - name: createuser
+        method: POST
+        description: Creates a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: users-password-reset-token}.json
+      path: /users/password-reset/{token}.json
+      operations:
+      - name: changepassword
+        method: PUT
+        description: Change password
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: token
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: discourse-users-rest
+    port: 8080
+    description: REST adapter for Discourse API Documentation — Users. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/admin/users-json
+      name: admin-users-json
+      description: REST surface for admin-users.json.
+      operations:
+      - method: GET
+        name: adminlistusers
+        description: List users
+        call: discourse-users.adminlistusers
+        with:
+          order: rest.order
+          asc: rest.asc
+          page: rest.page
+          show_emails: rest.show_emails
+          stats: rest.stats
+          email: rest.email
+          ip: rest.ip
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/users/list/flag-json
+      name: admin-users-list-flag-json
+      description: REST surface for admin-users-list-flag}.json.
+      operations:
+      - method: GET
+        name: adminlistusersflag
+        description: List users by flag
+        call: discourse-users.adminlistusersflag
+        with:
+          flag: rest.flag
+          order: rest.order
+          asc: rest.asc
+          page: rest.page
+          show_emails: rest.show_emails
+          stats: rest.stats
+          email: rest.email
+          ip: rest.ip
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/users/id-json
+      name: admin-users-id-json
+      description: REST surface for admin-users-id}.json.
+      operations:
+      - method: GET
+        name: admingetuser
+        description: Get a user by id
+        call: discourse-users.admingetuser
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteuser
+        description: Delete a user
+        call: discourse-users.deleteuser
+        with:
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/users/{id}/activate-json
+      name: admin-users-id-activate-json
+      description: REST surface for admin-users-id-activate.json.
+      operations:
+      - method: PUT
+        name: activateuser
+        description: Activate a user
+        call: discourse-users.activateuser
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/users/{id}/anonymize-json
+      name: admin-users-id-anonymize-json
+      description: REST surface for admin-users-id-anonymize.json.
+      operations:
+      - method: PUT
+        name: anonymizeuser
+        description: Anonymize a user
+        call: discourse-users.anonymizeuser
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/users/{id}/deactivate-json
+      name: admin-users-id-deactivate-json
+      description: REST surface for admin-users-id-deactivate.json.
+      operations:
+      - method: PUT
+        name: deactivateuser
+        description: Deactivate a user
+        call: discourse-users.deactivateuser
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/users/{id}/log-out-json
+      name: admin-users-id-log-out-json
+      description: REST surface for admin-users-id-log_out.json.
+      operations:
+      - method: POST
+        name: logoutuser
+        description: Log a user out
+        call: discourse-users.logoutuser
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/users/{id}/silence-json
+      name: admin-users-id-silence-json
+      description: REST surface for admin-users-id-silence.json.
+      operations:
+      - method: PUT
+        name: silenceuser
+        description: Silence a user
+        call: discourse-users.silenceuser
+        with:
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/users/{id}/suspend-json
+      name: admin-users-id-suspend-json
+      description: REST surface for admin-users-id-suspend.json.
+      operations:
+      - method: PUT
+        name: suspenduser
+        description: Suspend a user
+        call: discourse-users.suspenduser
+        with:
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/directory-items-json
+      name: directory-items-json
+      description: REST surface for directory_items.json.
+      operations:
+      - method: GET
+        name: listuserspublic
+        description: Get a public list of users
+        call: discourse-users.listuserspublic
+        with:
+          period: rest.period
+          order: rest.order
+          asc: rest.asc
+          page: rest.page
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/session/forgot-password-json
+      name: session-forgot-password-json
+      description: REST surface for session-forgot_password.json.
+      operations:
+      - method: POST
+        name: sendpasswordresetemail
+        description: Send password reset email
+        call: discourse-users.sendpasswordresetemail
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/u/by-external/external-id-json
+      name: u-by-external-external-id-json
+      description: REST surface for u-by-external-external_id}.json.
+      operations:
+      - method: GET
+        name: getuserexternalid
+        description: Get a user by external_id
+        call: discourse-users.getuserexternalid
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          external_id: rest.external_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/u/by-external/{provider}/external-id-json
+      name: u-by-external-provider-external-id-json
+      description: REST surface for u-by-external-provider-external_id}.json.
+      operations:
+      - method: GET
+        name: getuseridentiyproviderexternalid
+        description: Get a user by identity provider external ID
+        call: discourse-users.getuseridentiyproviderexternalid
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          provider: rest.provider
+          external_id: rest.external_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/u/username-json
+      name: u-username-json
+      description: REST surface for u-username}.json.
+      operations:
+      - method: GET
+        name: getuser
+        description: Get a single user by username
+        call: discourse-users.getuser
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          username: rest.username
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateuser
+        description: Update a user
+        call: discourse-users.updateuser
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          username: rest.username
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/u/{username}/emails-json
+      name: u-username-emails-json
+      description: REST surface for u-username-emails.json.
+      operations:
+      - method: GET
+        name: getuseremails
+        description: Get email addresses belonging to a user
+        call: discourse-users.getuseremails
+        with:
+          username: rest.username
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/u/{username}/preferences/avatar/pick-json
+      name: u-username-preferences-avatar-pick-json
+      description: REST surface for u-username-preferences-avatar-pick.json.
+      operations:
+      - method: PUT
+        name: updateavatar
+        description: Update avatar
+        call: discourse-users.updateavatar
+        with:
+          username: rest.username
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/u/{username}/preferences/email-json
+      name: u-username-preferences-email-json
+      description: REST surface for u-username-preferences-email.json.
+      operations:
+      - method: PUT
+        name: updateemail
+        description: Update email
+        call: discourse-users.updateemail
+        with:
+          username: rest.username
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/u/{username}/preferences/username-json
+      name: u-username-preferences-username-json
+      description: REST surface for u-username-preferences-username.json.
+      operations:
+      - method: PUT
+        name: updateusername
+        description: Update username
+        call: discourse-users.updateusername
+        with:
+          username: rest.username
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/user-badges/username-json
+      name: user-badges-username-json
+      description: REST surface for user-badges-username}.json.
+      operations:
+      - method: GET
+        name: listuserbadges
+        description: List badges for a user
+        call: discourse-users.listuserbadges
+        with:
+          username: rest.username
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/user-actions-json
+      name: user-actions-json
+      description: REST surface for user_actions.json.
+      operations:
+      - method: GET
+        name: listuseractions
+        description: Get a list of user actions
+        call: discourse-users.listuseractions
+        with:
+          offset: rest.offset
+          username: rest.username
+          filter: rest.filter
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/user-avatar/{username}/refresh-gravatar-json
+      name: user-avatar-username-refresh-gravatar-json
+      description: REST surface for user_avatar-username-refresh_gravatar.json.
+      operations:
+      - method: POST
+        name: refreshgravatar
+        description: Refresh gravatar
+        call: discourse-users.refreshgravatar
+        with:
+          username: rest.username
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/users-json
+      name: users-json
+      description: REST surface for users.json.
+      operations:
+      - method: POST
+        name: createuser
+        description: Creates a user
+        call: discourse-users.createuser
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/users/password-reset/token-json
+      name: users-password-reset-token-json
+      description: REST surface for users-password-reset-token}.json.
+      operations:
+      - method: PUT
+        name: changepassword
+        description: Change password
+        call: discourse-users.changepassword
+        with:
+          token: rest.token
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: discourse-users-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Discourse API Documentation — Users. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-users
+      description: List users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-users.adminlistusers
+      with:
+        order: tools.order
+        asc: tools.asc
+        page: tools.page
+        show_emails: tools.show_emails
+        stats: tools.stats
+        email: tools.email
+        ip: tools.ip
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-users-flag
+      description: List users by flag
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-users.adminlistusersflag
+      with:
+        flag: tools.flag
+        order: tools.order
+        asc: tools.asc
+        page: tools.page
+        show_emails: tools.show_emails
+        stats: tools.stats
+        email: tools.email
+        ip: tools.ip
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-user-id
+      description: Get a user by id
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-users.admingetuser
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-user
+      description: Delete a user
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: discourse-users.deleteuser
+      with:
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: activate-user
+      description: Activate a user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-users.activateuser
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: anonymize-user
+      description: Anonymize a user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-users.anonymizeuser
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deactivate-user
+      description: Deactivate a user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-users.deactivateuser
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: log-user-out
+      description: Log a user out
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-users.logoutuser
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: silence-user
+      description: Silence a user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-users.silenceuser
+      with:
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: suspend-user
+      description: Suspend a user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-users.suspenduser
+      with:
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-public-list-users
+      description: Get a public list of users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-users.listuserspublic
+      with:
+        period: tools.period
+        order: tools.order
+        asc: tools.asc
+        page: tools.page
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: send-password-reset-email
+      description: Send password reset email
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-users.sendpasswordresetemail
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-user-external-id
+      description: Get a user by external_id
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-users.getuserexternalid
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        external_id: tools.external_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-user-identity-provider-external
+      description: Get a user by identity provider external ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-users.getuseridentiyproviderexternalid
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        provider: tools.provider
+        external_id: tools.external_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-single-user-username
+      description: Get a single user by username
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-users.getuser
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        username: tools.username
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-user
+      description: Update a user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-users.updateuser
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        username: tools.username
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-email-addresses-belonging-user
+      description: Get email addresses belonging to a user
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-users.getuseremails
+      with:
+        username: tools.username
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-avatar
+      description: Update avatar
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-users.updateavatar
+      with:
+        username: tools.username
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-email
+      description: Update email
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-users.updateemail
+      with:
+        username: tools.username
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-username
+      description: Update username
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-users.updateusername
+      with:
+        username: tools.username
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-badges-user
+      description: List badges for a user
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-users.listuserbadges
+      with:
+        username: tools.username
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-list-user-actions
+      description: Get a list of user actions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-users.listuseractions
+      with:
+        offset: tools.offset
+        username: tools.username
+        filter: tools.filter
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: refresh-gravatar
+      description: Refresh gravatar
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-users.refreshgravatar
+      with:
+        username: tools.username
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: creates-user
+      description: Creates a user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-users.createuser
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: change-password
+      description: Change password
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-users.changepassword
+      with:
+        token: tools.token
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

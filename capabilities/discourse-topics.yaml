@@ -1,0 +1,874 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Discourse API Documentation — Topics
+  description: 'Discourse API Documentation — Topics. 15 operations. Lead operation: Get the latest topics. Self-contained
+    Naftiko capability covering one Discourse business surface.'
+  tags:
+  - Discourse
+  - Topics
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DISCOURSE_API_KEY: DISCOURSE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: discourse-topics
+    baseUri: https://{defaultHost}
+    description: Discourse API Documentation — Topics business capability. Self-contained, no shared references.
+    resources:
+    - name: latest.json
+      path: /latest.json
+      operations:
+      - name: listlatesttopics
+        method: GET
+        description: Get the latest topics
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: order
+          in: query
+          type: string
+          description: 'Enum: `default`, `created`, `activity`, `views`, `posts`, `category`,'
+        - name: ascending
+          in: query
+          type: string
+          description: Defaults to `desc`, add `ascending=true` to sort asc
+        - name: per_page
+          in: query
+          type: integer
+          description: Maximum number of topics returned, between 1-100
+    - name: posts.json
+      path: /posts.json
+      operations:
+      - name: createtopicpostpm
+        method: POST
+        description: Creates a new topic, a new post, or a private message
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: t---id}.json
+      path: /t/-/{id}.json
+      operations:
+      - name: updatetopic
+        method: PUT
+        description: Update a topic
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: t-external_id-external_id}.json
+      path: /t/external_id/{external_id}.json
+      operations:
+      - name: gettopicbyexternalid
+        method: GET
+        description: Get topic by external_id
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: external_id
+          in: path
+          type: string
+          required: true
+    - name: t-id}.json
+      path: /t/{id}.json
+      operations:
+      - name: gettopic
+        method: GET
+        description: Get a single topic
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+      - name: removetopic
+        method: DELETE
+        description: Remove a topic
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+    - name: t-id-bookmark.json
+      path: /t/{id}/bookmark.json
+      operations:
+      - name: bookmarktopic
+        method: PUT
+        description: Bookmark topic
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+    - name: t-id-change-timestamp.json
+      path: /t/{id}/change-timestamp.json
+      operations:
+      - name: updatetopictimestamp
+        method: PUT
+        description: Update topic timestamp
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: t-id-invite-group.json
+      path: /t/{id}/invite-group.json
+      operations:
+      - name: invitegrouptotopic
+        method: POST
+        description: Invite group to topic
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: t-id-invite.json
+      path: /t/{id}/invite.json
+      operations:
+      - name: invitetotopic
+        method: POST
+        description: Invite to topic
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: t-id-notifications.json
+      path: /t/{id}/notifications.json
+      operations:
+      - name: setnotificationlevel
+        method: POST
+        description: Set notification level
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: t-id-posts.json
+      path: /t/{id}/posts.json
+      operations:
+      - name: getspecificpostsfromtopic
+        method: GET
+        description: Get specific posts from a topic
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: t-id-status.json
+      path: /t/{id}/status.json
+      operations:
+      - name: updatetopicstatus
+        method: PUT
+        description: Update the status of a topic
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: t-id-timer.json
+      path: /t/{id}/timer.json
+      operations:
+      - name: createtopictimer
+        method: POST
+        description: Create topic timer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: top.json
+      path: /top.json
+      operations:
+      - name: listtoptopics
+        method: GET
+        description: Get the top topics filtered by period
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Api-Key
+          in: header
+          type: string
+          required: true
+        - name: Api-Username
+          in: header
+          type: string
+          required: true
+        - name: period
+          in: query
+          type: string
+          description: 'Enum: `all`, `yearly`, `quarterly`, `monthly`, `weekly`, `daily`'
+        - name: per_page
+          in: query
+          type: integer
+          description: Maximum number of topics returned, between 1-100
+  exposes:
+  - type: rest
+    namespace: discourse-topics-rest
+    port: 8080
+    description: REST adapter for Discourse API Documentation — Topics. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/latest-json
+      name: latest-json
+      description: REST surface for latest.json.
+      operations:
+      - method: GET
+        name: listlatesttopics
+        description: Get the latest topics
+        call: discourse-topics.listlatesttopics
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          order: rest.order
+          ascending: rest.ascending
+          per_page: rest.per_page
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/posts-json
+      name: posts-json
+      description: REST surface for posts.json.
+      operations:
+      - method: POST
+        name: createtopicpostpm
+        description: Creates a new topic, a new post, or a private message
+        call: discourse-topics.createtopicpostpm
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/t//id-json
+      name: t-id-json
+      description: REST surface for t---id}.json.
+      operations:
+      - method: PUT
+        name: updatetopic
+        description: Update a topic
+        call: discourse-topics.updatetopic
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/t/external-id/external-id-json
+      name: t-external-id-external-id-json
+      description: REST surface for t-external_id-external_id}.json.
+      operations:
+      - method: GET
+        name: gettopicbyexternalid
+        description: Get topic by external_id
+        call: discourse-topics.gettopicbyexternalid
+        with:
+          external_id: rest.external_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/t/id-json
+      name: t-id-json
+      description: REST surface for t-id}.json.
+      operations:
+      - method: GET
+        name: gettopic
+        description: Get a single topic
+        call: discourse-topics.gettopic
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: removetopic
+        description: Remove a topic
+        call: discourse-topics.removetopic
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/t/{id}/bookmark-json
+      name: t-id-bookmark-json
+      description: REST surface for t-id-bookmark.json.
+      operations:
+      - method: PUT
+        name: bookmarktopic
+        description: Bookmark topic
+        call: discourse-topics.bookmarktopic
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/t/{id}/change-timestamp-json
+      name: t-id-change-timestamp-json
+      description: REST surface for t-id-change-timestamp.json.
+      operations:
+      - method: PUT
+        name: updatetopictimestamp
+        description: Update topic timestamp
+        call: discourse-topics.updatetopictimestamp
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/t/{id}/invite-group-json
+      name: t-id-invite-group-json
+      description: REST surface for t-id-invite-group.json.
+      operations:
+      - method: POST
+        name: invitegrouptotopic
+        description: Invite group to topic
+        call: discourse-topics.invitegrouptotopic
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/t/{id}/invite-json
+      name: t-id-invite-json
+      description: REST surface for t-id-invite.json.
+      operations:
+      - method: POST
+        name: invitetotopic
+        description: Invite to topic
+        call: discourse-topics.invitetotopic
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/t/{id}/notifications-json
+      name: t-id-notifications-json
+      description: REST surface for t-id-notifications.json.
+      operations:
+      - method: POST
+        name: setnotificationlevel
+        description: Set notification level
+        call: discourse-topics.setnotificationlevel
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/t/{id}/posts-json
+      name: t-id-posts-json
+      description: REST surface for t-id-posts.json.
+      operations:
+      - method: GET
+        name: getspecificpostsfromtopic
+        description: Get specific posts from a topic
+        call: discourse-topics.getspecificpostsfromtopic
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/t/{id}/status-json
+      name: t-id-status-json
+      description: REST surface for t-id-status.json.
+      operations:
+      - method: PUT
+        name: updatetopicstatus
+        description: Update the status of a topic
+        call: discourse-topics.updatetopicstatus
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/t/{id}/timer-json
+      name: t-id-timer-json
+      description: REST surface for t-id-timer.json.
+      operations:
+      - method: POST
+        name: createtopictimer
+        description: Create topic timer
+        call: discourse-topics.createtopictimer
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/top-json
+      name: top-json
+      description: REST surface for top.json.
+      operations:
+      - method: GET
+        name: listtoptopics
+        description: Get the top topics filtered by period
+        call: discourse-topics.listtoptopics
+        with:
+          Api-Key: rest.Api-Key
+          Api-Username: rest.Api-Username
+          period: rest.period
+          per_page: rest.per_page
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: discourse-topics-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Discourse API Documentation — Topics. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-latest-topics
+      description: Get the latest topics
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-topics.listlatesttopics
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        order: tools.order
+        ascending: tools.ascending
+        per_page: tools.per_page
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: creates-new-topic-new-post
+      description: Creates a new topic, a new post, or a private message
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-topics.createtopicpostpm
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-topic
+      description: Update a topic
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-topics.updatetopic
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-topic-external-id
+      description: Get topic by external_id
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-topics.gettopicbyexternalid
+      with:
+        external_id: tools.external_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-single-topic
+      description: Get a single topic
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-topics.gettopic
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: remove-topic
+      description: Remove a topic
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: discourse-topics.removetopic
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: bookmark-topic
+      description: Bookmark topic
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-topics.bookmarktopic
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-topic-timestamp
+      description: Update topic timestamp
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-topics.updatetopictimestamp
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: invite-group-topic
+      description: Invite group to topic
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-topics.invitegrouptotopic
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: invite-topic
+      description: Invite to topic
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-topics.invitetotopic
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: set-notification-level
+      description: Set notification level
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-topics.setnotificationlevel
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-specific-posts-topic
+      description: Get specific posts from a topic
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-topics.getspecificpostsfromtopic
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-status-topic
+      description: Update the status of a topic
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: discourse-topics.updatetopicstatus
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-topic-timer
+      description: Create topic timer
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: discourse-topics.createtopictimer
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-top-topics-filtered-period
+      description: Get the top topics filtered by period
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: discourse-topics.listtoptopics
+      with:
+        Api-Key: tools.Api-Key
+        Api-Username: tools.Api-Username
+        period: tools.period
+        per_page: tools.per_page
+      outputParameters:
+      - type: object
+        mapping: $.
