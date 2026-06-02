@@ -2,12 +2,20 @@
   "repo": "discourse",
   "feeds": [
     {
-      "source": "https://blog.discourse.org/",
+      "source": "https://blog.discourse.org/feed/",
       "feed_url": "https://blog.discourse.org/feed/",
-      "title": "Discourse",
-      "saved": 6
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://blog.discourse.org/",
+      "feed_url": "https://blog.discourse.org/rss/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
     }
   ],
-  "post_count": 18,
-  "fetched": "2026-05-17T20:20:35Z"
+  "post_count": 21,
+  "fetched": "2026-06-01T23:35:02Z"
 }
