@@ -45,6 +45,12 @@ apis:
       - FN: Discourse Support
         url: https://meta.discourse.org/t/what-is-discourse-api/166416
 common:
+  - type: TrustCenter
+    url: security/discourse-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/discourse-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/discourse-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/civilized-discourse-construction-kit-inc
   - url: https://www.discourse.org/
