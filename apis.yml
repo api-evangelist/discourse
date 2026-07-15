@@ -45,6 +45,8 @@ apis:
       - FN: Discourse Support
         url: https://meta.discourse.org/t/what-is-discourse-api/166416
 common:
+  - type: AgenticAccess
+    url: agentic-access/discourse-agentic-access.yml
   - type: TrustCenter
     url: security/discourse-trust-center.yml
   - type: VulnerabilityDisclosure
