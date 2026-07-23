@@ -1,0 +1,2277 @@
+openapi: 3.1.0
+info:
+  title: Discourse API Documentation Admin Categories API
+  x-logo:
+    url: https://docs.discourse.org/logo.svg
+  version: latest
+  description: 'This page contains the documentation on how to use Discourse through API calls.
+
+
+    > Note: For any endpoints not listed you can follow the
+
+    [reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)
+
+    guide to figure out how to use an API endpoint.
+
+
+    ### Request Content-Type
+
+
+    The Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,
+
+    `multipart/form-data`, or `application/json`.
+
+
+    ### Endpoint Names and Response Content-Type
+
+
+    Most API endpoints provide the same content as their HTML counterparts. For example
+
+    the URL `/categories` serves a list of categories, the `/categories.json` API provides the
+
+    same information in JSON format.
+
+
+    Instead of sending API requests to `/categories.json` you may also send them to `/categories`
+
+    and add an `Accept: application/json` header to the request to get the JSON response.
+
+    Sending requests with the `Accept` header is necessary if you want to use URLs
+
+    for related endpoints returned by the API, such as pagination URLs.
+
+    These URLs are returned without the `.json` prefix so you need to add the header in
+
+    order to get the correct response format.
+
+
+    ### Authentication
+
+
+    Some endpoints do not require any authentication, pretty much anything else will
+
+    require you to be authenticated.
+
+
+    To become authenticated you will need to create an API Key from the admin panel.
+
+
+    Once you have your API Key you can pass it in along with your API Username
+
+    as an HTTP header like this:
+
+
+    ```
+
+    curl -X GET "http://127.0.0.1:3000/admin/users/list/active.json" \
+
+    -H "Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19" \
+
+    -H "Api-Username: system"
+
+    ```
+
+
+    and this is how POST requests will look:
+
+
+    ```
+
+    curl -X POST "http://127.0.0.1:3000/categories" \
+
+    -H "Content-Type: multipart/form-data;" \
+
+    -H "Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19" \
+
+    -H "Api-Username: system" \
+
+    -F "name=89853c20-4409-e91a-a8ea-f6cdff96aaaa" \
+
+    -F "color=49d9e9" \
+
+    -F "text_color=f0fcfd"
+
+    ```
+
+
+    ### Boolean values
+
+
+    If an endpoint accepts a boolean be sure to specify it as a lowercase
+
+    `true` or `false` value unless noted otherwise.
+
+    '
+  license:
+    name: MIT
+    url: https://docs.discourse.org/LICENSE.txt
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: discourse.example.com
+tags:
+- name: Categories
+paths:
+  /categories.json:
+    post:
+      summary: Creates a category
+      tags:
+      - Categories
+      operationId: createCategory
+      parameters: []
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  category:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      color:
+                        type: string
+                      text_color:
+                        type: string
+                      style_type:
+                        type: string
+                      emoji:
+                        type:
+                        - string
+                        - 'null'
+                      icon:
+                        type:
+                        - string
+                        - 'null'
+                      slug:
+                        type: string
+                      locale:
+                        type:
+                        - string
+                        - 'null'
+                      topic_count:
+                        type: integer
+                      post_count:
+                        type: integer
+                      position:
+                        type: integer
+                      description:
+                        type:
+                        - string
+                        - 'null'
+                      description_text:
+                        type:
+                        - string
+                        - 'null'
+                      description_excerpt:
+                        type:
+                        - string
+                        - 'null'
+                      topic_url:
+                        type:
+                        - string
+                        - 'null'
+                      read_restricted:
+                        type: boolean
+                      permission:
+                        type:
+                        - integer
+                        - 'null'
+                      notification_level:
+                        type: integer
+                      can_edit:
+                        type: boolean
+                      topic_template:
+                        type:
+                        - string
+                        - 'null'
+                      topic_title_placeholder:
+                        type:
+                        - string
+                        - 'null'
+                      form_template_ids:
+                        type: array
+                        items: {}
+                      has_children:
+                        type:
+                        - boolean
+                        - 'null'
+                      subcategory_count:
+                        type:
+                        - integer
+                        - 'null'
+                      sort_order:
+                        type:
+                        - string
+                        - 'null'
+                      sort_ascending:
+                        type:
+                        - string
+                        - 'null'
+                      show_subcategory_list:
+                        type: boolean
+                      num_featured_topics:
+                        type: integer
+                      default_view:
+                        type:
+                        - string
+                        - 'null'
+                      subcategory_list_style:
+                        type: string
+                      default_top_period:
+                        type: string
+                      default_list_filter:
+                        type: string
+                      minimum_required_tags:
+                        type: integer
+                      navigate_to_first_post_after_read:
+                        type: boolean
+                      custom_fields:
+                        type: object
+                        additionalProperties: false
+                        properties: {}
+                      allowed_tags:
+                        type: array
+                        items: {}
+                      allowed_tag_groups:
+                        type: array
+                        items: {}
+                      allow_global_tags:
+                        type: boolean
+                      required_tag_groups:
+                        type: array
+                        items:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            name:
+                              type: string
+                            min_count:
+                              type: integer
+                          required:
+                          - name
+                          - min_count
+                      category_setting:
+                        type: object
+                        additionalProperties: false
+                        properties:
+                          auto_bump_cooldown_days:
+                            type: integer
+                          num_auto_bump_daily:
+                            type:
+                            - integer
+                            - 'null'
+                          require_reply_approval:
+                            type:
+                            - boolean
+                            - 'null'
+                          require_topic_approval:
+                            type:
+                            - boolean
+                            - 'null'
+                      category_localizations:
+                        type: array
+                        items: {}
+                      read_only_banner:
+                        type:
+                        - string
+                        - 'null'
+                      available_groups:
+                        type: array
+                        items: {}
+                      auto_close_hours:
+                        type:
+                        - string
+                        - 'null'
+                      auto_close_based_on_last_post:
+                        type: boolean
+                      allow_unlimited_owner_edits_on_first_post:
+                        type: boolean
+                      default_slow_mode_seconds:
+                        type:
+                        - string
+                        - 'null'
+                      group_permissions:
+                        type: array
+                        items:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            permission_type:
+                              type: integer
+                            group_name:
+                              type: string
+                            group_id:
+                              type: integer
+                          required:
+                          - permission_type
+                          - group_name
+                          - group_id
+                      email_in:
+                        type:
+                        - string
+                        - 'null'
+                      email_in_allow_strangers:
+                        type: boolean
+                      mailinglist_mirror:
+                        type: boolean
+                      all_topics_wiki:
+                        type: boolean
+                      can_delete:
+                        type: boolean
+                      allow_badges:
+                        type: boolean
+                      topic_featured_link_allowed:
+                        type: boolean
+                      search_priority:
+                        type: integer
+                      uploaded_logo:
+                        type:
+                        - string
+                        - 'null'
+                      uploaded_logo_dark:
+                        type:
+                        - string
+                        - 'null'
+                      uploaded_background:
+                        type:
+                        - string
+                        - 'null'
+                      uploaded_background_dark:
+                        type:
+                        - string
+                        - 'null'
+                      category_types:
+                        type: object
+                    required:
+                    - id
+                    - name
+                    - color
+                    - text_color
+                    - style_type
+                    - emoji
+                    - icon
+                    - slug
+                    - topic_count
+                    - post_count
+                    - position
+                    - description
+                    - description_text
+                    - description_excerpt
+                    - topic_url
+                    - read_restricted
+                    - permission
+                    - notification_level
+                    - can_edit
+                    - topic_template
+                    - topic_title_placeholder
+                    - has_children
+                    - subcategory_count
+                    - sort_order
+                    - sort_ascending
+                    - show_subcategory_list
+                    - num_featured_topics
+                    - default_view
+                    - subcategory_list_style
+                    - default_top_period
+                    - default_list_filter
+                    - minimum_required_tags
+                    - navigate_to_first_post_after_read
+                    - custom_fields
+                    - required_tag_groups
+                    - read_only_banner
+                    - available_groups
+                    - auto_close_hours
+                    - auto_close_based_on_last_post
+                    - allow_unlimited_owner_edits_on_first_post
+                    - default_slow_mode_seconds
+                    - group_permissions
+                    - email_in
+                    - email_in_allow_strangers
+                    - mailinglist_mirror
+                    - all_topics_wiki
+                    - can_delete
+                    - allow_badges
+                    - topic_featured_link_allowed
+                    - search_priority
+                    - uploaded_logo
+                    - uploaded_logo_dark
+                    - uploaded_background
+                    - uploaded_background_dark
+                required:
+                - category
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                name:
+                  type: string
+                color:
+                  type: string
+                  example: 49d9e9
+                text_color:
+                  type: string
+                  example: f0fcfd
+                style_type:
+                  type: string
+                emoji:
+                  type: string
+                icon:
+                  type: string
+                parent_category_id:
+                  type: integer
+                allow_badges:
+                  type: boolean
+                slug:
+                  type: string
+                topic_featured_links_allowed:
+                  type: boolean
+                permissions:
+                  type: object
+                  additionalProperties: true
+                  properties:
+                    everyone:
+                      type: integer
+                      example: 1
+                    staff:
+                      type: integer
+                search_priority:
+                  type: integer
+                form_template_ids:
+                  type: array
+                  items: {}
+                category_localizations:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        description: 'The unique identifier for an existing localization.
+
+                          Must be included otherwise the record will be deleted.'
+                      locale:
+                        type: string
+                        description: 'The locale for the localization, e.g., ''en'',
+
+                          ''zh_CN''. Locale should be in the list of SiteSetting.content_localization_supported_locales.'
+                      name:
+                        type: string
+                        description: The name of the category in the specified locale.
+                      description:
+                        type: string
+                        description: 'The description excerpt of the category in the
+
+                          specified locale.'
+                    required:
+                    - locale
+                    - name
+              required:
+              - name
+    get:
+      summary: Retrieves a list of categories
+      tags:
+      - Categories
+      operationId: listCategories
+      parameters:
+      - name: include_subcategories
+        in: query
+        schema:
+          type: boolean
+          enum:
+          - true
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  category_list:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      can_create_category:
+                        type: boolean
+                      can_create_topic:
+                        type: boolean
+                      categories:
+                        type: array
+                        items:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                            color:
+                              type: string
+                            text_color:
+                              type: string
+                            style_type:
+                              type: string
+                            emoji:
+                              type:
+                              - string
+                              - 'null'
+                            icon:
+                              type:
+                              - string
+                              - 'null'
+                            slug:
+                              type: string
+                            topic_count:
+                              type: integer
+                            post_count:
+                              type: integer
+                            position:
+                              type: integer
+                            description:
+                              type:
+                              - string
+                              - 'null'
+                            description_text:
+                              type:
+                              - string
+                              - 'null'
+                            description_excerpt:
+                              type:
+                              - string
+                              - 'null'
+                            topic_url:
+                              type:
+                              - string
+                              - 'null'
+                            read_restricted:
+                              type: boolean
+                            permission:
+                              type: integer
+                            notification_level:
+                              type: integer
+                            can_edit:
+                              type: boolean
+                            topic_template:
+                              type:
+                              - string
+                              - 'null'
+                            topic_title_placeholder:
+                              type:
+                              - string
+                              - 'null'
+                            has_children:
+                              type: boolean
+                            subcategory_count:
+                              type:
+                              - integer
+                              - 'null'
+                            sort_order:
+                              type:
+                              - string
+                              - 'null'
+                            sort_ascending:
+                              type:
+                              - string
+                              - 'null'
+                            show_subcategory_list:
+                              type: boolean
+                            num_featured_topics:
+                              type: integer
+                            default_view:
+                              type:
+                              - string
+                              - 'null'
+                            subcategory_list_style:
+                              type: string
+                            default_top_period:
+                              type: string
+                            default_list_filter:
+                              type: string
+                            minimum_required_tags:
+                              type: integer
+                            navigate_to_first_post_after_read:
+                              type: boolean
+                            topics_day:
+                              type: integer
+                            topics_week:
+                              type: integer
+                            topics_month:
+                              type: integer
+                            topics_year:
+                              type: integer
+                            topics_all_time:
+                              type: integer
+                            is_uncategorized:
+                              type: boolean
+                            subcategory_ids:
+                              type: array
+                              items: {}
+                            subcategory_list:
+                              type:
+                              - array
+                              - 'null'
+                              items: {}
+                            uploaded_logo:
+                              type:
+                              - string
+                              - 'null'
+                            uploaded_logo_dark:
+                              type:
+                              - string
+                              - 'null'
+                            uploaded_background:
+                              type:
+                              - string
+                              - 'null'
+                            uploaded_background_dark:
+                              type:
+                              - string
+                              - 'null'
+                          required:
+                          - id
+                          - name
+                          - color
+                          - text_color
+                          - style_type
+                          - emoji
+                          - icon
+                          - slug
+                          - topic_count
+                          - post_count
+                          - position
+                          - description
+                          - description_text
+                          - description_excerpt
+                          - topic_url
+                          - read_restricted
+                          - permission
+                          - notification_level
+                          - can_edit
+                          - topic_template
+                          - topic_title_placeholder
+                          - has_children
+                          - subcategory_count
+                          - sort_order
+                          - sort_ascending
+                          - show_subcategory_list
+                          - num_featured_topics
+                          - default_view
+                          - subcategory_list_style
+                          - default_top_period
+                          - default_list_filter
+                          - minimum_required_tags
+                          - navigate_to_first_post_after_read
+                          - topics_day
+                          - topics_week
+                          - topics_month
+                          - topics_year
+                          - topics_all_time
+                          - subcategory_ids
+                          - uploaded_logo
+                          - uploaded_logo_dark
+                          - uploaded_background
+                          - uploaded_background_dark
+                    required:
+                    - can_create_category
+                    - can_create_topic
+                    - categories
+                required:
+                - category_list
+  /categories/{id}.json:
+    put:
+      summary: Updates a category
+      tags:
+      - Categories
+      operationId: updateCategory
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+        required: true
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  success:
+                    type: string
+                  category:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      color:
+                        type: string
+                      text_color:
+                        type: string
+                      style_type:
+                        type: string
+                      emoji:
+                        type:
+                        - string
+                        - 'null'
+                      icon:
+                        type:
+                        - string
+                        - 'null'
+                      slug:
+                        type: string
+                      locale:
+                        type:
+                        - string
+                        - 'null'
+                      topic_count:
+                        type: integer
+                      post_count:
+                        type: integer
+                      position:
+                        type: integer
+                      description:
+                        type:
+                        - string
+                        - 'null'
+                      description_text:
+                        type:
+                        - string
+                        - 'null'
+                      description_excerpt:
+                        type:
+                        - string
+                        - 'null'
+                      topic_url:
+                        type:
+                        - string
+                        - 'null'
+                      read_restricted:
+                        type: boolean
+                      permission:
+                        type:
+                        - integer
+                        - 'null'
+                      notification_level:
+                        type: integer
+                      can_edit:
+                        type: boolean
+                      topic_template:
+                        type:
+                        - string
+                        - 'null'
+                      topic_title_placeholder:
+                        type:
+                        - string
+                        - 'null'
+                      form_template_ids:
+                        type: array
+                        items: {}
+                      has_children:
+                        type:
+                        - boolean
+                        - 'null'
+                      subcategory_count:
+                        type:
+                        - integer
+                        - 'null'
+                      sort_order:
+                        type:
+                        - string
+                        - 'null'
+                      sort_ascending:
+                        type:
+                        - string
+                        - 'null'
+                      show_subcategory_list:
+                        type: boolean
+                      num_featured_topics:
+                        type: integer
+                      default_view:
+                        type:
+                        - string
+                        - 'null'
+                      subcategory_list_style:
+                        type: string
+                      default_top_period:
+                        type: string
+                      default_list_filter:
+                        type: string
+                      minimum_required_tags:
+                        type: integer
+                      navigate_to_first_post_after_read:
+                        type: boolean
+                      custom_fields:
+                        type: object
+                        additionalProperties: false
+                        properties: {}
+                      allowed_tags:
+                        type: array
+                        items: {}
+                      allowed_tag_groups:
+                        type: array
+                        items: {}
+                      allow_global_tags:
+                        type: boolean
+                      required_tag_groups:
+                        type: array
+                        items:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            name:
+                              type: string
+                            min_count:
+                              type: integer
+                          required:
+                          - name
+                          - min_count
+                      category_setting:
+                        type: object
+                        additionalProperties: false
+                        properties:
+                          auto_bump_cooldown_days:
+                            type: integer
+                          num_auto_bump_daily:
+                            type:
+                            - integer
+                            - 'null'
+                          require_reply_approval:
+                            type:
+                            - boolean
+                            - 'null'
+                          require_topic_approval:
+                            type:
+                            - boolean
+                            - 'null'
+                      category_localizations:
+                        type: array
+                        items: {}
+                      read_only_banner:
+                        type:
+                        - string
+                        - 'null'
+                      available_groups:
+                        type: array
+                        items: {}
+                      auto_close_hours:
+                        type:
+                        - string
+                        - 'null'
+                      auto_close_based_on_last_post:
+                        type: boolean
+                      allow_unlimited_owner_edits_on_first_post:
+                        type: boolean
+                      default_slow_mode_seconds:
+                        type:
+                        - string
+                        - 'null'
+                      group_permissions:
+                        type: array
+                        items:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            permission_type:
+                              type: integer
+                            group_name:
+                              type: string
+                            group_id:
+                              type: integer
+                          required:
+                          - permission_type
+                          - group_name
+                          - group_id
+                      email_in:
+                        type:
+                        - string
+                        - 'null'
+                      email_in_allow_strangers:
+                        type: boolean
+                      mailinglist_mirror:
+                        type: boolean
+                      all_topics_wiki:
+                        type: boolean
+                      can_delete:
+                        type: boolean
+                      allow_badges:
+                        type: boolean
+                      topic_featured_link_allowed:
+                        type: boolean
+                      search_priority:
+                        type: integer
+                      uploaded_logo:
+                        type:
+                        - string
+                        - 'null'
+                      uploaded_logo_dark:
+                        type:
+                        - string
+                        - 'null'
+                      uploaded_background:
+                        type:
+                        - string
+                        - 'null'
+                      uploaded_background_dark:
+                        type:
+                        - string
+                        - 'null'
+                      category_types:
+                        type: object
+                    required:
+                    - id
+                    - name
+                    - color
+                    - text_color
+                    - slug
+                    - topic_count
+                    - post_count
+                    - position
+                    - description
+                    - description_text
+                    - description_excerpt
+                    - topic_url
+                    - read_restricted
+                    - permission
+                    - notification_level
+                    - can_edit
+                    - topic_template
+                    - topic_title_placeholder
+                    - form_template_ids
+                    - has_children
+                    - subcategory_count
+                    - sort_order
+                    - sort_ascending
+                    - show_subcategory_list
+                    - num_featured_topics
+                    - default_view
+                    - subcategory_list_style
+                    - default_top_period
+                    - default_list_filter
+                    - minimum_required_tags
+                    - navigate_to_first_post_after_read
+                    - custom_fields
+                    - required_tag_groups
+                    - read_only_banner
+                    - available_groups
+                    - auto_close_hours
+                    - auto_close_based_on_last_post
+                    - allow_unlimited_owner_edits_on_first_post
+                    - default_slow_mode_seconds
+                    - group_permissions
+                    - email_in
+                    - email_in_allow_strangers
+                    - mailinglist_mirror
+                    - all_topics_wiki
+                    - can_delete
+                    - allow_badges
+                    - topic_featured_link_allowed
+                    - search_priority
+                    - uploaded_logo
+                    - uploaded_logo_dark
+                    - uploaded_background
+                    - uploaded_background_dark
+                required:
+                - success
+                - category
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                name:
+                  type: string
+                color:
+                  type: string
+                  example: 49d9e9
+                text_color:
+                  type: string
+                  example: f0fcfd
+                style_type:
+                  type: string
+                emoji:
+                  type: string
+                icon:
+                  type: string
+                parent_category_id:
+                  type: integer
+                allow_badges:
+                  type: boolean
+                slug:
+                  type: string
+                topic_featured_links_allowed:
+                  type: boolean
+                permissions:
+                  type: object
+                  additionalProperties: true
+                  properties:
+                    everyone:
+                      type: integer
+                      example: 1
+                    staff:
+                      type: integer
+                search_priority:
+                  type: integer
+                form_template_ids:
+                  type: array
+                  items: {}
+                category_localizations:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        description: 'The unique identifier for an existing localization.
+
+                          Must be included otherwise the record will be deleted.'
+                      locale:
+                        type: string
+                        description: 'The locale for the localization, e.g., ''en'',
+
+                          ''zh_CN''. Locale should be in the list of SiteSetting.content_localization_supported_locales.'
+                      name:
+                        type: string
+                        description: The name of the category in the specified locale.
+                      description:
+                        type: string
+                        description: 'The description excerpt of the category in the
+
+                          specified locale.'
+                    required:
+                    - locale
+                    - name
+              required:
+              - name
+  /c/{slug}/{id}.json:
+    get:
+      summary: List topics
+      tags:
+      - Categories
+      operationId: listCategoryTopics
+      parameters:
+      - name: slug
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: id
+        in: path
+        schema:
+          type: integer
+        required: true
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  users:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      properties:
+                        id:
+                          type: integer
+                        username:
+                          type: string
+                        name:
+                          type: string
+                        avatar_template:
+                          type: string
+                      required:
+                      - id
+                      - username
+                      - name
+                      - avatar_template
+                  primary_groups:
+                    type: array
+                    items: {}
+                  topic_list:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      can_create_topic:
+                        type: boolean
+                      per_page:
+                        type: integer
+                      top_tags:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                            slug:
+                              type: string
+                          required:
+                          - id
+                          - name
+                          - slug
+                      topics:
+                        type: array
+                        items:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            id:
+                              type: integer
+                            title:
+                              type: string
+                            fancy_title:
+                              type: string
+                            slug:
+                              type: string
+                            posts_count:
+                              type: integer
+                            reply_count:
+                              type: integer
+                            highest_post_number:
+                              type: integer
+                            image_url:
+                              type:
+                              - string
+                              - 'null'
+                            created_at:
+                              type: string
+                            last_posted_at:
+                              type: string
+                            bumped:
+                              type: boolean
+                            bumped_at:
+                              type: string
+                            archetype:
+                              type: string
+                            unseen:
+                              type: boolean
+                            pinned:
+                              type: boolean
+                            unpinned:
+                              type:
+                              - string
+                              - 'null'
+                            excerpt:
+                              type: string
+                            visible:
+                              type: boolean
+                            closed:
+                              type: boolean
+                            archived:
+                              type: boolean
+                            bookmarked:
+                              type:
+                              - string
+                              - 'null'
+                            liked:
+                              type:
+                              - string
+                              - 'null'
+                            views:
+                              type: integer
+                            like_count:
+                              type: integer
+                            has_summary:
+                              type: boolean
+                            last_poster_username:
+                              type: string
+                            category_id:
+                              type: integer
+                            pinned_globally:
+                              type: boolean
+                            featured_link:
+                              type:
+                              - string
+                              - 'null'
+                            posters:
+                              type: array
+                              items:
+                                type: object
+                                additionalProperties: false
+                                properties:
+                                  extras:
+                                    type: string
+                                  description:
+                                    type: string
+                                  user_id:
+                                    type: integer
+                                  primary_group_id:
+                                    type:
+                                    - integer
+                                    - 'null'
+                                required:
+                                - extras
+                                - description
+                                - user_id
+                                - primary_group_id
+                          required:
+                          - id
+                          - title
+                          - fancy_title
+                          - slug
+                          - posts_count
+                          - reply_count
+                          - highest_post_number
+                          - image_url
+                          - created_at
+                          - last_posted_at
+                          - bumped
+                          - bumped_at
+                          - archetype
+                          - unseen
+                          - pinned
+                          - unpinned
+                          - excerpt
+                          - visible
+                          - closed
+                          - archived
+                          - bookmarked
+                          - liked
+                          - views
+                          - like_count
+                          - has_summary
+                          - last_poster_username
+                          - category_id
+                          - pinned_globally
+                          - featured_link
+                          - posters
+                    required:
+                    - can_create_topic
+                    - per_page
+                    - topics
+                required:
+                - topic_list
+  /c/{id}/show.json:
+    get:
+      summary: Show category
+      tags:
+      - Categories
+      operationId: getCategory
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+        required: true
+      responses:
+        '200':
+          description: response
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  category:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      color:
+                        type: string
+                      text_color:
+                        type: string
+                      style_type:
+                        type: string
+                      emoji:
+                        type:
+                        - string
+                        - 'null'
+                      icon:
+                        type:
+                        - string
+                        - 'null'
+                      slug:
+                        type: string
+                      locale:
+                        type:
+                        - string
+                        - 'null'
+                      topic_count:
+                        type: integer
+                      post_count:
+                        type: integer
+                      position:
+                        type: integer
+                      description:
+                        type:
+                        - string
+                        - 'null'
+                      description_text:
+                        type:
+                        - string
+                        - 'null'
+                      description_excerpt:
+                        type:
+                        - string
+                        - 'null'
+                      topic_url:
+                        type:
+                        - string
+                        - 'null'
+                      read_restricted:
+                        type: boolean
+                      permission:
+                        type:
+                        - integer
+                        - 'null'
+                      notification_level:
+                        type: integer
+                      can_edit:
+                        type: boolean
+                      topic_template:
+                        type:
+                        - string
+                        - 'null'
+                      topic_title_placeholder:
+                        type:
+                        - string
+                        - 'null'
+                      form_template_ids:
+                        type: array
+                        items: {}
+                      has_children:
+                        type:
+                        - boolean
+                        - 'null'
+                      subcategory_count:
+                        type:
+                        - integer
+                        - 'null'
+                      sort_order:
+                        type:
+                        - string
+                        - 'null'
+                      sort_ascending:
+                        type:
+                        - string
+                        - 'null'
+                      show_subcategory_list:
+                        type: boolean
+                      num_featured_topics:
+                        type: integer
+                      default_view:
+                        type:
+                        - string
+                        - 'null'
+                      subcategory_list_style:
+                        type: string
+                      default_top_period:
+                        type: string
+                      default_list_filter:
+                        type: string
+                      minimum_required_tags:
+                        type: integer
+                      navigate_to_first_post_after_read:
+                        type: boolean
+                      custom_fields:
+                        type: object
+                        additionalProperties: false
+                        properties: {}
+                      allowed_tags:
+                        type: array
+                        items: {}
+                      allowed_tag_groups:
+                        type: array
+                        items: {}
+                      allow_global_tags:
+                        type: boolean
+                      required_tag_groups:
+                        type: array
+                        items:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            name:
+                              type: string
+                            min_count:
+                              type: integer
+                          required:
+                          - name
+                          - min_count
+                      category_setting:
+                        type: object
+                        additionalProperties: false
+                        properties:
+                          auto_bump_cooldown_days:
+                            type: integer
+                          num_auto_bump_daily:
+                            type:
+                            - integer
+                            - 'null'
+                          require_reply_approval:
+                            type:
+                            - boolean
+                            - 'null'
+                          require_topic_approval:
+                            type:
+                            - boolean
+                            - 'null'
+                      category_localizations:
+                        type: array
+                        items: {}
+                      read_only_banner:
+                        type:
+                        - string
+                        - 'null'
+                      available_groups:
+                        type: array
+                        items: {}
+                      auto_close_hours:
+                        type:
+                        - string
+                        - 'null'
+                      auto_close_based_on_last_post:
+                        type: boolean
+                      allow_unlimited_owner_edits_on_first_post:
+                        type: boolean
+                      default_slow_mode_seconds:
+                        type:
+                        - string
+                        - 'null'
+                      group_permissions:
+                        type: array
+                        items:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            permission_type:
+                              type: integer
+                            group_name:
+                              type: string
+                            group_id:
+                              type: integer
+                          required:
+                          - permission_type
+                          - group_name
+                          - group_id
+                      email_in:
+                        type:
+                        - string
+                        - 'null'
+                      email_in_allow_strangers:
+                        type: boolean
+                      mailinglist_mirror:
+                        type: boolean
+                      all_topics_wiki:
+                        type: boolean
+                      can_delete:
+                        type: boolean
+                      allow_badges:
+                        type: boolean
+                      topic_featured_link_allowed:
+                        type: boolean
+                      search_priority:
+                        type: integer
+                      uploaded_logo:
+                        type:
+                        - string
+                        - 'null'
+                      uploaded_logo_dark:
+                        type:
+                        - string
+                        - 'null'
+                      uploaded_background:
+                        type:
+                        - string
+                        - 'null'
+                      uploaded_background_dark:
+                        type:
+                        - string
+                        - 'null'
+                      category_types:
+                        type: object
+                    required:
+                    - id
+                    - name
+                    - color
+                    - text_color
+                    - style_type
+                    - emoji
+                    - icon
+                    - slug
+                    - topic_count
+                    - post_count
+                    - position
+                    - description
+                    - description_text
+                    - description_excerpt
+                    - topic_url
+                    - read_restricted
+                    - permission
+                    - notification_level
+                    - can_edit
+                    - topic_template
+                    - topic_title_placeholder
+                    - has_children
+                    - subcategory_count
+                    - sort_order
+                    - sort_ascending
+                    - show_subcategory_list
+                    - num_featured_topics
+                    - default_view
+                    - subcategory_list_style
+                    - default_top_period
+                    - default_list_filter
+                    - minimum_required_tags
+                    - navigate_to_first_post_after_read
+                    - custom_fields
+                    - required_tag_groups
+                    - read_only_banner
+                    - available_groups
+                    - auto_close_hours
+                    - auto_close_based_on_last_post
+                    - allow_unlimited_owner_edits_on_first_post
+                    - default_slow_mode_seconds
+                    - group_permissions
+                    - email_in
+                    - email_in_allow_strangers
+                    - mailinglist_mirror
+                    - all_topics_wiki
+                    - can_delete
+                    - allow_badges
+                    - topic_featured_link_allowed
+                    - search_priority
+                    - uploaded_logo
+                    - uploaded_logo_dark
+                    - uploaded_background
+                    - uploaded_background_dark
+                required:
+                - category
+  /site.json:
+    get:
+      summary: Get site info
+      tags:
+      - Categories
+      operationId: getSite
+      description: Can be used to fetch all categories and subcategories
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  default_archetype:
+                    type: string
+                  notification_types:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      mentioned:
+                        type: integer
+                      replied:
+                        type: integer
+                      quoted:
+                        type: integer
+                      edited:
+                        type: integer
+                      liked:
+                        type: integer
+                      private_message:
+                        type: integer
+                      invited_to_private_message:
+                        type: integer
+                      invitee_accepted:
+                        type: integer
+                      posted:
+                        type: integer
+                      watching_category_or_tag:
+                        type: integer
+                      new_features:
+                        type: integer
+                      admin_problems:
+                        type: integer
+                      moved_post:
+                        type: integer
+                      linked:
+                        type: integer
+                      granted_badge:
+                        type: integer
+                      invited_to_topic:
+                        type: integer
+                      custom:
+                        type: integer
+                      group_mentioned:
+                        type: integer
+                      group_message_summary:
+                        type: integer
+                      watching_first_post:
+                        type: integer
+                      topic_reminder:
+                        type: integer
+                      liked_consolidated:
+                        type: integer
+                      linked_consolidated:
+                        type: integer
+                      post_approved:
+                        type: integer
+                      code_review_commit_approved:
+                        type: integer
+                      membership_request_accepted:
+                        type: integer
+                      membership_request_consolidated:
+                        type: integer
+                      bookmark_reminder:
+                        type: integer
+                      reaction:
+                        type: integer
+                      votes_released:
+                        type: integer
+                      event_reminder:
+                        type: integer
+                      event_invitation:
+                        type: integer
+                      chat_mention:
+                        type: integer
+                      chat_message:
+                        type: integer
+                      chat_invitation:
+                        type: integer
+                      chat_group_mention:
+                        type: integer
+                      chat_quoted:
+                        type: integer
+                      chat_watched_thread:
+                        type: integer
+                      upcoming_change_available:
+                        type: integer
+                      upcoming_change_automatically_promoted:
+                        type: integer
+                      assigned:
+                        type: integer
+                      question_answer_user_commented:
+                        type: integer
+                      following:
+                        type: integer
+                      following_created_topic:
+                        type: integer
+                      following_replied:
+                        type: integer
+                      circles_activity:
+                        type: integer
+                    required:
+                    - mentioned
+                    - replied
+                    - quoted
+                    - edited
+                    - liked
+                    - private_message
+                    - invited_to_private_message
+                    - invitee_accepted
+                    - posted
+                    - watching_category_or_tag
+                    - moved_post
+                    - linked
+                    - granted_badge
+                    - invited_to_topic
+                    - custom
+                    - group_mentioned
+                    - group_message_summary
+                    - watching_first_post
+                    - topic_reminder
+                    - liked_consolidated
+                    - linked_consolidated
+                    - post_approved
+                    - code_review_commit_approved
+                    - membership_request_accepted
+                    - membership_request_consolidated
+                    - bookmark_reminder
+                    - reaction
+                    - votes_released
+                    - event_reminder
+                    - event_invitation
+                    - chat_mention
+                    - chat_message
+                    - chat_invitation
+                    - chat_group_mention
+                  post_types:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      regular:
+                        type: integer
+                      moderator_action:
+                        type: integer
+                      small_action:
+                        type: integer
+                      whisper:
+                        type: integer
+                    required:
+                    - regular
+                    - moderator_action
+                    - small_action
+                    - whisper
+                  trust_levels:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      newuser:
+                        type: integer
+                      basic:
+                        type: integer
+                      member:
+                        type: integer
+                      regular:
+                        type: integer
+                      leader:
+                        type: integer
+                    required:
+                    - newuser
+                    - basic
+                    - member
+                    - regular
+                    - leader
+                  user_tips:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      first_notification:
+                        type: integer
+                      topic_timeline:
+                        type: integer
+                      post_menu:
+                        type: integer
+                      topic_notification_levels:
+                        type: integer
+                      suggested_topics:
+                        type: integer
+                    required:
+                    - first_notification
+                    - topic_timeline
+                    - post_menu
+                    - topic_notification_levels
+                    - suggested_topics
+                  groups:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        flair_url:
+                          type:
+                          - string
+                          - 'null'
+                        flair_bg_color:
+                          type:
+                          - string
+                          - 'null'
+                        flair_color:
+                          type:
+                          - string
+                          - 'null'
+                        automatic:
+                          type:
+                          - boolean
+                      required:
+                      - id
+                      - name
+                      - flair_url
+                      - flair_bg_color
+                      - flair_color
+                      - automatic
+                  filters:
+                    type: array
+                    items: {}
+                  periods:
+                    type: array
+                    items: {}
+                  top_menu_items:
+                    type: array
+                    items: {}
+                  anonymous_top_menu_items:
+                    type: array
+                    items: {}
+                  uncategorized_category_id:
+                    type: integer
+                  user_field_max_length:
+                    type: integer
+                  post_action_types:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      properties:
+                        id:
+                          type:
+                          - integer
+                          - 'null'
+                        name_key:
+                          type:
+                          - string
+                          - 'null'
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        short_description:
+                          type: string
+                        is_flag:
+                          type: boolean
+                        require_message:
+                          type: boolean
+                        enabled:
+                          type: boolean
+                        applies_to:
+                          type: array
+                        is_used:
+                          type: boolean
+                        position:
+                          type: integer
+                        auto_action_type:
+                          type: boolean
+                        system:
+                          type: boolean
+                      required:
+                      - id
+                      - name_key
+                      - name
+                      - description
+                      - short_description
+                      - is_flag
+                      - require_message
+                      - enabled
+                      - applies_to
+                      - is_used
+                      - auto_action_type
+                  topic_flag_types:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      properties:
+                        id:
+                          type:
+                          - integer
+                          - 'null'
+                        name_key:
+                          type:
+                          - string
+                          - 'null'
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        short_description:
+                          type: string
+                        is_flag:
+                          type: boolean
+                        require_message:
+                          type: boolean
+                        enabled:
+                          type: boolean
+                        applies_to:
+                          type: array
+                        is_used:
+                          type: boolean
+                        position:
+                          type: integer
+                        auto_action_type:
+                          type: boolean
+                        system:
+                          type: boolean
+                      required:
+                      - id
+                      - name_key
+                      - name
+                      - description
+                      - short_description
+                      - is_flag
+                      - require_message
+                      - enabled
+                      - applies_to
+                      - is_used
+                      - auto_action_type
+                  can_create_tag:
+                    type: boolean
+                  can_tag_topics:
+                    type: boolean
+                  can_tag_pms:
+                    type: boolean
+                  tags_filter_regexp:
+                    type: string
+                  top_tags:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        slug:
+                          type: string
+                      required:
+                      - id
+                      - name
+                      - slug
+                  wizard_required:
+                    type: boolean
+                  can_associate_groups:
+                    type: boolean
+                  email_configured:
+                    type: boolean
+                  topic_featured_link_allowed_category_ids:
+                    type: array
+                    items: {}
+                  user_themes:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      properties:
+                        theme_id:
+                          type: integer
+                        name:
+                          type: string
+                        default:
+                          type: boolean
+                        color_scheme_id:
+                          type:
+                          - integer
+                          - 'null'
+                        dark_color_scheme_id:
+                          type:
+                          - integer
+                          - 'null'
+                        only_theme_color_schemes:
+                          type: boolean
+                      required:
+                      - theme_id
+                      - name
+                      - default
+                      - color_scheme_id
+                  user_color_schemes:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        is_dark:
+                          type: boolean
+                        theme_id:
+                          type:
+                          - integer
+                          - 'null'
+                        colors:
+                          type: array
+                      required:
+                      - id
+                      - name
+                      - is_dark
+                      - colors
+                  default_light_color_scheme:
+                    type:
+                    - object
+                    - 'null'
+                  default_dark_color_scheme:
+                    type:
+                    - object
+                    - 'null'
+                  censored_regexp:
+                    type: array
+                    items:
+                      type: object
+                  custom_emoji_translation:
+                    type: object
+                    additionalProperties: false
+                    properties: {}
+                  watched_words_replace:
+                    type:
+                    - string
+                    - 'null'
+                  watched_words_link:
+                    type:
+                    - string
+                    - 'null'
+                  markdown_additional_options:
+                    type: object
+                  hashtag_configurations:
+                    type: object
+                  hashtag_icons:
+                    type: object
+                  displayed_about_plugin_stat_groups:
+                    type: array
+                  categories:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        color:
+                          type: string
+                        text_color:
+                          type: string
+                        style_type:
+                          type: string
+                        emoji:
+                          type:
+                          - string
+                          - 'null'
+                        icon:
+                          type:
+                          - string
+                          - 'null'
+                        slug:
+                          type: string
+                        topic_count:
+                          type: integer
+                        post_count:
+                          type: integer
+                        position:
+                          type: integer
+                        description:
+                          type:
+                          - string
+                          - 'null'
+                        description_text:
+                          type:
+                          - string
+                          - 'null'
+                        description_excerpt:
+                          type:
+                          - string
+                          - 'null'
+                        topic_url:
+                          type: string
+                        read_restricted:
+                          type: boolean
+                        permission:
+                          type: integer
+                        notification_level:
+                          type: integer
+                        topic_template:
+                          type:
+                          - string
+                          - 'null'
+                        topic_title_placeholder:
+                          type:
+                          - string
+                          - 'null'
+                        has_children:
+                          type: boolean
+                        subcategory_count:
+                          type:
+                          - integer
+                          - 'null'
+                        sort_order:
+                          type:
+                          - string
+                          - 'null'
+                        sort_ascending:
+                          type:
+                          - string
+                          - 'null'
+                        show_subcategory_list:
+                          type: boolean
+                        num_featured_topics:
+                          type: integer
+                        default_view:
+                          type:
+                          - string
+                          - 'null'
+                        subcategory_list_style:
+                          type: string
+                        default_top_period:
+                          type: string
+                        default_list_filter:
+                          type: string
+                        minimum_required_tags:
+                          type: integer
+                        navigate_to_first_post_after_read:
+                          type: boolean
+                        allowed_tags:
+                          type: array
+                          items: {}
+                        allowed_tag_groups:
+                          type: array
+                          items: {}
+                        allow_global_tags:
+                          type: boolean
+                        required_tag_groups:
+                          type: array
+                          items:
+                            type: object
+                            additionalProperties: false
+                            properties:
+                              name:
+                                type: string
+                              min_count:
+                                type: integer
+                            required:
+                            - name
+                            - min_count
+                        read_only_banner:
+                          type:
+                          - string
+                          - 'null'
+                        uploaded_logo:
+                          type:
+                          - string
+                          - 'null'
+                        uploaded_logo_dark:
+                          type:
+                          - string
+                          - 'null'
+                        uploaded_background:
+                          type:
+                          - string
+                          - 'null'
+                        uploaded_background_dark:
+                          type:
+                          - string
+                          - 'null'
+                        can_edit:
+                          type: boolean
+                        custom_fields:
+                          type:
+                          - object
+                          - 'null'
+                          additionalProperties: true
+                        parent_category_id:
+                          type: integer
+                        form_template_ids:
+                          type: array
+                          items: {}
+                      required:
+                      - id
+                      - name
+                      - color
+                      - text_color
+                      - slug
+                      - topic_count
+                      - post_count
+                      - position
+                      - topic_url
+                      - read_restricted
+                      - permission
+                      - notification_level
+                      - topic_template
+                      - topic_title_placeholder
+                      - has_children
+                      - subcategory_count
+                      - sort_order
+                      - sort_ascending
+                      - show_subcategory_list
+                      - num_featured_topics
+                      - default_view
+                      - subcategory_list_style
+                      - default_top_period
+                      - default_list_filter
+                      - minimum_required_tags
+                      - navigate_to_first_post_after_read
+                      - allowed_tags
+                      - allowed_tag_groups
+                      - allow_global_tags
+                      - required_tag_groups
+                      - read_only_banner
+                      - uploaded_logo
+                      - uploaded_logo_dark
+                      - uploaded_background
+                      - uploaded_background_dark
+                      - can_edit
+                  archetypes:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        options:
+                          type: array
+                          items: {}
+                      required:
+                      - id
+                      - name
+                      - options
+                  user_fields:
+                    type: array
+                    items: {}
+                  auth_providers:
+                    type: array
+                    items: {}
+                  whispers_allowed_groups_names:
+                    type: array
+                  denied_emojis:
+                    type: array
+                  valid_flag_applies_to_types:
+                    type: array
+                  navigation_menu_site_top_tags:
+                    type: array
+                  full_name_required_for_signup:
+                    type: boolean
+                  full_name_visible_in_signup:
+                    type: boolean
+                  admin_config_login_routes:
+                    type: array
+                required:
+                - default_archetype
+                - notification_types
+                - post_types
+                - trust_levels
+                - groups
+                - filters
+                - periods
+                - top_menu_items
+                - anonymous_top_menu_items
+                - uncategorized_category_id
+                - user_field_max_length
+                - post_action_types
+                - topic_flag_types
+                - can_create_tag
+                - can_tag_topics
+                - can_tag_pms
+                - tags_filter_regexp
+                - top_tags
+                - topic_featured_link_allowed_category_ids
+                - user_themes
+                - user_color_schemes
+                - default_light_color_scheme
+                - default_dark_color_scheme
+                - censored_regexp
+                - custom_emoji_translation
+                - watched_words_replace
+                - watched_words_link
+                - categories
+                - archetypes
+                - user_fields
+                - auth_providers
+                - full_name_required_for_signup
+                - full_name_visible_in_signup
+                - email_configured

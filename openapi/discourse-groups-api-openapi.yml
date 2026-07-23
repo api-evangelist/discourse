@@ -1,0 +1,1274 @@
+openapi: 3.1.0
+info:
+  title: Discourse API Documentation Admin Groups API
+  x-logo:
+    url: https://docs.discourse.org/logo.svg
+  version: latest
+  description: 'This page contains the documentation on how to use Discourse through API calls.
+
+
+    > Note: For any endpoints not listed you can follow the
+
+    [reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)
+
+    guide to figure out how to use an API endpoint.
+
+
+    ### Request Content-Type
+
+
+    The Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,
+
+    `multipart/form-data`, or `application/json`.
+
+
+    ### Endpoint Names and Response Content-Type
+
+
+    Most API endpoints provide the same content as their HTML counterparts. For example
+
+    the URL `/categories` serves a list of categories, the `/categories.json` API provides the
+
+    same information in JSON format.
+
+
+    Instead of sending API requests to `/categories.json` you may also send them to `/categories`
+
+    and add an `Accept: application/json` header to the request to get the JSON response.
+
+    Sending requests with the `Accept` header is necessary if you want to use URLs
+
+    for related endpoints returned by the API, such as pagination URLs.
+
+    These URLs are returned without the `.json` prefix so you need to add the header in
+
+    order to get the correct response format.
+
+
+    ### Authentication
+
+
+    Some endpoints do not require any authentication, pretty much anything else will
+
+    require you to be authenticated.
+
+
+    To become authenticated you will need to create an API Key from the admin panel.
+
+
+    Once you have your API Key you can pass it in along with your API Username
+
+    as an HTTP header like this:
+
+
+    ```
+
+    curl -X GET "http://127.0.0.1:3000/admin/users/list/active.json" \
+
+    -H "Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19" \
+
+    -H "Api-Username: system"
+
+    ```
+
+
+    and this is how POST requests will look:
+
+
+    ```
+
+    curl -X POST "http://127.0.0.1:3000/categories" \
+
+    -H "Content-Type: multipart/form-data;" \
+
+    -H "Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19" \
+
+    -H "Api-Username: system" \
+
+    -F "name=89853c20-4409-e91a-a8ea-f6cdff96aaaa" \
+
+    -F "color=49d9e9" \
+
+    -F "text_color=f0fcfd"
+
+    ```
+
+
+    ### Boolean values
+
+
+    If an endpoint accepts a boolean be sure to specify it as a lowercase
+
+    `true` or `false` value unless noted otherwise.
+
+    '
+  license:
+    name: MIT
+    url: https://docs.discourse.org/LICENSE.txt
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: discourse.example.com
+tags:
+- name: Groups
+paths:
+  /admin/groups.json:
+    post:
+      summary: Create a group
+      tags:
+      - Groups
+      operationId: createGroup
+      parameters: []
+      responses:
+        '200':
+          description: group created
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  basic_group:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      id:
+                        type: integer
+                      automatic:
+                        type: boolean
+                      name:
+                        type: string
+                      user_count:
+                        type: integer
+                      mentionable_level:
+                        type: integer
+                      messageable_level:
+                        type: integer
+                      visibility_level:
+                        type: integer
+                      primary_group:
+                        type: boolean
+                      title:
+                        type:
+                        - string
+                        - 'null'
+                      grant_trust_level:
+                        type:
+                        - string
+                        - 'null'
+                      incoming_email:
+                        type:
+                        - string
+                        - 'null'
+                      has_messages:
+                        type: boolean
+                      flair_url:
+                        type:
+                        - string
+                        - 'null'
+                      flair_bg_color:
+                        type:
+                        - string
+                        - 'null'
+                      flair_color:
+                        type:
+                        - string
+                        - 'null'
+                      bio_raw:
+                        type:
+                        - string
+                        - 'null'
+                      bio_cooked:
+                        type:
+                        - string
+                        - 'null'
+                      bio_excerpt:
+                        type:
+                        - string
+                        - 'null'
+                      public_admission:
+                        type: boolean
+                      public_exit:
+                        type: boolean
+                      allow_membership_requests:
+                        type: boolean
+                      full_name:
+                        type:
+                        - string
+                        - 'null'
+                      default_notification_level:
+                        type: integer
+                      membership_request_template:
+                        type:
+                        - string
+                        - 'null'
+                      members_visibility_level:
+                        type: integer
+                      can_see_members:
+                        type: boolean
+                      can_admin_group:
+                        type: boolean
+                      can_edit_group:
+                        type: boolean
+                      publish_read_state:
+                        type: boolean
+                    required:
+                    - id
+                    - automatic
+                    - name
+                    - user_count
+                    - mentionable_level
+                    - messageable_level
+                    - visibility_level
+                    - primary_group
+                    - title
+                    - grant_trust_level
+                    - incoming_email
+                    - has_messages
+                    - flair_url
+                    - flair_bg_color
+                    - flair_color
+                    - bio_raw
+                    - bio_cooked
+                    - bio_excerpt
+                    - public_admission
+                    - public_exit
+                    - allow_membership_requests
+                    - full_name
+                    - default_notification_level
+                    - membership_request_template
+                    - members_visibility_level
+                    - can_see_members
+                    - can_admin_group
+                    - publish_read_state
+                required:
+                - basic_group
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                group:
+                  type: object
+                  additionalProperties: false
+                  properties:
+                    name:
+                      type: string
+                    full_name:
+                      type: string
+                    bio_raw:
+                      type: string
+                      description: About Group
+                    usernames:
+                      type: string
+                      description: comma,separated
+                    owner_usernames:
+                      type: string
+                      description: comma,separated
+                    automatic_membership_email_domains:
+                      type: string
+                      description: pipe|separated
+                    visibility_level:
+                      type: integer
+                    primary_group:
+                      type: boolean
+                    flair_icon:
+                      type: string
+                    flair_upload_id:
+                      type: integer
+                    flair_bg_color:
+                      type: string
+                    public_admission:
+                      type: boolean
+                    public_exit:
+                      type: boolean
+                    default_notification_level:
+                      type: integer
+                    muted_category_ids:
+                      type: array
+                      items:
+                        type: integer
+                    regular_category_ids:
+                      type: array
+                      items:
+                        type: integer
+                    watching_category_ids:
+                      type: array
+                      items:
+                        type: integer
+                    tracking_category_ids:
+                      type: array
+                      items:
+                        type: integer
+                    watching_first_post_category_ids:
+                      type: array
+                      items:
+                        type: integer
+                  required:
+                  - name
+              required:
+              - group
+  /admin/groups/{id}.json:
+    delete:
+      summary: Delete a group
+      tags:
+      - Groups
+      operationId: deleteGroup
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: response
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  success:
+                    type: string
+                    example: OK
+                required:
+                - success
+  /groups/{name}.json:
+    get:
+      summary: Get a group
+      tags:
+      - Groups
+      operationId: getGroup
+      parameters:
+      - name: name
+        in: path
+        example: name
+        description: Use group name instead of id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  group:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      id:
+                        type: integer
+                      automatic:
+                        type: boolean
+                      name:
+                        type: string
+                      user_count:
+                        type: integer
+                      mentionable_level:
+                        type: integer
+                      messageable_level:
+                        type: integer
+                      visibility_level:
+                        type: integer
+                      primary_group:
+                        type: boolean
+                      title:
+                        type:
+                        - string
+                        - 'null'
+                      grant_trust_level:
+                        type:
+                        - string
+                        - 'null'
+                      incoming_email:
+                        type:
+                        - string
+                        - 'null'
+                      has_messages:
+                        type: boolean
+                      flair_url:
+                        type:
+                        - string
+                        - 'null'
+                      flair_bg_color:
+                        type:
+                        - string
+                        - 'null'
+                      flair_color:
+                        type:
+                        - string
+                        - 'null'
+                      bio_raw:
+                        type:
+                        - string
+                        - 'null'
+                      bio_cooked:
+                        type:
+                        - string
+                        - 'null'
+                      bio_excerpt:
+                        type:
+                        - string
+                        - 'null'
+                      public_admission:
+                        type: boolean
+                      public_exit:
+                        type: boolean
+                      allow_membership_requests:
+                        type: boolean
+                      full_name:
+                        type:
+                        - string
+                        - 'null'
+                      default_notification_level:
+                        type: integer
+                      membership_request_template:
+                        type:
+                        - string
+                        - 'null'
+                      is_group_user:
+                        type: boolean
+                      members_visibility_level:
+                        type: integer
+                      can_see_members:
+                        type: boolean
+                      can_admin_group:
+                        type: boolean
+                      can_edit_group:
+                        type: boolean
+                      publish_read_state:
+                        type: boolean
+                      is_group_owner_display:
+                        type: boolean
+                      mentionable:
+                        type: boolean
+                      messageable:
+                        type: boolean
+                      automatic_membership_email_domains:
+                        type:
+                        - string
+                        - 'null'
+                      smtp_updated_at:
+                        type:
+                        - string
+                        - 'null'
+                      smtp_updated_by:
+                        type:
+                        - object
+                        - 'null'
+                      smtp_enabled:
+                        type: boolean
+                      smtp_server:
+                        type:
+                        - string
+                        - 'null'
+                      smtp_port:
+                        type:
+                        - string
+                        - 'null'
+                      smtp_ssl_mode:
+                        type:
+                        - integer
+                        - 'null'
+                      email_username:
+                        type:
+                        - string
+                        - 'null'
+                      email_from_alias:
+                        type:
+                        - string
+                        - 'null'
+                      email_password:
+                        type:
+                        - string
+                        - 'null'
+                      message_count:
+                        type: integer
+                      allow_unknown_sender_topic_replies:
+                        type: boolean
+                      associated_group_ids:
+                        type: array
+                        items: {}
+                      watching_category_ids:
+                        type: array
+                        items: {}
+                      tracking_category_ids:
+                        type: array
+                        items: {}
+                      watching_first_post_category_ids:
+                        type: array
+                        items: {}
+                      regular_category_ids:
+                        type: array
+                        items: {}
+                      muted_category_ids:
+                        type: array
+                        items: {}
+                      watching_tags:
+                        type: array
+                        items: {}
+                      watching_first_post_tags:
+                        type: array
+                        items: {}
+                      tracking_tags:
+                        type: array
+                        items: {}
+                      regular_tags:
+                        type: array
+                        items: {}
+                      muted_tags:
+                        type: array
+                        items: {}
+                    required:
+                    - id
+                    - automatic
+                    - name
+                    - user_count
+                    - mentionable_level
+                    - messageable_level
+                    - visibility_level
+                    - primary_group
+                    - title
+                    - grant_trust_level
+                    - incoming_email
+                    - has_messages
+                    - flair_url
+                    - flair_bg_color
+                    - flair_color
+                    - bio_raw
+                    - bio_cooked
+                    - bio_excerpt
+                    - public_admission
+                    - public_exit
+                    - allow_membership_requests
+                    - full_name
+                    - default_notification_level
+                    - membership_request_template
+                    - is_group_user
+                    - members_visibility_level
+                    - can_see_members
+                    - can_admin_group
+                    - publish_read_state
+                    - is_group_owner_display
+                    - mentionable
+                    - messageable
+                    - automatic_membership_email_domains
+                    - smtp_server
+                    - smtp_port
+                    - smtp_ssl_mode
+                    - email_username
+                    - email_password
+                    - message_count
+                    - allow_unknown_sender_topic_replies
+                    - watching_category_ids
+                    - tracking_category_ids
+                    - watching_first_post_category_ids
+                    - regular_category_ids
+                    - muted_category_ids
+                  extras:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      visible_group_names:
+                        type: array
+                        items: {}
+                    required:
+                    - visible_group_names
+                required:
+                - group
+                - extras
+  /groups/{id}.json:
+    put:
+      summary: Update a group
+      tags:
+      - Groups
+      operationId: updateGroup
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  success:
+                    type: string
+                    example: OK
+                required:
+                - success
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                group:
+                  type: object
+                  additionalProperties: false
+                  properties:
+                    name:
+                      type: string
+                    full_name:
+                      type: string
+                    bio_raw:
+                      type: string
+                      description: About Group
+                    usernames:
+                      type: string
+                      description: comma,separated
+                    owner_usernames:
+                      type: string
+                      description: comma,separated
+                    automatic_membership_email_domains:
+                      type: string
+                      description: pipe|separated
+                    visibility_level:
+                      type: integer
+                    primary_group:
+                      type: boolean
+                    flair_icon:
+                      type: string
+                    flair_upload_id:
+                      type: integer
+                    flair_bg_color:
+                      type: string
+                    public_admission:
+                      type: boolean
+                    public_exit:
+                      type: boolean
+                    default_notification_level:
+                      type: integer
+                    muted_category_ids:
+                      type: array
+                      items:
+                        type: integer
+                    regular_category_ids:
+                      type: array
+                      items:
+                        type: integer
+                    watching_category_ids:
+                      type: array
+                      items:
+                        type: integer
+                    tracking_category_ids:
+                      type: array
+                      items:
+                        type: integer
+                    watching_first_post_category_ids:
+                      type: array
+                      items:
+                        type: integer
+                  required:
+                  - name
+              required:
+              - group
+  /groups/by-id/{id}.json:
+    get:
+      summary: Get a group by id
+      tags:
+      - Groups
+      operationId: getGroupById
+      parameters:
+      - name: id
+        in: path
+        example: name
+        description: Use group name instead of id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: success response (by id)
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  group:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      id:
+                        type: integer
+                      automatic:
+                        type: boolean
+                      name:
+                        type: string
+                      user_count:
+                        type: integer
+                      mentionable_level:
+                        type: integer
+                      messageable_level:
+                        type: integer
+                      visibility_level:
+                        type: integer
+                      primary_group:
+                        type: boolean
+                      title:
+                        type:
+                        - string
+                        - 'null'
+                      grant_trust_level:
+                        type:
+                        - string
+                        - 'null'
+                      incoming_email:
+                        type:
+                        - string
+                        - 'null'
+                      has_messages:
+                        type: boolean
+                      flair_url:
+                        type:
+                        - string
+                        - 'null'
+                      flair_bg_color:
+                        type:
+                        - string
+                        - 'null'
+                      flair_color:
+                        type:
+                        - string
+                        - 'null'
+                      bio_raw:
+                        type:
+                        - string
+                        - 'null'
+                      bio_cooked:
+                        type:
+                        - string
+                        - 'null'
+                      bio_excerpt:
+                        type:
+                        - string
+                        - 'null'
+                      public_admission:
+                        type: boolean
+                      public_exit:
+                        type: boolean
+                      allow_membership_requests:
+                        type: boolean
+                      full_name:
+                        type:
+                        - string
+                        - 'null'
+                      default_notification_level:
+                        type: integer
+                      membership_request_template:
+                        type:
+                        - string
+                        - 'null'
+                      is_group_user:
+                        type: boolean
+                      members_visibility_level:
+                        type: integer
+                      can_see_members:
+                        type: boolean
+                      can_admin_group:
+                        type: boolean
+                      can_edit_group:
+                        type: boolean
+                      publish_read_state:
+                        type: boolean
+                      is_group_owner_display:
+                        type: boolean
+                      mentionable:
+                        type: boolean
+                      messageable:
+                        type: boolean
+                      automatic_membership_email_domains:
+                        type:
+                        - string
+                        - 'null'
+                      smtp_updated_at:
+                        type:
+                        - string
+                        - 'null'
+                      smtp_updated_by:
+                        type:
+                        - object
+                        - 'null'
+                      smtp_enabled:
+                        type: boolean
+                      smtp_server:
+                        type:
+                        - string
+                        - 'null'
+                      smtp_port:
+                        type:
+                        - string
+                        - 'null'
+                      smtp_ssl_mode:
+                        type:
+                        - integer
+                        - 'null'
+                      email_username:
+                        type:
+                        - string
+                        - 'null'
+                      email_from_alias:
+                        type:
+                        - string
+                        - 'null'
+                      email_password:
+                        type:
+                        - string
+                        - 'null'
+                      message_count:
+                        type: integer
+                      allow_unknown_sender_topic_replies:
+                        type: boolean
+                      associated_group_ids:
+                        type: array
+                        items: {}
+                      watching_category_ids:
+                        type: array
+                        items: {}
+                      tracking_category_ids:
+                        type: array
+                        items: {}
+                      watching_first_post_category_ids:
+                        type: array
+                        items: {}
+                      regular_category_ids:
+                        type: array
+                        items: {}
+                      muted_category_ids:
+                        type: array
+                        items: {}
+                      watching_tags:
+                        type: array
+                        items: {}
+                      watching_first_post_tags:
+                        type: array
+                        items: {}
+                      tracking_tags:
+                        type: array
+                        items: {}
+                      regular_tags:
+                        type: array
+                        items: {}
+                      muted_tags:
+                        type: array
+                        items: {}
+                    required:
+                    - id
+                    - automatic
+                    - name
+                    - user_count
+                    - mentionable_level
+                    - messageable_level
+                    - visibility_level
+                    - primary_group
+                    - title
+                    - grant_trust_level
+                    - incoming_email
+                    - has_messages
+                    - flair_url
+                    - flair_bg_color
+                    - flair_color
+                    - bio_raw
+                    - bio_cooked
+                    - bio_excerpt
+                    - public_admission
+                    - public_exit
+                    - allow_membership_requests
+                    - full_name
+                    - default_notification_level
+                    - membership_request_template
+                    - is_group_user
+                    - members_visibility_level
+                    - can_see_members
+                    - can_admin_group
+                    - publish_read_state
+                    - is_group_owner_display
+                    - mentionable
+                    - messageable
+                    - automatic_membership_email_domains
+                    - smtp_server
+                    - smtp_port
+                    - smtp_ssl_mode
+                    - email_username
+                    - email_password
+                    - message_count
+                    - allow_unknown_sender_topic_replies
+                    - watching_category_ids
+                    - tracking_category_ids
+                    - watching_first_post_category_ids
+                    - regular_category_ids
+                    - muted_category_ids
+                  extras:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      visible_group_names:
+                        type: array
+                        items: {}
+                    required:
+                    - visible_group_names
+                required:
+                - group
+                - extras
+  /groups/{name}/members.json:
+    get:
+      summary: List group members
+      tags:
+      - Groups
+      operationId: listGroupMembers
+      parameters:
+      - name: name
+        in: path
+        example: name
+        description: Use group name instead of id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  members:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      properties:
+                        id:
+                          type: integer
+                        username:
+                          type: string
+                        name:
+                          type:
+                          - string
+                          - 'null'
+                        avatar_template:
+                          type: string
+                        title:
+                          type:
+                          - string
+                          - 'null'
+                        last_posted_at:
+                          type: string
+                        last_seen_at:
+                          type: string
+                        added_at:
+                          type: string
+                        timezone:
+                          type: string
+                      required:
+                      - id
+                      - username
+                      - name
+                      - avatar_template
+                      - title
+                      - last_posted_at
+                      - last_seen_at
+                      - added_at
+                      - timezone
+                  owners:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      properties:
+                        id:
+                          type: integer
+                        username:
+                          type: string
+                        name:
+                          type:
+                          - string
+                          - 'null'
+                        avatar_template:
+                          type: string
+                        title:
+                          type:
+                          - string
+                          - 'null'
+                        last_posted_at:
+                          type: string
+                        last_seen_at:
+                          type: string
+                        added_at:
+                          type: string
+                        timezone:
+                          type: string
+                      required:
+                      - id
+                      - username
+                      - name
+                      - avatar_template
+                      - title
+                      - last_posted_at
+                      - last_seen_at
+                      - added_at
+                      - timezone
+                  meta:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      total:
+                        type: integer
+                      limit:
+                        type: integer
+                      offset:
+                        type: integer
+                    required:
+                    - total
+                    - limit
+                    - offset
+                required:
+                - members
+                - owners
+                - meta
+  /groups/{id}/members.json:
+    put:
+      summary: Add group members
+      tags:
+      - Groups
+      operationId: addGroupMembers
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  success:
+                    type: string
+                  usernames:
+                    type: array
+                    items: {}
+                  emails:
+                    type: array
+                    items: {}
+                required:
+                - success
+                - usernames
+                - emails
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                usernames:
+                  type: string
+                  description: comma separated list
+                  example: username1,username2
+    delete:
+      summary: Remove group members
+      tags:
+      - Groups
+      operationId: removeGroupMembers
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  success:
+                    type: string
+                  usernames:
+                    type: array
+                    items: {}
+                  skipped_usernames:
+                    type: array
+                    items: {}
+                required:
+                - success
+                - usernames
+                - skipped_usernames
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                usernames:
+                  type: string
+                  description: comma separated list
+                  example: username1,username2
+  /groups.json:
+    get:
+      summary: List groups
+      tags:
+      - Groups
+      operationId: listGroups
+      responses:
+        '200':
+          description: response
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  groups:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      properties:
+                        id:
+                          type: integer
+                        automatic:
+                          type: boolean
+                        name:
+                          type: string
+                        display_name:
+                          type: string
+                        user_count:
+                          type: integer
+                        mentionable_level:
+                          type: integer
+                        messageable_level:
+                          type: integer
+                        visibility_level:
+                          type: integer
+                        primary_group:
+                          type: boolean
+                        title:
+                          type:
+                          - string
+                          - 'null'
+                        grant_trust_level:
+                          type:
+                          - string
+                          - 'null'
+                        incoming_email:
+                          type:
+                          - string
+                          - 'null'
+                        has_messages:
+                          type: boolean
+                        flair_url:
+                          type:
+                          - string
+                          - 'null'
+                        flair_bg_color:
+                          type:
+                          - string
+                          - 'null'
+                        flair_color:
+                          type:
+                          - string
+                          - 'null'
+                        bio_raw:
+                          type:
+                          - string
+                          - 'null'
+                        bio_cooked:
+                          type:
+                          - string
+                          - 'null'
+                        bio_excerpt:
+                          type:
+                          - string
+                          - 'null'
+                        public_admission:
+                          type: boolean
+                        public_exit:
+                          type: boolean
+                        allow_membership_requests:
+                          type: boolean
+                        full_name:
+                          type:
+                          - string
+                          - 'null'
+                        default_notification_level:
+                          type: integer
+                        membership_request_template:
+                          type:
+                          - string
+                          - 'null'
+                        is_group_user:
+                          type: boolean
+                        is_group_owner:
+                          type: boolean
+                        members_visibility_level:
+                          type: integer
+                        can_see_members:
+                          type: boolean
+                        can_admin_group:
+                          type: boolean
+                        can_edit_group:
+                          type: boolean
+                        publish_read_state:
+                          type: boolean
+                      required:
+                      - id
+                      - automatic
+                      - name
+                      - display_name
+                      - user_count
+                      - mentionable_level
+                      - messageable_level
+                      - visibility_level
+                      - primary_group
+                      - title
+                      - grant_trust_level
+                      - incoming_email
+                      - has_messages
+                      - flair_url
+                      - flair_bg_color
+                      - flair_color
+                      - bio_raw
+                      - bio_cooked
+                      - bio_excerpt
+                      - public_admission
+                      - public_exit
+                      - allow_membership_requests
+                      - full_name
+                      - default_notification_level
+                      - membership_request_template
+                      - members_visibility_level
+                      - can_see_members
+                      - can_admin_group
+                      - publish_read_state
+                  extras:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      type_filters:
+                        type: array
+                        items: {}
+                    required:
+                    - type_filters
+                  total_rows_groups:
+                    type: integer
+                  load_more_groups:
+                    type: string
+                required:
+                - groups
+                - extras
+                - total_rows_groups
+                - load_more_groups

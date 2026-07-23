@@ -1,0 +1,508 @@
+openapi: 3.1.0
+info:
+  title: Discourse API Documentation Admin Discourse Calendar - Events API
+  x-logo:
+    url: https://docs.discourse.org/logo.svg
+  version: latest
+  description: 'This page contains the documentation on how to use Discourse through API calls.
+
+
+    > Note: For any endpoints not listed you can follow the
+
+    [reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)
+
+    guide to figure out how to use an API endpoint.
+
+
+    ### Request Content-Type
+
+
+    The Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,
+
+    `multipart/form-data`, or `application/json`.
+
+
+    ### Endpoint Names and Response Content-Type
+
+
+    Most API endpoints provide the same content as their HTML counterparts. For example
+
+    the URL `/categories` serves a list of categories, the `/categories.json` API provides the
+
+    same information in JSON format.
+
+
+    Instead of sending API requests to `/categories.json` you may also send them to `/categories`
+
+    and add an `Accept: application/json` header to the request to get the JSON response.
+
+    Sending requests with the `Accept` header is necessary if you want to use URLs
+
+    for related endpoints returned by the API, such as pagination URLs.
+
+    These URLs are returned without the `.json` prefix so you need to add the header in
+
+    order to get the correct response format.
+
+
+    ### Authentication
+
+
+    Some endpoints do not require any authentication, pretty much anything else will
+
+    require you to be authenticated.
+
+
+    To become authenticated you will need to create an API Key from the admin panel.
+
+
+    Once you have your API Key you can pass it in along with your API Username
+
+    as an HTTP header like this:
+
+
+    ```
+
+    curl -X GET "http://127.0.0.1:3000/admin/users/list/active.json" \
+
+    -H "Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19" \
+
+    -H "Api-Username: system"
+
+    ```
+
+
+    and this is how POST requests will look:
+
+
+    ```
+
+    curl -X POST "http://127.0.0.1:3000/categories" \
+
+    -H "Content-Type: multipart/form-data;" \
+
+    -H "Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19" \
+
+    -H "Api-Username: system" \
+
+    -F "name=89853c20-4409-e91a-a8ea-f6cdff96aaaa" \
+
+    -F "color=49d9e9" \
+
+    -F "text_color=f0fcfd"
+
+    ```
+
+
+    ### Boolean values
+
+
+    If an endpoint accepts a boolean be sure to specify it as a lowercase
+
+    `true` or `false` value unless noted otherwise.
+
+    '
+  license:
+    name: MIT
+    url: https://docs.discourse.org/LICENSE.txt
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: discourse.example.com
+tags:
+- name: Discourse Calendar - Events
+paths:
+  /discourse-post-event/events.json:
+    get:
+      summary: List calendar events
+      tags:
+      - Discourse Calendar - Events
+      operationId: listEvents
+      parameters:
+      - name: include_details
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - 'true'
+          - 'false'
+        description: 'Include detailed event information (creator, invitees, stats,
+
+          etc.)'
+      - name: category_id
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Filter events by category ID
+      - name: include_subcategories
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - 'true'
+          - 'false'
+        description: Include events from subcategories when filtering by category
+      - name: post_id
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Filter to events associated with a specific post ID
+      - name: attending_user
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter to events where the specified user (username) has RSVP''d
+
+          as going'
+      - name: before
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date-time
+        description: Return events starting before this date/time (ISO 8601 format)
+      - name: after
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date-time
+        description: Return events starting after this date/time (ISO 8601 format)
+      - name: order
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+        description: 'Sort order for events by start date (default: asc)'
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 200
+        description: 'Maximum number of events to return (default: 200)'
+      responses:
+        '200':
+          description: success response (detailed)
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                properties:
+                  events:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      properties:
+                        id:
+                          type: integer
+                        category_id:
+                          type:
+                          - integer
+                          - 'null'
+                        name:
+                          type:
+                          - string
+                          - 'null'
+                        recurrence:
+                          type:
+                          - string
+                          - 'null'
+                        recurrence_until:
+                          type:
+                          - string
+                          - 'null'
+                          format: date-time
+                        starts_at:
+                          type:
+                          - string
+                          - 'null'
+                          format: date-time
+                        ends_at:
+                          type:
+                          - string
+                          - 'null'
+                          format: date-time
+                        rrule:
+                          type: string
+                        show_local_time:
+                          type: boolean
+                        timezone:
+                          type:
+                          - string
+                          - 'null'
+                        duration:
+                          type: string
+                          pattern: ^\d{2}:\d{2}:\d{2}$
+                        all_day:
+                          type: boolean
+                        post:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            id:
+                              type: integer
+                            post_number:
+                              type: integer
+                            url:
+                              type: string
+                            category_slug:
+                              type: string
+                            topic:
+                              type: object
+                              additionalProperties: false
+                              properties:
+                                id:
+                                  type: integer
+                                title:
+                                  type: string
+                                tags:
+                                  type: array
+                                  items:
+                                    type: string
+                                tags_descriptions:
+                                  type: object
+                              required:
+                              - id
+                              - title
+                              - tags
+                              - tags_descriptions
+                          required:
+                          - id
+                          - post_number
+                          - url
+                          - category_slug
+                          - topic
+                        occurrences:
+                          type: array
+                          items:
+                            type: object
+                            additionalProperties: false
+                            properties:
+                              starts_at:
+                                type:
+                                - string
+                                - 'null'
+                              ends_at:
+                                type:
+                                - string
+                                - 'null'
+                            required:
+                            - starts_at
+                            - ends_at
+                        can_act_on_discourse_post_event:
+                          type:
+                          - boolean
+                          - 'null'
+                        can_update_attendance:
+                          type:
+                          - boolean
+                          - 'null'
+                        creator:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            id:
+                              type: integer
+                            username:
+                              type: string
+                            name:
+                              type:
+                              - string
+                              - 'null'
+                            avatar_template:
+                              type: string
+                          required:
+                          - id
+                          - username
+                          - avatar_template
+                        custom_fields:
+                          type:
+                          - object
+                          - 'null'
+                        is_closed:
+                          type: boolean
+                        is_expired:
+                          type: boolean
+                        is_ongoing:
+                          type: boolean
+                        is_private:
+                          type: boolean
+                        is_public:
+                          type: boolean
+                        is_standalone:
+                          type: boolean
+                        minimal:
+                          type:
+                          - boolean
+                          - 'null'
+                        raw_invitees:
+                          type:
+                          - array
+                          - 'null'
+                          items:
+                            type: string
+                        reminders:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              value:
+                                type: integer
+                              unit:
+                                type: string
+                              period:
+                                type: string
+                                enum:
+                                - before
+                                - after
+                              type:
+                                type: string
+                            required:
+                            - value
+                            - unit
+                            - period
+                            - type
+                        sample_invitees:
+                          type: array
+                          items:
+                            type: object
+                        should_display_invitees:
+                          type: boolean
+                        stats:
+                          type: object
+                        status:
+                          type: string
+                          enum:
+                          - public
+                          - private
+                          - standalone
+                        url:
+                          type: string
+                        description:
+                          type:
+                          - string
+                          - 'null'
+                        location:
+                          type:
+                          - string
+                          - 'null'
+                        watching_invitee:
+                          type:
+                          - object
+                          - 'null'
+                        chat_enabled:
+                          type:
+                          - boolean
+                          - 'null'
+                        channel:
+                          type: object
+                        max_attendees:
+                          type:
+                          - integer
+                          - 'null'
+                        at_capacity:
+                          type: boolean
+                      required:
+                      - id
+                      - category_id
+                      - starts_at
+                      - ends_at
+                      - show_local_time
+                      - timezone
+                      - can_act_on_discourse_post_event
+                      - can_update_attendance
+                      - is_closed
+                      - is_expired
+                      - is_ongoing
+                      - is_private
+                      - is_public
+                      - is_standalone
+                      - should_display_invitees
+                      - status
+                      - at_capacity
+                      - post
+                      - occurrences
+                required:
+                - events
+  /discourse-post-event/events.ics:
+    get:
+      summary: Export calendar events in iCalendar format
+      tags:
+      - Discourse Calendar - Events
+      operationId: exportEventsICS
+      parameters:
+      - name: category_id
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Filter events by category ID
+      - name: include_subcategories
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - 'true'
+          - 'false'
+        description: Include events from subcategories when filtering by category
+      - name: attending_user
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter to events where the specified user (username) has RSVP''d
+
+          as going'
+      - name: before
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date-time
+        description: Return events starting before this date/time (ISO 8601 format)
+      - name: after
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date-time
+        description: Return events starting after this date/time (ISO 8601 format)
+      - name: order
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+        description: 'Sort order for events by start date (default: asc)'
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 200
+        description: 'Maximum number of events to return (default: 200)'
+      responses:
+        '200':
+          description: iCalendar file
+          content:
+            text/calendar:
+              schema:
+                type: string
+                format: binary

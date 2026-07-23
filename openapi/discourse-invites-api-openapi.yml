@@ -1,0 +1,453 @@
+openapi: 3.1.0
+info:
+  title: Discourse API Documentation Admin Invites API
+  x-logo:
+    url: https://docs.discourse.org/logo.svg
+  version: latest
+  description: 'This page contains the documentation on how to use Discourse through API calls.
+
+
+    > Note: For any endpoints not listed you can follow the
+
+    [reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)
+
+    guide to figure out how to use an API endpoint.
+
+
+    ### Request Content-Type
+
+
+    The Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,
+
+    `multipart/form-data`, or `application/json`.
+
+
+    ### Endpoint Names and Response Content-Type
+
+
+    Most API endpoints provide the same content as their HTML counterparts. For example
+
+    the URL `/categories` serves a list of categories, the `/categories.json` API provides the
+
+    same information in JSON format.
+
+
+    Instead of sending API requests to `/categories.json` you may also send them to `/categories`
+
+    and add an `Accept: application/json` header to the request to get the JSON response.
+
+    Sending requests with the `Accept` header is necessary if you want to use URLs
+
+    for related endpoints returned by the API, such as pagination URLs.
+
+    These URLs are returned without the `.json` prefix so you need to add the header in
+
+    order to get the correct response format.
+
+
+    ### Authentication
+
+
+    Some endpoints do not require any authentication, pretty much anything else will
+
+    require you to be authenticated.
+
+
+    To become authenticated you will need to create an API Key from the admin panel.
+
+
+    Once you have your API Key you can pass it in along with your API Username
+
+    as an HTTP header like this:
+
+
+    ```
+
+    curl -X GET "http://127.0.0.1:3000/admin/users/list/active.json" \
+
+    -H "Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19" \
+
+    -H "Api-Username: system"
+
+    ```
+
+
+    and this is how POST requests will look:
+
+
+    ```
+
+    curl -X POST "http://127.0.0.1:3000/categories" \
+
+    -H "Content-Type: multipart/form-data;" \
+
+    -H "Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19" \
+
+    -H "Api-Username: system" \
+
+    -F "name=89853c20-4409-e91a-a8ea-f6cdff96aaaa" \
+
+    -F "color=49d9e9" \
+
+    -F "text_color=f0fcfd"
+
+    ```
+
+
+    ### Boolean values
+
+
+    If an endpoint accepts a boolean be sure to specify it as a lowercase
+
+    `true` or `false` value unless noted otherwise.
+
+    '
+  license:
+    name: MIT
+    url: https://docs.discourse.org/LICENSE.txt
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: discourse.example.com
+tags:
+- name: Invites
+paths:
+  /invites.json:
+    post:
+      summary: Create an invite
+      tags:
+      - Invites
+      operationId: createInvite
+      parameters:
+      - name: Api-Key
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: Api-Username
+        in: header
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                properties:
+                  id:
+                    type: integer
+                    example: 42
+                  invite_key:
+                    type: string
+                  link:
+                    type: string
+                    example: http://example.com/invites/9045fd767efe201ca60c6658bcf14158
+                  description:
+                    type:
+                    - string
+                    - 'null'
+                  email:
+                    type: string
+                    example: not-a-user-yet@example.com
+                  domain:
+                    type:
+                    - string
+                    - 'null'
+                  emailed:
+                    type: boolean
+                    example: false
+                  can_delete_invite:
+                    type: boolean
+                  custom_message:
+                    type:
+                    - string
+                    - 'null'
+                    example: Hello world!
+                  created_at:
+                    type: string
+                    example: '2021-01-01T12:00:00.000Z'
+                  updated_at:
+                    type: string
+                    example: '2021-01-01T12:00:00.000Z'
+                  expires_at:
+                    type: string
+                    example: '2021-02-01T12:00:00.000Z'
+                  expired:
+                    type: boolean
+                    example: false
+                  topics:
+                    type: array
+                    items:
+                      type: object
+                    example: []
+                  groups:
+                    type: array
+                    items:
+                      type: object
+                    example: []
+                required:
+                - id
+                - invite_key
+                - link
+                - description
+                - email
+                - domain
+                - emailed
+                - can_delete_invite
+                - custom_message
+                - created_at
+                - updated_at
+                - expires_at
+                - expired
+                - topics
+                - groups
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                email:
+                  type: string
+                  example: not-a-user-yet@example.com
+                  description: required for email invites only
+                skip_email:
+                  type: boolean
+                  default: false
+                custom_message:
+                  type: string
+                  description: optional, for email invites
+                max_redemptions_allowed:
+                  type: integer
+                  example: 5
+                  default: 1
+                  description: optional, for link invites
+                topic_id:
+                  type: integer
+                group_ids:
+                  type: string
+                  description: 'Optional, either this or `group_names`. Comma separated
+
+                    list for multiple ids.'
+                  example: 42,43
+                group_names:
+                  type: string
+                  description: 'Optional, either this or `group_ids`. Comma separated
+
+                    list for multiple names.'
+                  example: foo,bar
+                expires_at:
+                  type: string
+                  description: 'optional, if not supplied, the invite_expiry_days site
+
+                    setting is used'
+  /invites/create-multiple.json:
+    post:
+      summary: Create multiple invites
+      tags:
+      - Invites
+      operationId: createMultipleInvites
+      parameters:
+      - name: Api-Key
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: Api-Username
+        in: header
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  num_successfully_created_invitations:
+                    type: integer
+                    example: 42
+                  num_failed_invitations:
+                    type: integer
+                    example: 42
+                  failed_invitations:
+                    type: array
+                    items: {}
+                    example: []
+                  successful_invitations:
+                    type: array
+                    example:
+                    - id: 42
+                      link: http://example.com/invites/9045fd767efe201ca60c6658bcf14158
+                      email: not-a-user-yet-1@example.com
+                      emailed: true
+                      custom_message: Hello world!
+                      topics: []
+                      groups: []
+                      created_at: '2021-01-01T12:00:00.000Z'
+                      updated_at: '2021-01-01T12:00:00.000Z'
+                      expires_at: '2021-02-01T12:00:00.000Z'
+                      expired: false
+                    - id: 42
+                      link: http://example.com/invites/c6658bcf141589045fd767efe201ca60
+                      email: not-a-user-yet-2@example.com
+                      emailed: true
+                      custom_message: Hello world!
+                      topics: []
+                      groups: []
+                      created_at: '2021-01-01T12:00:00.000Z'
+                      updated_at: '2021-01-01T12:00:00.000Z'
+                      expires_at: '2021-02-01T12:00:00.000Z'
+                      expired: false
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example:
+                  - not-a-user-yet-1@example.com
+                  - not-a-user-yet-2@example.com
+                  description: 'pass 1 email per invite to be generated. other properties
+
+                    will be shared by each invite.'
+                skip_email:
+                  type: boolean
+                  default: false
+                custom_message:
+                  type: string
+                  description: optional, for email invites
+                max_redemptions_allowed:
+                  type: integer
+                  example: 5
+                  default: 1
+                  description: optional, for link invites
+                topic_id:
+                  type: integer
+                group_ids:
+                  type: string
+                  description: 'Optional, either this or `group_names`. Comma separated
+
+                    list for multiple ids.'
+                  example: 42,43
+                group_names:
+                  type: string
+                  description: 'Optional, either this or `group_ids`. Comma separated
+
+                    list for multiple names.'
+                  example: foo,bar
+                expires_at:
+                  type: string
+                  description: 'optional, if not supplied, the invite_expiry_days site
+
+                    setting is used'
+  /t/{id}/invite.json:
+    post:
+      summary: Invite to topic
+      tags:
+      - Invites
+      operationId: inviteToTopic
+      parameters:
+      - name: Api-Key
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: Api-Username
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: topic updated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      username:
+                        type: string
+                      name:
+                        type: string
+                      avatar_template:
+                        type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: string
+                email:
+                  type: string
+  /t/{id}/invite-group.json:
+    post:
+      summary: Invite group to topic
+      tags:
+      - Invites
+      operationId: inviteGroupToTopic
+      parameters:
+      - name: Api-Key
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: Api-Username
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: invites to a PM
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  group:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                group:
+                  type: string
+                  description: The name of the group to invite
+                should_notify:
+                  type: boolean
+                  description: Whether to notify the group, it defaults to true

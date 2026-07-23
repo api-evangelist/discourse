@@ -1,0 +1,696 @@
+openapi: 3.1.0
+info:
+  title: Discourse API Documentation Admin Private Messages API
+  x-logo:
+    url: https://docs.discourse.org/logo.svg
+  version: latest
+  description: 'This page contains the documentation on how to use Discourse through API calls.
+
+
+    > Note: For any endpoints not listed you can follow the
+
+    [reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)
+
+    guide to figure out how to use an API endpoint.
+
+
+    ### Request Content-Type
+
+
+    The Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,
+
+    `multipart/form-data`, or `application/json`.
+
+
+    ### Endpoint Names and Response Content-Type
+
+
+    Most API endpoints provide the same content as their HTML counterparts. For example
+
+    the URL `/categories` serves a list of categories, the `/categories.json` API provides the
+
+    same information in JSON format.
+
+
+    Instead of sending API requests to `/categories.json` you may also send them to `/categories`
+
+    and add an `Accept: application/json` header to the request to get the JSON response.
+
+    Sending requests with the `Accept` header is necessary if you want to use URLs
+
+    for related endpoints returned by the API, such as pagination URLs.
+
+    These URLs are returned without the `.json` prefix so you need to add the header in
+
+    order to get the correct response format.
+
+
+    ### Authentication
+
+
+    Some endpoints do not require any authentication, pretty much anything else will
+
+    require you to be authenticated.
+
+
+    To become authenticated you will need to create an API Key from the admin panel.
+
+
+    Once you have your API Key you can pass it in along with your API Username
+
+    as an HTTP header like this:
+
+
+    ```
+
+    curl -X GET "http://127.0.0.1:3000/admin/users/list/active.json" \
+
+    -H "Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19" \
+
+    -H "Api-Username: system"
+
+    ```
+
+
+    and this is how POST requests will look:
+
+
+    ```
+
+    curl -X POST "http://127.0.0.1:3000/categories" \
+
+    -H "Content-Type: multipart/form-data;" \
+
+    -H "Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19" \
+
+    -H "Api-Username: system" \
+
+    -F "name=89853c20-4409-e91a-a8ea-f6cdff96aaaa" \
+
+    -F "color=49d9e9" \
+
+    -F "text_color=f0fcfd"
+
+    ```
+
+
+    ### Boolean values
+
+
+    If an endpoint accepts a boolean be sure to specify it as a lowercase
+
+    `true` or `false` value unless noted otherwise.
+
+    '
+  license:
+    name: MIT
+    url: https://docs.discourse.org/LICENSE.txt
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: discourse.example.com
+tags:
+- name: Private Messages
+paths:
+  /posts.json:
+    post:
+      summary: Creates a new topic, a new post, or a private message
+      tags:
+      - Private Messages
+      operationId: createTopicPostPM
+      parameters: []
+      responses:
+        '200':
+          description: post created
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type:
+                    - string
+                    - 'null'
+                  username:
+                    type: string
+                  avatar_template:
+                    type: string
+                  created_at:
+                    type: string
+                  raw:
+                    type: string
+                  cooked:
+                    type: string
+                  post_number:
+                    type: integer
+                  post_type:
+                    type: integer
+                  posts_count:
+                    type: integer
+                  updated_at:
+                    type: string
+                  reply_count:
+                    type: integer
+                  reply_to_post_number:
+                    type:
+                    - string
+                    - 'null'
+                  quote_count:
+                    type: integer
+                  incoming_link_count:
+                    type: integer
+                  reads:
+                    type: integer
+                  readers_count:
+                    type: integer
+                  score:
+                    type: number
+                  yours:
+                    type: boolean
+                  topic_id:
+                    type: integer
+                  topic_slug:
+                    type: string
+                  display_username:
+                    type:
+                    - string
+                    - 'null'
+                  primary_group_name:
+                    type:
+                    - string
+                    - 'null'
+                  flair_name:
+                    type:
+                    - string
+                    - 'null'
+                  flair_url:
+                    type:
+                    - string
+                    - 'null'
+                  flair_bg_color:
+                    type:
+                    - string
+                    - 'null'
+                  flair_color:
+                    type:
+                    - string
+                    - 'null'
+                  flair_group_id:
+                    type:
+                    - integer
+                    - 'null'
+                  badges_granted:
+                    type: array
+                    items: {}
+                  version:
+                    type: integer
+                  can_edit:
+                    type: boolean
+                  can_delete:
+                    type: boolean
+                  can_recover:
+                    type: boolean
+                  can_see_hidden_post:
+                    type: boolean
+                  can_wiki:
+                    type: boolean
+                  user_title:
+                    type:
+                    - string
+                    - 'null'
+                  bookmarked:
+                    type: boolean
+                  actions_summary:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      properties:
+                        id:
+                          type: integer
+                        can_act:
+                          type: boolean
+                      required:
+                      - id
+                      - can_act
+                  moderator:
+                    type: boolean
+                  admin:
+                    type: boolean
+                  staff:
+                    type: boolean
+                  user_id:
+                    type: integer
+                  draft_sequence:
+                    type: integer
+                  hidden:
+                    type: boolean
+                  trust_level:
+                    type: integer
+                  deleted_at:
+                    type:
+                    - string
+                    - 'null'
+                  user_deleted:
+                    type: boolean
+                  edit_reason:
+                    type:
+                    - string
+                    - 'null'
+                  can_view_edit_history:
+                    type: boolean
+                  wiki:
+                    type: boolean
+                  reviewable_id:
+                    type:
+                    - integer
+                    - 'null'
+                  reviewable_score_count:
+                    type: integer
+                  reviewable_score_pending_count:
+                    type: integer
+                  post_url:
+                    type: string
+                  post_localizations:
+                    type: array
+                    items: {}
+                  mentioned_users:
+                    type: array
+                    items: {}
+                required:
+                - id
+                - name
+                - username
+                - avatar_template
+                - created_at
+                - cooked
+                - post_number
+                - post_type
+                - posts_count
+                - updated_at
+                - reply_count
+                - reply_to_post_number
+                - quote_count
+                - incoming_link_count
+                - reads
+                - readers_count
+                - score
+                - yours
+                - topic_id
+                - topic_slug
+                - display_username
+                - primary_group_name
+                - flair_name
+                - flair_url
+                - flair_bg_color
+                - flair_color
+                - version
+                - can_edit
+                - can_delete
+                - can_recover
+                - can_wiki
+                - user_title
+                - bookmarked
+                - actions_summary
+                - moderator
+                - admin
+                - staff
+                - user_id
+                - draft_sequence
+                - hidden
+                - trust_level
+                - deleted_at
+                - user_deleted
+                - edit_reason
+                - can_view_edit_history
+                - wiki
+                - reviewable_id
+                - reviewable_score_count
+                - reviewable_score_pending_count
+                - post_url
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                title:
+                  type: string
+                  description: Required if creating a new topic or new private message.
+                raw:
+                  type: string
+                topic_id:
+                  type: integer
+                  description: Required if creating a new post.
+                category:
+                  type: integer
+                  description: 'Optional if creating a new topic, and ignored if creating
+
+                    a new post.'
+                target_recipients:
+                  type: string
+                  description: Required for private message, comma separated.
+                  example: blake,sam
+                target_usernames:
+                  type: string
+                  description: Deprecated. Use target_recipients instead.
+                  deprecated: true
+                archetype:
+                  type: string
+                  description: Required for new private message.
+                  example: private_message
+                created_at:
+                  type: string
+                reply_to_post_number:
+                  type: integer
+                  description: Optional, the post number to reply to inside a topic.
+                embed_url:
+                  type: string
+                  description: 'Provide a URL from a remote system to associate a forum
+
+                    topic with that URL, typically for using Discourse as a comments
+
+                    system for an external blog.'
+                external_id:
+                  type: string
+                  description: 'Provide an external_id from a remote system to associate
+
+                    a forum topic with that id.'
+                auto_track:
+                  type: boolean
+                  description: 'If false, the user will not track the topic. By default,
+
+                    the user will track the topic.'
+              required:
+              - raw
+  /topics/private-messages/{username}.json:
+    get:
+      summary: Get a list of private messages for a user
+      tags:
+      - Private Messages
+      operationId: listUserPrivateMessages
+      parameters:
+      - name: username
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: private messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  users:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        username:
+                          type: string
+                        name:
+                          type: string
+                        avatar_template:
+                          type: string
+                  primary_groups:
+                    type: array
+                    items: {}
+                  topic_list:
+                    type: object
+                    properties:
+                      can_create_topic:
+                        type: boolean
+                      draft:
+                        type:
+                        - string
+                        - 'null'
+                      draft_key:
+                        type: string
+                      draft_sequence:
+                        type: integer
+                      per_page:
+                        type: integer
+                      topics:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            title:
+                              type: string
+                            fancy_title:
+                              type: string
+                            slug:
+                              type: string
+                            posts_count:
+                              type: integer
+                            reply_count:
+                              type: integer
+                            highest_post_number:
+                              type: integer
+                            image_url:
+                              type:
+                              - string
+                              - 'null'
+                            created_at:
+                              type: string
+                            last_posted_at:
+                              type: string
+                            bumped:
+                              type: boolean
+                            bumped_at:
+                              type: string
+                            archetype:
+                              type: string
+                            unseen:
+                              type: boolean
+                            last_read_post_number:
+                              type: integer
+                            unread_posts:
+                              type: integer
+                            pinned:
+                              type: boolean
+                            unpinned:
+                              type:
+                              - string
+                              - 'null'
+                            visible:
+                              type: boolean
+                            closed:
+                              type: boolean
+                            archived:
+                              type: boolean
+                            notification_level:
+                              type: integer
+                            bookmarked:
+                              type: boolean
+                            liked:
+                              type: boolean
+                            views:
+                              type: integer
+                            like_count:
+                              type: integer
+                            has_summary:
+                              type: boolean
+                            last_poster_username:
+                              type: string
+                            category_id:
+                              type:
+                              - string
+                              - 'null'
+                            pinned_globally:
+                              type: boolean
+                            featured_link:
+                              type:
+                              - string
+                              - 'null'
+                            allowed_user_count:
+                              type: integer
+                            posters:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  extras:
+                                    type: string
+                                  description:
+                                    type: string
+                                  user_id:
+                                    type: integer
+                                  primary_group_id:
+                                    type:
+                                    - integer
+                                    - 'null'
+                            participants:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  extras:
+                                    type: string
+                                  description:
+                                    type:
+                                    - string
+                                    - 'null'
+                                  user_id:
+                                    type: integer
+                                  primary_group_id:
+                                    type:
+                                    - integer
+                                    - 'null'
+  /topics/private-messages-sent/{username}.json:
+    get:
+      summary: Get a list of private messages sent for a user
+      tags:
+      - Private Messages
+      operationId: getUserSentPrivateMessages
+      parameters:
+      - name: username
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: private messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  users:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        username:
+                          type: string
+                        name:
+                          type:
+                          - string
+                          - 'null'
+                        avatar_template:
+                          type: string
+                  primary_groups:
+                    type: array
+                    items: {}
+                  topic_list:
+                    type: object
+                    properties:
+                      can_create_topic:
+                        type: boolean
+                      draft:
+                        type:
+                        - string
+                        - 'null'
+                      draft_key:
+                        type: string
+                      draft_sequence:
+                        type: integer
+                      per_page:
+                        type: integer
+                      topics:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            title:
+                              type: string
+                            fancy_title:
+                              type: string
+                            slug:
+                              type: string
+                            posts_count:
+                              type: integer
+                            reply_count:
+                              type: integer
+                            highest_post_number:
+                              type: integer
+                            image_url:
+                              type:
+                              - string
+                              - 'null'
+                            created_at:
+                              type: string
+                            last_posted_at:
+                              type: string
+                            bumped:
+                              type: boolean
+                            bumped_at:
+                              type: string
+                            archetype:
+                              type: string
+                            unseen:
+                              type: boolean
+                            last_read_post_number:
+                              type: integer
+                            unread_posts:
+                              type: integer
+                            pinned:
+                              type: boolean
+                            unpinned:
+                              type:
+                              - string
+                              - 'null'
+                            visible:
+                              type: boolean
+                            closed:
+                              type: boolean
+                            archived:
+                              type: boolean
+                            notification_level:
+                              type: integer
+                            bookmarked:
+                              type: boolean
+                            liked:
+                              type: boolean
+                            views:
+                              type: integer
+                            like_count:
+                              type: integer
+                            has_summary:
+                              type: boolean
+                            last_poster_username:
+                              type: string
+                            category_id:
+                              type:
+                              - string
+                              - 'null'
+                            pinned_globally:
+                              type: boolean
+                            featured_link:
+                              type:
+                              - string
+                              - 'null'
+                            allowed_user_count:
+                              type: integer
+                            posters:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  extras:
+                                    type: string
+                                  description:
+                                    type: string
+                                  user_id:
+                                    type: integer
+                                  primary_group_id:
+                                    type:
+                                    - integer
+                                    - 'null'
+                            participants:
+                              type: array
+                              items: {}
