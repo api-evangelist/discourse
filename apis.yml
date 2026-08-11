@@ -256,6 +256,9 @@ apis:
   - type: GitHubRepo
     url: https://github.com/discourse/discourse_api
 common:
+  - type: License
+    name: MIT
+    url: https://github.com/discourse/discourse_api/blob/main/LICENSE
   - type: AgenticAccess
     url: agentic-access/discourse-agentic-access.yml
   - type: TrustCenter
