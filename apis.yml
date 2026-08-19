@@ -28,7 +28,7 @@ tags:
   - Open Source
 created: '2023-11-13'
 modified: '2026-05-19'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 apis:
 - aid: discourse:discourse-admin-api
   name: Discourse Admin API
