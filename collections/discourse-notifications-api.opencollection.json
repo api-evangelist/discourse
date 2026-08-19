@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Discourse API Documentation Admin Notifications API",
+    "version": "latest"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Notifications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the notifications that belong to the current user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/notifications.json"
+          },
+          "docs": "Get the notifications that belong to the current user"
+        },
+        {
+          "info": {
+            "name": "Mark notifications as read",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{defaultHost}/notifications/mark-read.json",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Mark notifications as read"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

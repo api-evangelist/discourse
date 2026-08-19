@@ -1,0 +1,607 @@
+{
+  "item": [
+    {
+      "id": "f6bdbd80-fe81-4e55-8a1e-840e7ea85b5a",
+      "name": "Invites",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d38778d2-e7ff-42b5-a976-68936adeaf49",
+          "name": "Create an invite",
+          "request": {
+            "name": "Create an invite",
+            "description": {},
+            "url": {
+              "path": [
+                "invites.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<string>\",\n  \"skip_email\": false,\n  \"custom_message\": \"<string>\",\n  \"max_redemptions_allowed\": 1,\n  \"topic_id\": \"<integer>\",\n  \"group_ids\": \"<string>\",\n  \"group_names\": \"<string>\",\n  \"expires_at\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9d97712f-9f58-4a0f-97b1-be9919a28161",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invites.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"not-a-user-yet@example.com\",\n  \"skip_email\": false,\n  \"custom_message\": \"<string>\",\n  \"max_redemptions_allowed\": 5,\n  \"topic_id\": \"<integer>\",\n  \"group_ids\": \"42,43\",\n  \"group_names\": \"foo,bar\",\n  \"expires_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 42,\n  \"invite_key\": \"string\",\n  \"link\": \"http://example.com/invites/9045fd767efe201ca60c6658bcf14158\",\n  \"description\": \"string\",\n  \"email\": \"not-a-user-yet@example.com\",\n  \"domain\": \"string\",\n  \"emailed\": false,\n  \"can_delete_invite\": false,\n  \"custom_message\": \"Hello world!\",\n  \"created_at\": \"2021-01-01T12:00:00.000Z\",\n  \"updated_at\": \"2021-01-01T12:00:00.000Z\",\n  \"expires_at\": \"2021-02-01T12:00:00.000Z\",\n  \"expired\": false,\n  \"topics\": [],\n  \"groups\": []\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2795a7f0-d042-4534-af15-418c984cb1c3",
+          "name": "Create multiple invites",
+          "request": {
+            "name": "Create multiple invites",
+            "description": {},
+            "url": {
+              "path": [
+                "invites",
+                "create-multiple.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<string>\",\n  \"skip_email\": false,\n  \"custom_message\": \"<string>\",\n  \"max_redemptions_allowed\": 1,\n  \"topic_id\": \"<integer>\",\n  \"group_ids\": \"<string>\",\n  \"group_names\": \"<string>\",\n  \"expires_at\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "19077061-0a76-4d1c-83d7-949876607fde",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invites",
+                    "create-multiple.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"skip_email\": false,\n  \"custom_message\": \"<string>\",\n  \"max_redemptions_allowed\": 5,\n  \"topic_id\": \"<integer>\",\n  \"group_ids\": \"42,43\",\n  \"group_names\": \"foo,bar\",\n  \"expires_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"num_successfully_created_invitations\": 42,\n  \"num_failed_invitations\": 42,\n  \"successful_invitations\": [\n    {\n      \"id\": 42,\n      \"link\": \"http://example.com/invites/9045fd767efe201ca60c6658bcf14158\",\n      \"email\": \"not-a-user-yet-1@example.com\",\n      \"emailed\": true,\n      \"custom_message\": \"Hello world!\",\n      \"topics\": [],\n      \"groups\": [],\n      \"created_at\": \"2021-01-01T12:00:00.000Z\",\n      \"updated_at\": \"2021-01-01T12:00:00.000Z\",\n      \"expires_at\": \"2021-02-01T12:00:00.000Z\",\n      \"expired\": false\n    },\n    {\n      \"id\": 42,\n      \"link\": \"http://example.com/invites/c6658bcf141589045fd767efe201ca60\",\n      \"email\": \"not-a-user-yet-2@example.com\",\n      \"emailed\": true,\n      \"custom_message\": \"Hello world!\",\n      \"topics\": [],\n      \"groups\": [],\n      \"created_at\": \"2021-01-01T12:00:00.000Z\",\n      \"updated_at\": \"2021-01-01T12:00:00.000Z\",\n      \"expires_at\": \"2021-02-01T12:00:00.000Z\",\n      \"expired\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f4afe391-61e6-482e-ad8b-01c398074b02",
+          "name": "Invite to topic",
+          "request": {
+            "name": "Invite to topic",
+            "description": {},
+            "url": {
+              "path": [
+                "t",
+                ":id",
+                "invite.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e46c2458-d176-472b-85b2-311a29006212",
+              "name": "topic updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "t",
+                    ":id",
+                    "invite.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"user\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"user\": {\n    \"id\": 4122,\n    \"username\": \"string\",\n    \"name\": \"string\",\n    \"avatar_template\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8cb3b1f2-f4f0-493b-b57e-0100fcaee738",
+          "name": "Invite group to topic",
+          "request": {
+            "name": "Invite group to topic",
+            "description": {},
+            "url": {
+              "path": [
+                "t",
+                ":id",
+                "invite-group.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"group\": \"<string>\",\n  \"should_notify\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0f1cfb9d-4229-450f-b852-43170c5cd6dc",
+              "name": "invites to a PM",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "t",
+                    ":id",
+                    "invite-group.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"group\": \"<string>\",\n  \"should_notify\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"group\": {\n    \"id\": 6697,\n    \"name\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "discourse.example.com",
+      "key": "defaultHost"
+    },
+    {
+      "type": "string",
+      "value": "https://{{defaultHost}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8d9eb904-1cd6-44c0-8c91-71ebde8e182a",
+    "name": "Discourse API Documentation Admin Invites API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This page contains the documentation on how to use Discourse through API calls.\n\n> Note: For any endpoints not listed you can follow the\n[reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)\nguide to figure out how to use an API endpoint.\n\n### Request Content-Type\n\nThe Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,\n`multipart/form-data`, or `application/json`.\n\n### Endpoint Names and Response Content-Type\n\nMost API endpoints provide the same content as their HTML counterparts. For example\nthe URL `/categories` serves a list of categories, the `/categories.json` API provides the\nsame information in JSON format.\n\nInstead of sending API requests to `/categories.json` you may also send them to `/categories`\nand add an `Accept: application/json` header to the request to get the JSON response.\nSending requests with the `Accept` header is necessary if you want to use URLs\nfor related endpoints returned by the API, such as pagination URLs.\nThese URLs are returned without the `.json` prefix so you need to add the header in\norder to get the correct response format.\n\n### Authentication\n\nSome endpoints do not require any authentication, pretty much anything else will\nrequire you to be authenticated.\n\nTo become authenticated you will need to create an API Key from the admin panel.\n\nOnce you have your API Key you can pass it in along with your API Username\nas an HTTP header like this:\n\n```\ncurl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\"\n```\n\nand this is how POST requests will look:\n\n```\ncurl -X POST \"http://127.0.0.1:3000/categories\" \\\n-H \"Content-Type: multipart/form-data;\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\" \\\n-F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\\n-F \"color=49d9e9\" \\\n-F \"text_color=f0fcfd\"\n```\n\n### Boolean values\n\nIf an endpoint accepts a boolean be sure to specify it as a lowercase\n`true` or `false` value unless noted otherwise.\n",
+      "type": "text/plain"
+    }
+  }
+}

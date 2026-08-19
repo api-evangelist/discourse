@@ -1,0 +1,185 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Discourse API Documentation Admin Groups API",
+    "version": "latest"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{defaultHost}/admin/groups.json",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a group"
+        },
+        {
+          "info": {
+            "name": "Delete a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{defaultHost}/admin/groups/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a group"
+        },
+        {
+          "info": {
+            "name": "Get a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/groups/:name.json",
+            "params": [
+              {
+                "name": "name",
+                "value": "name",
+                "type": "path",
+                "description": "Use group name instead of id"
+              }
+            ]
+          },
+          "docs": "Get a group"
+        },
+        {
+          "info": {
+            "name": "Update a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{defaultHost}/groups/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a group"
+        },
+        {
+          "info": {
+            "name": "Get a group by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/groups/by-id/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "name",
+                "type": "path",
+                "description": "Use group name instead of id"
+              }
+            ]
+          },
+          "docs": "Get a group by id"
+        },
+        {
+          "info": {
+            "name": "List group members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/groups/:name/members.json",
+            "params": [
+              {
+                "name": "name",
+                "value": "name",
+                "type": "path",
+                "description": "Use group name instead of id"
+              }
+            ]
+          },
+          "docs": "List group members"
+        },
+        {
+          "info": {
+            "name": "Add group members",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{defaultHost}/groups/:id/members.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add group members"
+        },
+        {
+          "info": {
+            "name": "Remove group members",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{defaultHost}/groups/:id/members.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove group members"
+        },
+        {
+          "info": {
+            "name": "List groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/groups.json"
+          },
+          "docs": "List groups"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

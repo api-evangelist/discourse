@@ -1,0 +1,3046 @@
+{
+  "item": [
+    {
+      "id": "7fba17c0-d1f0-4fab-81a8-6ea0d036f10c",
+      "name": "Users",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fde60d8b-baf8-467c-9912-94f556e09523",
+          "name": "List badges for a user",
+          "request": {
+            "name": "List badges for a user",
+            "description": {},
+            "url": {
+              "path": [
+                "user-badges",
+                "{{username}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "128d0da2-3faa-4a60-a164-2af4aa4e596b",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user-badges",
+                    "{{username}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"user_badges\": [\n    {\n      \"id\": 9280,\n      \"granted_at\": \"string\",\n      \"grouping_position\": 8843,\n      \"is_favorite\": \"string\",\n      \"can_favorite\": true,\n      \"badge_id\": 5364,\n      \"granted_by_id\": 1566\n    },\n    {\n      \"id\": 6992,\n      \"granted_at\": \"string\",\n      \"grouping_position\": 4316,\n      \"is_favorite\": \"string\",\n      \"can_favorite\": true,\n      \"badge_id\": 1914,\n      \"granted_by_id\": 4682\n    }\n  ],\n  \"badges\": [\n    {\n      \"id\": 2797,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"grant_count\": 2323,\n      \"allow_title\": true,\n      \"multiple_grant\": false,\n      \"icon\": \"string\",\n      \"image_url\": \"string\",\n      \"listable\": false,\n      \"enabled\": false,\n      \"badge_grouping_id\": 7692,\n      \"system\": false,\n      \"slug\": \"string\",\n      \"manually_grantable\": false,\n      \"badge_type_id\": 4080\n    },\n    {\n      \"id\": 7678,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"grant_count\": 9475,\n      \"allow_title\": false,\n      \"multiple_grant\": false,\n      \"icon\": \"string\",\n      \"image_url\": \"string\",\n      \"listable\": true,\n      \"enabled\": false,\n      \"badge_grouping_id\": 5380,\n      \"system\": true,\n      \"slug\": \"string\",\n      \"manually_grantable\": true,\n      \"badge_type_id\": 388\n    }\n  ],\n  \"badge_types\": [\n    {\n      \"id\": 5575,\n      \"name\": \"string\",\n      \"sort_order\": 5760\n    },\n    {\n      \"id\": 7643,\n      \"name\": \"string\",\n      \"sort_order\": 7184\n    }\n  ],\n  \"granted_bies\": [\n    {\n      \"id\": 6319,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\",\n      \"flair_name\": \"string\",\n      \"admin\": false,\n      \"moderator\": true,\n      \"trust_level\": 2411\n    },\n    {\n      \"id\": 4925,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\",\n      \"flair_name\": \"string\",\n      \"admin\": false,\n      \"moderator\": false,\n      \"trust_level\": 9970\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "025eae9d-7fbb-454c-9123-aadb328458a9",
+          "name": "Creates a user",
+          "request": {
+            "name": "Creates a user",
+            "description": {},
+            "url": {
+              "path": [
+                "users.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"approved\": \"<boolean>\",\n  \"user_fields\": {\n    \"1\": \"<boolean>\",\n    \"key_0\": 4784\n  },\n  \"external_ids\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "58a51494-0de4-483c-b6e6-caaa3ca551dd",
+              "name": "user created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"approved\": \"<boolean>\",\n  \"user_fields\": {\n    \"1\": \"<boolean>\",\n    \"key_0\": true,\n    \"key_1\": 4050.2505762274,\n    \"key_2\": 1581,\n    \"key_3\": \"string\"\n  },\n  \"external_ids\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"active\": true,\n  \"message\": \"string\",\n  \"user_id\": 9262\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e56616b8-84e8-45e6-b957-27944865ff8b",
+          "name": "Get a single user by username",
+          "request": {
+            "name": "Get a single user by username",
+            "description": {},
+            "url": {
+              "path": [
+                "u",
+                "{{username}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d1d1b752-f7c8-4468-a224-703c654f034d",
+              "name": "user with primary group response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "u",
+                    "{{username}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"user_badges\": [],\n  \"user\": {\n    \"id\": 5640,\n    \"username\": \"string\",\n    \"name\": \"string\",\n    \"avatar_template\": \"string\",\n    \"last_posted_at\": \"string\",\n    \"last_seen_at\": \"string\",\n    \"created_at\": \"string\",\n    \"ignored\": false,\n    \"muted\": true,\n    \"can_ignore_user\": true,\n    \"can_mute_user\": true,\n    \"can_send_private_messages\": false,\n    \"can_send_private_message_to_user\": false,\n    \"trust_level\": 2397,\n    \"moderator\": false,\n    \"admin\": true,\n    \"title\": \"string\",\n    \"badge_count\": 2324,\n    \"custom_fields\": {\n      \"first_name\": \"string\"\n    },\n    \"time_read\": 6817,\n    \"recent_time_read\": 6533,\n    \"primary_group_id\": 5089,\n    \"primary_group_name\": \"string\",\n    \"flair_group_id\": 4412,\n    \"flair_name\": \"string\",\n    \"flair_url\": \"string\",\n    \"flair_bg_color\": \"string\",\n    \"flair_color\": \"string\",\n    \"featured_topic\": \"string\",\n    \"staged\": true,\n    \"can_edit\": true,\n    \"can_edit_username\": true,\n    \"can_edit_email\": false,\n    \"can_edit_name\": false,\n    \"uploaded_avatar_id\": 345,\n    \"has_title_badges\": true,\n    \"pending_count\": 7694,\n    \"profile_view_count\": 9218,\n    \"second_factor_enabled\": true,\n    \"can_upload_profile_header\": false,\n    \"can_upload_user_card_background\": true,\n    \"post_count\": 9535,\n    \"topic_count\": 6439,\n    \"can_be_deleted\": false,\n    \"can_delete_all_posts\": false,\n    \"locale\": \"string\",\n    \"system_avatar_upload_id\": \"string\",\n    \"system_avatar_template\": \"string\",\n    \"mailing_list_posts_per_day\": 2946,\n    \"can_change_bio\": false,\n    \"can_change_location\": false,\n    \"can_change_website\": false,\n    \"can_change_tracking_preferences\": false,\n    \"user_api_keys\": \"string\",\n    \"user_auth_tokens\": [\n      {\n        \"id\": 4171,\n        \"client_ip\": \"string\",\n        \"location\": \"string\",\n        \"browser\": \"string\",\n        \"device\": \"string\",\n        \"os\": \"string\",\n        \"icon\": \"string\",\n        \"created_at\": \"string\",\n        \"seen_at\": \"string\",\n        \"is_active\": false\n      },\n      {\n        \"id\": 5304,\n        \"client_ip\": \"string\",\n        \"location\": \"string\",\n        \"browser\": \"string\",\n        \"device\": \"string\",\n        \"os\": \"string\",\n        \"icon\": \"string\",\n        \"created_at\": \"string\",\n        \"seen_at\": \"string\",\n        \"is_active\": false\n      }\n    ],\n    \"user_notification_schedule\": {\n      \"enabled\": false,\n      \"day_0_start_time\": 3776,\n      \"day_0_end_time\": 1893,\n      \"day_1_start_time\": 513,\n      \"day_1_end_time\": 1297,\n      \"day_2_start_time\": 2275,\n      \"day_2_end_time\": 2450,\n      \"day_3_start_time\": 6800,\n      \"day_3_end_time\": 9476,\n      \"day_4_start_time\": 6523,\n      \"day_4_end_time\": 469,\n      \"day_5_start_time\": 4658,\n      \"day_5_end_time\": 9754,\n      \"day_6_start_time\": 192,\n      \"day_6_end_time\": 8602\n    },\n    \"use_logo_small_as_avatar\": false,\n    \"invited_by\": \"string\",\n    \"groups\": [\n      {\n        \"id\": 6949,\n        \"automatic\": false,\n        \"name\": \"string\",\n        \"display_name\": \"string\",\n        \"user_count\": 8871,\n        \"mentionable_level\": 163,\n        \"messageable_level\": 4587,\n        \"visibility_level\": 6043,\n        \"primary_group\": false,\n        \"title\": \"string\",\n        \"grant_trust_level\": \"string\",\n        \"incoming_email\": \"string\",\n        \"has_messages\": true,\n        \"flair_url\": \"string\",\n        \"flair_bg_color\": \"string\",\n        \"flair_color\": \"string\",\n        \"bio_raw\": \"string\",\n        \"bio_cooked\": \"string\",\n        \"bio_excerpt\": \"string\",\n        \"public_admission\": true,\n        \"public_exit\": true,\n        \"allow_membership_requests\": true,\n        \"full_name\": \"string\",\n        \"default_notification_level\": 5606,\n        \"membership_request_template\": \"string\",\n        \"members_visibility_level\": 3805,\n        \"can_see_members\": false,\n        \"can_admin_group\": true,\n        \"publish_read_state\": true\n      },\n      {\n        \"id\": 1064,\n        \"automatic\": false,\n        \"name\": \"string\",\n        \"display_name\": \"string\",\n        \"user_count\": 7065,\n        \"mentionable_level\": 2154,\n        \"messageable_level\": 2315,\n        \"visibility_level\": 9854,\n        \"primary_group\": false,\n        \"title\": \"string\",\n        \"grant_trust_level\": \"string\",\n        \"incoming_email\": \"string\",\n        \"has_messages\": false,\n        \"flair_url\": \"string\",\n        \"flair_bg_color\": \"string\",\n        \"flair_color\": \"string\",\n        \"bio_raw\": \"string\",\n        \"bio_cooked\": \"string\",\n        \"bio_excerpt\": \"string\",\n        \"public_admission\": true,\n        \"public_exit\": false,\n        \"allow_membership_requests\": true,\n        \"full_name\": \"string\",\n        \"default_notification_level\": 1641,\n        \"membership_request_template\": \"string\",\n        \"members_visibility_level\": 6328,\n        \"can_see_members\": true,\n        \"can_admin_group\": true,\n        \"publish_read_state\": true\n      }\n    ],\n    \"group_users\": [\n      {\n        \"group_id\": 664,\n        \"user_id\": 7899,\n        \"notification_level\": 4388,\n        \"owner\": false\n      },\n      {\n        \"group_id\": 281,\n        \"user_id\": 2797,\n        \"notification_level\": 5633,\n        \"owner\": false\n      }\n    ],\n    \"user_option\": {\n      \"user_id\": 9589,\n      \"mailing_list_mode\": false,\n      \"mailing_list_mode_frequency\": 2442,\n      \"email_digests\": true,\n      \"email_level\": 5210,\n      \"email_messages_level\": 4211,\n      \"external_links_in_new_tab\": true,\n      \"color_scheme_id\": \"string\",\n      \"dark_scheme_id\": \"string\",\n      \"dynamic_favicon\": true,\n      \"enable_quoting\": true,\n      \"enable_smart_lists\": false,\n      \"enable_markdown_monospace_font\": true,\n      \"enable_defer\": true,\n      \"digest_after_minutes\": 3460,\n      \"automatically_unpin_topics\": true,\n      \"auto_track_topics_after_msecs\": 9110,\n      \"notification_level_when_replying\": 6198,\n      \"new_topic_duration_minutes\": 424,\n      \"email_previous_replies\": 3721,\n      \"email_in_reply_to\": true,\n      \"like_notification_frequency\": 5545,\n      \"notify_on_linked_posts\": true,\n      \"include_tl0_in_digests\": true,\n      \"theme_key_seq\": 8602,\n      \"allow_private_messages\": false,\n      \"enable_allowed_pm_users\": false,\n      \"homepage_id\": \"string\",\n      \"hide_profile_and_presence\": true,\n      \"hide_profile\": true,\n      \"hide_presence\": false,\n      \"text_size\": \"string\",\n      \"text_size_seq\": 3889,\n      \"title_count_mode\": \"string\",\n      \"timezone\": \"string\",\n      \"skip_new_user_tips\": true,\n      \"topics_unread_when_closed\": false,\n      \"interface_color_mode\": 4869,\n      \"bookmark_auto_delete_preference\": 8576,\n      \"default_calendar\": \"string\",\n      \"oldest_search_log_date\": \"string\",\n      \"sidebar_link_to_filtered_list\": true,\n      \"sidebar_show_count_of_new_items\": true,\n      \"watched_precedence_over_muted\": true,\n      \"composition_mode\": 7154\n    },\n    \"can_ignore_users\": true,\n    \"can_mute_users\": false,\n    \"second_factor_backup_enabled\": false,\n    \"user_fields\": {\n      \"1\": \"string\",\n      \"2\": \"string\"\n    },\n    \"pending_posts_count\": 850,\n    \"display_sidebar_tags\": false,\n    \"can_pick_theme_with_custom_homepage\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30b185eb-51b7-4cac-901c-130c62fc3e83",
+          "name": "Update a user",
+          "request": {
+            "name": "Update a user",
+            "description": {},
+            "url": {
+              "path": [
+                "u",
+                "{{username}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"external_ids\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f7f71ccd-a708-4c06-939a-89772121f5f5",
+              "name": "user updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "u",
+                    "{{username}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"external_ids\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"string\",\n  \"user\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d3be1982-7546-4e89-bd3a-c9268621c725",
+          "name": "Get a user by external_id",
+          "request": {
+            "name": "Get a user by external_id",
+            "description": {},
+            "url": {
+              "path": [
+                "u",
+                "by-external",
+                "{{external_id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "062a1707-6f5f-4fed-9829-6b0307fd0609",
+              "name": "user response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "u",
+                    "by-external",
+                    "{{external_id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"user_badges\": [],\n  \"user\": {\n    \"id\": 5640,\n    \"username\": \"string\",\n    \"name\": \"string\",\n    \"avatar_template\": \"string\",\n    \"last_posted_at\": \"string\",\n    \"last_seen_at\": \"string\",\n    \"created_at\": \"string\",\n    \"ignored\": false,\n    \"muted\": true,\n    \"can_ignore_user\": true,\n    \"can_mute_user\": true,\n    \"can_send_private_messages\": false,\n    \"can_send_private_message_to_user\": false,\n    \"trust_level\": 2397,\n    \"moderator\": false,\n    \"admin\": true,\n    \"title\": \"string\",\n    \"badge_count\": 2324,\n    \"custom_fields\": {\n      \"first_name\": \"string\"\n    },\n    \"time_read\": 6817,\n    \"recent_time_read\": 6533,\n    \"primary_group_id\": 5089,\n    \"primary_group_name\": \"string\",\n    \"flair_group_id\": 4412,\n    \"flair_name\": \"string\",\n    \"flair_url\": \"string\",\n    \"flair_bg_color\": \"string\",\n    \"flair_color\": \"string\",\n    \"featured_topic\": \"string\",\n    \"staged\": true,\n    \"can_edit\": true,\n    \"can_edit_username\": true,\n    \"can_edit_email\": false,\n    \"can_edit_name\": false,\n    \"uploaded_avatar_id\": 345,\n    \"has_title_badges\": true,\n    \"pending_count\": 7694,\n    \"profile_view_count\": 9218,\n    \"second_factor_enabled\": true,\n    \"can_upload_profile_header\": false,\n    \"can_upload_user_card_background\": true,\n    \"post_count\": 9535,\n    \"topic_count\": 6439,\n    \"can_be_deleted\": false,\n    \"can_delete_all_posts\": false,\n    \"locale\": \"string\",\n    \"system_avatar_upload_id\": \"string\",\n    \"system_avatar_template\": \"string\",\n    \"mailing_list_posts_per_day\": 2946,\n    \"can_change_bio\": false,\n    \"can_change_location\": false,\n    \"can_change_website\": false,\n    \"can_change_tracking_preferences\": false,\n    \"user_api_keys\": \"string\",\n    \"user_auth_tokens\": [\n      {\n        \"id\": 4171,\n        \"client_ip\": \"string\",\n        \"location\": \"string\",\n        \"browser\": \"string\",\n        \"device\": \"string\",\n        \"os\": \"string\",\n        \"icon\": \"string\",\n        \"created_at\": \"string\",\n        \"seen_at\": \"string\",\n        \"is_active\": false\n      },\n      {\n        \"id\": 5304,\n        \"client_ip\": \"string\",\n        \"location\": \"string\",\n        \"browser\": \"string\",\n        \"device\": \"string\",\n        \"os\": \"string\",\n        \"icon\": \"string\",\n        \"created_at\": \"string\",\n        \"seen_at\": \"string\",\n        \"is_active\": false\n      }\n    ],\n    \"user_notification_schedule\": {\n      \"enabled\": false,\n      \"day_0_start_time\": 3776,\n      \"day_0_end_time\": 1893,\n      \"day_1_start_time\": 513,\n      \"day_1_end_time\": 1297,\n      \"day_2_start_time\": 2275,\n      \"day_2_end_time\": 2450,\n      \"day_3_start_time\": 6800,\n      \"day_3_end_time\": 9476,\n      \"day_4_start_time\": 6523,\n      \"day_4_end_time\": 469,\n      \"day_5_start_time\": 4658,\n      \"day_5_end_time\": 9754,\n      \"day_6_start_time\": 192,\n      \"day_6_end_time\": 8602\n    },\n    \"use_logo_small_as_avatar\": false,\n    \"invited_by\": \"string\",\n    \"groups\": [\n      {\n        \"id\": 6949,\n        \"automatic\": false,\n        \"name\": \"string\",\n        \"display_name\": \"string\",\n        \"user_count\": 8871,\n        \"mentionable_level\": 163,\n        \"messageable_level\": 4587,\n        \"visibility_level\": 6043,\n        \"primary_group\": false,\n        \"title\": \"string\",\n        \"grant_trust_level\": \"string\",\n        \"incoming_email\": \"string\",\n        \"has_messages\": true,\n        \"flair_url\": \"string\",\n        \"flair_bg_color\": \"string\",\n        \"flair_color\": \"string\",\n        \"bio_raw\": \"string\",\n        \"bio_cooked\": \"string\",\n        \"bio_excerpt\": \"string\",\n        \"public_admission\": true,\n        \"public_exit\": true,\n        \"allow_membership_requests\": true,\n        \"full_name\": \"string\",\n        \"default_notification_level\": 5606,\n        \"membership_request_template\": \"string\",\n        \"members_visibility_level\": 3805,\n        \"can_see_members\": false,\n        \"can_admin_group\": true,\n        \"publish_read_state\": true\n      },\n      {\n        \"id\": 1064,\n        \"automatic\": false,\n        \"name\": \"string\",\n        \"display_name\": \"string\",\n        \"user_count\": 7065,\n        \"mentionable_level\": 2154,\n        \"messageable_level\": 2315,\n        \"visibility_level\": 9854,\n        \"primary_group\": false,\n        \"title\": \"string\",\n        \"grant_trust_level\": \"string\",\n        \"incoming_email\": \"string\",\n        \"has_messages\": false,\n        \"flair_url\": \"string\",\n        \"flair_bg_color\": \"string\",\n        \"flair_color\": \"string\",\n        \"bio_raw\": \"string\",\n        \"bio_cooked\": \"string\",\n        \"bio_excerpt\": \"string\",\n        \"public_admission\": true,\n        \"public_exit\": false,\n        \"allow_membership_requests\": true,\n        \"full_name\": \"string\",\n        \"default_notification_level\": 1641,\n        \"membership_request_template\": \"string\",\n        \"members_visibility_level\": 6328,\n        \"can_see_members\": true,\n        \"can_admin_group\": true,\n        \"publish_read_state\": true\n      }\n    ],\n    \"group_users\": [\n      {\n        \"group_id\": 664,\n        \"user_id\": 7899,\n        \"notification_level\": 4388,\n        \"owner\": false\n      },\n      {\n        \"group_id\": 281,\n        \"user_id\": 2797,\n        \"notification_level\": 5633,\n        \"owner\": false\n      }\n    ],\n    \"user_option\": {\n      \"user_id\": 9589,\n      \"mailing_list_mode\": false,\n      \"mailing_list_mode_frequency\": 2442,\n      \"email_digests\": true,\n      \"email_level\": 5210,\n      \"email_messages_level\": 4211,\n      \"external_links_in_new_tab\": true,\n      \"color_scheme_id\": \"string\",\n      \"dark_scheme_id\": \"string\",\n      \"dynamic_favicon\": true,\n      \"enable_quoting\": true,\n      \"enable_smart_lists\": false,\n      \"enable_markdown_monospace_font\": true,\n      \"enable_defer\": true,\n      \"digest_after_minutes\": 3460,\n      \"automatically_unpin_topics\": true,\n      \"auto_track_topics_after_msecs\": 9110,\n      \"notification_level_when_replying\": 6198,\n      \"new_topic_duration_minutes\": 424,\n      \"email_previous_replies\": 3721,\n      \"email_in_reply_to\": true,\n      \"like_notification_frequency\": 5545,\n      \"notify_on_linked_posts\": true,\n      \"include_tl0_in_digests\": true,\n      \"theme_key_seq\": 8602,\n      \"allow_private_messages\": false,\n      \"enable_allowed_pm_users\": false,\n      \"homepage_id\": \"string\",\n      \"hide_profile_and_presence\": true,\n      \"hide_profile\": true,\n      \"hide_presence\": false,\n      \"text_size\": \"string\",\n      \"text_size_seq\": 3889,\n      \"title_count_mode\": \"string\",\n      \"timezone\": \"string\",\n      \"skip_new_user_tips\": true,\n      \"topics_unread_when_closed\": false,\n      \"interface_color_mode\": 4869,\n      \"bookmark_auto_delete_preference\": 8576,\n      \"default_calendar\": \"string\",\n      \"oldest_search_log_date\": \"string\",\n      \"sidebar_link_to_filtered_list\": true,\n      \"sidebar_show_count_of_new_items\": true,\n      \"watched_precedence_over_muted\": true,\n      \"composition_mode\": 7154\n    },\n    \"can_ignore_users\": true,\n    \"can_mute_users\": false,\n    \"second_factor_backup_enabled\": false,\n    \"user_fields\": {\n      \"1\": \"string\",\n      \"2\": \"string\"\n    },\n    \"pending_posts_count\": 850,\n    \"display_sidebar_tags\": false,\n    \"can_pick_theme_with_custom_homepage\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c14ec7a8-1d91-4b95-a672-b28983aa05ff",
+          "name": "Get a user by identity provider external ID",
+          "request": {
+            "name": "Get a user by identity provider external ID",
+            "description": {},
+            "url": {
+              "path": [
+                "u",
+                "by-external",
+                ":provider",
+                "{{external_id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "provider",
+                  "description": "(Required) Authentication provider name. Can be found in the provider callback\nURL: `/auth/{provider}/callback`"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7054fad5-9093-4a1b-9be1-9d499a025749",
+              "name": "user response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "u",
+                    "by-external",
+                    ":provider",
+                    "{{external_id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provider",
+                      "description": "(Required) Authentication provider name. Can be found in the provider callback\nURL: `/auth/{provider}/callback`"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"user_badges\": [],\n  \"user\": {\n    \"id\": 5640,\n    \"username\": \"string\",\n    \"name\": \"string\",\n    \"avatar_template\": \"string\",\n    \"last_posted_at\": \"string\",\n    \"last_seen_at\": \"string\",\n    \"created_at\": \"string\",\n    \"ignored\": false,\n    \"muted\": true,\n    \"can_ignore_user\": true,\n    \"can_mute_user\": true,\n    \"can_send_private_messages\": false,\n    \"can_send_private_message_to_user\": false,\n    \"trust_level\": 2397,\n    \"moderator\": false,\n    \"admin\": true,\n    \"title\": \"string\",\n    \"badge_count\": 2324,\n    \"custom_fields\": {\n      \"first_name\": \"string\"\n    },\n    \"time_read\": 6817,\n    \"recent_time_read\": 6533,\n    \"primary_group_id\": 5089,\n    \"primary_group_name\": \"string\",\n    \"flair_group_id\": 4412,\n    \"flair_name\": \"string\",\n    \"flair_url\": \"string\",\n    \"flair_bg_color\": \"string\",\n    \"flair_color\": \"string\",\n    \"featured_topic\": \"string\",\n    \"staged\": true,\n    \"can_edit\": true,\n    \"can_edit_username\": true,\n    \"can_edit_email\": false,\n    \"can_edit_name\": false,\n    \"uploaded_avatar_id\": 345,\n    \"has_title_badges\": true,\n    \"pending_count\": 7694,\n    \"profile_view_count\": 9218,\n    \"second_factor_enabled\": true,\n    \"can_upload_profile_header\": false,\n    \"can_upload_user_card_background\": true,\n    \"post_count\": 9535,\n    \"topic_count\": 6439,\n    \"can_be_deleted\": false,\n    \"can_delete_all_posts\": false,\n    \"locale\": \"string\",\n    \"system_avatar_upload_id\": \"string\",\n    \"system_avatar_template\": \"string\",\n    \"mailing_list_posts_per_day\": 2946,\n    \"can_change_bio\": false,\n    \"can_change_location\": false,\n    \"can_change_website\": false,\n    \"can_change_tracking_preferences\": false,\n    \"user_api_keys\": \"string\",\n    \"user_auth_tokens\": [\n      {\n        \"id\": 4171,\n        \"client_ip\": \"string\",\n        \"location\": \"string\",\n        \"browser\": \"string\",\n        \"device\": \"string\",\n        \"os\": \"string\",\n        \"icon\": \"string\",\n        \"created_at\": \"string\",\n        \"seen_at\": \"string\",\n        \"is_active\": false\n      },\n      {\n        \"id\": 5304,\n        \"client_ip\": \"string\",\n        \"location\": \"string\",\n        \"browser\": \"string\",\n        \"device\": \"string\",\n        \"os\": \"string\",\n        \"icon\": \"string\",\n        \"created_at\": \"string\",\n        \"seen_at\": \"string\",\n        \"is_active\": false\n      }\n    ],\n    \"user_notification_schedule\": {\n      \"enabled\": false,\n      \"day_0_start_time\": 3776,\n      \"day_0_end_time\": 1893,\n      \"day_1_start_time\": 513,\n      \"day_1_end_time\": 1297,\n      \"day_2_start_time\": 2275,\n      \"day_2_end_time\": 2450,\n      \"day_3_start_time\": 6800,\n      \"day_3_end_time\": 9476,\n      \"day_4_start_time\": 6523,\n      \"day_4_end_time\": 469,\n      \"day_5_start_time\": 4658,\n      \"day_5_end_time\": 9754,\n      \"day_6_start_time\": 192,\n      \"day_6_end_time\": 8602\n    },\n    \"use_logo_small_as_avatar\": false,\n    \"invited_by\": \"string\",\n    \"groups\": [\n      {\n        \"id\": 6949,\n        \"automatic\": false,\n        \"name\": \"string\",\n        \"display_name\": \"string\",\n        \"user_count\": 8871,\n        \"mentionable_level\": 163,\n        \"messageable_level\": 4587,\n        \"visibility_level\": 6043,\n        \"primary_group\": false,\n        \"title\": \"string\",\n        \"grant_trust_level\": \"string\",\n        \"incoming_email\": \"string\",\n        \"has_messages\": true,\n        \"flair_url\": \"string\",\n        \"flair_bg_color\": \"string\",\n        \"flair_color\": \"string\",\n        \"bio_raw\": \"string\",\n        \"bio_cooked\": \"string\",\n        \"bio_excerpt\": \"string\",\n        \"public_admission\": true,\n        \"public_exit\": true,\n        \"allow_membership_requests\": true,\n        \"full_name\": \"string\",\n        \"default_notification_level\": 5606,\n        \"membership_request_template\": \"string\",\n        \"members_visibility_level\": 3805,\n        \"can_see_members\": false,\n        \"can_admin_group\": true,\n        \"publish_read_state\": true\n      },\n      {\n        \"id\": 1064,\n        \"automatic\": false,\n        \"name\": \"string\",\n        \"display_name\": \"string\",\n        \"user_count\": 7065,\n        \"mentionable_level\": 2154,\n        \"messageable_level\": 2315,\n        \"visibility_level\": 9854,\n        \"primary_group\": false,\n        \"title\": \"string\",\n        \"grant_trust_level\": \"string\",\n        \"incoming_email\": \"string\",\n        \"has_messages\": false,\n        \"flair_url\": \"string\",\n        \"flair_bg_color\": \"string\",\n        \"flair_color\": \"string\",\n        \"bio_raw\": \"string\",\n        \"bio_cooked\": \"string\",\n        \"bio_excerpt\": \"string\",\n        \"public_admission\": true,\n        \"public_exit\": false,\n        \"allow_membership_requests\": true,\n        \"full_name\": \"string\",\n        \"default_notification_level\": 1641,\n        \"membership_request_template\": \"string\",\n        \"members_visibility_level\": 6328,\n        \"can_see_members\": true,\n        \"can_admin_group\": true,\n        \"publish_read_state\": true\n      }\n    ],\n    \"group_users\": [\n      {\n        \"group_id\": 664,\n        \"user_id\": 7899,\n        \"notification_level\": 4388,\n        \"owner\": false\n      },\n      {\n        \"group_id\": 281,\n        \"user_id\": 2797,\n        \"notification_level\": 5633,\n        \"owner\": false\n      }\n    ],\n    \"user_option\": {\n      \"user_id\": 9589,\n      \"mailing_list_mode\": false,\n      \"mailing_list_mode_frequency\": 2442,\n      \"email_digests\": true,\n      \"email_level\": 5210,\n      \"email_messages_level\": 4211,\n      \"external_links_in_new_tab\": true,\n      \"color_scheme_id\": \"string\",\n      \"dark_scheme_id\": \"string\",\n      \"dynamic_favicon\": true,\n      \"enable_quoting\": true,\n      \"enable_smart_lists\": false,\n      \"enable_markdown_monospace_font\": true,\n      \"enable_defer\": true,\n      \"digest_after_minutes\": 3460,\n      \"automatically_unpin_topics\": true,\n      \"auto_track_topics_after_msecs\": 9110,\n      \"notification_level_when_replying\": 6198,\n      \"new_topic_duration_minutes\": 424,\n      \"email_previous_replies\": 3721,\n      \"email_in_reply_to\": true,\n      \"like_notification_frequency\": 5545,\n      \"notify_on_linked_posts\": true,\n      \"include_tl0_in_digests\": true,\n      \"theme_key_seq\": 8602,\n      \"allow_private_messages\": false,\n      \"enable_allowed_pm_users\": false,\n      \"homepage_id\": \"string\",\n      \"hide_profile_and_presence\": true,\n      \"hide_profile\": true,\n      \"hide_presence\": false,\n      \"text_size\": \"string\",\n      \"text_size_seq\": 3889,\n      \"title_count_mode\": \"string\",\n      \"timezone\": \"string\",\n      \"skip_new_user_tips\": true,\n      \"topics_unread_when_closed\": false,\n      \"interface_color_mode\": 4869,\n      \"bookmark_auto_delete_preference\": 8576,\n      \"default_calendar\": \"string\",\n      \"oldest_search_log_date\": \"string\",\n      \"sidebar_link_to_filtered_list\": true,\n      \"sidebar_show_count_of_new_items\": true,\n      \"watched_precedence_over_muted\": true,\n      \"composition_mode\": 7154\n    },\n    \"can_ignore_users\": true,\n    \"can_mute_users\": false,\n    \"second_factor_backup_enabled\": false,\n    \"user_fields\": {\n      \"1\": \"string\",\n      \"2\": \"string\"\n    },\n    \"pending_posts_count\": 850,\n    \"display_sidebar_tags\": false,\n    \"can_pick_theme_with_custom_homepage\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e27a473-69a4-4943-9fc9-086ab82d121e",
+          "name": "Update avatar",
+          "request": {
+            "name": "Update avatar",
+            "description": {},
+            "url": {
+              "path": [
+                "u",
+                ":username",
+                "preferences",
+                "avatar",
+                "pick.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"upload_id\": \"<integer>\",\n  \"type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e092ad20-5d2a-4155-adb6-f326eacbb4bf",
+              "name": "avatar updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "u",
+                    ":username",
+                    "preferences",
+                    "avatar",
+                    "pick.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"upload_id\": \"<integer>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"OK\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "012271b2-c493-4ee7-81fe-804cd2be2e50",
+          "name": "Update email",
+          "request": {
+            "name": "Update email",
+            "description": {},
+            "url": {
+              "path": [
+                "u",
+                ":username",
+                "preferences",
+                "email.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<email>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f71009c3-f8f4-43dd-90e1-70383dc13895",
+              "name": "email updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "u",
+                    ":username",
+                    "preferences",
+                    "email.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<email>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d85ea7d8-e7aa-4f2d-8cff-f5111eddb179",
+          "name": "Update username",
+          "request": {
+            "name": "Update username",
+            "description": {},
+            "url": {
+              "path": [
+                "u",
+                ":username",
+                "preferences",
+                "username.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"new_username\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d4cba340-910e-4ac5-9227-faf728bfd14d",
+              "name": "username updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "u",
+                    ":username",
+                    "preferences",
+                    "username.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"new_username\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cf2fb5f3-b26b-4e34-b576-1ef0f7aee918",
+          "name": "Get a public list of users",
+          "request": {
+            "name": "Get a public list of users",
+            "description": {},
+            "url": {
+              "path": [
+                "directory_items.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "asc",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c3280d08-c01b-40c2-bdb8-246c79e865c0",
+              "name": "directory items response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "directory_items.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "period",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "asc",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"directory_items\": [\n    {\n      \"id\": 9454,\n      \"likes_received\": 8842,\n      \"likes_given\": 4975,\n      \"topics_entered\": 6163,\n      \"topic_count\": 2039,\n      \"post_count\": 8831,\n      \"posts_read\": 7382,\n      \"days_visited\": 4318,\n      \"user\": {\n        \"id\": 1925,\n        \"username\": \"string\",\n        \"name\": \"string\",\n        \"avatar_template\": \"string\",\n        \"title\": \"string\"\n      }\n    },\n    {\n      \"id\": 2349,\n      \"likes_received\": 3686,\n      \"likes_given\": 5383,\n      \"topics_entered\": 7751,\n      \"topic_count\": 6204,\n      \"post_count\": 3503,\n      \"posts_read\": 3206,\n      \"days_visited\": 4404,\n      \"user\": {\n        \"id\": 8908,\n        \"username\": \"string\",\n        \"name\": \"string\",\n        \"avatar_template\": \"string\",\n        \"title\": \"string\"\n      }\n    }\n  ],\n  \"meta\": {\n    \"last_updated_at\": \"string\",\n    \"total_rows_directory_items\": 3292,\n    \"load_more_directory_items\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cd5929c0-5413-432d-900c-45b05c8f3712",
+          "name": "Get a user by id",
+          "request": {
+            "name": "Get a user by id",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "users",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e1a2bc92-c3d5-4356-96d1-04a7e7acdb67",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "users",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 500,\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"avatar_template\": \"string\",\n  \"active\": false,\n  \"admin\": false,\n  \"moderator\": false,\n  \"last_seen_at\": \"string\",\n  \"last_emailed_at\": \"string\",\n  \"created_at\": \"string\",\n  \"last_seen_age\": 1128.703288774724,\n  \"last_emailed_age\": 6372.565918952477,\n  \"created_at_age\": 156.60950502073612,\n  \"trust_level\": 5050,\n  \"manual_locked_trust_level\": \"string\",\n  \"title\": \"string\",\n  \"time_read\": 8900,\n  \"staged\": true,\n  \"days_visited\": 2356,\n  \"posts_read_count\": 2183,\n  \"topics_entered\": 7604,\n  \"post_count\": 2705,\n  \"can_send_activation_email\": true,\n  \"can_activate\": true,\n  \"can_deactivate\": true,\n  \"ip_address\": \"string\",\n  \"registration_ip_address\": \"string\",\n  \"can_grant_admin\": true,\n  \"can_revoke_admin\": true,\n  \"can_grant_moderation\": false,\n  \"can_revoke_moderation\": false,\n  \"can_impersonate\": false,\n  \"like_count\": 3654,\n  \"like_given_count\": 5782,\n  \"topic_count\": 6662,\n  \"flags_given_count\": 4966,\n  \"flags_received_count\": 436,\n  \"private_topics_count\": 7382,\n  \"can_delete_all_posts\": false,\n  \"can_be_anonymized\": false,\n  \"can_be_merged\": true,\n  \"full_suspend_reason\": \"string\",\n  \"primary_group_id\": 4164,\n  \"badge_count\": 6073,\n  \"warnings_received_count\": 1666,\n  \"bounce_score\": 7577,\n  \"reset_bounce_score_after\": \"string\",\n  \"can_view_action_logs\": false,\n  \"can_disable_second_factor\": false,\n  \"can_delete_sso_record\": true,\n  \"api_key_count\": 147,\n  \"single_sign_on_record\": \"string\",\n  \"approved_by\": {\n    \"id\": 8693,\n    \"username\": \"string\",\n    \"name\": \"string\",\n    \"avatar_template\": \"string\"\n  },\n  \"suspended_by\": \"string\",\n  \"silenced_by\": \"string\",\n  \"groups\": [\n    {\n      \"id\": 2494,\n      \"automatic\": false,\n      \"name\": \"string\",\n      \"display_name\": \"string\",\n      \"user_count\": 4796,\n      \"mentionable_level\": 6372,\n      \"messageable_level\": 1858,\n      \"visibility_level\": 2117,\n      \"primary_group\": true,\n      \"title\": \"string\",\n      \"grant_trust_level\": \"string\",\n      \"incoming_email\": \"string\",\n      \"has_messages\": true,\n      \"flair_url\": \"string\",\n      \"flair_bg_color\": \"string\",\n      \"flair_color\": \"string\",\n      \"bio_raw\": \"string\",\n      \"bio_cooked\": \"string\",\n      \"bio_excerpt\": \"string\",\n      \"public_admission\": true,\n      \"public_exit\": true,\n      \"allow_membership_requests\": false,\n      \"full_name\": \"string\",\n      \"default_notification_level\": 8216,\n      \"membership_request_template\": \"string\",\n      \"members_visibility_level\": 2531,\n      \"can_see_members\": true,\n      \"can_admin_group\": false,\n      \"publish_read_state\": true,\n      \"flair_group_id\": 8717\n    },\n    {\n      \"id\": 8824,\n      \"automatic\": false,\n      \"name\": \"string\",\n      \"display_name\": \"string\",\n      \"user_count\": 3001,\n      \"mentionable_level\": 4625,\n      \"messageable_level\": 8551,\n      \"visibility_level\": 9628,\n      \"primary_group\": true,\n      \"title\": \"string\",\n      \"grant_trust_level\": \"string\",\n      \"incoming_email\": \"string\",\n      \"has_messages\": true,\n      \"flair_url\": \"string\",\n      \"flair_bg_color\": \"string\",\n      \"flair_color\": \"string\",\n      \"bio_raw\": \"string\",\n      \"bio_cooked\": \"string\",\n      \"bio_excerpt\": \"string\",\n      \"public_admission\": false,\n      \"public_exit\": true,\n      \"allow_membership_requests\": false,\n      \"full_name\": \"string\",\n      \"default_notification_level\": 2503,\n      \"membership_request_template\": \"string\",\n      \"members_visibility_level\": 7209,\n      \"can_see_members\": false,\n      \"can_admin_group\": true,\n      \"publish_read_state\": false,\n      \"flair_group_id\": 4696\n    }\n  ],\n  \"external_ids\": {},\n  \"include_ip\": true,\n  \"can_change_trust_level\": true,\n  \"can_be_deleted\": true,\n  \"latest_export\": {},\n  \"silence_reason\": \"string\",\n  \"post_edits_count\": 7426,\n  \"similar_users_count\": 4874,\n  \"penalty_counts\": {\n    \"silenced\": 3485,\n    \"suspended\": 4770\n  },\n  \"next_penalty\": \"string\",\n  \"tl3_requirements\": {\n    \"time_period\": 9341,\n    \"requirements_met\": true,\n    \"requirements_lost\": false,\n    \"trust_level_locked\": true,\n    \"on_grace_period\": false,\n    \"days_visited\": 3756,\n    \"min_days_visited\": 9800,\n    \"num_topics_replied_to\": 7700,\n    \"min_topics_replied_to\": 3669,\n    \"topics_viewed\": 8219,\n    \"min_topics_viewed\": 8706,\n    \"posts_read\": 6283,\n    \"min_posts_read\": 6001,\n    \"topics_viewed_all_time\": 1424,\n    \"min_topics_viewed_all_time\": 8911,\n    \"posts_read_all_time\": 3946,\n    \"min_posts_read_all_time\": 8880,\n    \"num_flagged_posts\": 8583,\n    \"max_flagged_posts\": 8010,\n    \"num_flagged_by_users\": 1353,\n    \"max_flagged_by_users\": 439,\n    \"num_likes_given\": 1338,\n    \"min_likes_given\": 3294,\n    \"num_likes_received\": 2038,\n    \"min_likes_received\": 4281,\n    \"num_likes_received_days\": 4343,\n    \"min_likes_received_days\": 6048,\n    \"num_likes_received_users\": 3275,\n    \"min_likes_received_users\": 5228,\n    \"penalty_counts\": {\n      \"silenced\": 695,\n      \"suspended\": 469,\n      \"total\": 7976\n    }\n  },\n  \"upcoming_changes_stats\": [\n    {\n      \"name\": \"string\",\n      \"humanized_name\": \"string\",\n      \"description\": \"string\",\n      \"enabled\": false,\n      \"specific_groups\": [\n        \"string\",\n        \"string\"\n      ],\n      \"reason\": \"enabled_for_no_one\"\n    },\n    {\n      \"name\": \"string\",\n      \"humanized_name\": \"string\",\n      \"description\": \"string\",\n      \"enabled\": true,\n      \"specific_groups\": [\n        \"string\",\n        \"string\"\n      ],\n      \"reason\": \"in_specific_groups\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fcea514b-00dd-4c5a-b37b-2ae9bf3542ce",
+          "name": "Delete a user",
+          "request": {
+            "name": "Delete a user",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "users",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"delete_posts\": \"<boolean>\",\n  \"block_email\": \"<boolean>\",\n  \"block_urls\": \"<boolean>\",\n  \"block_ip\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "db76cd90-3098-4503-a1d7-4b919159afb7",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "users",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"delete_posts\": \"<boolean>\",\n  \"block_email\": \"<boolean>\",\n  \"block_urls\": \"<boolean>\",\n  \"block_ip\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"deleted\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cfc84632-38c2-4cd3-8108-7dffeab49924",
+          "name": "Activate a user",
+          "request": {
+            "name": "Activate a user",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "users",
+                ":id",
+                "activate.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7246b130-1165-4a97-831d-77d0d0e8f2e5",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "users",
+                    ":id",
+                    "activate.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"OK\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "623bcf88-84d3-4f94-8acd-ad0cdd58532c",
+          "name": "Deactivate a user",
+          "request": {
+            "name": "Deactivate a user",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "users",
+                ":id",
+                "deactivate.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f6396461-8a1b-475f-8e45-21b535052bee",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "users",
+                    ":id",
+                    "deactivate.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"OK\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2ea201eb-a18b-4530-beda-16291be75c9e",
+          "name": "Suspend a user",
+          "request": {
+            "name": "Suspend a user",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "users",
+                ":id",
+                "suspend.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"suspend_until\": \"<string>\",\n  \"reason\": \"<string>\",\n  \"message\": \"<string>\",\n  \"post_action\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "763bb033-b12e-47f1-862f-a16f0c9e68e6",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "users",
+                    ":id",
+                    "suspend.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"suspend_until\": \"2121-02-22\",\n  \"reason\": \"<string>\",\n  \"message\": \"<string>\",\n  \"post_action\": \"delete\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"suspension\": {\n    \"suspend_reason\": \"string\",\n    \"full_suspend_reason\": \"string\",\n    \"suspended_till\": \"string\",\n    \"suspended_at\": \"string\",\n    \"suspended_by\": {\n      \"id\": 9174,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ef4ceffd-81e2-4903-be7f-3c586f063be7",
+          "name": "Silence a user",
+          "request": {
+            "name": "Silence a user",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "users",
+                ":id",
+                "silence.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"silenced_till\": \"<string>\",\n  \"reason\": \"<string>\",\n  \"message\": \"<string>\",\n  \"post_action\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6c20732b-7c67-4f04-8b11-20f87cd61e4e",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "users",
+                    ":id",
+                    "silence.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"silenced_till\": \"2022-06-01T08:00:00.000Z\",\n  \"reason\": \"<string>\",\n  \"message\": \"<string>\",\n  \"post_action\": \"delete\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"silence\": {\n    \"silenced\": true,\n    \"silence_reason\": \"string\",\n    \"silenced_till\": \"string\",\n    \"silenced_at\": \"string\",\n    \"silenced_by\": {\n      \"id\": 7622,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c93a093e-b533-4a03-b59f-b5ea366403db",
+          "name": "Anonymize a user",
+          "request": {
+            "name": "Anonymize a user",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "users",
+                ":id",
+                "anonymize.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1f82005c-8558-4a43-8743-7f64ec0fddb3",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "users",
+                    ":id",
+                    "anonymize.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"string\",\n  \"username\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f340fea-9968-479b-b65f-6d04499e4f56",
+          "name": "Log a user out",
+          "request": {
+            "name": "Log a user out",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "users",
+                ":id",
+                "log_out.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2d6a164a-2707-458c-9f4e-834d6c87b86f",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "users",
+                    ":id",
+                    "log_out.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"OK\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "65e09568-b510-41a9-a25a-eb25e911553b",
+          "name": "Refresh gravatar",
+          "request": {
+            "name": "Refresh gravatar",
+            "description": {},
+            "url": {
+              "path": [
+                "user_avatar",
+                ":username",
+                "refresh_gravatar.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "829e412a-1a86-4554-a6cc-7b53a1fd4ad9",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user_avatar",
+                    ":username",
+                    "refresh_gravatar.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"gravatar_upload_id\": 3228,\n  \"gravatar_avatar_template\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "690fe5d0-6d26-4bc0-bbf2-45f66492c08c",
+          "name": "List users",
+          "request": {
+            "name": "List users",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "users.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "asc",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "show_emails",
+                  "value": "<boolean>",
+                  "description": "Include user email addresses in response. These requests will\nbe logged in the staff action logs."
+                },
+                {
+                  "disabled": false,
+                  "key": "stats",
+                  "value": "<boolean>",
+                  "description": "Include user stats information"
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>",
+                  "description": "Filter to the user with this email address"
+                },
+                {
+                  "disabled": false,
+                  "key": "ip",
+                  "value": "<string>",
+                  "description": "Filter to users with this IP address"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2d3a39ec-9c6e-4058-b937-a0d5422f9b28",
+              "name": "users response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "users.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "asc",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "show_emails",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stats",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ip",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 3208,\n    \"username\": \"string\",\n    \"name\": \"string\",\n    \"avatar_template\": \"string\",\n    \"active\": true,\n    \"admin\": false,\n    \"moderator\": true,\n    \"last_seen_at\": \"string\",\n    \"last_emailed_at\": \"string\",\n    \"created_at\": \"string\",\n    \"last_seen_age\": 461.0613006301012,\n    \"last_emailed_age\": 5208.489584991671,\n    \"created_at_age\": 2307.059599343887,\n    \"trust_level\": 8414,\n    \"manual_locked_trust_level\": \"string\",\n    \"title\": \"string\",\n    \"time_read\": 4384,\n    \"staged\": true,\n    \"days_visited\": 7260,\n    \"posts_read_count\": 6719,\n    \"topics_entered\": 9301,\n    \"post_count\": 4345,\n    \"email\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cec2cfd0-93a7-4fc9-bfdc-4d7f3f08358c",
+          "name": "List users by flag",
+          "request": {
+            "name": "List users by flag",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "users",
+                "list",
+                "{{flag}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "asc",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "show_emails",
+                  "value": "<boolean>",
+                  "description": "Include user email addresses in response. These requests will\nbe logged in the staff action logs."
+                },
+                {
+                  "disabled": false,
+                  "key": "stats",
+                  "value": "<boolean>",
+                  "description": "Include user stats information"
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>",
+                  "description": "Filter to the user with this email address"
+                },
+                {
+                  "disabled": false,
+                  "key": "ip",
+                  "value": "<string>",
+                  "description": "Filter to users with this IP address"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8de37a82-ca3c-4e09-bcac-8bbb869053a0",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "users",
+                    "list",
+                    "{{flag}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "asc",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "show_emails",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stats",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ip",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 3208,\n    \"username\": \"string\",\n    \"name\": \"string\",\n    \"avatar_template\": \"string\",\n    \"active\": true,\n    \"admin\": false,\n    \"moderator\": true,\n    \"last_seen_at\": \"string\",\n    \"last_emailed_at\": \"string\",\n    \"created_at\": \"string\",\n    \"last_seen_age\": 461.0613006301012,\n    \"last_emailed_age\": 5208.489584991671,\n    \"created_at_age\": 2307.059599343887,\n    \"trust_level\": 8414,\n    \"manual_locked_trust_level\": \"string\",\n    \"title\": \"string\",\n    \"time_read\": 4384,\n    \"staged\": true,\n    \"days_visited\": 7260,\n    \"posts_read_count\": 6719,\n    \"topics_entered\": 9301,\n    \"post_count\": 4345,\n    \"email\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c5708ebb-d9cb-474b-b4eb-bcdaf37284ca",
+          "name": "Get a list of user actions",
+          "request": {
+            "name": "Get a list of user actions",
+            "description": {},
+            "url": {
+              "path": [
+                "user_actions.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "df7d0380-be6a-4502-9ac8-dd508bc92884",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user_actions.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"user_actions\": [\n    {\n      \"excerpt\": \"string\",\n      \"action_type\": 9157,\n      \"created_at\": \"string\",\n      \"avatar_template\": \"string\",\n      \"acting_avatar_template\": \"string\",\n      \"slug\": \"string\",\n      \"topic_id\": 3427,\n      \"target_user_id\": 3144,\n      \"target_name\": \"string\",\n      \"target_username\": \"string\",\n      \"post_number\": 9996,\n      \"post_id\": \"string\",\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"user_id\": 2232,\n      \"acting_username\": \"string\",\n      \"acting_name\": \"string\",\n      \"acting_user_id\": 5879,\n      \"title\": \"string\",\n      \"deleted\": false,\n      \"hidden\": \"string\",\n      \"post_type\": \"string\",\n      \"action_code\": \"string\",\n      \"category_id\": 5922,\n      \"closed\": true,\n      \"archived\": true\n    },\n    {\n      \"excerpt\": \"string\",\n      \"action_type\": 7002,\n      \"created_at\": \"string\",\n      \"avatar_template\": \"string\",\n      \"acting_avatar_template\": \"string\",\n      \"slug\": \"string\",\n      \"topic_id\": 2616,\n      \"target_user_id\": 7628,\n      \"target_name\": \"string\",\n      \"target_username\": \"string\",\n      \"post_number\": 7337,\n      \"post_id\": \"string\",\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"user_id\": 9409,\n      \"acting_username\": \"string\",\n      \"acting_name\": \"string\",\n      \"acting_user_id\": 1806,\n      \"title\": \"string\",\n      \"deleted\": false,\n      \"hidden\": \"string\",\n      \"post_type\": \"string\",\n      \"action_code\": \"string\",\n      \"category_id\": 7483,\n      \"closed\": false,\n      \"archived\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "34f35348-d885-4bf0-b5bb-fa1e95b5e55a",
+          "name": "Send password reset email",
+          "request": {
+            "name": "Send password reset email",
+            "description": {},
+            "url": {
+              "path": [
+                "session",
+                "forgot_password.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"login\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2df1760f-2326-43a5-8961-46953131481b",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "session",
+                    "forgot_password.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"login\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"string\",\n  \"user_found\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e20d3ce1-8a96-476c-a524-6ac1616635a0",
+          "name": "Change password",
+          "request": {
+            "name": "Change password",
+            "description": {},
+            "url": {
+              "path": [
+                "users",
+                "password-reset",
+                "{{token}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "752a2d37-d5b9-44cc-9a35-7fcbdb6e8a80",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "password-reset",
+                    "{{token}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57084865-b314-4c14-9fe1-88bbc9f1d79c",
+          "name": "Get email addresses belonging to a user",
+          "request": {
+            "name": "Get email addresses belonging to a user",
+            "description": {},
+            "url": {
+              "path": [
+                "u",
+                ":username",
+                "emails.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8ab76715-6064-4dfd-9662-eb7c4001f4fc",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "u",
+                    ":username",
+                    "emails.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"email\": \"string\",\n  \"secondary_emails\": [],\n  \"unconfirmed_emails\": [],\n  \"associated_accounts\": []\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "discourse.example.com",
+      "key": "defaultHost"
+    },
+    {
+      "type": "string",
+      "value": "https://{{defaultHost}}",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "username"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "external_id"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<integer>",
+      "key": "id"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "flag"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "token"
+    }
+  ],
+  "info": {
+    "_postman_id": "bb31b563-424f-4996-aad9-b585425c9cd7",
+    "name": "Discourse API Documentation Admin Users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This page contains the documentation on how to use Discourse through API calls.\n\n> Note: For any endpoints not listed you can follow the\n[reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)\nguide to figure out how to use an API endpoint.\n\n### Request Content-Type\n\nThe Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,\n`multipart/form-data`, or `application/json`.\n\n### Endpoint Names and Response Content-Type\n\nMost API endpoints provide the same content as their HTML counterparts. For example\nthe URL `/categories` serves a list of categories, the `/categories.json` API provides the\nsame information in JSON format.\n\nInstead of sending API requests to `/categories.json` you may also send them to `/categories`\nand add an `Accept: application/json` header to the request to get the JSON response.\nSending requests with the `Accept` header is necessary if you want to use URLs\nfor related endpoints returned by the API, such as pagination URLs.\nThese URLs are returned without the `.json` prefix so you need to add the header in\norder to get the correct response format.\n\n### Authentication\n\nSome endpoints do not require any authentication, pretty much anything else will\nrequire you to be authenticated.\n\nTo become authenticated you will need to create an API Key from the admin panel.\n\nOnce you have your API Key you can pass it in along with your API Username\nas an HTTP header like this:\n\n```\ncurl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\"\n```\n\nand this is how POST requests will look:\n\n```\ncurl -X POST \"http://127.0.0.1:3000/categories\" \\\n-H \"Content-Type: multipart/form-data;\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\" \\\n-F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\\n-F \"color=49d9e9\" \\\n-F \"text_color=f0fcfd\"\n```\n\n### Boolean values\n\nIf an endpoint accepts a boolean be sure to specify it as a lowercase\n`true` or `false` value unless noted otherwise.\n",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Discourse API Documentation Admin Badges API",
+    "version": "latest"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Badges",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List badges",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/admin/badges.json"
+          },
+          "docs": "List badges"
+        },
+        {
+          "info": {
+            "name": "Create badge",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{defaultHost}/admin/badges.json",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create badge"
+        },
+        {
+          "info": {
+            "name": "Update badge",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{defaultHost}/admin/badges/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update badge"
+        },
+        {
+          "info": {
+            "name": "Delete badge",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{defaultHost}/admin/badges/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete badge"
+        },
+        {
+          "info": {
+            "name": "List badges for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/user-badges/:username.json",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List badges for a user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

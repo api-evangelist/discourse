@@ -1,0 +1,667 @@
+{
+  "item": [
+    {
+      "id": "2bdd0f6c-348e-4fff-883d-00d59971ca3b",
+      "name": "Categories",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6d955444-c374-4bc8-99f9-eed633e9983e",
+          "name": "Creates a category",
+          "request": {
+            "name": "Creates a category",
+            "description": {},
+            "url": {
+              "path": [
+                "categories.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"color\": \"<string>\",\n  \"text_color\": \"<string>\",\n  \"style_type\": \"<string>\",\n  \"emoji\": \"<string>\",\n  \"icon\": \"<string>\",\n  \"parent_category_id\": \"<integer>\",\n  \"allow_badges\": \"<boolean>\",\n  \"slug\": \"<string>\",\n  \"topic_featured_links_allowed\": \"<boolean>\",\n  \"permissions\": {\n    \"everyone\": \"<integer>\",\n    \"staff\": \"<integer>\"\n  },\n  \"search_priority\": \"<integer>\",\n  \"category_localizations\": [\n    {\n      \"locale\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"description\": \"<string>\"\n    },\n    {\n      \"locale\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"description\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6b9ff75f-2fab-4f74-85f5-97e6c461db97",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "categories.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"color\": \"49d9e9\",\n  \"text_color\": \"f0fcfd\",\n  \"style_type\": \"<string>\",\n  \"emoji\": \"<string>\",\n  \"icon\": \"<string>\",\n  \"parent_category_id\": \"<integer>\",\n  \"allow_badges\": \"<boolean>\",\n  \"slug\": \"<string>\",\n  \"topic_featured_links_allowed\": \"<boolean>\",\n  \"permissions\": {\n    \"everyone\": 1,\n    \"staff\": \"<integer>\"\n  },\n  \"search_priority\": \"<integer>\",\n  \"category_localizations\": [\n    {\n      \"locale\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"description\": \"<string>\"\n    },\n    {\n      \"locale\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"description\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"category\": {\n    \"id\": 9361,\n    \"name\": \"string\",\n    \"color\": \"string\",\n    \"text_color\": \"string\",\n    \"style_type\": \"string\",\n    \"emoji\": \"string\",\n    \"icon\": \"string\",\n    \"slug\": \"string\",\n    \"topic_count\": 2008,\n    \"post_count\": 6931,\n    \"position\": 4914,\n    \"description\": \"string\",\n    \"description_text\": \"string\",\n    \"description_excerpt\": \"string\",\n    \"topic_url\": \"string\",\n    \"read_restricted\": true,\n    \"permission\": 6346,\n    \"notification_level\": 981,\n    \"can_edit\": true,\n    \"topic_template\": \"string\",\n    \"topic_title_placeholder\": \"string\",\n    \"has_children\": true,\n    \"subcategory_count\": 9576,\n    \"sort_order\": \"string\",\n    \"sort_ascending\": \"string\",\n    \"show_subcategory_list\": false,\n    \"num_featured_topics\": 2952,\n    \"default_view\": \"string\",\n    \"subcategory_list_style\": \"string\",\n    \"default_top_period\": \"string\",\n    \"default_list_filter\": \"string\",\n    \"minimum_required_tags\": 2540,\n    \"navigate_to_first_post_after_read\": true,\n    \"custom_fields\": {},\n    \"required_tag_groups\": [\n      {\n        \"name\": \"string\",\n        \"min_count\": 1489\n      },\n      {\n        \"name\": \"string\",\n        \"min_count\": 3967\n      }\n    ],\n    \"read_only_banner\": \"string\",\n    \"auto_close_hours\": \"string\",\n    \"auto_close_based_on_last_post\": true,\n    \"allow_unlimited_owner_edits_on_first_post\": false,\n    \"default_slow_mode_seconds\": \"string\",\n    \"group_permissions\": [\n      {\n        \"permission_type\": 3940,\n        \"group_name\": \"string\",\n        \"group_id\": 1218\n      },\n      {\n        \"permission_type\": 7477,\n        \"group_name\": \"string\",\n        \"group_id\": 5372\n      }\n    ],\n    \"email_in\": \"string\",\n    \"email_in_allow_strangers\": false,\n    \"mailinglist_mirror\": true,\n    \"all_topics_wiki\": true,\n    \"can_delete\": true,\n    \"allow_badges\": false,\n    \"topic_featured_link_allowed\": true,\n    \"search_priority\": 654,\n    \"uploaded_logo\": \"string\",\n    \"uploaded_logo_dark\": \"string\",\n    \"uploaded_background\": \"string\",\n    \"uploaded_background_dark\": \"string\",\n    \"locale\": \"string\",\n    \"allow_global_tags\": false,\n    \"category_setting\": {\n      \"auto_bump_cooldown_days\": 6375,\n      \"num_auto_bump_daily\": 7124,\n      \"require_reply_approval\": true,\n      \"require_topic_approval\": false\n    },\n    \"category_types\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1273c1fa-a958-4c2c-9396-b5a881f04918",
+          "name": "Retrieves a list of categories",
+          "request": {
+            "name": "Retrieves a list of categories",
+            "description": {},
+            "url": {
+              "path": [
+                "categories.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "include_subcategories",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3479a5db-3ba6-4c70-91ad-3fc911a114a2",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "categories.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "include_subcategories",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"category_list\": {\n    \"can_create_category\": true,\n    \"can_create_topic\": true,\n    \"categories\": [\n      {\n        \"id\": 7418,\n        \"name\": \"string\",\n        \"color\": \"string\",\n        \"text_color\": \"string\",\n        \"style_type\": \"string\",\n        \"emoji\": \"string\",\n        \"icon\": \"string\",\n        \"slug\": \"string\",\n        \"topic_count\": 1093,\n        \"post_count\": 9556,\n        \"position\": 8599,\n        \"description\": \"string\",\n        \"description_text\": \"string\",\n        \"description_excerpt\": \"string\",\n        \"topic_url\": \"string\",\n        \"read_restricted\": false,\n        \"permission\": 5422,\n        \"notification_level\": 9294,\n        \"can_edit\": true,\n        \"topic_template\": \"string\",\n        \"topic_title_placeholder\": \"string\",\n        \"has_children\": false,\n        \"subcategory_count\": 2302,\n        \"sort_order\": \"string\",\n        \"sort_ascending\": \"string\",\n        \"show_subcategory_list\": true,\n        \"num_featured_topics\": 4182,\n        \"default_view\": \"string\",\n        \"subcategory_list_style\": \"string\",\n        \"default_top_period\": \"string\",\n        \"default_list_filter\": \"string\",\n        \"minimum_required_tags\": 9232,\n        \"navigate_to_first_post_after_read\": true,\n        \"topics_day\": 2435,\n        \"topics_week\": 4460,\n        \"topics_month\": 3955,\n        \"topics_year\": 4967,\n        \"topics_all_time\": 4104,\n        \"uploaded_logo\": \"string\",\n        \"uploaded_logo_dark\": \"string\",\n        \"uploaded_background\": \"string\",\n        \"uploaded_background_dark\": \"string\",\n        \"is_uncategorized\": true\n      },\n      {\n        \"id\": 453,\n        \"name\": \"string\",\n        \"color\": \"string\",\n        \"text_color\": \"string\",\n        \"style_type\": \"string\",\n        \"emoji\": \"string\",\n        \"icon\": \"string\",\n        \"slug\": \"string\",\n        \"topic_count\": 4032,\n        \"post_count\": 6197,\n        \"position\": 8321,\n        \"description\": \"string\",\n        \"description_text\": \"string\",\n        \"description_excerpt\": \"string\",\n        \"topic_url\": \"string\",\n        \"read_restricted\": true,\n        \"permission\": 4330,\n        \"notification_level\": 2311,\n        \"can_edit\": false,\n        \"topic_template\": \"string\",\n        \"topic_title_placeholder\": \"string\",\n        \"has_children\": true,\n        \"subcategory_count\": 6717,\n        \"sort_order\": \"string\",\n        \"sort_ascending\": \"string\",\n        \"show_subcategory_list\": true,\n        \"num_featured_topics\": 8650,\n        \"default_view\": \"string\",\n        \"subcategory_list_style\": \"string\",\n        \"default_top_period\": \"string\",\n        \"default_list_filter\": \"string\",\n        \"minimum_required_tags\": 7710,\n        \"navigate_to_first_post_after_read\": false,\n        \"topics_day\": 8025,\n        \"topics_week\": 3507,\n        \"topics_month\": 992,\n        \"topics_year\": 3835,\n        \"topics_all_time\": 7849,\n        \"uploaded_logo\": \"string\",\n        \"uploaded_logo_dark\": \"string\",\n        \"uploaded_background\": \"string\",\n        \"uploaded_background_dark\": \"string\",\n        \"is_uncategorized\": true\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "02c9f553-a78f-463c-92da-272ebe5c1464",
+          "name": "Updates a category",
+          "request": {
+            "name": "Updates a category",
+            "description": {},
+            "url": {
+              "path": [
+                "categories",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"color\": \"<string>\",\n  \"text_color\": \"<string>\",\n  \"style_type\": \"<string>\",\n  \"emoji\": \"<string>\",\n  \"icon\": \"<string>\",\n  \"parent_category_id\": \"<integer>\",\n  \"allow_badges\": \"<boolean>\",\n  \"slug\": \"<string>\",\n  \"topic_featured_links_allowed\": \"<boolean>\",\n  \"permissions\": {\n    \"everyone\": \"<integer>\",\n    \"staff\": \"<integer>\"\n  },\n  \"search_priority\": \"<integer>\",\n  \"category_localizations\": [\n    {\n      \"locale\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"description\": \"<string>\"\n    },\n    {\n      \"locale\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"description\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fe919dc5-3ef5-4e20-911b-5396027328ed",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "categories",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"color\": \"49d9e9\",\n  \"text_color\": \"f0fcfd\",\n  \"style_type\": \"<string>\",\n  \"emoji\": \"<string>\",\n  \"icon\": \"<string>\",\n  \"parent_category_id\": \"<integer>\",\n  \"allow_badges\": \"<boolean>\",\n  \"slug\": \"<string>\",\n  \"topic_featured_links_allowed\": \"<boolean>\",\n  \"permissions\": {\n    \"everyone\": 1,\n    \"staff\": \"<integer>\"\n  },\n  \"search_priority\": \"<integer>\",\n  \"category_localizations\": [\n    {\n      \"locale\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"description\": \"<string>\"\n    },\n    {\n      \"locale\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"description\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"string\",\n  \"category\": {\n    \"id\": 5135,\n    \"name\": \"string\",\n    \"color\": \"string\",\n    \"text_color\": \"string\",\n    \"slug\": \"string\",\n    \"topic_count\": 5969,\n    \"post_count\": 6752,\n    \"position\": 8542,\n    \"description\": \"string\",\n    \"description_text\": \"string\",\n    \"description_excerpt\": \"string\",\n    \"topic_url\": \"string\",\n    \"read_restricted\": true,\n    \"permission\": 6759,\n    \"notification_level\": 7473,\n    \"can_edit\": false,\n    \"topic_template\": \"string\",\n    \"topic_title_placeholder\": \"string\",\n    \"has_children\": false,\n    \"subcategory_count\": 1367,\n    \"sort_order\": \"string\",\n    \"sort_ascending\": \"string\",\n    \"show_subcategory_list\": true,\n    \"num_featured_topics\": 9826,\n    \"default_view\": \"string\",\n    \"subcategory_list_style\": \"string\",\n    \"default_top_period\": \"string\",\n    \"default_list_filter\": \"string\",\n    \"minimum_required_tags\": 5767,\n    \"navigate_to_first_post_after_read\": false,\n    \"custom_fields\": {},\n    \"required_tag_groups\": [\n      {\n        \"name\": \"string\",\n        \"min_count\": 806\n      },\n      {\n        \"name\": \"string\",\n        \"min_count\": 2347\n      }\n    ],\n    \"read_only_banner\": \"string\",\n    \"auto_close_hours\": \"string\",\n    \"auto_close_based_on_last_post\": false,\n    \"allow_unlimited_owner_edits_on_first_post\": false,\n    \"default_slow_mode_seconds\": \"string\",\n    \"group_permissions\": [\n      {\n        \"permission_type\": 5258,\n        \"group_name\": \"string\",\n        \"group_id\": 7684\n      },\n      {\n        \"permission_type\": 6275,\n        \"group_name\": \"string\",\n        \"group_id\": 4175\n      }\n    ],\n    \"email_in\": \"string\",\n    \"email_in_allow_strangers\": false,\n    \"mailinglist_mirror\": false,\n    \"all_topics_wiki\": true,\n    \"can_delete\": false,\n    \"allow_badges\": false,\n    \"topic_featured_link_allowed\": false,\n    \"search_priority\": 8577,\n    \"uploaded_logo\": \"string\",\n    \"uploaded_logo_dark\": \"string\",\n    \"uploaded_background\": \"string\",\n    \"uploaded_background_dark\": \"string\",\n    \"style_type\": \"string\",\n    \"emoji\": \"string\",\n    \"icon\": \"string\",\n    \"locale\": \"string\",\n    \"allow_global_tags\": false,\n    \"category_setting\": {\n      \"auto_bump_cooldown_days\": 9575,\n      \"num_auto_bump_daily\": 3004,\n      \"require_reply_approval\": false,\n      \"require_topic_approval\": false\n    },\n    \"category_types\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e05701f9-f4e8-4a3c-8edb-3567f85b9339",
+          "name": "List topics",
+          "request": {
+            "name": "List topics",
+            "description": {},
+            "url": {
+              "path": [
+                "c",
+                ":slug",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "slug",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "42fdd99e-c810-48ab-b8bd-166750119f0f",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "c",
+                    ":slug",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "slug",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"topic_list\": {\n    \"can_create_topic\": false,\n    \"per_page\": 9968,\n    \"topics\": [\n      {\n        \"id\": 3,\n        \"title\": \"string\",\n        \"fancy_title\": \"string\",\n        \"slug\": \"string\",\n        \"posts_count\": 404,\n        \"reply_count\": 2319,\n        \"highest_post_number\": 9250,\n        \"image_url\": \"string\",\n        \"created_at\": \"string\",\n        \"last_posted_at\": \"string\",\n        \"bumped\": true,\n        \"bumped_at\": \"string\",\n        \"archetype\": \"string\",\n        \"unseen\": true,\n        \"pinned\": false,\n        \"unpinned\": \"string\",\n        \"excerpt\": \"string\",\n        \"visible\": true,\n        \"closed\": true,\n        \"archived\": true,\n        \"bookmarked\": \"string\",\n        \"liked\": \"string\",\n        \"views\": 9825,\n        \"like_count\": 3689,\n        \"has_summary\": false,\n        \"last_poster_username\": \"string\",\n        \"category_id\": 4432,\n        \"pinned_globally\": false,\n        \"featured_link\": \"string\",\n        \"posters\": [\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 2408,\n            \"primary_group_id\": 4721\n          },\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 1797,\n            \"primary_group_id\": 2586\n          }\n        ]\n      },\n      {\n        \"id\": 6041,\n        \"title\": \"string\",\n        \"fancy_title\": \"string\",\n        \"slug\": \"string\",\n        \"posts_count\": 256,\n        \"reply_count\": 3561,\n        \"highest_post_number\": 6947,\n        \"image_url\": \"string\",\n        \"created_at\": \"string\",\n        \"last_posted_at\": \"string\",\n        \"bumped\": false,\n        \"bumped_at\": \"string\",\n        \"archetype\": \"string\",\n        \"unseen\": false,\n        \"pinned\": false,\n        \"unpinned\": \"string\",\n        \"excerpt\": \"string\",\n        \"visible\": true,\n        \"closed\": true,\n        \"archived\": false,\n        \"bookmarked\": \"string\",\n        \"liked\": \"string\",\n        \"views\": 2271,\n        \"like_count\": 8778,\n        \"has_summary\": true,\n        \"last_poster_username\": \"string\",\n        \"category_id\": 9214,\n        \"pinned_globally\": false,\n        \"featured_link\": \"string\",\n        \"posters\": [\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 7199,\n            \"primary_group_id\": 6709\n          },\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 4787,\n            \"primary_group_id\": 2281\n          }\n        ]\n      }\n    ],\n    \"top_tags\": [\n      {\n        \"id\": 5314,\n        \"name\": \"string\",\n        \"slug\": \"string\"\n      },\n      {\n        \"id\": 6360,\n        \"name\": \"string\",\n        \"slug\": \"string\"\n      }\n    ]\n  },\n  \"users\": [\n    {\n      \"id\": 1991,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    },\n    {\n      \"id\": 1719,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46315119-0802-4bf8-9c61-343217e90bc2",
+          "name": "Show category",
+          "request": {
+            "name": "Show category",
+            "description": {},
+            "url": {
+              "path": [
+                "c",
+                ":id",
+                "show.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "def40550-5770-4ad4-bdf7-6757f41dd2a6",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "c",
+                    ":id",
+                    "show.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"category\": {\n    \"id\": 9361,\n    \"name\": \"string\",\n    \"color\": \"string\",\n    \"text_color\": \"string\",\n    \"style_type\": \"string\",\n    \"emoji\": \"string\",\n    \"icon\": \"string\",\n    \"slug\": \"string\",\n    \"topic_count\": 2008,\n    \"post_count\": 6931,\n    \"position\": 4914,\n    \"description\": \"string\",\n    \"description_text\": \"string\",\n    \"description_excerpt\": \"string\",\n    \"topic_url\": \"string\",\n    \"read_restricted\": true,\n    \"permission\": 6346,\n    \"notification_level\": 981,\n    \"can_edit\": true,\n    \"topic_template\": \"string\",\n    \"topic_title_placeholder\": \"string\",\n    \"has_children\": true,\n    \"subcategory_count\": 9576,\n    \"sort_order\": \"string\",\n    \"sort_ascending\": \"string\",\n    \"show_subcategory_list\": false,\n    \"num_featured_topics\": 2952,\n    \"default_view\": \"string\",\n    \"subcategory_list_style\": \"string\",\n    \"default_top_period\": \"string\",\n    \"default_list_filter\": \"string\",\n    \"minimum_required_tags\": 2540,\n    \"navigate_to_first_post_after_read\": true,\n    \"custom_fields\": {},\n    \"required_tag_groups\": [\n      {\n        \"name\": \"string\",\n        \"min_count\": 1489\n      },\n      {\n        \"name\": \"string\",\n        \"min_count\": 3967\n      }\n    ],\n    \"read_only_banner\": \"string\",\n    \"auto_close_hours\": \"string\",\n    \"auto_close_based_on_last_post\": true,\n    \"allow_unlimited_owner_edits_on_first_post\": false,\n    \"default_slow_mode_seconds\": \"string\",\n    \"group_permissions\": [\n      {\n        \"permission_type\": 3940,\n        \"group_name\": \"string\",\n        \"group_id\": 1218\n      },\n      {\n        \"permission_type\": 7477,\n        \"group_name\": \"string\",\n        \"group_id\": 5372\n      }\n    ],\n    \"email_in\": \"string\",\n    \"email_in_allow_strangers\": false,\n    \"mailinglist_mirror\": true,\n    \"all_topics_wiki\": true,\n    \"can_delete\": true,\n    \"allow_badges\": false,\n    \"topic_featured_link_allowed\": true,\n    \"search_priority\": 654,\n    \"uploaded_logo\": \"string\",\n    \"uploaded_logo_dark\": \"string\",\n    \"uploaded_background\": \"string\",\n    \"uploaded_background_dark\": \"string\",\n    \"locale\": \"string\",\n    \"allow_global_tags\": false,\n    \"category_setting\": {\n      \"auto_bump_cooldown_days\": 6375,\n      \"num_auto_bump_daily\": 7124,\n      \"require_reply_approval\": true,\n      \"require_topic_approval\": false\n    },\n    \"category_types\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "51ccd16a-65e2-40cd-91bb-036ab00fe43a",
+          "name": "Get site info",
+          "request": {
+            "name": "Get site info",
+            "description": {
+              "content": "Can be used to fetch all categories and subcategories",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "site.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4275d949-2506-4b83-8c61-fea9ef9aa48e",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "site.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"default_archetype\": \"string\",\n  \"notification_types\": {\n    \"mentioned\": 2421,\n    \"replied\": 1597,\n    \"quoted\": 9602,\n    \"edited\": 6282,\n    \"liked\": 5169,\n    \"private_message\": 1552,\n    \"invited_to_private_message\": 8958,\n    \"invitee_accepted\": 1535,\n    \"posted\": 9840,\n    \"watching_category_or_tag\": 1500,\n    \"moved_post\": 4390,\n    \"linked\": 8962,\n    \"granted_badge\": 470,\n    \"invited_to_topic\": 9821,\n    \"custom\": 9490,\n    \"group_mentioned\": 4469,\n    \"group_message_summary\": 3641,\n    \"watching_first_post\": 5620,\n    \"topic_reminder\": 2049,\n    \"liked_consolidated\": 630,\n    \"linked_consolidated\": 9506,\n    \"post_approved\": 2272,\n    \"code_review_commit_approved\": 2151,\n    \"membership_request_accepted\": 8902,\n    \"membership_request_consolidated\": 5194,\n    \"bookmark_reminder\": 2062,\n    \"reaction\": 9220,\n    \"votes_released\": 3517,\n    \"event_reminder\": 1275,\n    \"event_invitation\": 9581,\n    \"chat_mention\": 695,\n    \"chat_message\": 682,\n    \"chat_invitation\": 1019,\n    \"chat_group_mention\": 848,\n    \"new_features\": 2133,\n    \"admin_problems\": 5561,\n    \"chat_quoted\": 9530,\n    \"chat_watched_thread\": 5128,\n    \"upcoming_change_available\": 3120,\n    \"upcoming_change_automatically_promoted\": 6252,\n    \"assigned\": 2196,\n    \"question_answer_user_commented\": 6306,\n    \"following\": 1937,\n    \"following_created_topic\": 6480,\n    \"following_replied\": 4982,\n    \"circles_activity\": 300\n  },\n  \"post_types\": {\n    \"regular\": 8334,\n    \"moderator_action\": 6217,\n    \"small_action\": 1958,\n    \"whisper\": 6153\n  },\n  \"trust_levels\": {\n    \"newuser\": 8339,\n    \"basic\": 7020,\n    \"member\": 5086,\n    \"regular\": 471,\n    \"leader\": 8260\n  },\n  \"groups\": [\n    {\n      \"id\": 3044,\n      \"name\": \"string\",\n      \"flair_url\": \"string\",\n      \"flair_bg_color\": \"string\",\n      \"flair_color\": \"string\",\n      \"automatic\": false\n    },\n    {\n      \"id\": 3756,\n      \"name\": \"string\",\n      \"flair_url\": \"string\",\n      \"flair_bg_color\": \"string\",\n      \"flair_color\": \"string\",\n      \"automatic\": false\n    }\n  ],\n  \"filters\": [],\n  \"periods\": [],\n  \"top_menu_items\": [],\n  \"anonymous_top_menu_items\": [],\n  \"uncategorized_category_id\": 2877,\n  \"user_field_max_length\": 3765,\n  \"post_action_types\": [\n    {\n      \"id\": 9692,\n      \"name_key\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"short_description\": \"string\",\n      \"is_flag\": true,\n      \"require_message\": true,\n      \"enabled\": true,\n      \"is_used\": false,\n      \"auto_action_type\": false,\n      \"position\": 340,\n      \"system\": true\n    },\n    {\n      \"id\": 5701,\n      \"name_key\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"short_description\": \"string\",\n      \"is_flag\": false,\n      \"require_message\": true,\n      \"enabled\": true,\n      \"is_used\": true,\n      \"auto_action_type\": true,\n      \"position\": 7964,\n      \"system\": true\n    }\n  ],\n  \"topic_flag_types\": [\n    {\n      \"id\": 7091,\n      \"name_key\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"short_description\": \"string\",\n      \"is_flag\": true,\n      \"require_message\": false,\n      \"enabled\": true,\n      \"is_used\": false,\n      \"auto_action_type\": false,\n      \"position\": 1503,\n      \"system\": false\n    },\n    {\n      \"id\": 5468,\n      \"name_key\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"short_description\": \"string\",\n      \"is_flag\": true,\n      \"require_message\": true,\n      \"enabled\": false,\n      \"is_used\": false,\n      \"auto_action_type\": true,\n      \"position\": 41,\n      \"system\": false\n    }\n  ],\n  \"can_create_tag\": false,\n  \"can_tag_topics\": true,\n  \"can_tag_pms\": true,\n  \"tags_filter_regexp\": \"string\",\n  \"top_tags\": [\n    {\n      \"id\": 9496,\n      \"name\": \"string\",\n      \"slug\": \"string\"\n    },\n    {\n      \"id\": 6199,\n      \"name\": \"string\",\n      \"slug\": \"string\"\n    }\n  ],\n  \"topic_featured_link_allowed_category_ids\": [],\n  \"user_themes\": [\n    {\n      \"theme_id\": 5991,\n      \"name\": \"string\",\n      \"default\": false,\n      \"color_scheme_id\": 7621,\n      \"dark_color_scheme_id\": 493,\n      \"only_theme_color_schemes\": false\n    },\n    {\n      \"theme_id\": 2330,\n      \"name\": \"string\",\n      \"default\": true,\n      \"color_scheme_id\": 9315,\n      \"dark_color_scheme_id\": 8369,\n      \"only_theme_color_schemes\": true\n    }\n  ],\n  \"user_color_schemes\": [\n    {\n      \"id\": 4132,\n      \"name\": \"string\",\n      \"is_dark\": true,\n      \"theme_id\": 332\n    },\n    {\n      \"id\": 3671,\n      \"name\": \"string\",\n      \"is_dark\": true,\n      \"theme_id\": 6153\n    }\n  ],\n  \"default_light_color_scheme\": {},\n  \"default_dark_color_scheme\": {},\n  \"censored_regexp\": [],\n  \"custom_emoji_translation\": {},\n  \"watched_words_replace\": \"string\",\n  \"watched_words_link\": \"string\",\n  \"categories\": [\n    {\n      \"id\": 2612,\n      \"name\": \"string\",\n      \"color\": \"string\",\n      \"text_color\": \"string\",\n      \"slug\": \"string\",\n      \"topic_count\": 4818,\n      \"post_count\": 6516,\n      \"position\": 7925,\n      \"topic_url\": \"string\",\n      \"read_restricted\": true,\n      \"permission\": 1918,\n      \"notification_level\": 3492,\n      \"topic_template\": \"string\",\n      \"topic_title_placeholder\": \"string\",\n      \"has_children\": false,\n      \"subcategory_count\": 4513,\n      \"sort_order\": \"string\",\n      \"sort_ascending\": \"string\",\n      \"show_subcategory_list\": true,\n      \"num_featured_topics\": 9642,\n      \"default_view\": \"string\",\n      \"subcategory_list_style\": \"string\",\n      \"default_top_period\": \"string\",\n      \"default_list_filter\": \"string\",\n      \"minimum_required_tags\": 205,\n      \"navigate_to_first_post_after_read\": true,\n      \"allow_global_tags\": false,\n      \"required_tag_groups\": [\n        {\n          \"name\": \"string\",\n          \"min_count\": 4526\n        },\n        {\n          \"name\": \"string\",\n          \"min_count\": 7412\n        }\n      ],\n      \"read_only_banner\": \"string\",\n      \"uploaded_logo\": \"string\",\n      \"uploaded_logo_dark\": \"string\",\n      \"uploaded_background\": \"string\",\n      \"uploaded_background_dark\": \"string\",\n      \"can_edit\": false,\n      \"style_type\": \"string\",\n      \"emoji\": \"string\",\n      \"icon\": \"string\",\n      \"description\": \"string\",\n      \"description_text\": \"string\",\n      \"description_excerpt\": \"string\",\n      \"custom_fields\": {\n        \"key_0\": true\n      },\n      \"parent_category_id\": 7013\n    },\n    {\n      \"id\": 9563,\n      \"name\": \"string\",\n      \"color\": \"string\",\n      \"text_color\": \"string\",\n      \"slug\": \"string\",\n      \"topic_count\": 4003,\n      \"post_count\": 2358,\n      \"position\": 2943,\n      \"topic_url\": \"string\",\n      \"read_restricted\": false,\n      \"permission\": 7652,\n      \"notification_level\": 3619,\n      \"topic_template\": \"string\",\n      \"topic_title_placeholder\": \"string\",\n      \"has_children\": false,\n      \"subcategory_count\": 3223,\n      \"sort_order\": \"string\",\n      \"sort_ascending\": \"string\",\n      \"show_subcategory_list\": true,\n      \"num_featured_topics\": 555,\n      \"default_view\": \"string\",\n      \"subcategory_list_style\": \"string\",\n      \"default_top_period\": \"string\",\n      \"default_list_filter\": \"string\",\n      \"minimum_required_tags\": 8281,\n      \"navigate_to_first_post_after_read\": false,\n      \"allow_global_tags\": false,\n      \"required_tag_groups\": [\n        {\n          \"name\": \"string\",\n          \"min_count\": 5967\n        },\n        {\n          \"name\": \"string\",\n          \"min_count\": 3916\n        }\n      ],\n      \"read_only_banner\": \"string\",\n      \"uploaded_logo\": \"string\",\n      \"uploaded_logo_dark\": \"string\",\n      \"uploaded_background\": \"string\",\n      \"uploaded_background_dark\": \"string\",\n      \"can_edit\": false,\n      \"style_type\": \"string\",\n      \"emoji\": \"string\",\n      \"icon\": \"string\",\n      \"description\": \"string\",\n      \"description_text\": \"string\",\n      \"description_excerpt\": \"string\",\n      \"custom_fields\": {\n        \"key_0\": 3914,\n        \"key_1\": 5199\n      },\n      \"parent_category_id\": 1810\n    }\n  ],\n  \"archetypes\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    }\n  ],\n  \"user_fields\": [],\n  \"auth_providers\": [],\n  \"full_name_required_for_signup\": true,\n  \"full_name_visible_in_signup\": true,\n  \"email_configured\": false,\n  \"user_tips\": {\n    \"first_notification\": 3857,\n    \"topic_timeline\": 7888,\n    \"post_menu\": 9595,\n    \"topic_notification_levels\": 2077,\n    \"suggested_topics\": 8609\n  },\n  \"wizard_required\": true,\n  \"can_associate_groups\": true,\n  \"markdown_additional_options\": {},\n  \"hashtag_configurations\": {},\n  \"hashtag_icons\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "discourse.example.com",
+      "key": "defaultHost"
+    },
+    {
+      "type": "string",
+      "value": "https://{{defaultHost}}",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<integer>",
+      "key": "id"
+    }
+  ],
+  "info": {
+    "_postman_id": "38bc8175-10ae-463c-870c-d8533e97a0d1",
+    "name": "Discourse API Documentation Admin Categories API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This page contains the documentation on how to use Discourse through API calls.\n\n> Note: For any endpoints not listed you can follow the\n[reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)\nguide to figure out how to use an API endpoint.\n\n### Request Content-Type\n\nThe Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,\n`multipart/form-data`, or `application/json`.\n\n### Endpoint Names and Response Content-Type\n\nMost API endpoints provide the same content as their HTML counterparts. For example\nthe URL `/categories` serves a list of categories, the `/categories.json` API provides the\nsame information in JSON format.\n\nInstead of sending API requests to `/categories.json` you may also send them to `/categories`\nand add an `Accept: application/json` header to the request to get the JSON response.\nSending requests with the `Accept` header is necessary if you want to use URLs\nfor related endpoints returned by the API, such as pagination URLs.\nThese URLs are returned without the `.json` prefix so you need to add the header in\norder to get the correct response format.\n\n### Authentication\n\nSome endpoints do not require any authentication, pretty much anything else will\nrequire you to be authenticated.\n\nTo become authenticated you will need to create an API Key from the admin panel.\n\nOnce you have your API Key you can pass it in along with your API Username\nas an HTTP header like this:\n\n```\ncurl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\"\n```\n\nand this is how POST requests will look:\n\n```\ncurl -X POST \"http://127.0.0.1:3000/categories\" \\\n-H \"Content-Type: multipart/form-data;\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\" \\\n-F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\\n-F \"color=49d9e9\" \\\n-F \"text_color=f0fcfd\"\n```\n\n### Boolean values\n\nIf an endpoint accepts a boolean be sure to specify it as a lowercase\n`true` or `false` value unless noted otherwise.\n",
+      "type": "text/plain"
+    }
+  }
+}

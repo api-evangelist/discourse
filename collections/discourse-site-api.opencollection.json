@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Discourse API Documentation Admin Site API",
+    "version": "latest"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Site",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get site info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/site.json"
+          },
+          "docs": "Can be used to fetch all categories and subcategories"
+        },
+        {
+          "info": {
+            "name": "Get site basic info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/site/basic-info.json"
+          },
+          "docs": "Can be used to fetch basic info about a site"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

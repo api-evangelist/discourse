@@ -1,0 +1,189 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Discourse API Documentation Admin Posts API",
+    "version": "latest"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Posts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List latest posts across topics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/posts.json",
+            "params": [
+              {
+                "name": "before",
+                "value": "",
+                "type": "query",
+                "description": "Load posts with an id lower than this value. Useful for pagination."
+              }
+            ]
+          },
+          "docs": "List latest posts across topics"
+        },
+        {
+          "info": {
+            "name": "Creates a new topic, a new post, or a private message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{defaultHost}/posts.json",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new topic, a new post, or a private message"
+        },
+        {
+          "info": {
+            "name": "Retrieve a single post",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/posts/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint can be used to get the number of likes on a post using the\n`actions_summary` property in the response. `actions_summary` responses\nwith the id of `2` signify a `like`. If there are no `actions_summary`\nitems with the id of `2`, that means there are 0 likes. Other ids likely\nrefer to various different flag types.\n"
+        },
+        {
+          "info": {
+            "name": "Update a single post",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{defaultHost}/posts/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a single post"
+        },
+        {
+          "info": {
+            "name": "delete a single post",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{defaultHost}/posts/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "delete a single post"
+        },
+        {
+          "info": {
+            "name": "List replies to a post",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/posts/:id/replies.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List replies to a post"
+        },
+        {
+          "info": {
+            "name": "Lock a post from being edited",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{defaultHost}/posts/:id/locked.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Lock a post from being edited"
+        },
+        {
+          "info": {
+            "name": "Like a post and other actions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{defaultHost}/post_actions.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Like a post and other actions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

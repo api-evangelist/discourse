@@ -1,0 +1,132 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Discourse API Documentation Admin Invites API",
+    "version": "latest"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Invites",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create an invite",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{defaultHost}/invites.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an invite"
+        },
+        {
+          "info": {
+            "name": "Create multiple invites",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{defaultHost}/invites/create-multiple.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create multiple invites"
+        },
+        {
+          "info": {
+            "name": "Invite to topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{defaultHost}/t/:id/invite.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Invite to topic"
+        },
+        {
+          "info": {
+            "name": "Invite group to topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{defaultHost}/t/:id/invite-group.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Invite group to topic"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

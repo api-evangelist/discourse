@@ -1,0 +1,140 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Discourse API Documentation Admin Discourse Calendar - Events API",
+    "version": "latest"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Discourse Calendar - Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List calendar events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/discourse-post-event/events.json",
+            "params": [
+              {
+                "name": "include_details",
+                "value": "",
+                "type": "query",
+                "description": "Include detailed event information (creator, invitees, stats,\netc.)"
+              },
+              {
+                "name": "category_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter events by category ID"
+              },
+              {
+                "name": "include_subcategories",
+                "value": "",
+                "type": "query",
+                "description": "Include events from subcategories when filtering by category"
+              },
+              {
+                "name": "post_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter to events associated with a specific post ID"
+              },
+              {
+                "name": "attending_user",
+                "value": "",
+                "type": "query",
+                "description": "Filter to events where the specified user (username) has RSVP'd\nas going"
+              },
+              {
+                "name": "before",
+                "value": "",
+                "type": "query",
+                "description": "Return events starting before this date/time (ISO 8601 format)"
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query",
+                "description": "Return events starting after this date/time (ISO 8601 format)"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order for events by start date (default: asc)"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of events to return (default: 200)"
+              }
+            ]
+          },
+          "docs": "List calendar events"
+        },
+        {
+          "info": {
+            "name": "Export calendar events in iCalendar format",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/discourse-post-event/events.ics",
+            "params": [
+              {
+                "name": "category_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter events by category ID"
+              },
+              {
+                "name": "include_subcategories",
+                "value": "",
+                "type": "query",
+                "description": "Include events from subcategories when filtering by category"
+              },
+              {
+                "name": "attending_user",
+                "value": "",
+                "type": "query",
+                "description": "Filter to events where the specified user (username) has RSVP'd\nas going"
+              },
+              {
+                "name": "before",
+                "value": "",
+                "type": "query",
+                "description": "Return events starting before this date/time (ISO 8601 format)"
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query",
+                "description": "Return events starting after this date/time (ISO 8601 format)"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order for events by start date (default: asc)"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of events to return (default: 200)"
+              }
+            ]
+          },
+          "docs": "Export calendar events in iCalendar format"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

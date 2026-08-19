@@ -1,0 +1,341 @@
+{
+  "item": [
+    {
+      "id": "fff179ca-3cfe-47c2-bb33-03beaaf717e5",
+      "name": "Private Messages",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1af87e1f-e41c-40b1-918a-691d16ac83c9",
+          "name": "Creates a new topic, a new post, or a private message",
+          "request": {
+            "name": "Creates a new topic, a new post, or a private message",
+            "description": {},
+            "url": {
+              "path": [
+                "posts.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"raw\": \"<string>\",\n  \"title\": \"<string>\",\n  \"topic_id\": \"<integer>\",\n  \"category\": \"<integer>\",\n  \"target_recipients\": \"<string>\",\n  \"target_usernames\": \"<string>\",\n  \"archetype\": \"<string>\",\n  \"created_at\": \"<string>\",\n  \"reply_to_post_number\": \"<integer>\",\n  \"embed_url\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"auto_track\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6618cd8f-e172-45f9-b0d0-b119a74bf6d2",
+              "name": "post created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "posts.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"raw\": \"<string>\",\n  \"title\": \"<string>\",\n  \"topic_id\": \"<integer>\",\n  \"category\": \"<integer>\",\n  \"target_recipients\": \"blake,sam\",\n  \"target_usernames\": \"<string>\",\n  \"archetype\": \"private_message\",\n  \"created_at\": \"<string>\",\n  \"reply_to_post_number\": \"<integer>\",\n  \"embed_url\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"auto_track\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4691,\n  \"name\": \"string\",\n  \"username\": \"string\",\n  \"avatar_template\": \"string\",\n  \"created_at\": \"string\",\n  \"cooked\": \"string\",\n  \"post_number\": 9300,\n  \"post_type\": 158,\n  \"posts_count\": 3926,\n  \"updated_at\": \"string\",\n  \"reply_count\": 2857,\n  \"reply_to_post_number\": \"string\",\n  \"quote_count\": 3174,\n  \"incoming_link_count\": 4809,\n  \"reads\": 4655,\n  \"readers_count\": 9189,\n  \"score\": 34.012205115343534,\n  \"yours\": true,\n  \"topic_id\": 9449,\n  \"topic_slug\": \"string\",\n  \"display_username\": \"string\",\n  \"primary_group_name\": \"string\",\n  \"flair_name\": \"string\",\n  \"flair_url\": \"string\",\n  \"flair_bg_color\": \"string\",\n  \"flair_color\": \"string\",\n  \"version\": 5656,\n  \"can_edit\": true,\n  \"can_delete\": true,\n  \"can_recover\": true,\n  \"can_wiki\": false,\n  \"user_title\": \"string\",\n  \"bookmarked\": false,\n  \"actions_summary\": [\n    {\n      \"id\": 8892,\n      \"can_act\": true\n    },\n    {\n      \"id\": 6963,\n      \"can_act\": false\n    }\n  ],\n  \"moderator\": true,\n  \"admin\": false,\n  \"staff\": true,\n  \"user_id\": 3951,\n  \"draft_sequence\": 6710,\n  \"hidden\": true,\n  \"trust_level\": 2354,\n  \"deleted_at\": \"string\",\n  \"user_deleted\": false,\n  \"edit_reason\": \"string\",\n  \"can_view_edit_history\": false,\n  \"wiki\": true,\n  \"reviewable_id\": 6411,\n  \"reviewable_score_count\": 4855,\n  \"reviewable_score_pending_count\": 6579,\n  \"post_url\": \"string\",\n  \"raw\": \"string\",\n  \"flair_group_id\": 8361,\n  \"can_see_hidden_post\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8bdea9d6-9123-4b5c-a75c-70b44f6a74e9",
+          "name": "Get a list of private messages for a user",
+          "request": {
+            "name": "Get a list of private messages for a user",
+            "description": {},
+            "url": {
+              "path": [
+                "topics",
+                "private-messages",
+                "{{username}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "92303b2b-e92d-43b1-8d39-f3b10297d18e",
+              "name": "private messages",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "topics",
+                    "private-messages",
+                    "{{username}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"users\": [\n    {\n      \"id\": 3069,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    },\n    {\n      \"id\": 4814,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    }\n  ],\n  \"topic_list\": {\n    \"can_create_topic\": true,\n    \"draft\": \"string\",\n    \"draft_key\": \"string\",\n    \"draft_sequence\": 9290,\n    \"per_page\": 7616,\n    \"topics\": [\n      {\n        \"id\": 2684,\n        \"title\": \"string\",\n        \"fancy_title\": \"string\",\n        \"slug\": \"string\",\n        \"posts_count\": 9610,\n        \"reply_count\": 9208,\n        \"highest_post_number\": 14,\n        \"image_url\": \"string\",\n        \"created_at\": \"string\",\n        \"last_posted_at\": \"string\",\n        \"bumped\": false,\n        \"bumped_at\": \"string\",\n        \"archetype\": \"string\",\n        \"unseen\": true,\n        \"last_read_post_number\": 6505,\n        \"unread_posts\": 9696,\n        \"pinned\": true,\n        \"unpinned\": \"string\",\n        \"visible\": false,\n        \"closed\": true,\n        \"archived\": false,\n        \"notification_level\": 5268,\n        \"bookmarked\": true,\n        \"liked\": true,\n        \"views\": 5155,\n        \"like_count\": 9047,\n        \"has_summary\": false,\n        \"last_poster_username\": \"string\",\n        \"category_id\": \"string\",\n        \"pinned_globally\": true,\n        \"featured_link\": \"string\",\n        \"allowed_user_count\": 6363,\n        \"posters\": [\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 7448,\n            \"primary_group_id\": 2008\n          },\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 4586,\n            \"primary_group_id\": 8467\n          }\n        ],\n        \"participants\": [\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 9421,\n            \"primary_group_id\": 6912\n          },\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 2722,\n            \"primary_group_id\": 2416\n          }\n        ]\n      },\n      {\n        \"id\": 1463,\n        \"title\": \"string\",\n        \"fancy_title\": \"string\",\n        \"slug\": \"string\",\n        \"posts_count\": 9160,\n        \"reply_count\": 6739,\n        \"highest_post_number\": 7681,\n        \"image_url\": \"string\",\n        \"created_at\": \"string\",\n        \"last_posted_at\": \"string\",\n        \"bumped\": true,\n        \"bumped_at\": \"string\",\n        \"archetype\": \"string\",\n        \"unseen\": false,\n        \"last_read_post_number\": 8811,\n        \"unread_posts\": 2686,\n        \"pinned\": false,\n        \"unpinned\": \"string\",\n        \"visible\": false,\n        \"closed\": false,\n        \"archived\": true,\n        \"notification_level\": 9294,\n        \"bookmarked\": false,\n        \"liked\": true,\n        \"views\": 8936,\n        \"like_count\": 2907,\n        \"has_summary\": true,\n        \"last_poster_username\": \"string\",\n        \"category_id\": \"string\",\n        \"pinned_globally\": true,\n        \"featured_link\": \"string\",\n        \"allowed_user_count\": 8239,\n        \"posters\": [\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 5429,\n            \"primary_group_id\": 6400\n          },\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 8794,\n            \"primary_group_id\": 5371\n          }\n        ],\n        \"participants\": [\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 2618,\n            \"primary_group_id\": 6264\n          },\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 5887,\n            \"primary_group_id\": 2805\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "926ba00f-3b70-467b-9317-f66264559b06",
+          "name": "Get a list of private messages sent for a user",
+          "request": {
+            "name": "Get a list of private messages sent for a user",
+            "description": {},
+            "url": {
+              "path": [
+                "topics",
+                "private-messages-sent",
+                "{{username}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "db33a3ad-f21a-4e62-844e-ee8c95d36e75",
+              "name": "private messages",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "topics",
+                    "private-messages-sent",
+                    "{{username}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"users\": [\n    {\n      \"id\": 2260,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    },\n    {\n      \"id\": 1215,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    }\n  ],\n  \"topic_list\": {\n    \"can_create_topic\": false,\n    \"draft\": \"string\",\n    \"draft_key\": \"string\",\n    \"draft_sequence\": 7293,\n    \"per_page\": 829,\n    \"topics\": [\n      {\n        \"id\": 8418,\n        \"title\": \"string\",\n        \"fancy_title\": \"string\",\n        \"slug\": \"string\",\n        \"posts_count\": 2459,\n        \"reply_count\": 2578,\n        \"highest_post_number\": 1687,\n        \"image_url\": \"string\",\n        \"created_at\": \"string\",\n        \"last_posted_at\": \"string\",\n        \"bumped\": true,\n        \"bumped_at\": \"string\",\n        \"archetype\": \"string\",\n        \"unseen\": false,\n        \"last_read_post_number\": 3935,\n        \"unread_posts\": 8997,\n        \"pinned\": true,\n        \"unpinned\": \"string\",\n        \"visible\": true,\n        \"closed\": false,\n        \"archived\": false,\n        \"notification_level\": 1914,\n        \"bookmarked\": false,\n        \"liked\": false,\n        \"views\": 7241,\n        \"like_count\": 9630,\n        \"has_summary\": false,\n        \"last_poster_username\": \"string\",\n        \"category_id\": \"string\",\n        \"pinned_globally\": true,\n        \"featured_link\": \"string\",\n        \"allowed_user_count\": 9135,\n        \"posters\": [\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 409,\n            \"primary_group_id\": 7529\n          },\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 9003,\n            \"primary_group_id\": 4538\n          }\n        ]\n      },\n      {\n        \"id\": 1230,\n        \"title\": \"string\",\n        \"fancy_title\": \"string\",\n        \"slug\": \"string\",\n        \"posts_count\": 5427,\n        \"reply_count\": 8550,\n        \"highest_post_number\": 8707,\n        \"image_url\": \"string\",\n        \"created_at\": \"string\",\n        \"last_posted_at\": \"string\",\n        \"bumped\": false,\n        \"bumped_at\": \"string\",\n        \"archetype\": \"string\",\n        \"unseen\": true,\n        \"last_read_post_number\": 6672,\n        \"unread_posts\": 8873,\n        \"pinned\": false,\n        \"unpinned\": \"string\",\n        \"visible\": false,\n        \"closed\": true,\n        \"archived\": false,\n        \"notification_level\": 7052,\n        \"bookmarked\": true,\n        \"liked\": true,\n        \"views\": 1775,\n        \"like_count\": 9557,\n        \"has_summary\": false,\n        \"last_poster_username\": \"string\",\n        \"category_id\": \"string\",\n        \"pinned_globally\": true,\n        \"featured_link\": \"string\",\n        \"allowed_user_count\": 648,\n        \"posters\": [\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 7984,\n            \"primary_group_id\": 7340\n          },\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 9689,\n            \"primary_group_id\": 9754\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "discourse.example.com",
+      "key": "defaultHost"
+    },
+    {
+      "type": "string",
+      "value": "https://{{defaultHost}}",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "username"
+    }
+  ],
+  "info": {
+    "_postman_id": "e38029ff-3115-4af5-8eaf-e11d39ffe0c6",
+    "name": "Discourse API Documentation Admin Private Messages API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This page contains the documentation on how to use Discourse through API calls.\n\n> Note: For any endpoints not listed you can follow the\n[reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)\nguide to figure out how to use an API endpoint.\n\n### Request Content-Type\n\nThe Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,\n`multipart/form-data`, or `application/json`.\n\n### Endpoint Names and Response Content-Type\n\nMost API endpoints provide the same content as their HTML counterparts. For example\nthe URL `/categories` serves a list of categories, the `/categories.json` API provides the\nsame information in JSON format.\n\nInstead of sending API requests to `/categories.json` you may also send them to `/categories`\nand add an `Accept: application/json` header to the request to get the JSON response.\nSending requests with the `Accept` header is necessary if you want to use URLs\nfor related endpoints returned by the API, such as pagination URLs.\nThese URLs are returned without the `.json` prefix so you need to add the header in\norder to get the correct response format.\n\n### Authentication\n\nSome endpoints do not require any authentication, pretty much anything else will\nrequire you to be authenticated.\n\nTo become authenticated you will need to create an API Key from the admin panel.\n\nOnce you have your API Key you can pass it in along with your API Username\nas an HTTP header like this:\n\n```\ncurl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\"\n```\n\nand this is how POST requests will look:\n\n```\ncurl -X POST \"http://127.0.0.1:3000/categories\" \\\n-H \"Content-Type: multipart/form-data;\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\" \\\n-F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\\n-F \"color=49d9e9\" \\\n-F \"text_color=f0fcfd\"\n```\n\n### Boolean values\n\nIf an endpoint accepts a boolean be sure to specify it as a lowercase\n`true` or `false` value unless noted otherwise.\n",
+      "type": "text/plain"
+    }
+  }
+}

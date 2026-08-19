@@ -1,0 +1,540 @@
+{
+  "item": [
+    {
+      "id": "c8d62e16-dbdd-4d34-985d-cf2f4146108f",
+      "name": "Badges",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6030e7a8-68a4-48b9-becd-ab1eb94fd426",
+          "name": "List badges",
+          "request": {
+            "name": "List badges",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "badges.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9997123a-8fb4-4408-997d-97486c6bad78",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "badges.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"badges\": [\n    {\n      \"id\": 8979,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"grant_count\": 9474,\n      \"allow_title\": true,\n      \"multiple_grant\": true,\n      \"icon\": \"string\",\n      \"image_url\": \"string\",\n      \"listable\": true,\n      \"enabled\": false,\n      \"badge_grouping_id\": 3303,\n      \"system\": false,\n      \"long_description\": \"string\",\n      \"slug\": \"string\",\n      \"manually_grantable\": false,\n      \"query\": \"string\",\n      \"trigger\": 5054,\n      \"target_posts\": false,\n      \"auto_revoke\": false,\n      \"show_posts\": true,\n      \"badge_type_id\": 4554,\n      \"image_upload_id\": 6192,\n      \"show_in_post_header\": false,\n      \"i18n_name\": \"string\"\n    },\n    {\n      \"id\": 6191,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"grant_count\": 1974,\n      \"allow_title\": true,\n      \"multiple_grant\": false,\n      \"icon\": \"string\",\n      \"image_url\": \"string\",\n      \"listable\": false,\n      \"enabled\": true,\n      \"badge_grouping_id\": 8348,\n      \"system\": false,\n      \"long_description\": \"string\",\n      \"slug\": \"string\",\n      \"manually_grantable\": true,\n      \"query\": \"string\",\n      \"trigger\": 5516,\n      \"target_posts\": true,\n      \"auto_revoke\": true,\n      \"show_posts\": false,\n      \"badge_type_id\": 1323,\n      \"image_upload_id\": 9119,\n      \"show_in_post_header\": true,\n      \"i18n_name\": \"string\"\n    }\n  ],\n  \"badge_types\": [\n    {\n      \"id\": 6221,\n      \"name\": \"string\",\n      \"sort_order\": 6878\n    },\n    {\n      \"id\": 8036,\n      \"name\": \"string\",\n      \"sort_order\": 833\n    }\n  ],\n  \"badge_groupings\": [\n    {\n      \"id\": 8655,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"position\": 4543,\n      \"system\": true\n    },\n    {\n      \"id\": 7669,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"position\": 3928,\n      \"system\": false\n    }\n  ],\n  \"admin_badges\": {\n    \"triggers\": {\n      \"user_change\": 4724,\n      \"none\": 5065,\n      \"post_revision\": 5305,\n      \"trust_level_change\": 6247,\n      \"post_action\": 5911\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b9bc1582-e55a-44e2-93aa-920cb8886ad5",
+          "name": "Create badge",
+          "request": {
+            "name": "Create badge",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "badges.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"badge_type_id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cfd21b6b-c44d-4112-a207-ed80c829c639",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "badges.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"badge_type_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"badge_types\": [\n    {\n      \"id\": 5245,\n      \"name\": \"string\",\n      \"sort_order\": 4722\n    },\n    {\n      \"id\": 5634,\n      \"name\": \"string\",\n      \"sort_order\": 9631\n    }\n  ],\n  \"badge\": {\n    \"id\": 22,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"grant_count\": 6106,\n    \"allow_title\": true,\n    \"multiple_grant\": true,\n    \"icon\": \"string\",\n    \"image_url\": \"string\",\n    \"listable\": false,\n    \"enabled\": true,\n    \"badge_grouping_id\": 8225,\n    \"system\": false,\n    \"long_description\": \"string\",\n    \"slug\": \"string\",\n    \"manually_grantable\": false,\n    \"query\": \"string\",\n    \"trigger\": \"string\",\n    \"target_posts\": true,\n    \"auto_revoke\": true,\n    \"show_posts\": false,\n    \"badge_type_id\": 1255,\n    \"image_upload_id\": 3765,\n    \"show_in_post_header\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "018077fe-03e9-411b-bde3-d7ac56bf2176",
+          "name": "Update badge",
+          "request": {
+            "name": "Update badge",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "badges",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"badge_type_id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2c46ea4a-029b-459b-98a5-bf96a25f452a",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "badges",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"badge_type_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"badge_types\": [\n    {\n      \"id\": 5245,\n      \"name\": \"string\",\n      \"sort_order\": 4722\n    },\n    {\n      \"id\": 5634,\n      \"name\": \"string\",\n      \"sort_order\": 9631\n    }\n  ],\n  \"badge\": {\n    \"id\": 22,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"grant_count\": 6106,\n    \"allow_title\": true,\n    \"multiple_grant\": true,\n    \"icon\": \"string\",\n    \"image_url\": \"string\",\n    \"listable\": false,\n    \"enabled\": true,\n    \"badge_grouping_id\": 8225,\n    \"system\": false,\n    \"long_description\": \"string\",\n    \"slug\": \"string\",\n    \"manually_grantable\": false,\n    \"query\": \"string\",\n    \"trigger\": \"string\",\n    \"target_posts\": true,\n    \"auto_revoke\": true,\n    \"show_posts\": false,\n    \"badge_type_id\": 1255,\n    \"image_upload_id\": 3765,\n    \"show_in_post_header\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e0c34c6b-ce6c-413c-a837-aae0de8879d4",
+          "name": "Delete badge",
+          "request": {
+            "name": "Delete badge",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "badges",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "de18bd8d-1f14-4290-9fdb-b28d1d0eb093",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "badges",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87d23ef0-7b92-436c-9550-0fcca5251f13",
+          "name": "List badges for a user",
+          "request": {
+            "name": "List badges for a user",
+            "description": {},
+            "url": {
+              "path": [
+                "user-badges",
+                "{{username}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cffc1259-00b8-4ec9-84fc-df4e70d19de4",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user-badges",
+                    "{{username}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"user_badges\": [\n    {\n      \"id\": 9601,\n      \"granted_at\": \"string\",\n      \"grouping_position\": 3447,\n      \"is_favorite\": \"string\",\n      \"can_favorite\": false,\n      \"badge_id\": 3259,\n      \"granted_by_id\": 7059\n    },\n    {\n      \"id\": 7594,\n      \"granted_at\": \"string\",\n      \"grouping_position\": 2567,\n      \"is_favorite\": \"string\",\n      \"can_favorite\": false,\n      \"badge_id\": 8343,\n      \"granted_by_id\": 3602\n    }\n  ],\n  \"badges\": [\n    {\n      \"id\": 9385,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"grant_count\": 7624,\n      \"allow_title\": true,\n      \"multiple_grant\": true,\n      \"icon\": \"string\",\n      \"image_url\": \"string\",\n      \"listable\": false,\n      \"enabled\": false,\n      \"badge_grouping_id\": 293,\n      \"system\": false,\n      \"slug\": \"string\",\n      \"manually_grantable\": false,\n      \"badge_type_id\": 7002\n    },\n    {\n      \"id\": 6315,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"grant_count\": 4510,\n      \"allow_title\": false,\n      \"multiple_grant\": true,\n      \"icon\": \"string\",\n      \"image_url\": \"string\",\n      \"listable\": false,\n      \"enabled\": false,\n      \"badge_grouping_id\": 5311,\n      \"system\": false,\n      \"slug\": \"string\",\n      \"manually_grantable\": true,\n      \"badge_type_id\": 8973\n    }\n  ],\n  \"badge_types\": [\n    {\n      \"id\": 5579,\n      \"name\": \"string\",\n      \"sort_order\": 1279\n    },\n    {\n      \"id\": 622,\n      \"name\": \"string\",\n      \"sort_order\": 9317\n    }\n  ],\n  \"granted_bies\": [\n    {\n      \"id\": 9768,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\",\n      \"flair_name\": \"string\",\n      \"admin\": false,\n      \"moderator\": true,\n      \"trust_level\": 205\n    },\n    {\n      \"id\": 2206,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\",\n      \"flair_name\": \"string\",\n      \"admin\": true,\n      \"moderator\": false,\n      \"trust_level\": 6244\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "discourse.example.com",
+      "key": "defaultHost"
+    },
+    {
+      "type": "string",
+      "value": "https://{{defaultHost}}",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<integer>",
+      "key": "id"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "username"
+    }
+  ],
+  "info": {
+    "_postman_id": "1c7dcb20-1610-4850-bde6-6be24e29f281",
+    "name": "Discourse API Documentation Admin Badges API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This page contains the documentation on how to use Discourse through API calls.\n\n> Note: For any endpoints not listed you can follow the\n[reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)\nguide to figure out how to use an API endpoint.\n\n### Request Content-Type\n\nThe Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,\n`multipart/form-data`, or `application/json`.\n\n### Endpoint Names and Response Content-Type\n\nMost API endpoints provide the same content as their HTML counterparts. For example\nthe URL `/categories` serves a list of categories, the `/categories.json` API provides the\nsame information in JSON format.\n\nInstead of sending API requests to `/categories.json` you may also send them to `/categories`\nand add an `Accept: application/json` header to the request to get the JSON response.\nSending requests with the `Accept` header is necessary if you want to use URLs\nfor related endpoints returned by the API, such as pagination URLs.\nThese URLs are returned without the `.json` prefix so you need to add the header in\norder to get the correct response format.\n\n### Authentication\n\nSome endpoints do not require any authentication, pretty much anything else will\nrequire you to be authenticated.\n\nTo become authenticated you will need to create an API Key from the admin panel.\n\nOnce you have your API Key you can pass it in along with your API Username\nas an HTTP header like this:\n\n```\ncurl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\"\n```\n\nand this is how POST requests will look:\n\n```\ncurl -X POST \"http://127.0.0.1:3000/categories\" \\\n-H \"Content-Type: multipart/form-data;\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\" \\\n-F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\\n-F \"color=49d9e9\" \\\n-F \"text_color=f0fcfd\"\n```\n\n### Boolean values\n\nIf an endpoint accepts a boolean be sure to specify it as a lowercase\n`true` or `false` value unless noted otherwise.\n",
+      "type": "text/plain"
+    }
+  }
+}

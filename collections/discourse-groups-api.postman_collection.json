@@ -1,0 +1,996 @@
+{
+  "item": [
+    {
+      "id": "d9d69483-2c03-4863-bbd3-d5a9d0606bc2",
+      "name": "Groups",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ee8d9045-8bd5-4c5e-95b2-17cce8c37ab8",
+          "name": "Create a group",
+          "request": {
+            "name": "Create a group",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "groups.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"group\": {\n    \"name\": \"<string>\",\n    \"full_name\": \"<string>\",\n    \"bio_raw\": \"<string>\",\n    \"usernames\": \"<string>\",\n    \"owner_usernames\": \"<string>\",\n    \"automatic_membership_email_domains\": \"<string>\",\n    \"visibility_level\": \"<integer>\",\n    \"primary_group\": \"<boolean>\",\n    \"flair_icon\": \"<string>\",\n    \"flair_upload_id\": \"<integer>\",\n    \"flair_bg_color\": \"<string>\",\n    \"public_admission\": \"<boolean>\",\n    \"public_exit\": \"<boolean>\",\n    \"default_notification_level\": \"<integer>\",\n    \"muted_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"regular_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"watching_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"tracking_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"watching_first_post_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bd79a410-74d8-4939-a63a-02ffd3083a04",
+              "name": "group created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "groups.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"group\": {\n    \"name\": \"<string>\",\n    \"full_name\": \"<string>\",\n    \"bio_raw\": \"<string>\",\n    \"usernames\": \"<string>\",\n    \"owner_usernames\": \"<string>\",\n    \"automatic_membership_email_domains\": \"<string>\",\n    \"visibility_level\": \"<integer>\",\n    \"primary_group\": \"<boolean>\",\n    \"flair_icon\": \"<string>\",\n    \"flair_upload_id\": \"<integer>\",\n    \"flair_bg_color\": \"<string>\",\n    \"public_admission\": \"<boolean>\",\n    \"public_exit\": \"<boolean>\",\n    \"default_notification_level\": \"<integer>\",\n    \"muted_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"regular_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"watching_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"tracking_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"watching_first_post_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"basic_group\": {\n    \"id\": 1527,\n    \"automatic\": true,\n    \"name\": \"string\",\n    \"user_count\": 6381,\n    \"mentionable_level\": 52,\n    \"messageable_level\": 7873,\n    \"visibility_level\": 5397,\n    \"primary_group\": false,\n    \"title\": \"string\",\n    \"grant_trust_level\": \"string\",\n    \"incoming_email\": \"string\",\n    \"has_messages\": true,\n    \"flair_url\": \"string\",\n    \"flair_bg_color\": \"string\",\n    \"flair_color\": \"string\",\n    \"bio_raw\": \"string\",\n    \"bio_cooked\": \"string\",\n    \"bio_excerpt\": \"string\",\n    \"public_admission\": true,\n    \"public_exit\": false,\n    \"allow_membership_requests\": true,\n    \"full_name\": \"string\",\n    \"default_notification_level\": 88,\n    \"membership_request_template\": \"string\",\n    \"members_visibility_level\": 8832,\n    \"can_see_members\": false,\n    \"can_admin_group\": true,\n    \"publish_read_state\": false,\n    \"can_edit_group\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ee8e0792-ebfd-4b21-bfe7-38d7830138b0",
+          "name": "Delete a group",
+          "request": {
+            "name": "Delete a group",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "groups",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5f393a4e-9afa-4fd2-919a-055232f25912",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "groups",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"OK\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dca2e7e8-5a07-45b4-b6fe-95ed87e7c4c4",
+          "name": "Get a group",
+          "request": {
+            "name": "Get a group",
+            "description": {},
+            "url": {
+              "path": [
+                "groups",
+                "{{name}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c32f6ca0-34aa-406d-9caf-8810ba12bac3",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups",
+                    "{{name}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"group\": {\n    \"id\": 3804,\n    \"automatic\": false,\n    \"name\": \"string\",\n    \"user_count\": 8529,\n    \"mentionable_level\": 8645,\n    \"messageable_level\": 4036,\n    \"visibility_level\": 6435,\n    \"primary_group\": false,\n    \"title\": \"string\",\n    \"grant_trust_level\": \"string\",\n    \"incoming_email\": \"string\",\n    \"has_messages\": false,\n    \"flair_url\": \"string\",\n    \"flair_bg_color\": \"string\",\n    \"flair_color\": \"string\",\n    \"bio_raw\": \"string\",\n    \"bio_cooked\": \"string\",\n    \"bio_excerpt\": \"string\",\n    \"public_admission\": false,\n    \"public_exit\": true,\n    \"allow_membership_requests\": true,\n    \"full_name\": \"string\",\n    \"default_notification_level\": 6475,\n    \"membership_request_template\": \"string\",\n    \"is_group_user\": true,\n    \"members_visibility_level\": 8399,\n    \"can_see_members\": false,\n    \"can_admin_group\": true,\n    \"publish_read_state\": true,\n    \"is_group_owner_display\": true,\n    \"mentionable\": false,\n    \"messageable\": false,\n    \"automatic_membership_email_domains\": \"string\",\n    \"smtp_server\": \"string\",\n    \"smtp_port\": \"string\",\n    \"smtp_ssl_mode\": 349,\n    \"email_username\": \"string\",\n    \"email_password\": \"string\",\n    \"message_count\": 8303,\n    \"allow_unknown_sender_topic_replies\": false,\n    \"can_edit_group\": true,\n    \"smtp_updated_at\": \"string\",\n    \"smtp_updated_by\": {},\n    \"smtp_enabled\": true,\n    \"email_from_alias\": \"string\"\n  },\n  \"extras\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6480bcc6-1d80-44b7-975d-2e7c67d91bc5",
+          "name": "Update a group",
+          "request": {
+            "name": "Update a group",
+            "description": {},
+            "url": {
+              "path": [
+                "groups",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"group\": {\n    \"name\": \"<string>\",\n    \"full_name\": \"<string>\",\n    \"bio_raw\": \"<string>\",\n    \"usernames\": \"<string>\",\n    \"owner_usernames\": \"<string>\",\n    \"automatic_membership_email_domains\": \"<string>\",\n    \"visibility_level\": \"<integer>\",\n    \"primary_group\": \"<boolean>\",\n    \"flair_icon\": \"<string>\",\n    \"flair_upload_id\": \"<integer>\",\n    \"flair_bg_color\": \"<string>\",\n    \"public_admission\": \"<boolean>\",\n    \"public_exit\": \"<boolean>\",\n    \"default_notification_level\": \"<integer>\",\n    \"muted_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"regular_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"watching_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"tracking_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"watching_first_post_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fe7e4807-9106-401d-b6b4-985599694225",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"group\": {\n    \"name\": \"<string>\",\n    \"full_name\": \"<string>\",\n    \"bio_raw\": \"<string>\",\n    \"usernames\": \"<string>\",\n    \"owner_usernames\": \"<string>\",\n    \"automatic_membership_email_domains\": \"<string>\",\n    \"visibility_level\": \"<integer>\",\n    \"primary_group\": \"<boolean>\",\n    \"flair_icon\": \"<string>\",\n    \"flair_upload_id\": \"<integer>\",\n    \"flair_bg_color\": \"<string>\",\n    \"public_admission\": \"<boolean>\",\n    \"public_exit\": \"<boolean>\",\n    \"default_notification_level\": \"<integer>\",\n    \"muted_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"regular_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"watching_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"tracking_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"watching_first_post_category_ids\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"OK\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7db0b437-9c35-4a99-a047-6ce4fca01bca",
+          "name": "Get a group by id",
+          "request": {
+            "name": "Get a group by id",
+            "description": {},
+            "url": {
+              "path": [
+                "groups",
+                "by-id",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "825b0448-7e60-45b5-88e1-4f8a0d1c85d7",
+              "name": "success response (by id)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups",
+                    "by-id",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"group\": {\n    \"id\": 3804,\n    \"automatic\": false,\n    \"name\": \"string\",\n    \"user_count\": 8529,\n    \"mentionable_level\": 8645,\n    \"messageable_level\": 4036,\n    \"visibility_level\": 6435,\n    \"primary_group\": false,\n    \"title\": \"string\",\n    \"grant_trust_level\": \"string\",\n    \"incoming_email\": \"string\",\n    \"has_messages\": false,\n    \"flair_url\": \"string\",\n    \"flair_bg_color\": \"string\",\n    \"flair_color\": \"string\",\n    \"bio_raw\": \"string\",\n    \"bio_cooked\": \"string\",\n    \"bio_excerpt\": \"string\",\n    \"public_admission\": false,\n    \"public_exit\": true,\n    \"allow_membership_requests\": true,\n    \"full_name\": \"string\",\n    \"default_notification_level\": 6475,\n    \"membership_request_template\": \"string\",\n    \"is_group_user\": true,\n    \"members_visibility_level\": 8399,\n    \"can_see_members\": false,\n    \"can_admin_group\": true,\n    \"publish_read_state\": true,\n    \"is_group_owner_display\": true,\n    \"mentionable\": false,\n    \"messageable\": false,\n    \"automatic_membership_email_domains\": \"string\",\n    \"smtp_server\": \"string\",\n    \"smtp_port\": \"string\",\n    \"smtp_ssl_mode\": 349,\n    \"email_username\": \"string\",\n    \"email_password\": \"string\",\n    \"message_count\": 8303,\n    \"allow_unknown_sender_topic_replies\": false,\n    \"can_edit_group\": true,\n    \"smtp_updated_at\": \"string\",\n    \"smtp_updated_by\": {},\n    \"smtp_enabled\": true,\n    \"email_from_alias\": \"string\"\n  },\n  \"extras\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bfe1349d-56f0-456a-982d-dc4f81ce7145",
+          "name": "List group members",
+          "request": {
+            "name": "List group members",
+            "description": {},
+            "url": {
+              "path": [
+                "groups",
+                ":name",
+                "members.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Use group name instead of id"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c2eb2bb1-6fd6-47d2-8958-16d210f712de",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups",
+                    ":name",
+                    "members.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Use group name instead of id"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"members\": [\n    {\n      \"id\": 5827,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\",\n      \"title\": \"string\",\n      \"last_posted_at\": \"string\",\n      \"last_seen_at\": \"string\",\n      \"added_at\": \"string\",\n      \"timezone\": \"string\"\n    },\n    {\n      \"id\": 9671,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\",\n      \"title\": \"string\",\n      \"last_posted_at\": \"string\",\n      \"last_seen_at\": \"string\",\n      \"added_at\": \"string\",\n      \"timezone\": \"string\"\n    }\n  ],\n  \"owners\": [\n    {\n      \"id\": 5204,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\",\n      \"title\": \"string\",\n      \"last_posted_at\": \"string\",\n      \"last_seen_at\": \"string\",\n      \"added_at\": \"string\",\n      \"timezone\": \"string\"\n    },\n    {\n      \"id\": 3694,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\",\n      \"title\": \"string\",\n      \"last_posted_at\": \"string\",\n      \"last_seen_at\": \"string\",\n      \"added_at\": \"string\",\n      \"timezone\": \"string\"\n    }\n  ],\n  \"meta\": {\n    \"total\": 6637,\n    \"limit\": 8357,\n    \"offset\": 4735\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "92c95e9a-62ec-45b9-8997-918c329a5128",
+          "name": "Add group members",
+          "request": {
+            "name": "Add group members",
+            "description": {},
+            "url": {
+              "path": [
+                "groups",
+                ":id",
+                "members.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usernames\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2a08e190-5c0b-4f31-af55-9c47d7281c0d",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups",
+                    ":id",
+                    "members.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"usernames\": \"username1,username2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"string\",\n  \"usernames\": [],\n  \"emails\": []\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0dfbbcd9-488a-4e73-b277-c9ce039032ca",
+          "name": "Remove group members",
+          "request": {
+            "name": "Remove group members",
+            "description": {},
+            "url": {
+              "path": [
+                "groups",
+                ":id",
+                "members.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usernames\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "29a084c7-efe8-4c1b-8ee0-5510e77af57e",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups",
+                    ":id",
+                    "members.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"usernames\": \"username1,username2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"string\",\n  \"usernames\": [],\n  \"skipped_usernames\": []\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5d232ca4-3912-4550-a3ce-ff1f17b0769c",
+          "name": "List groups",
+          "request": {
+            "name": "List groups",
+            "description": {},
+            "url": {
+              "path": [
+                "groups.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5121a436-276b-47fe-9829-e36a7e57934a",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"groups\": [\n    {\n      \"id\": 9960,\n      \"automatic\": true,\n      \"name\": \"string\",\n      \"display_name\": \"string\",\n      \"user_count\": 1450,\n      \"mentionable_level\": 665,\n      \"messageable_level\": 4671,\n      \"visibility_level\": 8335,\n      \"primary_group\": true,\n      \"title\": \"string\",\n      \"grant_trust_level\": \"string\",\n      \"incoming_email\": \"string\",\n      \"has_messages\": true,\n      \"flair_url\": \"string\",\n      \"flair_bg_color\": \"string\",\n      \"flair_color\": \"string\",\n      \"bio_raw\": \"string\",\n      \"bio_cooked\": \"string\",\n      \"bio_excerpt\": \"string\",\n      \"public_admission\": false,\n      \"public_exit\": false,\n      \"allow_membership_requests\": false,\n      \"full_name\": \"string\",\n      \"default_notification_level\": 1377,\n      \"membership_request_template\": \"string\",\n      \"members_visibility_level\": 7626,\n      \"can_see_members\": true,\n      \"can_admin_group\": false,\n      \"publish_read_state\": true,\n      \"is_group_user\": true,\n      \"is_group_owner\": true,\n      \"can_edit_group\": true\n    },\n    {\n      \"id\": 5506,\n      \"automatic\": false,\n      \"name\": \"string\",\n      \"display_name\": \"string\",\n      \"user_count\": 1644,\n      \"mentionable_level\": 7467,\n      \"messageable_level\": 111,\n      \"visibility_level\": 4872,\n      \"primary_group\": true,\n      \"title\": \"string\",\n      \"grant_trust_level\": \"string\",\n      \"incoming_email\": \"string\",\n      \"has_messages\": false,\n      \"flair_url\": \"string\",\n      \"flair_bg_color\": \"string\",\n      \"flair_color\": \"string\",\n      \"bio_raw\": \"string\",\n      \"bio_cooked\": \"string\",\n      \"bio_excerpt\": \"string\",\n      \"public_admission\": false,\n      \"public_exit\": false,\n      \"allow_membership_requests\": true,\n      \"full_name\": \"string\",\n      \"default_notification_level\": 368,\n      \"membership_request_template\": \"string\",\n      \"members_visibility_level\": 9328,\n      \"can_see_members\": false,\n      \"can_admin_group\": false,\n      \"publish_read_state\": true,\n      \"is_group_user\": true,\n      \"is_group_owner\": false,\n      \"can_edit_group\": false\n    }\n  ],\n  \"extras\": {},\n  \"total_rows_groups\": 1156,\n  \"load_more_groups\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "discourse.example.com",
+      "key": "defaultHost"
+    },
+    {
+      "type": "string",
+      "value": "https://{{defaultHost}}",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<integer>",
+      "key": "id"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Use group name instead of id",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "name"
+    }
+  ],
+  "info": {
+    "_postman_id": "fd0f6cf5-74ed-4c92-8987-dd0a2f37ac7c",
+    "name": "Discourse API Documentation Admin Groups API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This page contains the documentation on how to use Discourse through API calls.\n\n> Note: For any endpoints not listed you can follow the\n[reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)\nguide to figure out how to use an API endpoint.\n\n### Request Content-Type\n\nThe Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,\n`multipart/form-data`, or `application/json`.\n\n### Endpoint Names and Response Content-Type\n\nMost API endpoints provide the same content as their HTML counterparts. For example\nthe URL `/categories` serves a list of categories, the `/categories.json` API provides the\nsame information in JSON format.\n\nInstead of sending API requests to `/categories.json` you may also send them to `/categories`\nand add an `Accept: application/json` header to the request to get the JSON response.\nSending requests with the `Accept` header is necessary if you want to use URLs\nfor related endpoints returned by the API, such as pagination URLs.\nThese URLs are returned without the `.json` prefix so you need to add the header in\norder to get the correct response format.\n\n### Authentication\n\nSome endpoints do not require any authentication, pretty much anything else will\nrequire you to be authenticated.\n\nTo become authenticated you will need to create an API Key from the admin panel.\n\nOnce you have your API Key you can pass it in along with your API Username\nas an HTTP header like this:\n\n```\ncurl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\"\n```\n\nand this is how POST requests will look:\n\n```\ncurl -X POST \"http://127.0.0.1:3000/categories\" \\\n-H \"Content-Type: multipart/form-data;\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\" \\\n-F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\\n-F \"color=49d9e9\" \\\n-F \"text_color=f0fcfd\"\n```\n\n### Boolean values\n\nIf an endpoint accepts a boolean be sure to specify it as a lowercase\n`true` or `false` value unless noted otherwise.\n",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "item": [
+    {
+      "id": "8af96f20-5ed2-4555-8857-83085157e5e9",
+      "name": "Site",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1585a983-3040-492c-9b8b-f660f48233d0",
+          "name": "Get site info",
+          "request": {
+            "name": "Get site info",
+            "description": {
+              "content": "Can be used to fetch all categories and subcategories",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "site.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ea2cecc1-764d-446f-abf9-abb25af7ede7",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "site.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"default_archetype\": \"string\",\n  \"notification_types\": {\n    \"mentioned\": 5609,\n    \"replied\": 4879,\n    \"quoted\": 4567,\n    \"edited\": 1898,\n    \"liked\": 5313,\n    \"private_message\": 2675,\n    \"invited_to_private_message\": 2837,\n    \"invitee_accepted\": 2922,\n    \"posted\": 9925,\n    \"watching_category_or_tag\": 2658,\n    \"moved_post\": 6895,\n    \"linked\": 4642,\n    \"granted_badge\": 6109,\n    \"invited_to_topic\": 8442,\n    \"custom\": 7227,\n    \"group_mentioned\": 790,\n    \"group_message_summary\": 2850,\n    \"watching_first_post\": 2630,\n    \"topic_reminder\": 6266,\n    \"liked_consolidated\": 9969,\n    \"linked_consolidated\": 3161,\n    \"post_approved\": 5797,\n    \"code_review_commit_approved\": 174,\n    \"membership_request_accepted\": 6745,\n    \"membership_request_consolidated\": 8322,\n    \"bookmark_reminder\": 9557,\n    \"reaction\": 6587,\n    \"votes_released\": 4016,\n    \"event_reminder\": 1488,\n    \"event_invitation\": 4527,\n    \"chat_mention\": 5616,\n    \"chat_message\": 8104,\n    \"chat_invitation\": 4952,\n    \"chat_group_mention\": 551,\n    \"new_features\": 2167,\n    \"admin_problems\": 1002,\n    \"chat_quoted\": 954,\n    \"chat_watched_thread\": 1285,\n    \"upcoming_change_available\": 8903,\n    \"upcoming_change_automatically_promoted\": 6039,\n    \"assigned\": 6014,\n    \"question_answer_user_commented\": 9715,\n    \"following\": 6667,\n    \"following_created_topic\": 241,\n    \"following_replied\": 6011,\n    \"circles_activity\": 5471\n  },\n  \"post_types\": {\n    \"regular\": 5108,\n    \"moderator_action\": 4517,\n    \"small_action\": 6948,\n    \"whisper\": 8154\n  },\n  \"trust_levels\": {\n    \"newuser\": 8323,\n    \"basic\": 4684,\n    \"member\": 7816,\n    \"regular\": 5228,\n    \"leader\": 5011\n  },\n  \"groups\": [\n    {\n      \"id\": 7538,\n      \"name\": \"string\",\n      \"flair_url\": \"string\",\n      \"flair_bg_color\": \"string\",\n      \"flair_color\": \"string\",\n      \"automatic\": false\n    },\n    {\n      \"id\": 6104,\n      \"name\": \"string\",\n      \"flair_url\": \"string\",\n      \"flair_bg_color\": \"string\",\n      \"flair_color\": \"string\",\n      \"automatic\": true\n    }\n  ],\n  \"filters\": [],\n  \"periods\": [],\n  \"top_menu_items\": [],\n  \"anonymous_top_menu_items\": [],\n  \"uncategorized_category_id\": 6890,\n  \"user_field_max_length\": 8641,\n  \"post_action_types\": [\n    {\n      \"id\": 4088,\n      \"name_key\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"short_description\": \"string\",\n      \"is_flag\": false,\n      \"require_message\": false,\n      \"enabled\": true,\n      \"is_used\": false,\n      \"auto_action_type\": true,\n      \"position\": 2823,\n      \"system\": true\n    },\n    {\n      \"id\": 1832,\n      \"name_key\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"short_description\": \"string\",\n      \"is_flag\": true,\n      \"require_message\": false,\n      \"enabled\": true,\n      \"is_used\": true,\n      \"auto_action_type\": false,\n      \"position\": 6688,\n      \"system\": true\n    }\n  ],\n  \"topic_flag_types\": [\n    {\n      \"id\": 9276,\n      \"name_key\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"short_description\": \"string\",\n      \"is_flag\": false,\n      \"require_message\": true,\n      \"enabled\": false,\n      \"is_used\": false,\n      \"auto_action_type\": true,\n      \"position\": 5893,\n      \"system\": false\n    },\n    {\n      \"id\": 3377,\n      \"name_key\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"short_description\": \"string\",\n      \"is_flag\": true,\n      \"require_message\": true,\n      \"enabled\": false,\n      \"is_used\": true,\n      \"auto_action_type\": false,\n      \"position\": 8847,\n      \"system\": false\n    }\n  ],\n  \"can_create_tag\": true,\n  \"can_tag_topics\": false,\n  \"can_tag_pms\": false,\n  \"tags_filter_regexp\": \"string\",\n  \"top_tags\": [\n    {\n      \"id\": 5016,\n      \"name\": \"string\",\n      \"slug\": \"string\"\n    },\n    {\n      \"id\": 5760,\n      \"name\": \"string\",\n      \"slug\": \"string\"\n    }\n  ],\n  \"topic_featured_link_allowed_category_ids\": [],\n  \"user_themes\": [\n    {\n      \"theme_id\": 4082,\n      \"name\": \"string\",\n      \"default\": false,\n      \"color_scheme_id\": 3621,\n      \"dark_color_scheme_id\": 2360,\n      \"only_theme_color_schemes\": false\n    },\n    {\n      \"theme_id\": 3362,\n      \"name\": \"string\",\n      \"default\": true,\n      \"color_scheme_id\": 2944,\n      \"dark_color_scheme_id\": 3499,\n      \"only_theme_color_schemes\": false\n    }\n  ],\n  \"user_color_schemes\": [\n    {\n      \"id\": 2246,\n      \"name\": \"string\",\n      \"is_dark\": false,\n      \"theme_id\": 513\n    },\n    {\n      \"id\": 2383,\n      \"name\": \"string\",\n      \"is_dark\": true,\n      \"theme_id\": 2444\n    }\n  ],\n  \"default_light_color_scheme\": {},\n  \"default_dark_color_scheme\": {},\n  \"censored_regexp\": [],\n  \"custom_emoji_translation\": {},\n  \"watched_words_replace\": \"string\",\n  \"watched_words_link\": \"string\",\n  \"categories\": [\n    {\n      \"id\": 2627,\n      \"name\": \"string\",\n      \"color\": \"string\",\n      \"text_color\": \"string\",\n      \"slug\": \"string\",\n      \"topic_count\": 9043,\n      \"post_count\": 9371,\n      \"position\": 5674,\n      \"topic_url\": \"string\",\n      \"read_restricted\": true,\n      \"permission\": 772,\n      \"notification_level\": 978,\n      \"topic_template\": \"string\",\n      \"topic_title_placeholder\": \"string\",\n      \"has_children\": true,\n      \"subcategory_count\": 4001,\n      \"sort_order\": \"string\",\n      \"sort_ascending\": \"string\",\n      \"show_subcategory_list\": true,\n      \"num_featured_topics\": 3056,\n      \"default_view\": \"string\",\n      \"subcategory_list_style\": \"string\",\n      \"default_top_period\": \"string\",\n      \"default_list_filter\": \"string\",\n      \"minimum_required_tags\": 1380,\n      \"navigate_to_first_post_after_read\": false,\n      \"allow_global_tags\": true,\n      \"required_tag_groups\": [\n        {\n          \"name\": \"string\",\n          \"min_count\": 3757\n        },\n        {\n          \"name\": \"string\",\n          \"min_count\": 2801\n        }\n      ],\n      \"read_only_banner\": \"string\",\n      \"uploaded_logo\": \"string\",\n      \"uploaded_logo_dark\": \"string\",\n      \"uploaded_background\": \"string\",\n      \"uploaded_background_dark\": \"string\",\n      \"can_edit\": true,\n      \"style_type\": \"string\",\n      \"emoji\": \"string\",\n      \"icon\": \"string\",\n      \"description\": \"string\",\n      \"description_text\": \"string\",\n      \"description_excerpt\": \"string\",\n      \"custom_fields\": {\n        \"key_0\": 2915\n      },\n      \"parent_category_id\": 8840\n    },\n    {\n      \"id\": 3056,\n      \"name\": \"string\",\n      \"color\": \"string\",\n      \"text_color\": \"string\",\n      \"slug\": \"string\",\n      \"topic_count\": 9372,\n      \"post_count\": 2326,\n      \"position\": 2836,\n      \"topic_url\": \"string\",\n      \"read_restricted\": false,\n      \"permission\": 240,\n      \"notification_level\": 938,\n      \"topic_template\": \"string\",\n      \"topic_title_placeholder\": \"string\",\n      \"has_children\": false,\n      \"subcategory_count\": 3363,\n      \"sort_order\": \"string\",\n      \"sort_ascending\": \"string\",\n      \"show_subcategory_list\": false,\n      \"num_featured_topics\": 4376,\n      \"default_view\": \"string\",\n      \"subcategory_list_style\": \"string\",\n      \"default_top_period\": \"string\",\n      \"default_list_filter\": \"string\",\n      \"minimum_required_tags\": 5107,\n      \"navigate_to_first_post_after_read\": true,\n      \"allow_global_tags\": true,\n      \"required_tag_groups\": [\n        {\n          \"name\": \"string\",\n          \"min_count\": 3233\n        },\n        {\n          \"name\": \"string\",\n          \"min_count\": 1546\n        }\n      ],\n      \"read_only_banner\": \"string\",\n      \"uploaded_logo\": \"string\",\n      \"uploaded_logo_dark\": \"string\",\n      \"uploaded_background\": \"string\",\n      \"uploaded_background_dark\": \"string\",\n      \"can_edit\": true,\n      \"style_type\": \"string\",\n      \"emoji\": \"string\",\n      \"icon\": \"string\",\n      \"description\": \"string\",\n      \"description_text\": \"string\",\n      \"description_excerpt\": \"string\",\n      \"custom_fields\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"parent_category_id\": 7766\n    }\n  ],\n  \"archetypes\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    }\n  ],\n  \"user_fields\": [],\n  \"auth_providers\": [],\n  \"full_name_required_for_signup\": false,\n  \"full_name_visible_in_signup\": true,\n  \"email_configured\": true,\n  \"user_tips\": {\n    \"first_notification\": 582,\n    \"topic_timeline\": 5838,\n    \"post_menu\": 8997,\n    \"topic_notification_levels\": 2892,\n    \"suggested_topics\": 3837\n  },\n  \"wizard_required\": true,\n  \"can_associate_groups\": false,\n  \"markdown_additional_options\": {},\n  \"hashtag_configurations\": {},\n  \"hashtag_icons\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0fab84de-a0bd-4bcb-a4b4-1b6f84901329",
+          "name": "Get site basic info",
+          "request": {
+            "name": "Get site basic info",
+            "description": {
+              "content": "Can be used to fetch basic info about a site",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "site",
+                "basic-info.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "03157c89-1321-447e-8cd6-9dbc1b986227",
+              "name": "success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "site",
+                    "basic-info.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"logo_url\": \"string\",\n  \"logo_small_url\": \"string\",\n  \"apple_touch_icon_url\": \"string\",\n  \"favicon_url\": \"string\",\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"header_primary_color\": \"string\",\n  \"header_background_color\": \"string\",\n  \"login_required\": true,\n  \"locale\": \"string\",\n  \"include_in_discourse_discover\": false,\n  \"mobile_logo_url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "discourse.example.com",
+      "key": "defaultHost"
+    },
+    {
+      "type": "string",
+      "value": "https://{{defaultHost}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "207cd381-695b-4c64-88c7-130763ba6703",
+    "name": "Discourse API Documentation Admin Site API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This page contains the documentation on how to use Discourse through API calls.\n\n> Note: For any endpoints not listed you can follow the\n[reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)\nguide to figure out how to use an API endpoint.\n\n### Request Content-Type\n\nThe Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,\n`multipart/form-data`, or `application/json`.\n\n### Endpoint Names and Response Content-Type\n\nMost API endpoints provide the same content as their HTML counterparts. For example\nthe URL `/categories` serves a list of categories, the `/categories.json` API provides the\nsame information in JSON format.\n\nInstead of sending API requests to `/categories.json` you may also send them to `/categories`\nand add an `Accept: application/json` header to the request to get the JSON response.\nSending requests with the `Accept` header is necessary if you want to use URLs\nfor related endpoints returned by the API, such as pagination URLs.\nThese URLs are returned without the `.json` prefix so you need to add the header in\norder to get the correct response format.\n\n### Authentication\n\nSome endpoints do not require any authentication, pretty much anything else will\nrequire you to be authenticated.\n\nTo become authenticated you will need to create an API Key from the admin panel.\n\nOnce you have your API Key you can pass it in along with your API Username\nas an HTTP header like this:\n\n```\ncurl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\"\n```\n\nand this is how POST requests will look:\n\n```\ncurl -X POST \"http://127.0.0.1:3000/categories\" \\\n-H \"Content-Type: multipart/form-data;\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\" \\\n-F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\\n-F \"color=49d9e9\" \\\n-F \"text_color=f0fcfd\"\n```\n\n### Boolean values\n\nIf an endpoint accepts a boolean be sure to specify it as a lowercase\n`true` or `false` value unless noted otherwise.\n",
+      "type": "text/plain"
+    }
+  }
+}

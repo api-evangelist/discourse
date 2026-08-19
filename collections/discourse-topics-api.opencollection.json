@@ -1,0 +1,467 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Discourse API Documentation Admin Topics API",
+    "version": "latest"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Topics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Creates a new topic, a new post, or a private message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{defaultHost}/posts.json",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new topic, a new post, or a private message"
+        },
+        {
+          "info": {
+            "name": "Get specific posts from a topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/t/:id/posts.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get specific posts from a topic"
+        },
+        {
+          "info": {
+            "name": "Get a single topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/t/:id.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single topic"
+        },
+        {
+          "info": {
+            "name": "Remove a topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{defaultHost}/t/:id.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove a topic"
+        },
+        {
+          "info": {
+            "name": "Update a topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{defaultHost}/t/-/:id.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a topic"
+        },
+        {
+          "info": {
+            "name": "Invite to topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{defaultHost}/t/:id/invite.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Invite to topic"
+        },
+        {
+          "info": {
+            "name": "Invite group to topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{defaultHost}/t/:id/invite-group.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Invite group to topic"
+        },
+        {
+          "info": {
+            "name": "Bookmark topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{defaultHost}/t/:id/bookmark.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Bookmark topic"
+        },
+        {
+          "info": {
+            "name": "Update the status of a topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{defaultHost}/t/:id/status.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the status of a topic"
+        },
+        {
+          "info": {
+            "name": "Get the latest topics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/latest.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Enum: `default`, `created`, `activity`, `views`, `posts`, `category`,\n`likes`, `op_likes`, `posters`"
+              },
+              {
+                "name": "ascending",
+                "value": "",
+                "type": "query",
+                "description": "Defaults to `desc`, add `ascending=true` to sort asc"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of topics returned, between 1-100"
+              }
+            ]
+          },
+          "docs": "Get the latest topics"
+        },
+        {
+          "info": {
+            "name": "Get the top topics filtered by period",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/top.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "period",
+                "value": "",
+                "type": "query",
+                "description": "Enum: `all`, `yearly`, `quarterly`, `monthly`, `weekly`, `daily`"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of topics returned, between 1-100"
+              }
+            ]
+          },
+          "docs": "Get the top topics filtered by period"
+        },
+        {
+          "info": {
+            "name": "Set notification level",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{defaultHost}/t/:id/notifications.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set notification level"
+        },
+        {
+          "info": {
+            "name": "Update topic timestamp",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{defaultHost}/t/:id/change-timestamp.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update topic timestamp"
+        },
+        {
+          "info": {
+            "name": "Create topic timer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{defaultHost}/t/:id/timer.json",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Api-Username",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create topic timer"
+        },
+        {
+          "info": {
+            "name": "Get topic by external_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/t/external_id/:external_id.json",
+            "params": [
+              {
+                "name": "external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get topic by external_id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

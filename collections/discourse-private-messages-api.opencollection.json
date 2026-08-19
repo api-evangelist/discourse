@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Discourse API Documentation Admin Private Messages API",
+    "version": "latest"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Private Messages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Creates a new topic, a new post, or a private message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{defaultHost}/posts.json",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new topic, a new post, or a private message"
+        },
+        {
+          "info": {
+            "name": "Get a list of private messages for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/topics/private-messages/:username.json",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a list of private messages for a user"
+        },
+        {
+          "info": {
+            "name": "Get a list of private messages sent for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{defaultHost}/topics/private-messages-sent/:username.json",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a list of private messages sent for a user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

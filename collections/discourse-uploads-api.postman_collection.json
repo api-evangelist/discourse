@@ -1,0 +1,878 @@
+{
+  "item": [
+    {
+      "id": "dc2ae5dd-40d7-4a0d-bfe0-f86a8f13f3f2",
+      "name": "Uploads",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "39a63f59-5b52-4f47-80eb-1cc05a5d7bf9",
+          "name": "Creates an upload",
+          "request": {
+            "name": "Creates an upload",
+            "description": {},
+            "url": {
+              "path": [
+                "uploads.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "type",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required)  (This can only be one of avatar,profile_background,card_background,custom_emoji,composer)"
+                },
+                {
+                  "key": "user_id",
+                  "value": "<integer>",
+                  "type": "text",
+                  "description": "required if uploading an avatar"
+                },
+                {
+                  "key": "synchronous",
+                  "value": "<boolean>",
+                  "type": "text",
+                  "description": "Use this flag to return an id and url"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fb473ddc-5f0f-4187-8c02-28c7ede1ea96",
+              "name": "file uploaded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "uploads.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required)  (This can only be one of avatar,profile_background,card_background,custom_emoji,composer)",
+                        "type": "text/plain"
+                      },
+                      "key": "type",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "required if uploading an avatar",
+                        "type": "text/plain"
+                      },
+                      "key": "user_id",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Use this flag to return an id and url",
+                        "type": "text/plain"
+                      },
+                      "key": "synchronous",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2950,\n  \"url\": \"string\",\n  \"original_filename\": \"string\",\n  \"filesize\": 9796,\n  \"width\": 9600,\n  \"height\": 8836,\n  \"thumbnail_width\": 384,\n  \"thumbnail_height\": 6552,\n  \"extension\": \"string\",\n  \"short_url\": \"string\",\n  \"short_path\": \"string\",\n  \"retain_hours\": \"string\",\n  \"human_filesize\": \"string\",\n  \"dominant_color\": \"string\",\n  \"thumbnail\": {\n    \"id\": 4914,\n    \"upload_id\": 6007,\n    \"url\": \"string\",\n    \"extension\": \"string\",\n    \"width\": 5891,\n    \"height\": 9337,\n    \"filesize\": 1431\n  },\n  \"optimized_video\": {\n    \"id\": 3434,\n    \"upload_id\": 8270,\n    \"url\": \"string\",\n    \"extension\": \"string\",\n    \"filesize\": 699,\n    \"sha1\": \"string\",\n    \"original_filename\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1ea19cb5-de54-4407-ad11-13896bca9232",
+          "name": "Initiates a direct external upload",
+          "request": {
+            "name": "Initiates a direct external upload",
+            "description": {
+              "content": "Direct external uploads bypass the usual method of creating uploads\nvia the POST /uploads route, and upload directly to an external provider,\nwhich by default is S3. This route begins the process, and will return\na unique identifier for the external upload as well as a presigned URL\nwhich is where the file binary blob should be uploaded to.\n\nOnce the upload is complete to the external service, you must call the\nPOST /complete-external-upload route using the unique identifier returned\nby this route, which will create any required Upload record in the Discourse\ndatabase and also move file from its temporary location to the final\ndestination in the external storage service.\n\nYou must have the correct permissions and CORS settings configured in your\nexternal provider. We support AWS S3 as the default. See:\n\nhttps://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.\n\nAn external file store must be set up and `enable_direct_s3_uploads` must\nbe set to true for this endpoint to function.\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "uploads",
+                "generate-presigned-put.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"<string>\",\n  \"file_name\": \"<string>\",\n  \"file_size\": \"<integer>\",\n  \"metadata\": {\n    \"sha1-checksum\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4ae67f77-9f6e-4c22-b689-34489efd5b1b",
+              "name": "external upload initialized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "uploads",
+                    "generate-presigned-put.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"file_name\": \"IMG_2021.jpeg\",\n  \"file_size\": 4096,\n  \"metadata\": {\n    \"sha1-checksum\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key\": \"temp/site/uploads/default/12345/67890.jpg\",\n  \"url\": \"https://file-uploads.s3.us-west-2.amazonaws.com/temp/site/uploads/default/123/456.jpg?x-amz-acl=private&x-amz-meta-sha1-checksum=sha1&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AAAAus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211221T011246Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Signature=12345678\",\n  \"signed_headers\": {\n    \"x-amz-acl\": \"private\",\n    \"x-amz-meta-sha1-checksum\": \"sha1\"\n  },\n  \"unique_identifier\": \"66e86218-80d9-4bda-b4d5-2b6def968705\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b5e9f2db-6eaa-4a3a-9317-1fbe0a6c358e",
+          "name": "Completes a direct external upload",
+          "request": {
+            "name": "Completes a direct external upload",
+            "description": {
+              "content": "Completes an external upload initialized with /get-presigned-put. The\nfile will be moved from its temporary location in external storage to\na final destination in the S3 bucket. An Upload record will also be\ncreated in the database in most cases.\n\nIf a sha1-checksum was provided in the initial request it will also\nbe compared with the uploaded file in storage to make sure the same\nfile was uploaded. The file size will be compared for the same reason.\n\nYou must have the correct permissions and CORS settings configured in your\nexternal provider. We support AWS S3 as the default. See:\n\nhttps://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.\n\nAn external file store must be set up and `enable_direct_s3_uploads` must\nbe set to true for this endpoint to function.\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "uploads",
+                "complete-external-upload.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"unique_identifier\": \"<string>\",\n  \"for_private_message\": \"<string>\",\n  \"for_site_setting\": \"<string>\",\n  \"pasted\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "41fab37e-5f38-438e-b75d-03e92f26c493",
+              "name": "external upload initialized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "uploads",
+                    "complete-external-upload.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"unique_identifier\": \"66e86218-80d9-4bda-b4d5-2b6def968705\",\n  \"for_private_message\": \"true\",\n  \"for_site_setting\": \"true\",\n  \"pasted\": \"true\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2950,\n  \"url\": \"string\",\n  \"original_filename\": \"string\",\n  \"filesize\": 9796,\n  \"width\": 9600,\n  \"height\": 8836,\n  \"thumbnail_width\": 384,\n  \"thumbnail_height\": 6552,\n  \"extension\": \"string\",\n  \"short_url\": \"string\",\n  \"short_path\": \"string\",\n  \"retain_hours\": \"string\",\n  \"human_filesize\": \"string\",\n  \"dominant_color\": \"string\",\n  \"thumbnail\": {\n    \"id\": 4914,\n    \"upload_id\": 6007,\n    \"url\": \"string\",\n    \"extension\": \"string\",\n    \"width\": 5891,\n    \"height\": 9337,\n    \"filesize\": 1431\n  },\n  \"optimized_video\": {\n    \"id\": 3434,\n    \"upload_id\": 8270,\n    \"url\": \"string\",\n    \"extension\": \"string\",\n    \"filesize\": 699,\n    \"sha1\": \"string\",\n    \"original_filename\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "42a5774d-1b09-4f01-832a-137f350af660",
+          "name": "Creates a multipart external upload",
+          "request": {
+            "name": "Creates a multipart external upload",
+            "description": {
+              "content": "Creates a multipart upload in the external storage provider, storing\na temporary reference to the external upload similar to /get-presigned-put.\n\nYou must have the correct permissions and CORS settings configured in your\nexternal provider. We support AWS S3 as the default. See:\n\nhttps://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.\n\nAn external file store must be set up and `enable_direct_s3_uploads` must\nbe set to true for this endpoint to function.\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "uploads",
+                "create-multipart.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"upload_type\": \"<string>\",\n  \"file_name\": \"<string>\",\n  \"file_size\": \"<integer>\",\n  \"metadata\": {\n    \"sha1-checksum\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a063fdd6-199a-4dd0-a5fb-85b482b757e0",
+              "name": "external upload initialized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "uploads",
+                    "create-multipart.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"upload_type\": \"<string>\",\n  \"file_name\": \"IMG_2021.jpeg\",\n  \"file_size\": 4096,\n  \"metadata\": {\n    \"sha1-checksum\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"external_upload_identifier\": \"84x83tmxy398t3y._Q_z8CoJYVr69bE6D7f8J6Oo0434QquLFoYdGVerWFx9X5HDEI_TP_95c34n853495x35345394.d.ghQ\",\n  \"key\": \"temp/site/uploads/default/12345/67890.jpg\",\n  \"unique_identifier\": \"66e86218-80d9-4bda-b4d5-2b6def968705\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7ebe59c0-4395-465f-a700-c120d94cd7cd",
+          "name": "Generates batches of presigned URLs for multipart parts",
+          "request": {
+            "name": "Generates batches of presigned URLs for multipart parts",
+            "description": {
+              "content": "Multipart uploads are uploaded in chunks or parts to individual presigned\nURLs, similar to the one generated by /generate-presigned-put. The part\nnumbers provided must be between 1 and 10000. The total number of parts\nwill depend on the chunk size in bytes that you intend to use to upload\neach chunk. For example a 12MB file may have 2 5MB chunks and a final\n2MB chunk, for part numbers 1, 2, and 3.\n\nThis endpoint will return a presigned URL for each part number provided,\nwhich you can then use to send PUT requests for the binary chunk corresponding\nto that part. When the part is uploaded, the provider should return an\nETag for the part, and this should be stored along with the part number,\nbecause this is needed to complete the multipart upload.\n\nYou must have the correct permissions and CORS settings configured in your\nexternal provider. We support AWS S3 as the default. See:\n\nhttps://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.\n\nAn external file store must be set up and `enable_direct_s3_uploads` must\nbe set to true for this endpoint to function.\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "uploads",
+                "batch-presign-multipart-parts.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"part_numbers\": \"<array>\",\n  \"unique_identifier\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "345085ef-71eb-428e-afac-3bef120db9f3",
+              "name": "external upload initialized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "uploads",
+                    "batch-presign-multipart-parts.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"part_numbers\": [\n    1,\n    2,\n    3\n  ],\n  \"unique_identifier\": \"66e86218-80d9-4bda-b4d5-2b6def968705\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"presigned_urls\": {\n    \"1\": \"https://discourse-martin-uploads-test.s3.us-east-2.amazonaws.com/temp/uploads/default/123abc/123abc.jpg?partNumber=1&uploadId=123456abcd&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test&X-Amz-Date=20211222T012336Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Signature=abc123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bc5927ac-b1e1-4bee-a5ea-2a52efebc349",
+          "name": "Abort multipart upload",
+          "request": {
+            "name": "Abort multipart upload",
+            "description": {
+              "content": "This endpoint aborts the multipart upload initiated with /create-multipart.\nThis should be used when cancelling the upload. It does not matter if parts\nwere already uploaded into the external storage provider.\n\nYou must have the correct permissions and CORS settings configured in your\nexternal provider. We support AWS S3 as the default. See:\n\nhttps://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.\n\nAn external file store must be set up and `enable_direct_s3_uploads` must\nbe set to true for this endpoint to function.\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "uploads",
+                "abort-multipart.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"external_upload_identifier\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1ac3960a-832b-44b7-9cf9-0b55b5f8523d",
+              "name": "external upload initialized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "uploads",
+                    "abort-multipart.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"external_upload_identifier\": \"84x83tmxy398t3y._Q_z8CoJYVr69bE6D7f8J6Oo0434QquLFoYdGVerWFx9X5HDEI_TP_95c34n853495x35345394.d.ghQ\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"OK\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6e182d68-61ed-4ac5-8dfc-8b7b5ffa5543",
+          "name": "Complete multipart upload",
+          "request": {
+            "name": "Complete multipart upload",
+            "description": {
+              "content": "Completes the multipart upload in the external store, and copies the\nfile from its temporary location to its final location in the store.\nAll of the parts must have been uploaded to the external storage provider.\nAn Upload record will be completed in most cases once the file is copied\nto its final location.\n\nYou must have the correct permissions and CORS settings configured in your\nexternal provider. We support AWS S3 as the default. See:\n\nhttps://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.\n\nAn external file store must be set up and `enable_direct_s3_uploads` must\nbe set to true for this endpoint to function.\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "uploads",
+                "complete-multipart.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"unique_identifier\": \"<string>\",\n  \"parts\": \"<array>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "57516885-c84e-407e-a34a-91d65fcba985",
+              "name": "external upload initialized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "uploads",
+                    "complete-multipart.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"unique_identifier\": \"66e86218-80d9-4bda-b4d5-2b6def968705\",\n  \"parts\": [\n    {\n      \"part_number\": 1,\n      \"etag\": \"0c376dcfcc2606f4335bbc732de93344\"\n    },\n    {\n      \"part_number\": 2,\n      \"etag\": \"09ert8cfcc2606f4335bbc732de91122\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2950,\n  \"url\": \"string\",\n  \"original_filename\": \"string\",\n  \"filesize\": 9796,\n  \"width\": 9600,\n  \"height\": 8836,\n  \"thumbnail_width\": 384,\n  \"thumbnail_height\": 6552,\n  \"extension\": \"string\",\n  \"short_url\": \"string\",\n  \"short_path\": \"string\",\n  \"retain_hours\": \"string\",\n  \"human_filesize\": \"string\",\n  \"dominant_color\": \"string\",\n  \"thumbnail\": {\n    \"id\": 4914,\n    \"upload_id\": 6007,\n    \"url\": \"string\",\n    \"extension\": \"string\",\n    \"width\": 5891,\n    \"height\": 9337,\n    \"filesize\": 1431\n  },\n  \"optimized_video\": {\n    \"id\": 3434,\n    \"upload_id\": 8270,\n    \"url\": \"string\",\n    \"extension\": \"string\",\n    \"filesize\": 699,\n    \"sha1\": \"string\",\n    \"original_filename\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "discourse.example.com",
+      "key": "defaultHost"
+    },
+    {
+      "type": "string",
+      "value": "https://{{defaultHost}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "dc451229-5510-44bd-a376-ee35f4b0d575",
+    "name": "Discourse API Documentation Admin Uploads API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This page contains the documentation on how to use Discourse through API calls.\n\n> Note: For any endpoints not listed you can follow the\n[reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)\nguide to figure out how to use an API endpoint.\n\n### Request Content-Type\n\nThe Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,\n`multipart/form-data`, or `application/json`.\n\n### Endpoint Names and Response Content-Type\n\nMost API endpoints provide the same content as their HTML counterparts. For example\nthe URL `/categories` serves a list of categories, the `/categories.json` API provides the\nsame information in JSON format.\n\nInstead of sending API requests to `/categories.json` you may also send them to `/categories`\nand add an `Accept: application/json` header to the request to get the JSON response.\nSending requests with the `Accept` header is necessary if you want to use URLs\nfor related endpoints returned by the API, such as pagination URLs.\nThese URLs are returned without the `.json` prefix so you need to add the header in\norder to get the correct response format.\n\n### Authentication\n\nSome endpoints do not require any authentication, pretty much anything else will\nrequire you to be authenticated.\n\nTo become authenticated you will need to create an API Key from the admin panel.\n\nOnce you have your API Key you can pass it in along with your API Username\nas an HTTP header like this:\n\n```\ncurl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\"\n```\n\nand this is how POST requests will look:\n\n```\ncurl -X POST \"http://127.0.0.1:3000/categories\" \\\n-H \"Content-Type: multipart/form-data;\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\" \\\n-F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\\n-F \"color=49d9e9\" \\\n-F \"text_color=f0fcfd\"\n```\n\n### Boolean values\n\nIf an endpoint accepts a boolean be sure to specify it as a lowercase\n`true` or `false` value unless noted otherwise.\n",
+      "type": "text/plain"
+    }
+  }
+}

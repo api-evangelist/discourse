@@ -1,0 +1,2049 @@
+{
+  "item": [
+    {
+      "id": "b372149e-44fd-46a8-ba85-7e4d45a8ce08",
+      "name": "Topics",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0c82ec2b-9d67-4811-88d5-b1a18684056e",
+          "name": "Creates a new topic, a new post, or a private message",
+          "request": {
+            "name": "Creates a new topic, a new post, or a private message",
+            "description": {},
+            "url": {
+              "path": [
+                "posts.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"raw\": \"<string>\",\n  \"title\": \"<string>\",\n  \"topic_id\": \"<integer>\",\n  \"category\": \"<integer>\",\n  \"target_recipients\": \"<string>\",\n  \"target_usernames\": \"<string>\",\n  \"archetype\": \"<string>\",\n  \"created_at\": \"<string>\",\n  \"reply_to_post_number\": \"<integer>\",\n  \"embed_url\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"auto_track\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6d8a1a9a-ba4d-4252-a6be-2ff59af062f0",
+              "name": "post created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "posts.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"raw\": \"<string>\",\n  \"title\": \"<string>\",\n  \"topic_id\": \"<integer>\",\n  \"category\": \"<integer>\",\n  \"target_recipients\": \"blake,sam\",\n  \"target_usernames\": \"<string>\",\n  \"archetype\": \"private_message\",\n  \"created_at\": \"<string>\",\n  \"reply_to_post_number\": \"<integer>\",\n  \"embed_url\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"auto_track\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 9300,\n  \"name\": \"string\",\n  \"username\": \"string\",\n  \"avatar_template\": \"string\",\n  \"created_at\": \"string\",\n  \"cooked\": \"string\",\n  \"post_number\": 7646,\n  \"post_type\": 6895,\n  \"posts_count\": 9978,\n  \"updated_at\": \"string\",\n  \"reply_count\": 5942,\n  \"reply_to_post_number\": \"string\",\n  \"quote_count\": 2650,\n  \"incoming_link_count\": 2430,\n  \"reads\": 8926,\n  \"readers_count\": 6462,\n  \"score\": 2735.6638473524577,\n  \"yours\": false,\n  \"topic_id\": 6858,\n  \"topic_slug\": \"string\",\n  \"display_username\": \"string\",\n  \"primary_group_name\": \"string\",\n  \"flair_name\": \"string\",\n  \"flair_url\": \"string\",\n  \"flair_bg_color\": \"string\",\n  \"flair_color\": \"string\",\n  \"version\": 6898,\n  \"can_edit\": false,\n  \"can_delete\": false,\n  \"can_recover\": false,\n  \"can_wiki\": false,\n  \"user_title\": \"string\",\n  \"bookmarked\": true,\n  \"actions_summary\": [\n    {\n      \"id\": 2828,\n      \"can_act\": true\n    },\n    {\n      \"id\": 813,\n      \"can_act\": false\n    }\n  ],\n  \"moderator\": false,\n  \"admin\": true,\n  \"staff\": true,\n  \"user_id\": 8264,\n  \"draft_sequence\": 7216,\n  \"hidden\": true,\n  \"trust_level\": 9476,\n  \"deleted_at\": \"string\",\n  \"user_deleted\": true,\n  \"edit_reason\": \"string\",\n  \"can_view_edit_history\": false,\n  \"wiki\": true,\n  \"reviewable_id\": 1520,\n  \"reviewable_score_count\": 7286,\n  \"reviewable_score_pending_count\": 5552,\n  \"post_url\": \"string\",\n  \"raw\": \"string\",\n  \"flair_group_id\": 7594,\n  \"can_see_hidden_post\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9afb1e48-8ee1-4f7b-9a49-c121f5c74c5c",
+          "name": "Get specific posts from a topic",
+          "request": {
+            "name": "Get specific posts from a topic",
+            "description": {},
+            "url": {
+              "path": [
+                "t",
+                ":id",
+                "posts.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"post_ids[]\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d8636d07-878c-43bc-bf7e-a236eefcd3eb",
+              "name": "specific posts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "t",
+                    ":id",
+                    "posts.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"post_ids[]\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"post_stream\": {\n    \"posts\": [\n      {\n        \"id\": 6231,\n        \"name\": \"string\",\n        \"username\": \"string\",\n        \"avatar_template\": \"string\",\n        \"created_at\": \"string\",\n        \"cooked\": \"string\",\n        \"post_number\": 3226,\n        \"post_type\": 3533,\n        \"updated_at\": \"string\",\n        \"reply_count\": 482,\n        \"reply_to_post_number\": \"string\",\n        \"quote_count\": 9372,\n        \"incoming_link_count\": 3166,\n        \"reads\": 5826,\n        \"readers_count\": 8702,\n        \"score\": 8223.04076062855,\n        \"yours\": false,\n        \"topic_id\": 5732,\n        \"topic_slug\": \"string\",\n        \"display_username\": \"string\",\n        \"primary_group_name\": \"string\",\n        \"flair_name\": \"string\",\n        \"flair_url\": \"string\",\n        \"flair_bg_color\": \"string\",\n        \"flair_color\": \"string\",\n        \"version\": 7379,\n        \"can_edit\": false,\n        \"can_delete\": true,\n        \"can_recover\": true,\n        \"can_wiki\": true,\n        \"read\": false,\n        \"user_title\": \"string\",\n        \"actions_summary\": [\n          {\n            \"id\": 4157,\n            \"can_act\": true\n          },\n          {\n            \"id\": 7671,\n            \"can_act\": true\n          }\n        ],\n        \"moderator\": false,\n        \"admin\": true,\n        \"staff\": true,\n        \"user_id\": 4232,\n        \"hidden\": false,\n        \"trust_level\": 6444,\n        \"deleted_at\": \"string\",\n        \"user_deleted\": true,\n        \"edit_reason\": \"string\",\n        \"can_view_edit_history\": true,\n        \"wiki\": true,\n        \"reviewable_id\": 1142,\n        \"reviewable_score_count\": 1246,\n        \"reviewable_score_pending_count\": 7354\n      },\n      {\n        \"id\": 4989,\n        \"name\": \"string\",\n        \"username\": \"string\",\n        \"avatar_template\": \"string\",\n        \"created_at\": \"string\",\n        \"cooked\": \"string\",\n        \"post_number\": 2245,\n        \"post_type\": 4934,\n        \"updated_at\": \"string\",\n        \"reply_count\": 8832,\n        \"reply_to_post_number\": \"string\",\n        \"quote_count\": 109,\n        \"incoming_link_count\": 1595,\n        \"reads\": 9985,\n        \"readers_count\": 3884,\n        \"score\": 1919.9004355525317,\n        \"yours\": false,\n        \"topic_id\": 849,\n        \"topic_slug\": \"string\",\n        \"display_username\": \"string\",\n        \"primary_group_name\": \"string\",\n        \"flair_name\": \"string\",\n        \"flair_url\": \"string\",\n        \"flair_bg_color\": \"string\",\n        \"flair_color\": \"string\",\n        \"version\": 6406,\n        \"can_edit\": true,\n        \"can_delete\": false,\n        \"can_recover\": false,\n        \"can_wiki\": true,\n        \"read\": true,\n        \"user_title\": \"string\",\n        \"actions_summary\": [\n          {\n            \"id\": 9728,\n            \"can_act\": false\n          },\n          {\n            \"id\": 6004,\n            \"can_act\": true\n          }\n        ],\n        \"moderator\": true,\n        \"admin\": true,\n        \"staff\": false,\n        \"user_id\": 3736,\n        \"hidden\": true,\n        \"trust_level\": 2053,\n        \"deleted_at\": \"string\",\n        \"user_deleted\": false,\n        \"edit_reason\": \"string\",\n        \"can_view_edit_history\": false,\n        \"wiki\": false,\n        \"reviewable_id\": 8454,\n        \"reviewable_score_count\": 6811,\n        \"reviewable_score_pending_count\": 6625\n      }\n    ]\n  },\n  \"id\": 6128\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1dcffede-6475-4e13-8fcb-8d5fe293ddf0",
+          "name": "Get a single topic",
+          "request": {
+            "name": "Get a single topic",
+            "description": {},
+            "url": {
+              "path": [
+                "t",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e821e096-ec6d-444e-a221-7a8ff214282a",
+              "name": "specific posts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "t",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"post_stream\": {\n    \"posts\": [\n      {\n        \"id\": 8956,\n        \"name\": \"string\",\n        \"username\": \"string\",\n        \"avatar_template\": \"string\",\n        \"created_at\": \"string\",\n        \"cooked\": \"string\",\n        \"post_number\": 5834,\n        \"post_type\": 1881,\n        \"updated_at\": \"string\",\n        \"reply_count\": 4004,\n        \"reply_to_post_number\": \"string\",\n        \"quote_count\": 9821,\n        \"incoming_link_count\": 3480,\n        \"reads\": 5038,\n        \"readers_count\": 3201,\n        \"score\": 5863.32798841165,\n        \"yours\": true,\n        \"topic_id\": 574,\n        \"topic_slug\": \"string\",\n        \"display_username\": \"string\",\n        \"primary_group_name\": \"string\",\n        \"flair_name\": \"string\",\n        \"flair_url\": \"string\",\n        \"flair_bg_color\": \"string\",\n        \"flair_color\": \"string\",\n        \"version\": 516,\n        \"can_edit\": true,\n        \"can_delete\": false,\n        \"can_recover\": true,\n        \"can_wiki\": false,\n        \"link_counts\": [\n          {\n            \"url\": \"string\",\n            \"internal\": true,\n            \"reflection\": true,\n            \"title\": \"string\",\n            \"clicks\": 1816\n          },\n          {\n            \"url\": \"string\",\n            \"internal\": false,\n            \"reflection\": true,\n            \"title\": \"string\",\n            \"clicks\": 4111\n          }\n        ],\n        \"read\": true,\n        \"user_title\": \"string\",\n        \"bookmarked\": false,\n        \"actions_summary\": [\n          {\n            \"id\": 3602,\n            \"can_act\": true\n          },\n          {\n            \"id\": 2888,\n            \"can_act\": true\n          }\n        ],\n        \"moderator\": false,\n        \"admin\": true,\n        \"staff\": false,\n        \"user_id\": 2354,\n        \"hidden\": true,\n        \"trust_level\": 7134,\n        \"deleted_at\": \"string\",\n        \"user_deleted\": true,\n        \"edit_reason\": \"string\",\n        \"can_view_edit_history\": false,\n        \"wiki\": true,\n        \"reviewable_id\": 4330,\n        \"reviewable_score_count\": 1957,\n        \"reviewable_score_pending_count\": 8341,\n        \"can_see_hidden_post\": true\n      },\n      {\n        \"id\": 5923,\n        \"name\": \"string\",\n        \"username\": \"string\",\n        \"avatar_template\": \"string\",\n        \"created_at\": \"string\",\n        \"cooked\": \"string\",\n        \"post_number\": 336,\n        \"post_type\": 5607,\n        \"updated_at\": \"string\",\n        \"reply_count\": 6511,\n        \"reply_to_post_number\": \"string\",\n        \"quote_count\": 1218,\n        \"incoming_link_count\": 5806,\n        \"reads\": 7438,\n        \"readers_count\": 8498,\n        \"score\": 4934.999714612935,\n        \"yours\": true,\n        \"topic_id\": 9273,\n        \"topic_slug\": \"string\",\n        \"display_username\": \"string\",\n        \"primary_group_name\": \"string\",\n        \"flair_name\": \"string\",\n        \"flair_url\": \"string\",\n        \"flair_bg_color\": \"string\",\n        \"flair_color\": \"string\",\n        \"version\": 1450,\n        \"can_edit\": true,\n        \"can_delete\": false,\n        \"can_recover\": false,\n        \"can_wiki\": true,\n        \"link_counts\": [\n          {\n            \"url\": \"string\",\n            \"internal\": false,\n            \"reflection\": false,\n            \"title\": \"string\",\n            \"clicks\": 3818\n          },\n          {\n            \"url\": \"string\",\n            \"internal\": false,\n            \"reflection\": false,\n            \"title\": \"string\",\n            \"clicks\": 4352\n          }\n        ],\n        \"read\": true,\n        \"user_title\": \"string\",\n        \"bookmarked\": false,\n        \"actions_summary\": [\n          {\n            \"id\": 396,\n            \"can_act\": true\n          },\n          {\n            \"id\": 3144,\n            \"can_act\": false\n          }\n        ],\n        \"moderator\": true,\n        \"admin\": true,\n        \"staff\": true,\n        \"user_id\": 7855,\n        \"hidden\": true,\n        \"trust_level\": 9774,\n        \"deleted_at\": \"string\",\n        \"user_deleted\": false,\n        \"edit_reason\": \"string\",\n        \"can_view_edit_history\": false,\n        \"wiki\": true,\n        \"reviewable_id\": 1939,\n        \"reviewable_score_count\": 7806,\n        \"reviewable_score_pending_count\": 399,\n        \"can_see_hidden_post\": false\n      }\n    ]\n  },\n  \"timeline_lookup\": [],\n  \"suggested_topics\": [\n    {\n      \"id\": 9679,\n      \"title\": \"string\",\n      \"fancy_title\": \"string\",\n      \"slug\": \"string\",\n      \"posts_count\": 9316,\n      \"reply_count\": 669,\n      \"highest_post_number\": 3007,\n      \"image_url\": \"string\",\n      \"created_at\": \"string\",\n      \"last_posted_at\": \"string\",\n      \"bumped\": true,\n      \"bumped_at\": \"string\",\n      \"archetype\": \"string\",\n      \"unseen\": true,\n      \"pinned\": true,\n      \"unpinned\": \"string\",\n      \"excerpt\": \"string\",\n      \"visible\": false,\n      \"closed\": false,\n      \"archived\": true,\n      \"bookmarked\": \"string\",\n      \"liked\": \"string\",\n      \"tags\": [\n        {\n          \"id\": 2262,\n          \"name\": \"string\",\n          \"slug\": \"string\"\n        },\n        {\n          \"id\": 4598,\n          \"name\": \"string\",\n          \"slug\": \"string\"\n        }\n      ],\n      \"tags_descriptions\": {},\n      \"like_count\": 6994,\n      \"views\": 3956,\n      \"category_id\": 9890,\n      \"featured_link\": \"string\",\n      \"posters\": [\n        {\n          \"extras\": \"string\",\n          \"description\": \"string\",\n          \"user\": {\n            \"id\": 9518,\n            \"username\": \"string\",\n            \"name\": \"string\",\n            \"avatar_template\": \"string\"\n          }\n        },\n        {\n          \"extras\": \"string\",\n          \"description\": \"string\",\n          \"user\": {\n            \"id\": 6726,\n            \"username\": \"string\",\n            \"name\": \"string\",\n            \"avatar_template\": \"string\"\n          }\n        }\n      ]\n    },\n    {\n      \"id\": 2260,\n      \"title\": \"string\",\n      \"fancy_title\": \"string\",\n      \"slug\": \"string\",\n      \"posts_count\": 59,\n      \"reply_count\": 9976,\n      \"highest_post_number\": 3303,\n      \"image_url\": \"string\",\n      \"created_at\": \"string\",\n      \"last_posted_at\": \"string\",\n      \"bumped\": true,\n      \"bumped_at\": \"string\",\n      \"archetype\": \"string\",\n      \"unseen\": false,\n      \"pinned\": false,\n      \"unpinned\": \"string\",\n      \"excerpt\": \"string\",\n      \"visible\": true,\n      \"closed\": false,\n      \"archived\": true,\n      \"bookmarked\": \"string\",\n      \"liked\": \"string\",\n      \"tags\": [\n        {\n          \"id\": 5607,\n          \"name\": \"string\",\n          \"slug\": \"string\"\n        },\n        {\n          \"id\": 1047,\n          \"name\": \"string\",\n          \"slug\": \"string\"\n        }\n      ],\n      \"tags_descriptions\": {},\n      \"like_count\": 8346,\n      \"views\": 272,\n      \"category_id\": 7906,\n      \"featured_link\": \"string\",\n      \"posters\": [\n        {\n          \"extras\": \"string\",\n          \"description\": \"string\",\n          \"user\": {\n            \"id\": 8136,\n            \"username\": \"string\",\n            \"name\": \"string\",\n            \"avatar_template\": \"string\"\n          }\n        },\n        {\n          \"extras\": \"string\",\n          \"description\": \"string\",\n          \"user\": {\n            \"id\": 6477,\n            \"username\": \"string\",\n            \"name\": \"string\",\n            \"avatar_template\": \"string\"\n          }\n        }\n      ]\n    }\n  ],\n  \"tags\": [\n    {\n      \"id\": 2705,\n      \"name\": \"string\",\n      \"slug\": \"string\"\n    },\n    {\n      \"id\": 8426,\n      \"name\": \"string\",\n      \"slug\": \"string\"\n    }\n  ],\n  \"tags_descriptions\": {},\n  \"id\": 706,\n  \"title\": \"string\",\n  \"fancy_title\": \"string\",\n  \"posts_count\": 4582,\n  \"created_at\": \"string\",\n  \"views\": 4636,\n  \"reply_count\": 9144,\n  \"like_count\": 3086,\n  \"last_posted_at\": \"string\",\n  \"visible\": false,\n  \"closed\": true,\n  \"archived\": true,\n  \"has_summary\": true,\n  \"archetype\": \"string\",\n  \"slug\": \"string\",\n  \"category_id\": 3028,\n  \"word_count\": 9189,\n  \"deleted_at\": \"string\",\n  \"user_id\": 1391,\n  \"featured_link\": \"string\",\n  \"pinned_globally\": true,\n  \"pinned_at\": \"string\",\n  \"pinned_until\": \"string\",\n  \"image_url\": \"string\",\n  \"slow_mode_seconds\": 2126,\n  \"draft\": \"string\",\n  \"draft_key\": \"string\",\n  \"draft_sequence\": 5491,\n  \"unpinned\": \"string\",\n  \"pinned\": false,\n  \"highest_post_number\": 6144,\n  \"deleted_by\": \"string\",\n  \"has_deleted\": false,\n  \"actions_summary\": [\n    {\n      \"id\": 6381,\n      \"count\": 408,\n      \"hidden\": true,\n      \"can_act\": true\n    },\n    {\n      \"id\": 2752,\n      \"count\": 5642,\n      \"hidden\": true,\n      \"can_act\": true\n    }\n  ],\n  \"chunk_size\": 8413,\n  \"bookmarked\": false,\n  \"bookmarks\": [],\n  \"topic_timer\": \"string\",\n  \"message_bus_last_id\": 3093,\n  \"participant_count\": 325,\n  \"show_read_indicator\": true,\n  \"thumbnails\": \"string\",\n  \"slow_mode_enabled_until\": \"string\",\n  \"details\": {\n    \"can_edit\": true,\n    \"notification_level\": 74,\n    \"can_move_posts\": true,\n    \"can_delete\": false,\n    \"can_remove_allowed_users\": false,\n    \"can_create_post\": false,\n    \"can_reply_as_new_topic\": true,\n    \"can_convert_topic\": true,\n    \"can_review_topic\": true,\n    \"can_close_topic\": true,\n    \"can_archive_topic\": true,\n    \"can_split_merge_topic\": false,\n    \"can_edit_staff_notes\": true,\n    \"can_toggle_topic_visibility\": true,\n    \"can_pin_unpin_topic\": false,\n    \"can_moderate_category\": false,\n    \"can_remove_self_id\": 1259,\n    \"created_by\": {\n      \"id\": 3600,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    },\n    \"last_poster\": {\n      \"id\": 3566,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    },\n    \"can_invite_to\": false,\n    \"can_invite_via_email\": false,\n    \"can_flag_topic\": false,\n    \"can_banner_topic\": true,\n    \"participants\": [\n      {\n        \"id\": 6375,\n        \"username\": \"string\",\n        \"name\": \"string\",\n        \"avatar_template\": \"string\",\n        \"post_count\": 1020,\n        \"primary_group_name\": \"string\",\n        \"flair_name\": \"string\",\n        \"flair_url\": \"string\",\n        \"flair_color\": \"string\",\n        \"flair_bg_color\": \"string\",\n        \"admin\": false,\n        \"moderator\": true,\n        \"trust_level\": 5149,\n        \"flair_group_id\": 6741\n      },\n      {\n        \"id\": 8729,\n        \"username\": \"string\",\n        \"name\": \"string\",\n        \"avatar_template\": \"string\",\n        \"post_count\": 1968,\n        \"primary_group_name\": \"string\",\n        \"flair_name\": \"string\",\n        \"flair_url\": \"string\",\n        \"flair_color\": \"string\",\n        \"flair_bg_color\": \"string\",\n        \"admin\": true,\n        \"moderator\": false,\n        \"trust_level\": 8521,\n        \"flair_group_id\": 4668\n      }\n    ]\n  },\n  \"current_post_number\": 96\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "92cfe3da-1988-440d-9107-19ce38468258",
+          "name": "Remove a topic",
+          "request": {
+            "name": "Remove a topic",
+            "description": {},
+            "url": {
+              "path": [
+                "t",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "687b24e7-1477-43ec-b530-4ea761dfc84a",
+              "name": "specific posts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "t",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2044698d-caec-468d-8ce2-75e81a4bd5d0",
+          "name": "Update a topic",
+          "request": {
+            "name": "Update a topic",
+            "description": {},
+            "url": {
+              "path": [
+                "t",
+                "-",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"topic\": {\n    \"title\": \"<string>\",\n    \"category_id\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ff937b4f-ce65-497c-8689-14ad542db7b3",
+              "name": "topic updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "t",
+                    "-",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"topic\": {\n    \"title\": \"<string>\",\n    \"category_id\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"basic_topic\": {\n    \"id\": 757,\n    \"title\": \"string\",\n    \"fancy_title\": \"string\",\n    \"slug\": \"string\",\n    \"posts_count\": 1399\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b6de012e-d8c4-40ca-9ed4-bbbffb3b4407",
+          "name": "Invite to topic",
+          "request": {
+            "name": "Invite to topic",
+            "description": {},
+            "url": {
+              "path": [
+                "t",
+                ":id",
+                "invite.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b6c2d939-a8f8-4ae5-94ee-c3eb78f0acb1",
+              "name": "topic updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "t",
+                    ":id",
+                    "invite.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"user\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"user\": {\n    \"id\": 7031,\n    \"username\": \"string\",\n    \"name\": \"string\",\n    \"avatar_template\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "638bc614-5635-4084-9cf9-73e408bab80b",
+          "name": "Invite group to topic",
+          "request": {
+            "name": "Invite group to topic",
+            "description": {},
+            "url": {
+              "path": [
+                "t",
+                ":id",
+                "invite-group.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"group\": \"<string>\",\n  \"should_notify\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1eab60ed-ecd0-4195-b0e5-e5c15bc1820f",
+              "name": "invites to a PM",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "t",
+                    ":id",
+                    "invite-group.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"group\": \"<string>\",\n  \"should_notify\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"group\": {\n    \"id\": 8744,\n    \"name\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b76f23c-82cc-465e-97c1-f57ac9fe1433",
+          "name": "Bookmark topic",
+          "request": {
+            "name": "Bookmark topic",
+            "description": {},
+            "url": {
+              "path": [
+                "t",
+                ":id",
+                "bookmark.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f3bc812e-1cd3-4d8e-a1f5-abd31451d531",
+              "name": "topic updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "t",
+                    ":id",
+                    "bookmark.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "570766b8-2033-4d4c-86fc-e82c86fd98c9",
+          "name": "Update the status of a topic",
+          "request": {
+            "name": "Update the status of a topic",
+            "description": {},
+            "url": {
+              "path": [
+                "t",
+                ":id",
+                "status.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"<string>\",\n  \"enabled\": \"<string>\",\n  \"until\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dc1cf8c2-66d3-4fc1-88ec-f557c35b377d",
+              "name": "topic updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "t",
+                    ":id",
+                    "status.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<string>\",\n  \"enabled\": \"<string>\",\n  \"until\": \"2030-12-31\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"OK\",\n  \"topic_status_update\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "407fc73c-79ac-4475-b14e-143872b111f9",
+          "name": "Get the latest topics",
+          "request": {
+            "name": "Get the latest topics",
+            "description": {},
+            "url": {
+              "path": [
+                "latest.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>",
+                  "description": "Enum: `default`, `created`, `activity`, `views`, `posts`, `category`,\n`likes`, `op_likes`, `posters`"
+                },
+                {
+                  "disabled": false,
+                  "key": "ascending",
+                  "value": "<string>",
+                  "description": "Defaults to `desc`, add `ascending=true` to sort asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "<integer>",
+                  "description": "Maximum number of topics returned, between 1-100"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "99ac6433-d9fe-4b81-9de6-423447e10c6e",
+              "name": "topic updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "latest.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ascending",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"users\": [\n    {\n      \"id\": 2287,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    },\n    {\n      \"id\": 5340,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    }\n  ],\n  \"topic_list\": {\n    \"can_create_topic\": false,\n    \"draft\": \"string\",\n    \"draft_key\": \"string\",\n    \"draft_sequence\": 2205,\n    \"per_page\": 2955,\n    \"topics\": [\n      {\n        \"id\": 5588,\n        \"title\": \"string\",\n        \"fancy_title\": \"string\",\n        \"slug\": \"string\",\n        \"posts_count\": 5262,\n        \"reply_count\": 4049,\n        \"highest_post_number\": 3078,\n        \"image_url\": \"string\",\n        \"created_at\": \"string\",\n        \"last_posted_at\": \"string\",\n        \"bumped\": false,\n        \"bumped_at\": \"string\",\n        \"archetype\": \"string\",\n        \"unseen\": true,\n        \"last_read_post_number\": 1557,\n        \"unread_posts\": 5906,\n        \"pinned\": false,\n        \"unpinned\": \"string\",\n        \"visible\": true,\n        \"closed\": true,\n        \"archived\": false,\n        \"notification_level\": 3476,\n        \"bookmarked\": true,\n        \"liked\": false,\n        \"views\": 8024,\n        \"like_count\": 6900,\n        \"has_summary\": false,\n        \"last_poster_username\": \"string\",\n        \"category_id\": 6027,\n        \"op_like_count\": 9298,\n        \"pinned_globally\": true,\n        \"featured_link\": \"string\",\n        \"posters\": [\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 9268,\n            \"primary_group_id\": 8531\n          },\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 2683,\n            \"primary_group_id\": 126\n          }\n        ]\n      },\n      {\n        \"id\": 5316,\n        \"title\": \"string\",\n        \"fancy_title\": \"string\",\n        \"slug\": \"string\",\n        \"posts_count\": 290,\n        \"reply_count\": 7932,\n        \"highest_post_number\": 9673,\n        \"image_url\": \"string\",\n        \"created_at\": \"string\",\n        \"last_posted_at\": \"string\",\n        \"bumped\": false,\n        \"bumped_at\": \"string\",\n        \"archetype\": \"string\",\n        \"unseen\": false,\n        \"last_read_post_number\": 5071,\n        \"unread_posts\": 8865,\n        \"pinned\": false,\n        \"unpinned\": \"string\",\n        \"visible\": true,\n        \"closed\": false,\n        \"archived\": false,\n        \"notification_level\": 8367,\n        \"bookmarked\": true,\n        \"liked\": false,\n        \"views\": 7387,\n        \"like_count\": 1935,\n        \"has_summary\": false,\n        \"last_poster_username\": \"string\",\n        \"category_id\": 6963,\n        \"op_like_count\": 8468,\n        \"pinned_globally\": true,\n        \"featured_link\": \"string\",\n        \"posters\": [\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 8183,\n            \"primary_group_id\": 752\n          },\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 5797,\n            \"primary_group_id\": 7400\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "91e37fae-3997-4bc0-a689-3d416209cbfc",
+          "name": "Get the top topics filtered by period",
+          "request": {
+            "name": "Get the top topics filtered by period",
+            "description": {},
+            "url": {
+              "path": [
+                "top.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "<string>",
+                  "description": "Enum: `all`, `yearly`, `quarterly`, `monthly`, `weekly`, `daily`"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "<integer>",
+                  "description": "Maximum number of topics returned, between 1-100"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c86eb75-2d36-4d7c-aab5-d183a4de1368",
+              "name": "response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "top.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "period",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"users\": [\n    {\n      \"id\": 9184,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    },\n    {\n      \"id\": 2938,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    }\n  ],\n  \"topic_list\": {\n    \"can_create_topic\": false,\n    \"draft\": \"string\",\n    \"draft_key\": \"string\",\n    \"draft_sequence\": 1936,\n    \"for_period\": \"string\",\n    \"per_page\": 3645,\n    \"topics\": [\n      {\n        \"id\": 4597,\n        \"title\": \"string\",\n        \"fancy_title\": \"string\",\n        \"slug\": \"string\",\n        \"posts_count\": 4062,\n        \"reply_count\": 1761,\n        \"highest_post_number\": 3720,\n        \"image_url\": \"string\",\n        \"created_at\": \"string\",\n        \"last_posted_at\": \"string\",\n        \"bumped\": true,\n        \"bumped_at\": \"string\",\n        \"archetype\": \"string\",\n        \"unseen\": false,\n        \"last_read_post_number\": 1786,\n        \"unread_posts\": 9571,\n        \"pinned\": false,\n        \"unpinned\": true,\n        \"visible\": true,\n        \"closed\": true,\n        \"archived\": true,\n        \"notification_level\": 5208,\n        \"bookmarked\": false,\n        \"liked\": false,\n        \"views\": 3921,\n        \"like_count\": 2825,\n        \"has_summary\": false,\n        \"last_poster_username\": \"string\",\n        \"category_id\": 1349,\n        \"op_like_count\": 4449,\n        \"pinned_globally\": true,\n        \"featured_link\": \"string\",\n        \"posters\": [\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 9478,\n            \"primary_group_id\": 8490\n          },\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 6460,\n            \"primary_group_id\": 2096\n          }\n        ]\n      },\n      {\n        \"id\": 6536,\n        \"title\": \"string\",\n        \"fancy_title\": \"string\",\n        \"slug\": \"string\",\n        \"posts_count\": 3572,\n        \"reply_count\": 6431,\n        \"highest_post_number\": 2781,\n        \"image_url\": \"string\",\n        \"created_at\": \"string\",\n        \"last_posted_at\": \"string\",\n        \"bumped\": false,\n        \"bumped_at\": \"string\",\n        \"archetype\": \"string\",\n        \"unseen\": true,\n        \"last_read_post_number\": 7280,\n        \"unread_posts\": 4418,\n        \"pinned\": false,\n        \"unpinned\": true,\n        \"visible\": false,\n        \"closed\": false,\n        \"archived\": false,\n        \"notification_level\": 7054,\n        \"bookmarked\": false,\n        \"liked\": false,\n        \"views\": 7214,\n        \"like_count\": 9946,\n        \"has_summary\": false,\n        \"last_poster_username\": \"string\",\n        \"category_id\": 2302,\n        \"op_like_count\": 7746,\n        \"pinned_globally\": false,\n        \"featured_link\": \"string\",\n        \"posters\": [\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 1140,\n            \"primary_group_id\": 8316\n          },\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 312,\n            \"primary_group_id\": 8449\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c22447f-90a6-4a4b-bd14-3459f1da73af",
+          "name": "Set notification level",
+          "request": {
+            "name": "Set notification level",
+            "description": {},
+            "url": {
+              "path": [
+                "t",
+                ":id",
+                "notifications.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"notification_level\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "30eef3cd-b1f9-40db-8e5a-aceb5e78bb45",
+              "name": "topic updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "t",
+                    ":id",
+                    "notifications.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notification_level\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"OK\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "05fc5f7a-6295-45e0-a279-c32b51141124",
+          "name": "Update topic timestamp",
+          "request": {
+            "name": "Update topic timestamp",
+            "description": {},
+            "url": {
+              "path": [
+                "t",
+                ":id",
+                "change-timestamp.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"timestamp\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9b328131-d663-40c0-8cfb-736961bcc414",
+              "name": "topic updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "t",
+                    ":id",
+                    "change-timestamp.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"timestamp\": \"1594291380\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"OK\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "99a3c891-3e30-421a-851a-1541d364bc06",
+          "name": "Create topic timer",
+          "request": {
+            "name": "Create topic timer",
+            "description": {},
+            "url": {
+              "path": [
+                "t",
+                ":id",
+                "timer.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Api-Username",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"time\": \"<string>\",\n  \"status_type\": \"<string>\",\n  \"based_on_last_post\": \"<boolean>\",\n  \"category_id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2e2a1626-2236-4a63-bc09-85d6117bf293",
+              "name": "topic updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "t",
+                    ":id",
+                    "timer.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Api-Username",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"time\": \"\",\n  \"status_type\": \"<string>\",\n  \"based_on_last_post\": \"<boolean>\",\n  \"category_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"OK\",\n  \"execute_at\": \"string\",\n  \"duration\": \"string\",\n  \"based_on_last_post\": false,\n  \"closed\": true,\n  \"category_id\": 379\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d922e23e-7679-4e3f-b813-8fde4ce70337",
+          "name": "Get topic by external_id",
+          "request": {
+            "name": "Get topic by external_id",
+            "description": {},
+            "url": {
+              "path": [
+                "t",
+                "external_id",
+                "{{external_id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4dd7cea0-c742-49a1-b869-576add041082",
+              "name": "redirects to /t/{topic_id}.json",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "t",
+                    "external_id",
+                    "{{external_id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Moved Permanently",
+              "code": 301,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "discourse.example.com",
+      "key": "defaultHost"
+    },
+    {
+      "type": "string",
+      "value": "https://{{defaultHost}}",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "id"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "external_id"
+    }
+  ],
+  "info": {
+    "_postman_id": "96bfff6a-ac40-43d0-9ed6-3ca7b9aeb5ba",
+    "name": "Discourse API Documentation Admin Topics API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This page contains the documentation on how to use Discourse through API calls.\n\n> Note: For any endpoints not listed you can follow the\n[reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)\nguide to figure out how to use an API endpoint.\n\n### Request Content-Type\n\nThe Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,\n`multipart/form-data`, or `application/json`.\n\n### Endpoint Names and Response Content-Type\n\nMost API endpoints provide the same content as their HTML counterparts. For example\nthe URL `/categories` serves a list of categories, the `/categories.json` API provides the\nsame information in JSON format.\n\nInstead of sending API requests to `/categories.json` you may also send them to `/categories`\nand add an `Accept: application/json` header to the request to get the JSON response.\nSending requests with the `Accept` header is necessary if you want to use URLs\nfor related endpoints returned by the API, such as pagination URLs.\nThese URLs are returned without the `.json` prefix so you need to add the header in\norder to get the correct response format.\n\n### Authentication\n\nSome endpoints do not require any authentication, pretty much anything else will\nrequire you to be authenticated.\n\nTo become authenticated you will need to create an API Key from the admin panel.\n\nOnce you have your API Key you can pass it in along with your API Username\nas an HTTP header like this:\n\n```\ncurl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\"\n```\n\nand this is how POST requests will look:\n\n```\ncurl -X POST \"http://127.0.0.1:3000/categories\" \\\n-H \"Content-Type: multipart/form-data;\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\" \\\n-F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\\n-F \"color=49d9e9\" \\\n-F \"text_color=f0fcfd\"\n```\n\n### Boolean values\n\nIf an endpoint accepts a boolean be sure to specify it as a lowercase\n`true` or `false` value unless noted otherwise.\n",
+      "type": "text/plain"
+    }
+  }
+}

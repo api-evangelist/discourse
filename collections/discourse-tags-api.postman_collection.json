@@ -1,0 +1,631 @@
+{
+  "item": [
+    {
+      "id": "ecdd771b-5568-4790-9638-d6cf0891afc8",
+      "name": "Tags",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ab69b05a-807c-41ad-a1a0-8cf5ea888e8f",
+          "name": "Get a list of tag groups",
+          "request": {
+            "name": "Get a list of tag groups",
+            "description": {},
+            "url": {
+              "path": [
+                "tag_groups.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ca1de7a1-96a3-49be-a67d-ffc08b3bebe8",
+              "name": "tags",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tag_groups.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tag_groups\": [\n    {\n      \"id\": 4947,\n      \"name\": \"string\",\n      \"tags\": [\n        {\n          \"id\": 6152,\n          \"name\": \"string\",\n          \"slug\": \"string\"\n        },\n        {\n          \"id\": 1243,\n          \"name\": \"string\",\n          \"slug\": \"string\"\n        }\n      ],\n      \"parent_tag\": [\n        {\n          \"id\": 7026,\n          \"name\": \"string\",\n          \"slug\": \"string\"\n        },\n        {\n          \"id\": 6341,\n          \"name\": \"string\",\n          \"slug\": \"string\"\n        }\n      ],\n      \"one_per_topic\": false,\n      \"permissions\": {\n        \"key_0\": 4250,\n        \"key_1\": 5612,\n        \"key_2\": 4935\n      }\n    },\n    {\n      \"id\": 7903,\n      \"name\": \"string\",\n      \"tags\": [\n        {\n          \"id\": 8359,\n          \"name\": \"string\",\n          \"slug\": \"string\"\n        },\n        {\n          \"id\": 9861,\n          \"name\": \"string\",\n          \"slug\": \"string\"\n        }\n      ],\n      \"parent_tag\": [\n        {\n          \"id\": 5351,\n          \"name\": \"string\",\n          \"slug\": \"string\"\n        },\n        {\n          \"id\": 7872,\n          \"name\": \"string\",\n          \"slug\": \"string\"\n        }\n      ],\n      \"one_per_topic\": false,\n      \"permissions\": {\n        \"key_0\": 1005,\n        \"key_1\": 2751,\n        \"key_2\": 2801\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9b700098-c967-435d-83d1-32e817ee7122",
+          "name": "Creates a tag group",
+          "request": {
+            "name": "Creates a tag group",
+            "description": {},
+            "url": {
+              "path": [
+                "tag_groups.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "258428da-e20d-4a71-afb7-a1d8f36c4338",
+              "name": "tag group created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tag_groups.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tag_group\": {\n    \"id\": 3842,\n    \"name\": \"string\",\n    \"tags\": [\n      {\n        \"id\": 2118,\n        \"name\": \"string\",\n        \"slug\": \"string\"\n      },\n      {\n        \"id\": 8435,\n        \"name\": \"string\",\n        \"slug\": \"string\"\n      }\n    ],\n    \"parent_tag\": [\n      {\n        \"id\": 7639,\n        \"name\": \"string\",\n        \"slug\": \"string\"\n      },\n      {\n        \"id\": 2888,\n        \"name\": \"string\",\n        \"slug\": \"string\"\n      }\n    ],\n    \"one_per_topic\": false,\n    \"permissions\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e4ac52f8-595e-4964-b558-73e3381fefe9",
+          "name": "Get a single tag group",
+          "request": {
+            "name": "Get a single tag group",
+            "description": {},
+            "url": {
+              "path": [
+                "tag_groups",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "282c7d4a-58a8-4eb9-a633-c759c4b46b0f",
+              "name": "notifications",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tag_groups",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tag_group\": {\n    \"id\": 8136,\n    \"name\": \"string\",\n    \"one_per_topic\": false,\n    \"permissions\": {\n      \"everyone\": 5901\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c1d2de9e-87ff-41ca-b1b2-d9b9daf84870",
+          "name": "Update tag group",
+          "request": {
+            "name": "Update tag group",
+            "description": {},
+            "url": {
+              "path": [
+                "tag_groups",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "64b6d481-cab0-4b08-a444-a23289188442",
+              "name": "Tag group updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tag_groups",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": \"string\",\n  \"tag_group\": {\n    \"id\": 4580,\n    \"name\": \"string\",\n    \"one_per_topic\": true,\n    \"permissions\": {\n      \"everyone\": 6539\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "218d7052-7540-4405-bf0a-7db14067dc29",
+          "name": "Get a list of tags",
+          "request": {
+            "name": "Get a list of tags",
+            "description": {},
+            "url": {
+              "path": [
+                "tags.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d70f764e-b070-4fc1-ab69-9b996e9babee",
+              "name": "notifications",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tags\": [\n    {\n      \"id\": 4491,\n      \"text\": \"string\",\n      \"name\": \"string\",\n      \"count\": 7119,\n      \"pm_count\": 6018,\n      \"target_tag\": \"string\"\n    },\n    {\n      \"id\": 3820,\n      \"text\": \"string\",\n      \"name\": \"string\",\n      \"count\": 775,\n      \"pm_count\": 7936,\n      \"target_tag\": \"string\"\n    }\n  ],\n  \"extras\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2ca9d063-7b25-4798-9672-5e9e8d908aa8",
+          "name": "Get a specific tag",
+          "request": {
+            "name": "Get a specific tag",
+            "description": {},
+            "url": {
+              "path": [
+                "tag",
+                "{{name}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a8f40e5a-64ff-4e65-8b68-d9c26b11ecd0",
+              "name": "notifications",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tag",
+                    "{{name}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"users\": [\n    {\n      \"id\": 7244,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    },\n    {\n      \"id\": 2995,\n      \"username\": \"string\",\n      \"name\": \"string\",\n      \"avatar_template\": \"string\"\n    }\n  ],\n  \"topic_list\": {\n    \"can_create_topic\": true,\n    \"draft\": \"string\",\n    \"draft_key\": \"string\",\n    \"draft_sequence\": 7448,\n    \"per_page\": 6486,\n    \"tags\": [\n      {\n        \"id\": 6464,\n        \"name\": \"string\",\n        \"topic_count\": 6930,\n        \"staff\": false\n      },\n      {\n        \"id\": 9907,\n        \"name\": \"string\",\n        \"topic_count\": 9532,\n        \"staff\": false\n      }\n    ],\n    \"topics\": [\n      {\n        \"id\": 1318,\n        \"title\": \"string\",\n        \"fancy_title\": \"string\",\n        \"slug\": \"string\",\n        \"posts_count\": 1132,\n        \"reply_count\": 5896,\n        \"highest_post_number\": 8651,\n        \"image_url\": \"string\",\n        \"created_at\": \"string\",\n        \"last_posted_at\": \"string\",\n        \"bumped\": false,\n        \"bumped_at\": \"string\",\n        \"archetype\": \"string\",\n        \"unseen\": true,\n        \"last_read_post_number\": 1174,\n        \"unread_posts\": 7015,\n        \"pinned\": false,\n        \"unpinned\": \"string\",\n        \"visible\": true,\n        \"closed\": true,\n        \"archived\": false,\n        \"notification_level\": 5459,\n        \"bookmarked\": true,\n        \"liked\": false,\n        \"views\": 8861,\n        \"like_count\": 8625,\n        \"has_summary\": true,\n        \"last_poster_username\": \"string\",\n        \"category_id\": 6760,\n        \"pinned_globally\": true,\n        \"featured_link\": \"string\",\n        \"posters\": [\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 7742,\n            \"primary_group_id\": 3380\n          },\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 6544,\n            \"primary_group_id\": 4002\n          }\n        ]\n      },\n      {\n        \"id\": 7395,\n        \"title\": \"string\",\n        \"fancy_title\": \"string\",\n        \"slug\": \"string\",\n        \"posts_count\": 6486,\n        \"reply_count\": 733,\n        \"highest_post_number\": 7096,\n        \"image_url\": \"string\",\n        \"created_at\": \"string\",\n        \"last_posted_at\": \"string\",\n        \"bumped\": false,\n        \"bumped_at\": \"string\",\n        \"archetype\": \"string\",\n        \"unseen\": true,\n        \"last_read_post_number\": 9844,\n        \"unread_posts\": 6680,\n        \"pinned\": true,\n        \"unpinned\": \"string\",\n        \"visible\": false,\n        \"closed\": true,\n        \"archived\": true,\n        \"notification_level\": 3328,\n        \"bookmarked\": false,\n        \"liked\": true,\n        \"views\": 3133,\n        \"like_count\": 3955,\n        \"has_summary\": true,\n        \"last_poster_username\": \"string\",\n        \"category_id\": 5204,\n        \"pinned_globally\": true,\n        \"featured_link\": \"string\",\n        \"posters\": [\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 2496,\n            \"primary_group_id\": 5287\n          },\n          {\n            \"extras\": \"string\",\n            \"description\": \"string\",\n            \"user_id\": 4331,\n            \"primary_group_id\": 2669\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "discourse.example.com",
+      "key": "defaultHost"
+    },
+    {
+      "type": "string",
+      "value": "https://{{defaultHost}}",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "id"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "name"
+    }
+  ],
+  "info": {
+    "_postman_id": "29b76a1f-a697-4da2-9e01-1fd4ae6dcfb9",
+    "name": "Discourse API Documentation Admin Tags API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This page contains the documentation on how to use Discourse through API calls.\n\n> Note: For any endpoints not listed you can follow the\n[reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)\nguide to figure out how to use an API endpoint.\n\n### Request Content-Type\n\nThe Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,\n`multipart/form-data`, or `application/json`.\n\n### Endpoint Names and Response Content-Type\n\nMost API endpoints provide the same content as their HTML counterparts. For example\nthe URL `/categories` serves a list of categories, the `/categories.json` API provides the\nsame information in JSON format.\n\nInstead of sending API requests to `/categories.json` you may also send them to `/categories`\nand add an `Accept: application/json` header to the request to get the JSON response.\nSending requests with the `Accept` header is necessary if you want to use URLs\nfor related endpoints returned by the API, such as pagination URLs.\nThese URLs are returned without the `.json` prefix so you need to add the header in\norder to get the correct response format.\n\n### Authentication\n\nSome endpoints do not require any authentication, pretty much anything else will\nrequire you to be authenticated.\n\nTo become authenticated you will need to create an API Key from the admin panel.\n\nOnce you have your API Key you can pass it in along with your API Username\nas an HTTP header like this:\n\n```\ncurl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\"\n```\n\nand this is how POST requests will look:\n\n```\ncurl -X POST \"http://127.0.0.1:3000/categories\" \\\n-H \"Content-Type: multipart/form-data;\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\" \\\n-F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\\n-F \"color=49d9e9\" \\\n-F \"text_color=f0fcfd\"\n```\n\n### Boolean values\n\nIf an endpoint accepts a boolean be sure to specify it as a lowercase\n`true` or `false` value unless noted otherwise.\n",
+      "type": "text/plain"
+    }
+  }
+}

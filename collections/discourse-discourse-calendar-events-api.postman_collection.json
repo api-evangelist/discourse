@@ -1,0 +1,383 @@
+{
+  "item": [
+    {
+      "id": "2486c3d8-4c31-4f42-87f6-a7362cefce15",
+      "name": "Discourse Calendar - Events",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5e42a913-4802-46cb-962b-1d51ed198d6a",
+          "name": "List calendar events",
+          "request": {
+            "name": "List calendar events",
+            "description": {},
+            "url": {
+              "path": [
+                "discourse-post-event",
+                "events.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "include_details",
+                  "value": "<string>",
+                  "description": "Include detailed event information (creator, invitees, stats,\netc.)"
+                },
+                {
+                  "disabled": false,
+                  "key": "category_id",
+                  "value": "<integer>",
+                  "description": "Filter events by category ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_subcategories",
+                  "value": "<string>",
+                  "description": "Include events from subcategories when filtering by category"
+                },
+                {
+                  "disabled": false,
+                  "key": "post_id",
+                  "value": "<integer>",
+                  "description": "Filter to events associated with a specific post ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "attending_user",
+                  "value": "<string>",
+                  "description": "Filter to events where the specified user (username) has RSVP'd\nas going"
+                },
+                {
+                  "disabled": false,
+                  "key": "before",
+                  "value": "<dateTime>",
+                  "description": "Return events starting before this date/time (ISO 8601 format)"
+                },
+                {
+                  "disabled": false,
+                  "key": "after",
+                  "value": "<dateTime>",
+                  "description": "Return events starting after this date/time (ISO 8601 format)"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>",
+                  "description": "Sort order for events by start date (default: asc)"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of events to return (default: 200)"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "23cc88a4-bb43-4d1f-ad0a-b612d6c52de3",
+              "name": "success response (detailed)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discourse-post-event",
+                    "events.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "include_details",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "include_subcategories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "post_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "attending_user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    {\n      \"id\": 4079,\n      \"category_id\": 6646,\n      \"starts_at\": \"1977-05-21T08:15:29.858Z\",\n      \"ends_at\": \"1991-11-16T21:39:35.490Z\",\n      \"show_local_time\": true,\n      \"timezone\": \"string\",\n      \"can_act_on_discourse_post_event\": true,\n      \"can_update_attendance\": true,\n      \"is_closed\": false,\n      \"is_expired\": false,\n      \"is_ongoing\": true,\n      \"is_private\": false,\n      \"is_public\": false,\n      \"is_standalone\": false,\n      \"should_display_invitees\": true,\n      \"status\": \"standalone\",\n      \"at_capacity\": true,\n      \"post\": {\n        \"id\": 4537,\n        \"post_number\": 496,\n        \"url\": \"string\",\n        \"category_slug\": \"string\",\n        \"topic\": {\n          \"id\": 1105,\n          \"title\": \"string\",\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ],\n          \"tags_descriptions\": {}\n        }\n      },\n      \"occurrences\": [\n        {\n          \"starts_at\": \"string\",\n          \"ends_at\": \"string\"\n        },\n        {\n          \"starts_at\": \"string\",\n          \"ends_at\": \"string\"\n        }\n      ],\n      \"name\": \"string\",\n      \"recurrence\": \"string\",\n      \"recurrence_until\": \"2023-05-30T12:33:41.972Z\",\n      \"rrule\": \"string\",\n      \"duration\": \"58:31:97\",\n      \"all_day\": true,\n      \"creator\": {\n        \"id\": 7052,\n        \"username\": \"string\",\n        \"avatar_template\": \"string\",\n        \"name\": \"string\"\n      },\n      \"custom_fields\": {},\n      \"minimal\": false,\n      \"raw_invitees\": [\n        \"string\",\n        \"string\"\n      ],\n      \"reminders\": [\n        {\n          \"value\": 4461,\n          \"unit\": \"string\",\n          \"period\": \"after\",\n          \"type\": \"string\"\n        },\n        {\n          \"value\": 9395,\n          \"unit\": \"string\",\n          \"period\": \"after\",\n          \"type\": \"string\"\n        }\n      ],\n      \"stats\": {},\n      \"url\": \"string\",\n      \"description\": \"string\",\n      \"location\": \"string\",\n      \"watching_invitee\": {},\n      \"chat_enabled\": true,\n      \"channel\": {},\n      \"max_attendees\": 1984\n    },\n    {\n      \"id\": 7699,\n      \"category_id\": 684,\n      \"starts_at\": \"1980-01-14T17:02:28.668Z\",\n      \"ends_at\": \"1946-12-07T11:09:18.877Z\",\n      \"show_local_time\": true,\n      \"timezone\": \"string\",\n      \"can_act_on_discourse_post_event\": true,\n      \"can_update_attendance\": false,\n      \"is_closed\": true,\n      \"is_expired\": true,\n      \"is_ongoing\": true,\n      \"is_private\": false,\n      \"is_public\": true,\n      \"is_standalone\": false,\n      \"should_display_invitees\": false,\n      \"status\": \"standalone\",\n      \"at_capacity\": true,\n      \"post\": {\n        \"id\": 7916,\n        \"post_number\": 7609,\n        \"url\": \"string\",\n        \"category_slug\": \"string\",\n        \"topic\": {\n          \"id\": 3349,\n          \"title\": \"string\",\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ],\n          \"tags_descriptions\": {}\n        }\n      },\n      \"occurrences\": [\n        {\n          \"starts_at\": \"string\",\n          \"ends_at\": \"string\"\n        },\n        {\n          \"starts_at\": \"string\",\n          \"ends_at\": \"string\"\n        }\n      ],\n      \"name\": \"string\",\n      \"recurrence\": \"string\",\n      \"recurrence_until\": \"1989-12-28T07:43:56.051Z\",\n      \"rrule\": \"string\",\n      \"duration\": \"76:86:16\",\n      \"all_day\": false,\n      \"creator\": {\n        \"id\": 9448,\n        \"username\": \"string\",\n        \"avatar_template\": \"string\",\n        \"name\": \"string\"\n      },\n      \"custom_fields\": {},\n      \"minimal\": false,\n      \"raw_invitees\": [\n        \"string\",\n        \"string\"\n      ],\n      \"reminders\": [\n        {\n          \"value\": 8689,\n          \"unit\": \"string\",\n          \"period\": \"before\",\n          \"type\": \"string\"\n        },\n        {\n          \"value\": 696,\n          \"unit\": \"string\",\n          \"period\": \"before\",\n          \"type\": \"string\"\n        }\n      ],\n      \"stats\": {},\n      \"url\": \"string\",\n      \"description\": \"string\",\n      \"location\": \"string\",\n      \"watching_invitee\": {},\n      \"chat_enabled\": false,\n      \"channel\": {},\n      \"max_attendees\": 7663\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0c0efa9d-cadb-47e7-80d5-0c465353a569",
+          "name": "Export calendar events in iCalendar format",
+          "request": {
+            "name": "Export calendar events in iCalendar format",
+            "description": {},
+            "url": {
+              "path": [
+                "discourse-post-event",
+                "events.ics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "category_id",
+                  "value": "<integer>",
+                  "description": "Filter events by category ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_subcategories",
+                  "value": "<string>",
+                  "description": "Include events from subcategories when filtering by category"
+                },
+                {
+                  "disabled": false,
+                  "key": "attending_user",
+                  "value": "<string>",
+                  "description": "Filter to events where the specified user (username) has RSVP'd\nas going"
+                },
+                {
+                  "disabled": false,
+                  "key": "before",
+                  "value": "<dateTime>",
+                  "description": "Return events starting before this date/time (ISO 8601 format)"
+                },
+                {
+                  "disabled": false,
+                  "key": "after",
+                  "value": "<dateTime>",
+                  "description": "Return events starting after this date/time (ISO 8601 format)"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>",
+                  "description": "Sort order for events by start date (default: asc)"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of events to return (default: 200)"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{defaultHost}}",
+                  "key": "defaultHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/calendar"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "732f7949-c182-4695-982f-c31942c50947",
+              "name": "iCalendar file",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discourse-post-event",
+                    "events.ics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "category_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "include_subcategories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attending_user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{defaultHost}}",
+                      "key": "defaultHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/calendar"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/calendar"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "discourse.example.com",
+      "key": "defaultHost"
+    },
+    {
+      "type": "string",
+      "value": "https://{{defaultHost}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "dc2380ac-c496-495e-89d0-07d21ef490ba",
+    "name": "Discourse API Documentation Admin Discourse Calendar - Events API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This page contains the documentation on how to use Discourse through API calls.\n\n> Note: For any endpoints not listed you can follow the\n[reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)\nguide to figure out how to use an API endpoint.\n\n### Request Content-Type\n\nThe Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,\n`multipart/form-data`, or `application/json`.\n\n### Endpoint Names and Response Content-Type\n\nMost API endpoints provide the same content as their HTML counterparts. For example\nthe URL `/categories` serves a list of categories, the `/categories.json` API provides the\nsame information in JSON format.\n\nInstead of sending API requests to `/categories.json` you may also send them to `/categories`\nand add an `Accept: application/json` header to the request to get the JSON response.\nSending requests with the `Accept` header is necessary if you want to use URLs\nfor related endpoints returned by the API, such as pagination URLs.\nThese URLs are returned without the `.json` prefix so you need to add the header in\norder to get the correct response format.\n\n### Authentication\n\nSome endpoints do not require any authentication, pretty much anything else will\nrequire you to be authenticated.\n\nTo become authenticated you will need to create an API Key from the admin panel.\n\nOnce you have your API Key you can pass it in along with your API Username\nas an HTTP header like this:\n\n```\ncurl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\"\n```\n\nand this is how POST requests will look:\n\n```\ncurl -X POST \"http://127.0.0.1:3000/categories\" \\\n-H \"Content-Type: multipart/form-data;\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\" \\\n-F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\\n-F \"color=49d9e9\" \\\n-F \"text_color=f0fcfd\"\n```\n\n### Boolean values\n\nIf an endpoint accepts a boolean be sure to specify it as a lowercase\n`true` or `false` value unless noted otherwise.\n",
+      "type": "text/plain"
+    }
+  }
+}
