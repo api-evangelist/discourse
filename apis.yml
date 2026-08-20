@@ -25,6 +25,10 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/discourse.
 tags:
   - Communities
   - Forums
+  - Open-Source
+tags_raw:
+  - Communities
+  - Forums
   - Open Source
 created: '2023-11-13'
 modified: '2026-05-19'
@@ -107,6 +111,8 @@ apis:
   humanURL: https://www.discourse.org/
   baseURL: https://meta.discourse.org
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
@@ -135,6 +141,8 @@ apis:
   humanURL: https://www.discourse.org/
   baseURL: https://meta.discourse.org
   tags:
+  - Notification
+  tags_raw:
   - Notifications
   properties:
   - type: OpenAPI
@@ -247,6 +255,8 @@ apis:
   humanURL: https://www.discourse.org/
   baseURL: https://meta.discourse.org
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
