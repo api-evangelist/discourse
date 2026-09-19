@@ -240,6 +240,8 @@ apis:
   humanURL: https://www.discourse.org/
   baseURL: https://meta.discourse.org
   tags:
+  - Topic
+  tags_raw:
   - Topics
   properties:
   - type: OpenAPI
