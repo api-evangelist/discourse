@@ -1,22 +1,7 @@
 {
   "provider": "discourse",
   "sources": [
-    "discourse-admin-api-openapi.yml",
-    "discourse-backups-api-openapi.yml",
-    "discourse-badges-api-openapi.yml",
-    "discourse-categories-api-openapi.yml",
-    "discourse-discourse-calendar-events-api-openapi.yml",
-    "discourse-groups-api-openapi.yml",
-    "discourse-invites-api-openapi.yml",
-    "discourse-notifications-api-openapi.yml",
-    "discourse-posts-api-openapi.yml",
-    "discourse-private-messages-api-openapi.yml",
-    "discourse-search-api-openapi.yml",
-    "discourse-site-api-openapi.yml",
-    "discourse-tags-api-openapi.yml",
-    "discourse-topics-api-openapi.yml",
-    "discourse-uploads-api-openapi.yml",
-    "discourse-users-api-openapi.yml"
+    "_original/discourse-openapi.json"
   ],
   "outputs": [
     "discourse-admin-api-openapi.yml",
@@ -39,6 +24,43 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "discourse-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "discourse-openapi.json: declared missing tag: Admin",
+    "discourse-openapi.json: declared missing tag: Backups",
+    "discourse-openapi.json: declared missing tag: Badges",
+    "discourse-openapi.json: declared missing tag: Categories",
+    "discourse-openapi.json: declared missing tag: Discourse Calendar - Events",
+    "discourse-openapi.json: declared missing tag: Groups",
+    "discourse-openapi.json: declared missing tag: Invites",
+    "discourse-openapi.json: declared missing tag: Notifications",
+    "discourse-openapi.json: declared missing tag: Posts",
+    "discourse-openapi.json: declared missing tag: Private Messages",
+    "discourse-openapi.json: declared missing tag: Search",
+    "discourse-openapi.json: declared missing tag: Site",
+    "discourse-openapi.json: declared missing tag: Tags",
+    "discourse-openapi.json: declared missing tag: Topics",
+    "discourse-openapi.json: declared missing tag: Uploads",
+    "discourse-openapi.json: declared missing tag: Users",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "discourse-admin-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discourse-backups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discourse-badges-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discourse-categories-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discourse-discourse-calendar-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discourse-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discourse-invites-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discourse-notifications-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discourse-posts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discourse-private-messages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discourse-search-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discourse-site-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discourse-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discourse-topics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discourse-uploads-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discourse-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
