@@ -281,6 +281,8 @@ apis:
   - type: GitHubRepo
     url: https://github.com/discourse/discourse_api
 common:
+- type: VendorFacets
+  url: vendor-facets/discourse-vendor-facets.yml
 - type: License
   name: MIT
   url: https://github.com/discourse/discourse_api/blob/main/LICENSE
