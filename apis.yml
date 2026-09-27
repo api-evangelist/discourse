@@ -35,14 +35,19 @@ accessModel:
 position: Consuming
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/discourse.png
+x-docs-platform: redocly
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-09-25
+x-docs-hosting: github-pages
 tags:
-- Communities
+- Community
 - Forums
-- Open-Source
+- Open Source
 tags_raw:
 - Communities
 - Forums
 - Open Source
+- Open-Source
 created: '2023-11-13'
 modified: '2026-09-16'
 specificationVersion: '0.23'
