@@ -1,0 +1,12 @@
+{
+ "url": "https://docs.discourse.org/openapi.json",
+ "requested_url": "https://docs.discourse.org/openapi.json",
+ "status": 200,
+ "content_type": "application/json; charset=utf-8",
+ "bytes": 713636,
+ "sha256": "bd0cc899503bbd8517cd092f13decbc895c37bb41281bae4d8ed88798dc0b77b",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 0.979), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
