@@ -286,6 +286,10 @@ apis:
   - type: GitHubRepo
     url: https://github.com/discourse/discourse_api
 common:
+- type: RateLimits
+  url: rate-limits/discourse-rate-limits.yml
+- type: FinOps
+  url: finops/discourse-finops.yml
 - type: VendorFacets
   url: vendor-facets/discourse-vendor-facets.yml
 - type: License
