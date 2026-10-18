@@ -103,5 +103,5 @@
     - connectors/applications/discourse
     vendor_link: https://www.discourse.org/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
