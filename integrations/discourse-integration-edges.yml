@@ -102,6 +102,897 @@ edges:
     builder: Pipedream repo (component)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: Codecademy
+  app: Codebytes Plugin
+  apps:
+  - Codebytes Plugin
+  listing_count: 1
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://meta.discourse.org/t/196990
+  category: Discourse plugin
+  partner_url: https://www.codecademy.com
+  signal_note: meta.discourse.org plugin topic; repo https://github.com/Codecademy/discourse-codebytes-plugin; publisher
+    domain codecademy.com from the GitHub organization profile website of 'Codecademy'; listing count and plugin
+    names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+  partner_held:
+    candidate: codecademy
+    why: 'end-user: Codecademy built the Codebytes plugin for its own Discourse forum (an edtech company, not a
+      vendor building on Discourse)'
+- partner_name: Algolia
+  app: Discourse Algolia Search
+  apps:
+  - Algolia plugin indexation
+  - Discourse Algolia Search
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/73517
+  category: Discourse plugin integration
+  partner: algolia
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Algolia'; exact normalised match to algolia's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse, mlamarque
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Amazon
+  app: Discourse Login with Amazon
+  apps:
+  - Discourse Login with Amazon
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/117564
+  category: Discourse plugin integration
+  partner: amazon
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Amazon'; exact normalised match to amazon's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Amazon Web Services
+  app: Discourse Amazon SNS notifications
+  apps:
+  - Discourse Amazon SNS notifications
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/384054
+  category: Discourse plugin integration
+  partner: amazon-web-services
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Amazon Web Services'; exact normalised match to amazon-web-services's
+    apis.yml name (Kin 2026-10-20 decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Apple
+  app: Discourse Apple Authentication
+  apps:
+  - Discourse Apple Authentication
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/171485
+  category: Discourse plugin integration
+  partner: apple
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Apple'; exact normalised match to apple's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Baidu
+  app: 百度统计插件配置
+  apps:
+  - 百度统计插件配置
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/392512
+  category: Discourse plugin integration
+  partner: baidu
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Baidu'; exact normalised match to baidu's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: xuxiaowei-com-cn
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Bilibili
+  app: Discourse Bilibili Onebox
+  apps:
+  - Discourse Bilibili Onebox
+  - Discourse-embed-bilibili（在discourse中插入哔哩哔哩视频）
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/389149
+  category: Discourse plugin integration
+  partner: bilibili
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Bilibili'; exact normalised match to bilibili's apis.yml name (Kin
+    2026-10-20 decision 2)
+  builder: scavin, whitewatercn
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Buffer
+  app: Buffer -- streamline sharing topics on social media
+  apps:
+  - Buffer -- streamline sharing topics on social media
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/400819
+  category: Discourse plugin integration
+  partner: buffer
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Buffer'; exact normalised match to buffer's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Chargebee
+  app: Chargebee subscriptions plugin
+  apps:
+  - Chargebee subscriptions plugin
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/39192
+  category: Discourse plugin integration
+  partner: chargebee
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Chargebee'; exact normalised match to chargebee's apis.yml name (Kin
+    2026-10-20 decision 2)
+  builder: liliakai
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Codeberg
+  app: Discourse Codeberg Login
+  apps:
+  - Discourse Codeberg Login
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/255511
+  category: Discourse plugin integration
+  partner: codeberg
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Codeberg'; exact normalised match to codeberg's apis.yml name (Kin
+    2026-10-20 decision 2)
+  builder: Regalijan
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: CoinGecko
+  app: Crypto Ticker — live cryptocurrency prices (Bitcoin, Ethereum, Solana…) in your forum
+  apps:
+  - Crypto Ticker — live cryptocurrency prices (Bitcoin, Ethereum, Solana…) in your forum
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/413885
+  category: Discourse plugin integration
+  partner: coingecko
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'CoinGecko'; exact normalised match to coingecko's apis.yml name (Kin
+    2026-10-20 decision 2)
+  builder: LoadFoundryHQ
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Discord
+  app: 'Discord Bot Construction Kit :robot:'
+  apps:
+  - 'Discord Bot Construction Kit :robot:'
+  - Discourse Chat Integrations
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/66522
+  category: Discourse plugin integration
+  partner: discord
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Discord'; exact normalised match to discord's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse, merefield
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Firebase
+  app: Discourse Mobile Push — FCM push notifications for mobile apps
+  apps:
+  - Discourse Mobile Push — FCM push notifications for mobile apps
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/414258
+  category: Discourse plugin integration
+  partner: firebase
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Firebase'; exact normalised match to firebase's apis.yml name (Kin
+    2026-10-20 decision 2)
+  builder: mikeyboysan
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Font Awesome
+  app: Discourse FontAwesome Pro
+  apps:
+  - Discourse FontAwesome Pro
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/150871
+  category: Discourse plugin integration
+  partner: font-awesome
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Font Awesome'; exact normalised match to font-awesome's apis.yml name
+    (Kin 2026-10-20 decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Garmin
+  app: Garmin Connect Course Onebox Plugin
+  apps:
+  - Garmin Connect Course Onebox Plugin
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/19854
+  category: Discourse plugin integration
+  partner: garmin
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Garmin'; exact normalised match to garmin's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: mrloop
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: GitHub
+  app: Discourse GitHub Verification
+  apps:
+  - Discourse GitHub
+  - Discourse GitHub Verification
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/267030
+  category: Discourse plugin integration
+  partner: github
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'GitHub'; exact normalised match to github's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: GitLab
+  app: GitLab OmniAuth plugin
+  apps:
+  - GitLab OmniAuth plugin
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/24382
+  category: Discourse plugin integration
+  partner: gitlab
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'GitLab'; exact normalised match to gitlab's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Gitcoin
+  app: Gitcoin Passport Plugin
+  apps:
+  - Gitcoin Passport Plugin
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/273532
+  category: Discourse plugin integration
+  partner: gitcoin
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Gitcoin'; exact normalised match to gitcoin's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: dappy-studio
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Gitter
+  app: Discourse Chat Integrations
+  apps:
+  - Discourse Chat Integrations
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/66522
+  category: Discourse plugin integration
+  partner: gitter
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Gitter'; exact normalised match to gitter's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Google Analytics
+  app: Advanced Google Analytics (v4)
+  apps:
+  - Advanced Google Analytics (v4)
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/412327
+  category: Discourse plugin integration
+  partner: google-analytics
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Google Analytics'; exact normalised match to google-analytics's apis.yml
+    name (Kin 2026-10-20 decision 2)
+  builder: multidimension-al
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Google Books
+  app: Discourse Googlebooks
+  apps:
+  - Discourse Googlebooks
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/68560
+  category: Discourse plugin integration
+  partner: google-books
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Google Books'; exact normalised match to google-books's apis.yml name
+    (Kin 2026-10-20 decision 2)
+  builder: netdeamon
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Google Sheets
+  app: Discourse Linkify Google Sheets
+  apps:
+  - Discourse Linkify Google Sheets
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/163985
+  category: Discourse plugin integration
+  partner: google-sheets
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Google Sheets'; exact normalised match to google-sheets's apis.yml
+    name (Kin 2026-10-20 decision 2)
+  builder: paviliondev
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: GroupMe
+  app: Discourse Chat Integrations
+  apps:
+  - Discourse Chat Integrations
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/66522
+  category: Discourse plugin integration
+  partner: groupme
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'GroupMe'; exact normalised match to groupme's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Have I Been Pwned
+  app: Pwned Passwords Validator
+  apps:
+  - Pwned Passwords Validator
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/90074
+  category: Discourse plugin integration
+  partner: have-i-been-pwned
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Have I Been Pwned'; exact normalised match to have-i-been-pwned's
+    apis.yml name (Kin 2026-10-20 decision 2)
+  builder: featheredtoast
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Jira
+  app: Discourse Jira
+  apps:
+  - Discourse Jira
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/274045
+  category: Discourse plugin integration
+  partner: jira
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Jira'; exact normalised match to jira's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Ko-fi
+  app: Discourse Ko-fi integration
+  apps:
+  - Discourse Ko-fi integration
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/399978
+  category: Discourse plugin integration
+  partner: ko-fi
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Ko-fi'; exact normalised match to ko-fi's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: magicball-network
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Mailgun
+  app: Discourse Mailgun Routes
+  apps:
+  - Discourse Mailgun Routes
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/210609
+  category: Discourse plugin integration
+  partner: mailgun
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Mailgun'; exact normalised match to mailgun's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Regalijan
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Matrix
+  app: Discourse Chat Integrations
+  apps:
+  - Discourse Chat Integrations
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/66522
+  category: Discourse plugin integration
+  partner: matrix
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Matrix'; exact normalised match to matrix's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Mattermost
+  app: Discourse Chat Integrations
+  apps:
+  - Discourse Chat Integrations
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/66522
+  category: Discourse plugin integration
+  partner: mattermost
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Mattermost'; exact normalised match to mattermost's apis.yml name
+    (Kin 2026-10-20 decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Microsoft
+  app: Microsoft Authentication
+  apps:
+  - Microsoft Authentication
+  - Microsoft Graph Mail Poller
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/51731
+  category: Discourse plugin integration
+  partner: microsoft
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Microsoft'; exact normalised match to microsoft's apis.yml name (Kin
+    2026-10-20 decision 2)
+  builder: CERN, Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Microsoft Teams
+  app: Discourse Chat Integrations
+  apps:
+  - Discourse Chat Integrations
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/66522
+  category: Discourse plugin integration
+  partner: microsoft-teams
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Microsoft Teams'; exact normalised match to microsoft-teams's apis.yml
+    name (Kin 2026-10-20 decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Monero
+  app: Monero Subscriptions Plugin
+  apps:
+  - Monero Subscriptions Plugin
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/264997
+  category: Discourse plugin integration
+  partner: monero
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Monero'; exact normalised match to monero's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: spirobel
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: MusicBrainz
+  app: Discourse MusicBrainz Onebox
+  apps:
+  - Discourse MusicBrainz Onebox
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/251111
+  category: Discourse plugin integration
+  partner: musicbrainz
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'MusicBrainz'; exact normalised match to musicbrainz's apis.yml name
+    (Kin 2026-10-20 decision 2)
+  builder: phw
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Open Collective
+  app: Discourse OpenCollective Integration
+  apps:
+  - Discourse OpenCollective Integration
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/69813
+  category: Discourse plugin integration
+  partner: open-collective
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Open Collective'; exact normalised match to open-collective's apis.yml
+    name (Kin 2026-10-20 decision 2)
+  builder: sudaraka94
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Patreon
+  app: Discourse Patreon
+  apps:
+  - Discourse Patreon
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/44366
+  category: Discourse plugin integration
+  partner: patreon
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Patreon'; exact normalised match to patreon's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: PostHog
+  app: Discourse Posthog Plugin
+  apps:
+  - Discourse Posthog Plugin
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/394116
+  category: Discourse plugin integration
+  partner: posthog
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'PostHog'; exact normalised match to posthog's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: christophdb
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Prometheus
+  app: Discourse Prometheus
+  apps:
+  - Discourse Prometheus
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/72666
+  category: Discourse plugin integration
+  partner: prometheus-io
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Prometheus'; exact normalised match to prometheus-io's apis.yml name
+    (Kin 2026-10-20 decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Salesforce
+  app: Discourse Salesforce
+  apps:
+  - Discourse Salesforce
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/218267
+  category: Discourse plugin integration
+  partner: salesforce
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Salesforce'; exact normalised match to salesforce's apis.yml name
+    (Kin 2026-10-20 decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Steam
+  app: Discourse Steam Login
+  apps:
+  - Discourse Steam Login
+  - Steam Profile Onebox plugin
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/18153
+  category: Discourse plugin integration
+  partner: steam
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Steam'; exact normalised match to steam's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse, MiguelAngelLV
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Stripe
+  app: Stripe Donations Plugin
+  apps:
+  - Discourse Subscriptions Plugin
+  - Stripe Donations Plugin
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/140818
+  category: Discourse plugin integration
+  partner: stripe
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Stripe'; exact normalised match to stripe's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse, chrisbeach
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Telegram
+  app: Telegram Notifications Plugin (discourse-telegram-notifications)
+  apps:
+  - Discourse Chat Bridge (Telegram)
+  - Discourse Chat Integrations
+  - Discourse-Telegram chat bridge
+  - Telegram Auth Plugin (work with latest discourse version)
+  - Telegram Notifications Plugin (discourse-telegram-notifications)
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/60483
+  category: Discourse plugin integration
+  partner: telegram
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Telegram'; exact normalised match to telegram's apis.yml name (Kin
+    2026-10-20 decision 2)
+  builder: Discourse, Lhcfl, babylai, nodeloc
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Wild Apricot
+  app: Wild Apricot login plugin
+  apps:
+  - Wild Apricot login plugin
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/35032
+  category: Discourse plugin integration
+  partner: wildapricot
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Wild Apricot'; exact normalised match to wildapricot's apis.yml name
+    (Kin 2026-10-20 decision 2)
+  builder: LeoMcA
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: WordPress
+  app: Plugin for embedding Discourse topics in wordpress pages or posts
+  apps:
+  - Plugin for embedding Discourse topics in wordpress pages or posts
+  type: coverage
+  relationship: connector-coverage
+  direction: third-party
+  channel: community-built
+  evidence: https://meta.discourse.org/t/30228
+  category: Discourse plugin integration
+  partner: wordpress
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'WordPress'; exact normalised match to wordpress's apis.yml name (Kin
+    2026-10-20 decision 2)
+  builder: matthieu-lapeyre
+  signal_note: community plugin integrating this product; builder unknown to the vendor -> out of position shares;
+    plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Zendesk
+  app: Discourse Zendesk
+  apps:
+  - Discourse Zendesk
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/68005
+  category: Discourse plugin integration
+  partner: zendesk
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Zendesk'; exact normalised match to zendesk's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
+- partner_name: Zulip
+  app: Discourse Chat Integrations
+  apps:
+  - Discourse Chat Integrations
+  type: coverage
+  relationship: connector-coverage
+  direction: provider-built
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/66522
+  category: Discourse plugin integration
+  partner: zulip
+  partner_match: register-name
+  identity_source: register-name
+  identity_note: register gave only the name 'Zulip'; exact normalised match to zulip's apis.yml name (Kin 2026-10-20
+    decision 2)
+  builder: Discourse
+  signal_note: official Discourse-team plugin integrating this product; plugin names are context, never counted
+  detected_by: sweep-discourse-plugin-ecosystem.py
+  detected: '2026-10-23'
 method: searched
 checked:
 - https://fivetran.com/docs-sitemap.xml
@@ -111,6 +1002,11 @@ checked:
 - https://github.com/n8n-io/n8n/tree/860f1273ebd73fabbd668cbec2c49ed9b48a286d/packages/nodes-base/nodes/
 - https://github.com/n8n-io/n8n/tree/f73dc337f8dc61a4fd44aebe41c55faafe4f53a4/packages/nodes-base/nodes/
 - https://zapier.com/api/v4/apps/
+- https://api.github.com/users/
+- https://meta.discourse.org/c/customization/plugin/22.json
+- https://meta.discourse.org/c/customization/plugin/22.json?page=N
+- https://meta.discourse.org/c/customization/theme/61.json
+- https://meta.discourse.org/t/<id>.json
 source:
 - https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
 - https://github.com/n8n-io/n8n/tree/860f1273ebd73fabbd668cbec2c49ed9b48a286d/packages/nodes-base/nodes/

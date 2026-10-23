@@ -105,3 +105,543 @@
     builder: Pipedream repo (component)
   status: not-a-workflow
   arazzo: null
+- slug: discourse-codecademy
+  label: Codecademy
+  partner_name: Codecademy
+  category: Discourse plugin
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://meta.discourse.org/t/196990
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-algolia
+  label: Algolia
+  partner: algolia
+  partner_name: Algolia
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/73517
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-amazon
+  label: Amazon
+  partner: amazon
+  partner_name: Amazon
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/117564
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-amazon-web-services
+  label: Amazon Web Services
+  partner: amazon-web-services
+  partner_name: Amazon Web Services
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/384054
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-apple
+  label: Apple
+  partner: apple
+  partner_name: Apple
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/171485
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-baidu
+  label: Baidu
+  partner: baidu
+  partner_name: Baidu
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/392512
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-bilibili
+  label: Bilibili
+  partner: bilibili
+  partner_name: Bilibili
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/389149
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-buffer
+  label: Buffer
+  partner: buffer
+  partner_name: Buffer
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/400819
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-chargebee
+  label: Chargebee
+  partner: chargebee
+  partner_name: Chargebee
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/39192
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-codeberg
+  label: Codeberg
+  partner: codeberg
+  partner_name: Codeberg
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/255511
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-coingecko
+  label: CoinGecko
+  partner: coingecko
+  partner_name: CoinGecko
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/413885
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-discord
+  label: Discord
+  partner: discord
+  partner_name: Discord
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/66522
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-firebase
+  label: Firebase
+  partner: firebase
+  partner_name: Firebase
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/414258
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-font-awesome
+  label: Font Awesome
+  partner: font-awesome
+  partner_name: Font Awesome
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/150871
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-garmin
+  label: Garmin
+  partner: garmin
+  partner_name: Garmin
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/19854
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-github
+  label: GitHub
+  partner: github
+  partner_name: GitHub
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/267030
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-gitlab
+  label: GitLab
+  partner: gitlab
+  partner_name: GitLab
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/24382
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-gitcoin
+  label: Gitcoin
+  partner: gitcoin
+  partner_name: Gitcoin
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/273532
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-gitter
+  label: Gitter
+  partner: gitter
+  partner_name: Gitter
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/66522
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-google-analytics
+  label: Google Analytics
+  partner: google-analytics
+  partner_name: Google Analytics
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/412327
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-google-books
+  label: Google Books
+  partner: google-books
+  partner_name: Google Books
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/68560
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-google-sheets
+  label: Google Sheets
+  partner: google-sheets
+  partner_name: Google Sheets
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/163985
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-groupme
+  label: GroupMe
+  partner: groupme
+  partner_name: GroupMe
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/66522
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-have-i-been-pwned
+  label: Have I Been Pwned
+  partner: have-i-been-pwned
+  partner_name: Have I Been Pwned
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/90074
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-jira
+  label: Jira
+  partner: jira
+  partner_name: Jira
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/274045
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-ko-fi
+  label: Ko-fi
+  partner: ko-fi
+  partner_name: Ko-fi
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/399978
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-mailgun
+  label: Mailgun
+  partner: mailgun
+  partner_name: Mailgun
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/210609
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-matrix
+  label: Matrix
+  partner: matrix
+  partner_name: Matrix
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/66522
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-mattermost
+  label: Mattermost
+  partner: mattermost
+  partner_name: Mattermost
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/66522
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-microsoft
+  label: Microsoft
+  partner: microsoft
+  partner_name: Microsoft
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/51731
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-microsoft-teams
+  label: Microsoft Teams
+  partner: microsoft-teams
+  partner_name: Microsoft Teams
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/66522
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-monero
+  label: Monero
+  partner: monero
+  partner_name: Monero
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/264997
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-musicbrainz
+  label: MusicBrainz
+  partner: musicbrainz
+  partner_name: MusicBrainz
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/251111
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-open-collective
+  label: Open Collective
+  partner: open-collective
+  partner_name: Open Collective
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/69813
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-patreon
+  label: Patreon
+  partner: patreon
+  partner_name: Patreon
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/44366
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-posthog
+  label: PostHog
+  partner: posthog
+  partner_name: PostHog
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/394116
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-prometheus
+  label: Prometheus
+  partner: prometheus-io
+  partner_name: Prometheus
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/72666
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-salesforce
+  label: Salesforce
+  partner: salesforce
+  partner_name: Salesforce
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/218267
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-steam
+  label: Steam
+  partner: steam
+  partner_name: Steam
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/18153
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-stripe
+  label: Stripe
+  partner: stripe
+  partner_name: Stripe
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/140818
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-telegram
+  label: Telegram
+  partner: telegram
+  partner_name: Telegram
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/60483
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-wild-apricot
+  label: Wild Apricot
+  partner: wildapricot
+  partner_name: Wild Apricot
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/35032
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-wordpress
+  label: WordPress
+  partner: wordpress
+  partner_name: WordPress
+  category: Discourse plugin integration
+  type: coverage
+  channel: community-built
+  evidence: https://meta.discourse.org/t/30228
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-zendesk
+  label: Zendesk
+  partner: zendesk
+  partner_name: Zendesk
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/68005
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: discourse-zulip
+  label: Zulip
+  partner: zulip
+  partner_name: Zulip
+  category: Discourse plugin integration
+  type: coverage
+  channel: provider-built
+  evidence: https://meta.discourse.org/t/66522
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
