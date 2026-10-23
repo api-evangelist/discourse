@@ -1981,3 +1981,9 @@ paths:
       responses:
         '301':
           description: redirects to /t/{topic_id}.json
+x-provenance:
+  method: harvested
+  publisher: Discourse
+  source: https://docs.discourse.org/openapi.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)

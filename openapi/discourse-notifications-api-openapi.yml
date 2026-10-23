@@ -104,3 +104,9 @@ paths:
                   description: '(optional) Leave off to mark all notifications as
 
                     read'
+x-provenance:
+  method: harvested
+  publisher: Discourse
+  source: https://docs.discourse.org/openapi.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
