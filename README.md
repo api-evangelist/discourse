@@ -1,4 +1,4 @@
-# Discourse (discourse)
+# Discourse
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,71 +66,150 @@
 
 At Discourse, our mission is to democratize online community and teamwork by raising the standard of civilized discourse on the Internet. We achieve this through delivering the best community and forum software. The Discourse API exposes administrative and content endpoints for categories, topics, posts, users, groups, tags, uploads, badges, and more.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/discourse/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/discourse/refs/heads/main/apis.yml)
+**Areas:** Community · Forums · Open Source
 
-## Scope
+## Discourse on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Discourse is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/discourse/](https://apis.io/providers/discourse/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (16)
 
-- Communities
-- Forums
-- Open Source
+- [Discourse Admin API](https://apis.io/apis/discourse/discourse-admin-api/) — The Admin API from Discourse — 10 operation(s) for admin.
+- [Discourse Backups API](https://apis.io/apis/discourse/discourse-backups-api/) — The Backups API from Discourse — 2 operation(s) for backups.
+- [Discourse Badges API](https://apis.io/apis/discourse/discourse-badges-api/) — The Badges API from Discourse — 3 operation(s) for badges.
+- [Discourse Categories API](https://apis.io/apis/discourse/discourse-categories-api/) — The Categories API from Discourse — 5 operation(s) for categories.
+- [Discourse Calendar - Events API](https://apis.io/apis/discourse/discourse-discourse-calendar-events-api/) — The Discourse Calendar - Events API from Discourse — 2 operation(s) for discourse calendar - events.
+- [Discourse Groups API](https://apis.io/apis/discourse/discourse-groups-api/) — The Groups API from Discourse — 8 operation(s) for groups.
+- [Discourse Invites API](https://apis.io/apis/discourse/discourse-invites-api/) — The Invites API from Discourse — 4 operation(s) for invites.
+- [Discourse Notifications API](https://apis.io/apis/discourse/discourse-notifications-api/) — The Notifications API from Discourse — 2 operation(s) for notifications.
+- [Discourse Posts API](https://apis.io/apis/discourse/discourse-posts-api/) — The Posts API from Discourse — 5 operation(s) for posts.
+- [Discourse Private Messages API](https://apis.io/apis/discourse/discourse-private-messages-api/) — The Private Messages API from Discourse — 3 operation(s) for private messages.
+- [Discourse Search API](https://apis.io/apis/discourse/discourse-search-api/) — The Search API from Discourse — 1 operation(s) for search.
+- [Discourse Site API](https://apis.io/apis/discourse/discourse-site-api/) — The Site API from Discourse — 2 operation(s) for site.
+- [Discourse Tags API](https://apis.io/apis/discourse/discourse-tags-api/) — The Tags API from Discourse — 4 operation(s) for tags.
+- [Discourse Topics API](https://apis.io/apis/discourse/discourse-topics-api/) — The Topics API from Discourse — 14 operation(s) for topics.
+- [Discourse Uploads API](https://apis.io/apis/discourse/discourse-uploads-api/) — The Uploads API from Discourse — 7 operation(s) for uploads.
+- [Discourse Users API](https://apis.io/apis/discourse/discourse-users-api/) — The Users API from Discourse — 23 operation(s) for users.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2023-11-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Discourse API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Discourse API exposes the full set of REST endpoints used to manage a Discourse forum, including categories, topics, posts, users, groups, tags, badges, uploads, search, site settings, and admin operations. Authentication uses an API Key plus an Api-Username header issued from the Discourse admin panel.
+- [Discourse Agentic Access](https://apis.io/agentic-access/discourse/discourse-agentic-access/)
 
-- **Human URL:** [https://www.discourse.org/](https://www.discourse.org/)
-- **Base URL:** `https://meta.discourse.org`
+#### Collections (17)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Categories
-- Forums
-- Groups
-- Posts
-- Tags
-- Topics
-- Users
+- [Discourse API Documentation](https://apis.io/collections/discourse/open-discourse/)
+- [Discourse API Documentation Admin API](https://apis.io/collections/discourse/open-discourse-admin-api/)
+- [Discourse API Documentation Admin Backups API](https://apis.io/collections/discourse/open-discourse-backups-api/)
+- [Discourse API Documentation Admin Badges API](https://apis.io/collections/discourse/open-discourse-badges-api/)
+- [Discourse API Documentation Admin Categories API](https://apis.io/collections/discourse/open-discourse-categories-api/)
+- [Discourse API Documentation Admin Discourse Calendar - Events API](https://apis.io/collections/discourse/open-discourse-discourse-calendar-events-api/)
+- [Discourse API Documentation Admin Groups API](https://apis.io/collections/discourse/open-discourse-groups-api/)
+- [Discourse API Documentation Admin Invites API](https://apis.io/collections/discourse/open-discourse-invites-api/)
+- [Discourse API Documentation Admin Notifications API](https://apis.io/collections/discourse/open-discourse-notifications-api/)
+- [Discourse API Documentation Admin Posts API](https://apis.io/collections/discourse/open-discourse-posts-api/)
+- [Discourse API Documentation Admin Private Messages API](https://apis.io/collections/discourse/open-discourse-private-messages-api/)
+- [Discourse API Documentation Admin Search API](https://apis.io/collections/discourse/open-discourse-search-api/)
+- [Discourse API Documentation Admin Site API](https://apis.io/collections/discourse/open-discourse-site-api/)
+- [Discourse API Documentation Admin Tags API](https://apis.io/collections/discourse/open-discourse-tags-api/)
+- [Discourse API Documentation Admin Topics API](https://apis.io/collections/discourse/open-discourse-topics-api/)
+- [Discourse API Documentation Admin Uploads API](https://apis.io/collections/discourse/open-discourse-uploads-api/)
+- [Discourse API Documentation Admin Users API](https://apis.io/collections/discourse/open-discourse-users-api/)
 
-#### Properties
+#### Security (3)
 
-- [Documentation](https://docs.discourse.org/)
-- [OpenAPI](openapi/discourse-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/discourse.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/discourse.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Git Hub Repo](https://github.com/discourse/discourse_api)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Discourse Domain Security](https://apis.io/security/discourse/discourse-domain-security/)
+- [Discourse Trust Center](https://apis.io/security/discourse/discourse-trust-center/)
+- [Discourse Vulnerability Disclosure](https://apis.io/security/discourse/discourse-vulnerability-disclosure/)
 
-- [LinkedIn](https://www.linkedin.com/company/civilized-discourse-construction-kit-inc)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Discourse Plans Pricing](https://apis.io/plans/discourse/discourse-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Discourse Rate Limits](https://apis.io/rate-limits/discourse/discourse-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Discourse Finops](https://apis.io/finops/discourse/discourse-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.discourse.org/)
 - [Documentation](https://docs.discourse.org/)
-- [Community](https://meta.discourse.org/)
-- [Plans](https://www.discourse.org/pricing)
-- [Blog](https://blog.discourse.org/)
-- [Plugins](https://www.discourse.org/plugins)
-- [Integrations](https://www.discourse.org/integrations)
-- [Git Hub Repo](https://github.com/discourse/discourse)
-- [Git Hub Org](https://github.com/discourse)
-- [Privacy Policy](https://www.discourse.org/privacy)
-- [Terms of Service](https://www.discourse.org/tos)
-- [Status Page](https://status.discourse.org/)
 - [Support](https://meta.discourse.org/c/support/api/52)
+- [Blog](https://blog.discourse.org/)
+- [Terms of service](https://www.discourse.org/tos)
+- [Privacy policy](https://www.discourse.org/privacy)
+- [Status](https://status.discourse.org/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
-**URL:** http://apievangelist.com
+**Kin Score 33.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 37.7 |
+| Contract governance | 0.0 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 16.7 |
+| Access clarity | 36.8 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/discourse/](https://apis.io/providers/discourse/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Discourse: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/discourse/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
